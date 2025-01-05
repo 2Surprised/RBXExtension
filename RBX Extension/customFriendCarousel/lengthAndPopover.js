@@ -9976,6 +9976,7 @@
             K.useRef)(null);
             return (0,
             K.useEffect)(function() {
+                // console.log("DOM element referenced by triggerRef:", u.current, u.current.offsetLeft);
                 return u.current ? (u.current.addEventListener("mouseover", t),
                 u.current.addEventListener("mouseout", n),
                 function() {
@@ -9992,6 +9993,7 @@
                 style: {
                     position: "absolute",
                     top: ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetHeight) || 0) + ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetTop) || 0),
+                    left: ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetLeft) || 0) + ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetWidth) || 0) / 2 - o / 2,
                     zIndex: 1002,
                     width: o
                 },

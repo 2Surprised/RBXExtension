@@ -661,7 +661,6 @@
 .content .friends-carousel-container {
     width: 100%;
     display: flex;
-    overflow: hidden;
     padding-left: 12px;
     padding-right: 12px
 }
@@ -669,7 +668,9 @@
 .content .friends-carousel-list-container {
     width: 100%;
     display: flex;
-    overflow: scroll;
+    /* position: relative; */
+    overflow-x: auto;
+    /* overflow-y: clip; */
     flex-direction: row;
     justify-content: space-between
 }
@@ -677,13 +678,14 @@
 .content .friends-carousel-list-container-not-full {
     width: 100%;
     display: flex;
-    overflow: scroll;
+    overflow-x: auto;
+    /* overflow-y: clip; */
     flex-direction: row;
-    justify-content: space-between
+    justify-content: flex-start
 }
 
 .content .react-friends-carousel-container {
-    height: 187px
+    height: 220px
 }
 
 @media(max-width: 991px) {
@@ -693,7 +695,8 @@
 }
 
 .content .friends-carousel-tile {
-    margin-bottom: 16px;
+    position: relative;
+    margin-bottom: 30px;
     margin-left: 3px;
     margin-right: 3px;
     cursor: pointer

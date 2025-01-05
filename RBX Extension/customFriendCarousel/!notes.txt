@@ -1,1 +1,1 @@
-JS file is from FriendsList.tsx and FriendTilePopover.tsx
+JS lines modified are from FriendsList.tsx and FriendTilePopover.tsx
