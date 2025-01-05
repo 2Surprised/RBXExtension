@@ -10062,7 +10062,7 @@
             K.useEffect)(function() {
                 var e, t = null === (e = o.current) || void 0 === e ? void 0 : e.offsetWidth;
                 s(110 * (null !== (e = null == n ? void 0 : n.length) && void 0 !== e ? e : 0) > (null != t ? t : 0)),
-                null != t && null != n && (t = 25,
+                null != t && null != n && (t = 30,
                 l(n.slice(0, t)))
             }, [null === (e = o.current) || void 0 === e ? void 0 : e.offsetWidth, n]),
             Y().createElement("div", null, Y().createElement("div", {
