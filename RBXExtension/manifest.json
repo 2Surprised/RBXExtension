@@ -4,12 +4,16 @@
     "description": "Improves the Roblox user experience.",
     "version": "1.0",
     "permissions": [
-        "declarativeNetRequest"
+        "declarativeNetRequest",
+        "debugger"
     ],
     "host_permissions": [
         "https://*.roblox.com/*",
         "https://*.rbxcdn.com/*"
     ],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
     "declarative_net_request": {
         "rule_resources": [
             {

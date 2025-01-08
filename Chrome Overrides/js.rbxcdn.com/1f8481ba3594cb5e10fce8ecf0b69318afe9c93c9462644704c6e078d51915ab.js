@@ -9976,8 +9976,7 @@
             K.useRef)(null);
             return (0,
             K.useEffect)(function() {
-                console.log("DOM element referenced by triggerRef:", u.current, u.current.offsetLeft);
-                
+                // console.log("DOM element referenced by triggerRef:", u.current, u.current.offsetLeft);
                 return u.current ? (u.current.addEventListener("mouseover", t),
                 u.current.addEventListener("mouseout", n),
                 function() {
@@ -10063,7 +10062,7 @@
             K.useEffect)(function() {
                 var e, t = null === (e = o.current) || void 0 === e ? void 0 : e.offsetWidth;
                 s(110 * (null !== (e = null == n ? void 0 : n.length) && void 0 !== e ? e : 0) > (null != t ? t : 0)),
-                null != t && null != n && (t = 25,
+                null != t && null != n && (t = 30,
                 l(n.slice(0, t)))
             }, [null === (e = o.current) || void 0 === e ? void 0 : e.offsetWidth, n]),
             Y().createElement("div", null, Y().createElement("div", {
@@ -11813,7 +11812,7 @@
               , d = (0,
             K.useCallback)(function(e) {
                 o(void 0),
-                u(!1),
+                u(!1), // CUSTOM_MODIFICATION (setError = false) (Experiences failed to load error)
                 pe(Se.Home, t, s, c, e).then(function(e) {
                     o(e),
                     (0,
@@ -11880,7 +11879,7 @@
                 }, Y().createElement("h2", null, n(at.LabelGames)), Y().createElement(Ce, {
                     errorMessage: n(at.LabelApiError),
                     onRefresh: function() {
-                        return d()
+                        return d() // EXPERIENCE REFRESH FUNCTION (CUSTOM_MESSAGE)
                     }
                 }));
             if (void 0 === a)
