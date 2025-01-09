@@ -5,7 +5,8 @@
     "version": "1.0",
     "permissions": [
         "declarativeNetRequest",
-        "debugger"
+        "debugger",
+        "webNavigation"
     ],
     "host_permissions": [
         "https://*.roblox.com/*",
@@ -31,8 +32,8 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "customFriendCarousel/lengthAndPopover.js",
-                "customFriendCarousel/scroll.css"
+                "friendCarousel/custom/lengthAndPopover.js",
+                "friendCarousel/custom/scroll.css"
             ],
             "matches": [ "https://*.roblox.com/*" ]
         }
