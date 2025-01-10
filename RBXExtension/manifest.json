@@ -6,14 +6,17 @@
     "permissions": [
         "declarativeNetRequest",
         "debugger",
-        "webNavigation"
+        "webRequest",
+        "tabs"
     ],
     "host_permissions": [
         "https://*.roblox.com/*",
         "https://*.rbxcdn.com/*"
     ],
+    "action": {},
     "background": {
-        "service_worker": "service-worker.js"
+        "service_worker": "friendActivityTracker.js",
+        "type": "module"
     },
     "declarative_net_request": {
         "rule_resources": [
