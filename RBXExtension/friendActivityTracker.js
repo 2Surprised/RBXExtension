@@ -46,7 +46,7 @@ chrome.debugger.onEvent.addListener((source, method, params) => {
     }
 })
 
-function isFriendActivity(responseBody) {
+function isFriendActivityOrGameDetails(responseBody) {
     console.log(responseBody)
     try {
         const object = JSON.parse(responseBody)
@@ -62,7 +62,16 @@ function isFriendActivity(responseBody) {
 
 function sendActivityAlert(userPresences) {
     for (const userPresence of userPresences) {
-        // const { gameId, lastLocation, lastOnline, placeId, rootPlaceId, universeId, userId, userPresenceType } = userPresence
-        console.log(`=== USER PRESENCE ===`, userPresence)
+        const { gameId, lastLocation, lastOnline, placeId, rootPlaceId, universeId, userId, userPresenceType } = userPresence
+
+        // TODO: Obtain icon URL, title, and display message
+
+        chrome.notifications.create({
+            iconUrl: ``,
+            title: ``,
+            message: ``,
+            priority: 2,
+            type: 'basic'
+        })
     }
 }
