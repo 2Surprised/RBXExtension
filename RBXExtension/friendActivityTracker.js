@@ -35,7 +35,8 @@ chrome.debugger.onDetach.addListener((source, reason) => {
 chrome.debugger.onEvent.addListener((source, method, params) => {
     if (method === 'Network.responseReceived') {
         const { requestId } = params
-        // TODO: Possible source of "No resource with given identifier found" errors
+        // TODO: Investigate source of "No resource with given identifier found" errors
+        // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
         chrome.debugger.sendCommand(
             source,
             'Network.getResponseBody',
