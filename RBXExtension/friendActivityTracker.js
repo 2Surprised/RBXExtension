@@ -22,6 +22,8 @@ function attachDebugger(details) {
 
 // On startup, attach debugger
 // TODO: Use chrome.tabs.onCreated and onUpdated for more robust implementation
+// TODO: Fix error with filter's inability to filter out chrome:// urls, despite specifying HTTPS protocol
+// https://stackoverflow.com/questions/24600495/chrome-tabs-executescript-cannot-access-a-chrome-url#comment130231485_24606853
 chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://*.roblox.com/*" ] });
 
 chrome.debugger.onDetach.addListener((source, reason) => {
@@ -32,7 +34,6 @@ chrome.debugger.onDetach.addListener((source, reason) => {
 chrome.debugger.onEvent.addListener((source, method, params) => {
     if (method === 'Network.responseReceived') {
         const { requestId } = params
-
         // TODO: Possible source of "No resource with given identifier found" errors
         chrome.debugger.sendCommand(
             source,
@@ -46,16 +47,15 @@ chrome.debugger.onEvent.addListener((source, method, params) => {
     }
 })
 
-function isFriendActivityOrGameDetails(responseBody) {
-    console.log(responseBody)
+function isFriendActivity(responseBody) {
     try {
-        const object = JSON.parse(responseBody)
-        if (object.userPresences && userPresences.length <= 3) {
+        const object = JSON.parse(`${responseBody}`)
+        if (object.userPresences && object.userPresences.length <= 3) {
             sendActivityAlert(object.userPresences)
         }
     } catch (error) {
-        if (!error.message === 'SyntaxError') { // If it's not invalid JSON
-            console.warn('isFriendActivity', error)
+        if (!error.name === 'SyntaxError') {
+            console.warn(error)
         }
     }
 }
@@ -63,15 +63,22 @@ function isFriendActivityOrGameDetails(responseBody) {
 function sendActivityAlert(userPresences) {
     for (const userPresence of userPresences) {
         const { gameId, lastLocation, lastOnline, placeId, rootPlaceId, universeId, userId, userPresenceType } = userPresence
+        if (!rootPlaceId) return;
+        // 'Offline' = 0, 'Online' = 1, 'InGame' = 2, 'InStudio' = 3, 'Invisible' = 4
+        if (userPresenceType !== 2) return;
 
-        // TODO: Obtain icon URL, title, and display message
-
-        chrome.notifications.create({
-            iconUrl: ``,
-            title: ``,
-            message: ``,
-            priority: 2,
-            type: 'basic'
+        fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${rootPlaceId}`)
+        .then(response => response.json())
+        .then(result => {
+            const { placeId, name, description, sourceName, sourceDescription, url, builder, builderId, hasVerifiedBadge, isPlayable, reasonProhibited, universeId, universeRootPlaceId, price, imageToken } = result[0]
+            chrome.notifications.create({
+                iconUrl: './utils/RBLX_Tilt_Primary_Black.png',
+                title: 'New Friend Activity',
+                message: `${userId} is playing ${name}!`,
+                priority: 2,
+                type: 'basic'
+            })
         })
+        .catch(error => console.error(error))
     }
 }

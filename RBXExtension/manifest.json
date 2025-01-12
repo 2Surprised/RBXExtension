@@ -37,7 +37,8 @@
         {
             "resources": [
                 "friendCarousel/custom/lengthAndPopover.js",
-                "friendCarousel/custom/scroll.css"
+                "friendCarousel/custom/scroll.css",
+                "utils/RBLX_Tilt_Primary_Black.png"
             ],
             "matches": [ "https://*.roblox.com/*" ]
         }
