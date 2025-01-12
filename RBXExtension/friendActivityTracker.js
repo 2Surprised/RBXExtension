@@ -1,3 +1,4 @@
+// TODO: Add user settings option to disable activity tracker
 let isDebuggerAlreadyAttached = false
 let attachedTabId = ''
 
@@ -60,6 +61,10 @@ function isFriendActivity(responseBody) {
     }
 }
 
+// TODO: Implement method to find username from user ID for notifications
+// TODO: Fix notifications not appearing on screen
+// TODO: Implement filter for game activity with user-friendly interface
+// TODO: Add buttons to launch game client from notification
 function sendActivityAlert(userPresences) {
     for (const userPresence of userPresences) {
         const { gameId, lastLocation, lastOnline, placeId, rootPlaceId, universeId, userId, userPresenceType } = userPresence
