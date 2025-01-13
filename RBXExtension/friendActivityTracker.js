@@ -75,6 +75,7 @@ function sendActivityAlert(userPresences) {
         // 'Offline' = 0, 'Online' = 1, 'InGame' = 2, 'InStudio' = 3, 'Invisible' = 4
         if (userPresenceType !== 2) return;
 
+        // TODO: Handle teleports to subplaces differently
         fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${rootPlaceId}`)
         .then(response => response.json())
         .then(result => {
