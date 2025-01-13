@@ -37,6 +37,7 @@ chrome.debugger.onEvent.addListener((source, method, params) => {
         const { requestId } = params
         // TODO: Investigate source of "No resource with given identifier found" errors
         // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
+        // TODO: Investigate source of "No data found for resource with given identifier" errors
         chrome.debugger.sendCommand(
             source,
             'Network.getResponseBody',
@@ -63,7 +64,7 @@ function isFriendActivity(responseBody) {
 }
 
 // TODO: Implement method to find username from user ID for notifications
-// TODO: Fix notifications not appearing on screen
+// TODO: Prevent duplicate notifications from appearing for set duration
 // TODO: Implement filter for game activity with user-friendly interface
 // TODO: Add buttons to launch game client from notification
 function sendActivityAlert(userPresences) {
