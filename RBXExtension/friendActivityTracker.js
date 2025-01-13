@@ -65,6 +65,7 @@ function isFriendActivity(responseBody) {
 
 // TODO: Implement method to find username from user ID for notifications
 // TODO: Prevent duplicate notifications from appearing for set duration
+// TODO: Update notification design
 // TODO: Implement filter for game activity with user-friendly interface
 // TODO: Add buttons to launch game client from notification
 function sendActivityAlert(userPresences) {
