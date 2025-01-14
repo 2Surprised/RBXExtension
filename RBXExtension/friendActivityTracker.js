@@ -1,4 +1,5 @@
 // TODO: Remove event listeners after use
+// TODO: Attempt switch to async await syntax
 // TODO: Add user settings option to disable activity tracker
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource } from './utils/utility.js'
 let isDebuggerAlreadyAttached = false
@@ -88,8 +89,8 @@ function sendActivityAlert(userPresences) {
 
             chrome.notifications.create({
                 iconUrl: imageData,
-                title: `${userDisplayName} is in-game!`,
-                message: `Now playing: ${name}!`,
+                title: `${userDisplayName} is playing!`,
+                message: `Now in: ${name}!`,
                 contextMessage: '',
                 priority: 2,
                 type: 'basic',
