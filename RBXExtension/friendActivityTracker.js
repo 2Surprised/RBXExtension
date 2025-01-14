@@ -1,4 +1,6 @@
+// TODO: Remove event listeners after use
 // TODO: Add user settings option to disable activity tracker
+import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource } from './utils/utility.js'
 let isDebuggerAlreadyAttached = false
 let attachedTabId = ''
 
@@ -63,9 +65,8 @@ function isFriendActivity(responseBody) {
     }
 }
 
-// TODO: Implement method to find username from user ID for notifications
+// TODO: Implement session cache to prevent unnecessary strain on API
 // TODO: Prevent duplicate notifications from appearing for set duration
-// TODO: Update notification design
 // TODO: Implement filter for game activity with user-friendly interface
 // TODO: Add buttons to launch game client from notification
 function sendActivityAlert(userPresences) {
@@ -78,16 +79,23 @@ function sendActivityAlert(userPresences) {
         // TODO: Handle teleports to subplaces differently
         fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${rootPlaceId}`)
         .then(response => response.json())
-        .then(result => {
+        .then(result => (async function() {
             const { placeId, name, description, sourceName, sourceDescription, url, builder, builderId, hasVerifiedBadge, isPlayable, reasonProhibited, universeId, universeRootPlaceId, price, imageToken } = result[0]
+            const userObject = await getUserFromUserId(userId)
+            const userDisplayName = userObject.displayName
+            const imageUrl = await getAvatarIconUrlFromUserId(userId)
+            const imageData = await getDataUrlFromWebResource(imageUrl)
+
             chrome.notifications.create({
-                iconUrl: './utils/RBLX_Tilt_Primary_Black.png',
-                title: 'New Friend Activity',
-                message: `${userId} is playing ${name}!`,
+                iconUrl: imageData,
+                title: `${userDisplayName} is in-game!`,
+                message: `Now playing: ${name}!`,
+                contextMessage: '',
                 priority: 2,
-                type: 'basic'
+                type: 'basic',
+                silent: false
             })
-        })
+        })())
         .catch(error => console.error(error))
     }
 }
