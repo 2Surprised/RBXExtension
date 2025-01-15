@@ -42,17 +42,6 @@ export async function getDataUrlFromWebResource(url) {
     })
 }
 
-// export async function getDataUrlFromWebResource(url) {
-//     if (!url) throw new Error(errorMessage.invalidWebResource);
-//     try {
-//         const blob = await fetch(url).then(response => response.blob())
-//         const objectUrl = await blobToBase64(blob)
-//         return objectUrl;
-//     } catch (error) {
-//         return errorHandler(error);
-//     }
-// }
-
 // Extension logic
 export function isUserIdValid(userId) {
     if (!userId || typeof(userId) !== 'number') { return false };
@@ -70,16 +59,6 @@ export async function getUserFromUserId(userId) {
     })
 }
 
-// export async function getUserFromUserId(userId) {
-//     if (!isUserIdValid(userId)) throw new Error(errorMessage.invalidUserId);
-//     try {
-//         const userObject = await fetch(`https://users.roblox.com/v1/users/${userId}`).then(response => response.json())
-//         return userObject;
-//     } catch (error) {
-//         return errorHandler(error);
-//     }
-// }
-
 // type = 'avatar', 'avatar-bust', and 'avatar-headshot'
 export async function getAvatarIconUrlFromUserId(userId, type = 'avatar-headshot', size = 420) {
     if (!isUserIdValid(userId)) { throw new Error(errorMessage.invalidUserId) }
@@ -93,16 +72,3 @@ export async function getAvatarIconUrlFromUserId(userId, type = 'avatar-headshot
         errorHandler(error)
     })
 }
-
-// // type = 'avatar', 'avatar-bust', and 'avatar-headshot'
-// export async function getAvatarIconUrlFromUserId(userId, type = 'avatar-headshot', size = 420) {
-//     if (!isUserIdValid(userId)) throw new Error(errorMessage.invalidUserId);
-//     try {
-//         const response = await fetch(`https://thumbnails.roblox.com/v1/users/${type}?userIds=${userId}&size=${size}x${size}&format=Png&isCircular=false`).then(response => response.json())
-//         const iconObject = response.data[0]
-//         if (iconObject.state !== 'Completed') throw new Error(errorMessage.avatarIconFail);
-//         return iconObject.imageUrl;
-//     } catch (error) {
-//         return errorHandler(error);
-//     }
-// }
