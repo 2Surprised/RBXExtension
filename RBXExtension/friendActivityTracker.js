@@ -3,6 +3,7 @@
 // TODO: Attempt switch to async await syntax
 // TODO: Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
+// TODO: Add user settings option to disable automated notification deletion
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxPresenceRegex } from './utils/utility.js'
 let isDebuggerAlreadyAttached = false
 let attachedTabId = ''
@@ -72,7 +73,7 @@ function isFriendActivity(responseBody) {
 // TODO: Prevent duplicate notifications from appearing for set duration
 // TODO: Implement filter for game activity with user-friendly interface
 // TODO: Add buttons to launch game client from notification
-function sendActivityAlert(userPresences) {
+async function sendActivityAlert(userPresences) {
     for (const userPresence of userPresences) {
         const { placeId, rootPlaceId, userId, userPresenceType } = userPresence
         if (!rootPlaceId) return;
@@ -110,10 +111,13 @@ function sendActivityAlert(userPresences) {
                 })
             })
         }
-        
-        fetchData()
-        .then(() => {
-            chrome.notifications.create({
+
+        // TODO: Create self-deleting notifications
+        let notificationId = ''
+
+        await fetchData()
+        .then(async () => {
+            notificationId = await chrome.notifications.create({
                 iconUrl: imageDataUrl,
                 title: !isSubPlace ? `${userDisplayName} is playing!` : `${userDisplayName} is in a subplace!`,
                 message: !isSubPlace ? `Now in: ${rootPlaceName}` : `Now in: ${subPlaceName}`,
