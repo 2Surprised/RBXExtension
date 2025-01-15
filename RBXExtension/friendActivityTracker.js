@@ -2,6 +2,7 @@
 // TODO: Remove event listeners after use
 // TODO: Attempt switch to async await syntax
 // TODO: Add user settings option to disable activity tracker
+// TODO: Add user settings option to disable subplace tracker
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxPresenceRegex } from './utils/utility.js'
 let isDebuggerAlreadyAttached = false
 let attachedTabId = ''
@@ -71,31 +72,52 @@ function isFriendActivity(responseBody) {
 // TODO: Prevent duplicate notifications from appearing for set duration
 // TODO: Implement filter for game activity with user-friendly interface
 // TODO: Add buttons to launch game client from notification
-async function sendActivityAlert(userPresences) {
+function sendActivityAlert(userPresences) {
     for (const userPresence of userPresences) {
         const { placeId, rootPlaceId, userId, userPresenceType } = userPresence
-        let isSubPlace = false
         if (!rootPlaceId) return;
         if (userPresenceType !== 2) return; // 'Offline' = 0, 'Online' = 1, 'InGame' = 2, 'InStudio' = 3, 'Invisible' = 4
+
+        let isSubPlace = false
+        let rootPlaceName = ''
+        let subPlaceName = ''
+        let placeUrl = ''
+        let userDisplayName = ''
+        let imageDataUrl = ''
         if (placeId !== rootPlaceId) { isSubPlace = true }
 
-        // TODO: Handle teleports to subplaces differently
-        const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${rootPlaceId}`).then(response => response.json())
-        const { name } = games[0]
-        const userObjectPromise = getUserFromUserId(userId)
-        const imageUrlPromise = getAvatarIconUrlFromUserId(userId)
+        // TODO: Detect if a friend has joined another, then display the members of the party
+        // TODO: Lead user to the game's page when clicking on notification
+        function fetchData() {
+            return new Promise(async (resolve, _reject) => {
+                const placeIdsToFetch = isSubPlace? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId
+                const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIdsToFetch}`).then(response => response.json())
+                rootPlaceName = games[0].name
+                placeUrl = games[0].url
+                if (isSubPlace) {
+                    subPlaceName = games[1].name
+                    placeUrl = games[1].url
+                }
+                const userObjectPromise = getUserFromUserId(userId)
+                const imageUrlPromise = getAvatarIconUrlFromUserId(userId)
+                
+                Promise.all([userObjectPromise, imageUrlPromise]).then(async responses => {
+                    const userObject = responses[0]
+                    const imageUrl = responses[1]
+                    imageDataUrl = await getDataUrlFromWebResource(imageUrl)
+                    userDisplayName = userObject.displayName
+                    resolve()
+                })
+            })
+        }
         
-        Promise.all([userObjectPromise, imageUrlPromise]).then(async responses => {
-            const userObject = responses[0]
-            const imageUrl = responses[1]
-            const imageData = await getDataUrlFromWebResource(imageUrl)
-            const userDisplayName = userObject.displayName
-
+        fetchData()
+        .then(() => {
             chrome.notifications.create({
-                iconUrl: imageData,
-                title: `${userDisplayName} is playing!`,
-                message: `Now in: ${name}`,
-                contextMessage: '',
+                iconUrl: imageDataUrl,
+                title: !isSubPlace ? `${userDisplayName} is playing!` : `${userDisplayName} is in a subplace!`,
+                message: !isSubPlace ? `Now in: ${rootPlaceName}` : `Now in: ${subPlaceName}`,
+                contextMessage: !isSubPlace ? '' : `Part of: ${rootPlaceName}`,
                 priority: 2,
                 type: 'basic',
                 silent: false
@@ -103,6 +125,7 @@ async function sendActivityAlert(userPresences) {
         })
         .catch(error => {
             console.error(error)
+            return;
         })
     }
 }
