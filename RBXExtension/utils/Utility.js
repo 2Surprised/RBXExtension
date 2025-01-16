@@ -1,4 +1,5 @@
 // Regular expressions
+export const ExtensionName = 'RBXExtension'
 export const RobloxWebsiteRegex = "^https?\:\/\/([a-z0-9\-]+\.)*roblox\.com(.+)?$"
 export const RobloxPresenceRegex = "^https?\:\/\/presence\.roblox\.com"
 
@@ -17,7 +18,7 @@ export function errorHandler(errorObject) {
     if (!errorObject) { throw new Error(errorMessage.noErrorsPassed) }
     const cause = errorObject.cause
     if (cause) { cause = `\nCause: ${cause}` }
-    console.error(errorObject, cause)
+    console.error(`${ExtensionName}:`, errorObject, cause)
     return errorMessage.default;
 }
 
@@ -32,7 +33,7 @@ export async function blobToBase64(blob) {
 
 export async function getDataUrlFromWebResource(url) {
     if (!url) { throw new Error(errorMessage.invalidWebResource) }
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, _reject) => {
         const blob = await fetch(url).then(response => response.blob())
         const objectUrl = await blobToBase64(blob)
         resolve(objectUrl)
@@ -50,7 +51,7 @@ export function isUserIdValid(userId) {
 
 export async function getUserFromUserId(userId) {
     if (!isUserIdValid(userId)) { throw new Error(errorMessage.invalidUserId) }
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, _reject) => {
         const userObject = await fetch(`https://users.roblox.com/v1/users/${userId}`).then(response => response.json())
         resolve(userObject)
     })
