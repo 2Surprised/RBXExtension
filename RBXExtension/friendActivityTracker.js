@@ -4,14 +4,16 @@
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxPresenceRegex } from './utils/utility.js'
+let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
 let attachedTabId = ''
 
 async function attachDebugger(details) {
+    if (isTryingToAttach || isDebuggerAlreadyAttached) return;
+    isTryingToAttach = true
     try {
         const { tabId } = details
-        if (isDebuggerAlreadyAttached) return;
         if (!tabId > 0) return;
         const tab = await chrome.tabs.get(tabId)
         tabTitle = tab.title
@@ -23,21 +25,25 @@ async function attachDebugger(details) {
             { tabId: tabId },
             'Network.enable'
         )
+        isTryingToAttach = false
         isDebuggerAlreadyAttached = true
         attachedTabId = tabId
-        console.log(`Attached to ${tabTitle}`)
+        console.log(`Attached to ${tabTitle}!`)
     } catch (error) {
-        console.error(error, 'type:', typeof(error), 'tab title:', tabTitle, 'is attached?:', isDebuggerAlreadyAttached)
+        isTryingToAttach = false
+        // This happens when a user updates a chrome:// tab by navigating from it, to roblox.com.
+        // This error can be safely ignored, as the debugger is simply trying to attach to a still
+        // unloading chrome:// tab.
+        if (error.message === 'Cannot access a chrome:// URL') return;
+        console.error(error)
     }
 }
 
-// TODO: Use chrome.tabs.onCreated and onUpdated for more robust implementation
-// TODO: Fix error with filter's inability to filter out chrome:// urls, despite specifying HTTPS protocol
-// https://stackoverflow.com/questions/24600495/chrome-tabs-executescript-cannot-access-a-chrome-url#comment130231485_24606853
 // On startup, attach debugger
 chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://*.roblox.com/*" ] })
 
 chrome.debugger.onDetach.addListener(() => {
+    console.log('The debugger has been detached.')
     isDebuggerAlreadyAttached = false
     attachedTabId = ''
 })
@@ -65,6 +71,7 @@ function isFriendActivity(responseBody) {
             sendActivityAlert(object.userPresences)
         }
     } catch (error) {
+        // TODO: Attempt switch to instanceof syntax
         if (!error.name === 'SyntaxError') {
             console.warn(error)
         }
