@@ -66,6 +66,7 @@ export async function getAvatarIconUrlFromUserId(userId, type = 'avatar-headshot
     return new Promise(async (resolve, reject) => {
         const response = await fetch(`https://thumbnails.roblox.com/v1/users/${type}?userIds=${userId}&size=${size}x${size}&format=Png&isCircular=false`).then(response => response.json())
         const iconObject = response.data[0]
+        // Resolve issue with fetch request not returning a 200
         if (iconObject.state !== 'Completed') { reject(errorMessage.avatarIconFail) }
         resolve(iconObject.imageUrl)
     })
