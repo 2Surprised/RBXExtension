@@ -1,30 +1,34 @@
-// !! TODO: Prevent userhub websocket from disconnecting, or reopen connection when disconnected
+// TODO: Prevent userhub websocket from disconnecting, or reopen connection when disconnected
 // TODO: Remove event listeners after use
-// TODO: Attempt switch to async await syntax
 // TODO: Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxPresenceRegex } from './utils/utility.js'
 let isDebuggerAlreadyAttached = false
+let tabTitle = ''
 let attachedTabId = ''
 
-function attachDebugger(details) {
-    const { tabId } = details
-    if (isDebuggerAlreadyAttached) return;
-    if (!tabId > 0) return;
-
-    chrome.debugger.attach(
-        { tabId: tabId },
-        '1.3'
-    )
-    .then(() => {
-        chrome.debugger.sendCommand(
+async function attachDebugger(details) {
+    try {
+        const { tabId } = details
+        if (isDebuggerAlreadyAttached) return;
+        if (!tabId > 0) return;
+        const tab = await chrome.tabs.get(tabId)
+        tabTitle = tab.title
+        await chrome.debugger.attach(
+            { tabId: tabId },
+            '1.3'
+        )
+        await chrome.debugger.sendCommand(
             { tabId: tabId },
             'Network.enable'
         )
         isDebuggerAlreadyAttached = true
         attachedTabId = tabId
-    })
+        console.log(`Attached to ${tabTitle}`)
+    } catch (error) {
+        console.error(error, 'type:', typeof(error), 'tab title:', tabTitle, 'is attached?:', isDebuggerAlreadyAttached)
+    }
 }
 
 // TODO: Use chrome.tabs.onCreated and onUpdated for more robust implementation
@@ -38,21 +42,19 @@ chrome.debugger.onDetach.addListener(() => {
     attachedTabId = ''
 })
 
-chrome.debugger.onEvent.addListener((source, method, params) => {
+chrome.debugger.onEvent.addListener(async (source, method, params) => {
     if (method === 'Network.responseReceived' && params.response.url.match(RobloxPresenceRegex) && params.response.status === 200) {
         const { requestId } = params
         // TODO: Investigate source of "No resource with given identifier found" errors
         // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
         // TODO: Investigate source of "No data found for resource with given identifier" errors
-        chrome.debugger.sendCommand(
+        const result = await chrome.debugger.sendCommand(
             source,
             'Network.getResponseBody',
             { requestId: requestId }
         )
-        .then(result => {
-            const responseBody = result.body
-            isFriendActivity(responseBody)
-        })
+        const responseBody = result.body
+        isFriendActivity(responseBody)
     }
 })
 
@@ -85,11 +87,13 @@ async function sendActivityAlert(userPresences) {
         let placeUrl = ''
         let userDisplayName = ''
         let imageDataUrl = ''
+        // TODO: Create self-deleting notifications
+        let notificationId = ''
         if (placeId !== rootPlaceId) { isSubPlace = true }
 
         // TODO: Detect if a friend has joined another, then display the members of the party
         // TODO: Lead user to the game's page when clicking on notification
-        function fetchData() {
+        await (function fetchData() {
             return new Promise(async (resolve, _reject) => {
                 const placeIdsToFetch = isSubPlace? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId
                 const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIdsToFetch}`).then(response => response.json())
@@ -101,35 +105,23 @@ async function sendActivityAlert(userPresences) {
                 }
                 const userObjectPromise = getUserFromUserId(userId)
                 const imageUrlPromise = getAvatarIconUrlFromUserId(userId)
-                
-                Promise.all([userObjectPromise, imageUrlPromise]).then(async responses => {
-                    const userObject = responses[0]
-                    const imageUrl = responses[1]
-                    imageDataUrl = await getDataUrlFromWebResource(imageUrl)
-                    userDisplayName = userObject.displayName
-                    resolve()
-                })
+                const responses = await Promise.all([userObjectPromise, imageUrlPromise])
+                const userObject = responses[0]
+                const imageUrl = responses[1]
+                imageDataUrl = await getDataUrlFromWebResource(imageUrl)
+                userDisplayName = userObject.displayName
+                resolve()
             })
-        }
+        })()
 
-        // TODO: Create self-deleting notifications
-        let notificationId = ''
-
-        await fetchData()
-        .then(async () => {
-            notificationId = await chrome.notifications.create({
-                iconUrl: imageDataUrl,
-                title: !isSubPlace ? `${userDisplayName} is playing!` : `${userDisplayName} is in a subplace!`,
-                message: !isSubPlace ? `Now in: ${rootPlaceName}` : `Now in: ${subPlaceName}`,
-                contextMessage: !isSubPlace ? '' : `Part of: ${rootPlaceName}`,
-                priority: 2,
-                type: 'basic',
-                silent: false
-            })
-        })
-        .catch(error => {
-            console.error(error)
-            return;
+        notificationId = await chrome.notifications.create({
+            iconUrl: imageDataUrl,
+            title: !isSubPlace ? `${userDisplayName} is playing!` : `${userDisplayName} is in a subplace!`,
+            message: !isSubPlace ? `Now in: ${rootPlaceName}` : `Now in: ${subPlaceName}`,
+            contextMessage: !isSubPlace ? '' : `Part of: ${rootPlaceName}`,
+            priority: 2,
+            type: 'basic',
+            silent: false
         })
     }
 }
