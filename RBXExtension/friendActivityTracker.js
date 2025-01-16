@@ -31,9 +31,10 @@ async function attachDebugger(details) {
         console.log(`Attached to ${tabTitle}!`)
     } catch (error) {
         isTryingToAttach = false
-        // This happens when a user updates a chrome:// tab by navigating from it, to roblox.com.
-        // This error can be safely ignored, as the debugger is simply trying to attach to a still
-        // unloading chrome:// tab.
+        // When a user updates a chrome:// tab by navigating from it, this error will occur.
+        // This error can be safely ignored, as the debugger is simply trying to attach to a
+        // still unloading chrome:// tab. After a few tries, it'll successfully attach to the
+        // newly loaded in tab.
         if (error.message === 'Cannot access a chrome:// URL') return;
         console.error(error)
     }
