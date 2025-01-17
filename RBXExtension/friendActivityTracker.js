@@ -1,4 +1,7 @@
 // TODO: Prevent userhub websocket from disconnecting, or reopen connection when disconnected
+// TODO: Prevent false positives as a result of the Presence API returning invalid data.
+//       Check in with the Games API to check if a friend has truly left a game, as more
+//       often than not, the friend never left the game they were in.
 // TODO: Remove event listeners after use
 // TODO: Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
@@ -12,11 +15,11 @@ let attachedTabId = ''
 async function attachDebugger(details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
     isTryingToAttach = true
+    const { tabId } = details
+    if (!tabId > 0) return;
+    const tab = await chrome.tabs.get(tabId)
+    tabTitle = tab.title
     try {
-        const { tabId } = details
-        if (!tabId > 0) return;
-        const tab = await chrome.tabs.get(tabId)
-        tabTitle = tab.title
         await chrome.debugger.attach(
             { tabId: tabId },
             '1.3'
@@ -40,6 +43,7 @@ async function attachDebugger(details) {
     }
 }
 
+// TODO: Use chrome.debugger.getTargets() for more robust implementation
 // On startup, attach debugger
 chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://*.roblox.com/*" ] })
 
@@ -49,19 +53,45 @@ chrome.debugger.onDetach.addListener(() => {
     attachedTabId = ''
 })
 
-chrome.debugger.onEvent.addListener(async (source, method, params) => {
+chrome.debugger.onEvent.addListener((source, method, params) => {
+    const { requestId } = params
     if (method === 'Network.responseReceived' && params.response.url.match(RobloxPresenceRegex) && params.response.status === 200) {
-        const { requestId } = params
-        // TODO: Investigate source of "No resource with given identifier found" errors
         // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
-        // TODO: Investigate source of "No data found for resource with given identifier" errors
-        const result = await chrome.debugger.sendCommand(
-            source,
-            'Network.getResponseBody',
-            { requestId: requestId }
-        )
-        const responseBody = result.body
-        isFriendActivity(responseBody)
+        // These guard nodes prevent "No resource with given identifier",
+        // and "No data found for resource with given identifier" errors.
+        // Some are not required since the second and third conditionals above already
+        // remove them from the equation.
+        if (params.type === 'Preflight') return;
+        // "unknown" seems to be caused by local files being fetched, and any redirects to local files,
+        // which somehow causes the remote debugging protocol to be unable to retrieve their contents.
+        // Oddly enough, it seems like many other requests from the disk cache succeed, so the local
+        // files might be stored in long-term storage instead of in caches and RAM.
+        // if (params.response.securityState === 'unknown') return; // (Not required)
+        if (params.response.headers["content-length"] === 0) return;
+        // if (params.response.status === 204) return; // Ignore HTTP 204 No Content successes (Not required)
+        // The document will have no data when the response is first received, while fonts never have data
+        // if (params.type === 'Document' || params.type === 'Font') return; // (Not required)
+
+        async function getResponseBodyAndPassOnData() {
+            const result = await chrome.debugger.sendCommand(
+                source,
+                'Network.getResponseBody',
+                { requestId: requestId }
+            )
+            const responseBody = result.body
+            isFriendActivity(responseBody)
+        }
+
+        getResponseBodyAndPassOnData()
+        .catch(error => {
+            console.warn('Failed to retrieve response body, will retry in a few seconds.', requestId, params, error)
+            // This is a hacky solution, but if the original retrieval of the response body fails,
+            // this will simply wait a few seconds before attempting another retrieval.
+            setTimeout(() => {
+                getResponseBodyAndPassOnData()
+                .catch(error => console.error('Failed to retrieve response body.', requestId, params, error))
+            }, 3000);
+        })
     }
 })
 
@@ -92,6 +122,7 @@ async function sendActivityAlert(userPresences) {
         let isSubPlace = false
         let rootPlaceName = ''
         let subPlaceName = ''
+        // TODO: Lead user to the game's page when clicking on notification
         let placeUrl = ''
         let userDisplayName = ''
         let imageDataUrl = ''
@@ -100,7 +131,6 @@ async function sendActivityAlert(userPresences) {
         if (placeId !== rootPlaceId) { isSubPlace = true }
 
         // TODO: Detect if a friend has joined another, then display the members of the party
-        // TODO: Lead user to the game's page when clicking on notification
         await (function fetchData() {
             return new Promise(async (resolve, _reject) => {
                 const placeIdsToFetch = isSubPlace? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId
