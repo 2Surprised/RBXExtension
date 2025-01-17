@@ -90,7 +90,7 @@ chrome.debugger.onEvent.addListener((source, method, params) => {
             setTimeout(() => {
                 getResponseBodyAndPassOnData()
                 .catch(error => console.error('Failed to retrieve response body.', requestId, params, error))
-            }, 3000);
+            }, 5000);
         })
     }
 })
