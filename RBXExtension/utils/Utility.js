@@ -22,7 +22,16 @@ export function errorHandler(errorObject) {
     return errorMessage.default;
 }
 
-export async function blobToBase64(blob) {
+export function removeValueFromArray(array, value) {
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if (element === value) {
+            array.splice(index, 1)
+        }
+    }
+}
+
+export function blobToBase64(blob) {
     return new Promise((resolve, reject) => {
         const fileReader = new FileReader()
         fileReader.onload = () => resolve(fileReader.result)
@@ -31,7 +40,7 @@ export async function blobToBase64(blob) {
     })
 }
 
-export async function getDataUrlFromWebResource(url) {
+export function getDataUrlFromWebResource(url) {
     if (!url) { throw new Error(errorMessage.invalidWebResource) }
     return new Promise(async (resolve, _reject) => {
         const blob = await fetch(url).then(response => response.blob())
@@ -49,7 +58,7 @@ export function isUserIdValid(userId) {
     return true;
 }
 
-export async function getUserFromUserId(userId) {
+export function getUserFromUserId(userId) {
     if (!isUserIdValid(userId)) { throw new Error(errorMessage.invalidUserId) }
     return new Promise(async (resolve, _reject) => {
         const userObject = await fetch(`https://users.roblox.com/v1/users/${userId}`).then(response => response.json())
@@ -61,7 +70,7 @@ export async function getUserFromUserId(userId) {
 }
 
 // type = 'avatar', 'avatar-bust', and 'avatar-headshot'
-export async function getAvatarIconUrlFromUserId(userId, type = 'avatar-headshot', size = 420) {
+export function getAvatarIconUrlFromUserId(userId, type = 'avatar-headshot', size = 420) {
     if (!isUserIdValid(userId)) { throw new Error(errorMessage.invalidUserId) }
     return new Promise(async (resolve, reject) => {
         const response = await fetch(`https://thumbnails.roblox.com/v1/users/${type}?userIds=${userId}&size=${size}x${size}&format=Png&isCircular=false`).then(response => response.json())
