@@ -142,7 +142,7 @@ async function sendActivityAlert(userPresences) {
                     placeUrl = games[1].url
                 }
                 const userObjectPromise = getUserFromUserId(userId)
-                const imageUrlPromise = getAvatarIconUrlFromUserId(userId)
+                const imageUrlPromise = getAvatarIconUrlFromUserId(userId, 'avatar-headshot', 100)
                 const responses = await Promise.all([userObjectPromise, imageUrlPromise])
                 const userObject = responses[0]
                 const imageUrl = responses[1]
