@@ -2,7 +2,6 @@
 // TODO: Prevent false positives as a result of the Presence API returning invalid data.
 //       Check in with the Games API to check if a friend has truly left a game, as more
 //       often than not, the friend never left the game they were in.
-// TODO: Remove event listeners after use
 // TODO: Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
@@ -28,10 +27,6 @@ async function attachDebugger(details) {
             { tabId: tabId },
             'Network.enable'
         )
-        isTryingToAttach = false
-        isDebuggerAlreadyAttached = true
-        attachedTabId = tabId
-        console.log(`Attached to ${tabTitle}!`)
     } catch (error) {
         isTryingToAttach = false
         // When a user updates a chrome:// tab by navigating from it, this error will occur.
@@ -41,6 +36,11 @@ async function attachDebugger(details) {
         if (error.message === 'Cannot access a chrome:// URL') return;
         console.error(error)
     }
+    isTryingToAttach = false
+    isDebuggerAlreadyAttached = true
+    attachedTabId = tabId
+    chrome.webRequest.onBeforeRequest.removeListener(attachDebugger)
+    console.log(`Attached to ${tabTitle}!`)
 }
 
 // TODO: Use chrome.debugger.getTargets() for more robust implementation
@@ -48,12 +48,13 @@ async function attachDebugger(details) {
 chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://*.roblox.com/*" ] })
 
 chrome.debugger.onDetach.addListener(() => {
-    console.log('The debugger has been detached.')
     isDebuggerAlreadyAttached = false
     attachedTabId = ''
+    chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://*.roblox.com/*" ] })
+    console.log('The debugger has been detached.')
 })
 
-chrome.debugger.onEvent.addListener((source, method, params) => {
+chrome.debugger.onEvent.addListener(async (source, method, params) => {
     const { requestId } = params
     if (method === 'Network.responseReceived' && params.response.url.match(RobloxPresenceRegex) && params.response.status === 200) {
         // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
@@ -71,7 +72,6 @@ chrome.debugger.onEvent.addListener((source, method, params) => {
         // if (params.response.status === 204) return; // Ignore HTTP 204 No Content successes (Not required)
         // The document will have no data when the response is first received, while fonts never have data
         // if (params.type === 'Document' || params.type === 'Font') return; // (Not required)
-
         async function getResponseBodyAndPassOnData() {
             const result = await chrome.debugger.sendCommand(
                 source,
@@ -82,16 +82,17 @@ chrome.debugger.onEvent.addListener((source, method, params) => {
             isFriendActivity(responseBody)
         }
 
-        getResponseBodyAndPassOnData()
-        .catch(error => {
+        try {
+            await getResponseBodyAndPassOnData()
+        } catch (error) {
             console.warn('Failed to retrieve response body, will retry in a few seconds.', requestId, params, error)
             // This is a hacky solution, but if the original retrieval of the response body fails,
             // this will simply wait a few seconds before attempting another retrieval.
             setTimeout(() => {
                 getResponseBodyAndPassOnData()
                 .catch(error => console.error('Failed to retrieve response body.', requestId, params, error))
-            }, 5000);
-        })
+            }, 5000)
+        }
     }
 })
 
@@ -118,7 +119,6 @@ async function sendActivityAlert(userPresences) {
         const { placeId, rootPlaceId, userId, userPresenceType } = userPresence
         if (!rootPlaceId) return;
         if (userPresenceType !== 2) return; // 'Offline' = 0, 'Online' = 1, 'InGame' = 2, 'InStudio' = 3, 'Invisible' = 4
-
         let isSubPlace = false
         let rootPlaceName = ''
         let subPlaceName = ''
