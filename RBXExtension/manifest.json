@@ -1,21 +1,23 @@
 {
     "manifest_version": 3,
     "name": "Roblox+",
-    "description": "Improves the Roblox user experience.",
+    "description": "Improves the user experience on the Roblox website.",
     "version": "1.0",
+    "action": {
+        "default_title": "Roblox+",
+        "default_popup": "popup.html"
+    },
     "permissions": [
         "declarativeNetRequest",
         "debugger",
         "webRequest",
         "tabs",
-        "notifications",
-        "storage"
+        "notifications"
     ],
     "host_permissions": [
         "https://*.roblox.com/*",
         "https://*.rbxcdn.com/*"
     ],
-    "action": {},
     "background": {
         "service_worker": "friendActivityTracker.js",
         "type": "module"
