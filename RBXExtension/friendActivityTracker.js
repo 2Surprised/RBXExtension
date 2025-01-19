@@ -6,17 +6,18 @@
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWebsiteRegex, RobloxWWWRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
+const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
+const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 5000
 let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
 let attachedTabId = ''
-const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
-const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 5000
 
 async function attachDebugger(details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
     isTryingToAttach = true
     let tabId = 0; // This semicolon is necessary, or a TypeError will be thrown because of the IIFE
+
     (function getTabId() {
         if (!Array.isArray(details)) {
             ({ tabId } = details)
@@ -30,19 +31,15 @@ async function attachDebugger(details) {
             }
         }
     })()
+
     if (!tabId > 0) {
         isTryingToAttach = false
         return;
     }
+
     try {
-        await chrome.debugger.attach(
-            { tabId: tabId },
-            '1.3'
-        )
-        await chrome.debugger.sendCommand(
-            { tabId: tabId },
-            'Network.enable'
-        )
+        await chrome.debugger.attach({ tabId: tabId }, '1.3')
+        await chrome.debugger.sendCommand({ tabId: tabId }, 'Network.enable')
     } catch (error) {
         isTryingToAttach = false
         // When a user updates a chrome:// tab by navigating from it, this error will occur.
@@ -52,10 +49,12 @@ async function attachDebugger(details) {
         if (error.message === 'Cannot access a chrome:// URL') return;
         console.error(error)
     }
+
     chrome.webRequest.onBeforeRequest.removeListener(attachDebugger)
     isTryingToAttach = false
     isDebuggerAlreadyAttached = true
     attachedTabId = tabId
+
     const tab = await chrome.tabs.get(tabId)
     tabTitle = tab.title
     console.log(`Currently attached to: ${tabTitle}`)
@@ -69,15 +68,17 @@ function onDetach() {
 }
 
 // TODO: Implement warning when friend activity tracker is unable to work
-// On startup, attach debugger (Cannot be an IIFE because it is anonymous and cannot be called again)
 function attemptToAttachDebugger() {
     chrome.tabs.query({ url: "https://www.roblox.com/*" }, attachDebugger)
     chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://www.roblox.com/*" ] })
 }
+
+// On startup, attach debugger
 attemptToAttachDebugger()
 // On detach, attempt to attach again
 chrome.debugger.onDetach.addListener(onDetach)
-// When navigation attempt happens, check if the tab is still www.roblox.com
+
+// Detach debugger if no longer on www.roblox.com
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (tabId !== attachedTabId) return;
     tabTitle = tab.title
@@ -90,12 +91,16 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 chrome.debugger.onEvent.addListener(async (source, method, params) => {
     const { requestId } = params
-    if (method === 'Network.responseReceived' && params.response.url.match(RobloxPresenceRegex) && params.response.status === 200) {
+
+    if (method === 'Network.responseReceived' &&
+        params.response.url.match(RobloxPresenceRegex) &&
+        params.response.status === 200
+    ) {
         // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
         // These guard nodes prevent "No resource with given identifier",
         // and "No data found for resource with given identifier" errors.
-        // Some are not required since the second and third conditionals above already
-        // remove them from the equation.
+        // Some are not required since the second and third conditionals above
+        // already remove them from the equation.
         if (params.type === 'Preflight') return;
         // "unknown" seems to be caused by local files being fetched, and any redirects to local files,
         // which somehow causes the remote debugging protocol to be unable to retrieve their contents.
@@ -106,6 +111,7 @@ chrome.debugger.onEvent.addListener(async (source, method, params) => {
         // if (params.response.status === 204) return; // Ignore HTTP 204 No Content successes (Not required)
         // The document will have no data when the response is first received, while fonts never have data
         // if (params.type === 'Document' || params.type === 'Font') return; // (Not required)
+
         async function getResponseBodyAndPassOnData() {
             const result = await chrome.debugger.sendCommand(
                 source,
@@ -151,19 +157,16 @@ const recentUserPresences = []
 async function sendActivityAlert(userPresences) {
     for (const userPresence of userPresences) {
         // Prevents duplicate notifications from coming through
-        if (recentUserPresences.length !== 0) {
-            for (const recentUserPresence of recentUserPresences) {
-                if (JSON.stringify(userPresence) === JSON.stringify(recentUserPresence)) return;
-            }
-        }
-        recentUserPresences.push(userPresence)
+        if (recentUserPresences.includes(JSON.stringify(userPresence))) continue;
+        recentUserPresences.push(JSON.stringify(userPresence))
         setTimeout(() => {
-            removeValueFromArray(recentUserPresences, userPresence)
+            removeValueFromArray(recentUserPresences, JSON.stringify(userPresence))
         }, RESET_TIMER_FOR_RECENT_USER_PRESENCE)
 
         const { placeId, rootPlaceId, userId, userPresenceType } = userPresence
         if (!rootPlaceId) return;
         if (userPresenceType !== 2) return; // 'Offline' = 0, 'Online' = 1, 'InGame' = 2, 'InStudio' = 3, 'Invisible' = 4
+        
         let isSubPlace = false
         let rootPlaceName = ''
         let subPlaceName = ''
@@ -173,28 +176,25 @@ async function sendActivityAlert(userPresences) {
         let imageDataUrl = ''
         // TODO: Create self-deleting notifications
         let notificationId = ''
-        if (placeId !== rootPlaceId) { isSubPlace = true }
+        isSubPlace = placeId !== rootPlaceId
 
         // TODO: Detect if a friend has joined another, then display the members of the party
-        await (function fetchData() {
-            return new Promise(async (resolve, _reject) => {
-                const placeIdsToFetch = isSubPlace? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId
-                const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIdsToFetch}`).then(response => response.json())
-                rootPlaceName = games[0].name
-                placeUrl = games[0].url
-                if (isSubPlace) {
-                    subPlaceName = games[1].name
-                    placeUrl = games[1].url
-                }
-                const userObjectPromise = getUserFromUserId(userId)
-                const imageUrlPromise = getAvatarIconUrlFromUserId(userId, 'avatar-headshot', 100)
-                const responses = await Promise.all([userObjectPromise, imageUrlPromise])
-                const userObject = responses[0]
-                const imageUrl = responses[1]
-                imageDataUrl = await getDataUrlFromWebResource(imageUrl)
-                userDisplayName = userObject.displayName
-                resolve()
-            })
+        await (async function fetchData() {
+            const placeIdsToFetch = isSubPlace? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId
+            const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIdsToFetch}`).then(response => response.json())
+            rootPlaceName = games[0].name
+            placeUrl = games[0].url
+            if (isSubPlace) {
+                subPlaceName = games[1].name
+                placeUrl = games[1].url
+            }
+            const userObjectPromise = getUserFromUserId(userId)
+            const imageUrlPromise = getAvatarIconUrlFromUserId(userId, 'avatar-headshot', 100)
+            const responses = await Promise.all([userObjectPromise, imageUrlPromise])
+            const userObject = responses[0]
+            const imageUrl = responses[1]
+            imageDataUrl = await getDataUrlFromWebResource(imageUrl)
+            userDisplayName = userObject.displayName
         })()
 
         notificationId = await chrome.notifications.create({
