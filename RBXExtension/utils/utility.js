@@ -4,6 +4,7 @@ export const RobloxWebsiteRegex = "^https?\:\/\/([a-z0-9\-]+\.)*roblox\.com(.+)?
 export const RobloxWWWRegex = "^https?\:\/\/www\.roblox\.com"
 export const RobloxPresenceRegex = "^https?\:\/\/presence\.roblox\.com"
 
+// TODO: Implement better error handling
 // Error messages
 export const errorMessage = {
     default: 'Something went wrong. Check the console for information.',
