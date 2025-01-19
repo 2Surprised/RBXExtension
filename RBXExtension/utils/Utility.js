@@ -23,10 +23,23 @@ export function errorHandler(errorObject) {
 }
 
 export function removeValueFromArray(array, value) {
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        if (element === value) {
-            array.splice(index, 1)
+    if (typeof(value) === 'object') {
+        for (let index = 0; index < array.length; index++) {
+            const element = array[index]
+            try {
+                if (JSON.stringify(element) === JSON.stringify(value)) {
+                    array.splice(index, 1)
+                }
+            } catch (error) {
+                // Some elements of the array may not be objects, this prevents an error from throwing
+            }
+        }
+    } else {
+        for (let index = 0; index < array.length; index++) {
+            const element = array[index]
+            if (element === value) {
+                array.splice(index, 1)
+            }
         }
     }
 }
