@@ -103,8 +103,7 @@ function isFriendActivity(responseBody) {
             sendActivityAlert(object.userPresences)
         }
     } catch (error) {
-        // TODO: Attempt switch to instanceof syntax
-        if (!error.name === 'SyntaxError') {
+        if (!error instanceof SyntaxError) {
             console.warn(error)
         }
     }
@@ -120,10 +119,7 @@ async function sendActivityAlert(userPresences) {
         // Prevents duplicate notifications from coming through
         if (recentUserPresences.length !== 0) {
             for (const recentUserPresence of recentUserPresences) {
-                if (JSON.stringify(userPresence) === JSON.stringify(recentUserPresence)) {
-                    console.warn(Date.now(), 'Stopping notification from sending!')
-                    return;
-                }
+                if (JSON.stringify(userPresence) === JSON.stringify(recentUserPresence)) return;
             }
         }
         recentUserPresences.push(userPresence)
