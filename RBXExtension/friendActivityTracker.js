@@ -10,6 +10,8 @@ let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
 let attachedTabId = ''
+const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
+const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 5000
 
 async function attachDebugger(details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
@@ -91,7 +93,7 @@ chrome.debugger.onEvent.addListener(async (source, method, params) => {
             setTimeout(() => {
                 getResponseBodyAndPassOnData()
                 .catch(error => console.error('Failed to retrieve response body.', requestId, params, error))
-            }, 5000)
+            }, RETRY_TIMER_FOR_FAILED_REQUESTS)
         }
     }
 })
@@ -125,7 +127,7 @@ async function sendActivityAlert(userPresences) {
         recentUserPresences.push(userPresence)
         setTimeout(() => {
             removeValueFromArray(recentUserPresences, userPresence)
-        }, 5000)
+        }, RESET_TIMER_FOR_RECENT_USER_PRESENCE)
 
         const { placeId, rootPlaceId, userId, userPresenceType } = userPresence
         if (!rootPlaceId) return;
