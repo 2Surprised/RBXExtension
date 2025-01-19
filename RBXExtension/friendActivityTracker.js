@@ -7,7 +7,8 @@
 // TODO: Add user settings option to disable automated notification deletion
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWebsiteRegex, RobloxWWWRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
 const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
-const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 5000
+const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
+const MAXIMUM_USER_PRESENCES_AT_ONE_TIME = 3
 let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
@@ -139,7 +140,7 @@ chrome.debugger.onEvent.addListener(async (source, method, params) => {
 function isFriendActivity(responseBody) {
     try {
         const object = JSON.parse(`${responseBody}`)
-        if (object.userPresences && object.userPresences.length <= 3) {
+        if (object.userPresences && object.userPresences.length <= MAXIMUM_USER_PRESENCES_AT_ONE_TIME) {
             sendActivityAlert(object.userPresences)
         }
     } catch (error) {
