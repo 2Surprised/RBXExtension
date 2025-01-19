@@ -5,7 +5,7 @@
 // TODO: Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
-import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxPresenceRegex } from './utils/utility.js'
+import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
 let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
@@ -111,11 +111,26 @@ function isFriendActivity(responseBody) {
 }
 
 // TODO: Implement session cache to prevent unnecessary strain on API
-// TODO: Prevent duplicate notifications from appearing for set duration
 // TODO: Implement filter for game activity with user-friendly interface
 // TODO: Add buttons to launch game client from notification
+const recentUserPresences = []
+
 async function sendActivityAlert(userPresences) {
     for (const userPresence of userPresences) {
+        // Prevents duplicate notifications from coming through
+        if (recentUserPresences.length !== 0) {
+            for (const recentUserPresence of recentUserPresences) {
+                if (JSON.stringify(userPresence) === JSON.stringify(recentUserPresence)) {
+                    console.warn(Date.now(), 'Stopping notification from sending!')
+                    return;
+                }
+            }
+        }
+        recentUserPresences.push(userPresence)
+        setTimeout(() => {
+            removeValueFromArray(recentUserPresences, userPresence)
+        }, 5000)
+
         const { placeId, rootPlaceId, userId, userPresenceType } = userPresence
         if (!rootPlaceId) return;
         if (userPresenceType !== 2) return; // 'Offline' = 0, 'Online' = 1, 'InGame' = 2, 'InStudio' = 3, 'Invisible' = 4
