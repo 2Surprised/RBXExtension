@@ -1,6 +1,7 @@
 // Regular expressions
 export const ExtensionName = 'RBXExtension'
 export const RobloxWebsiteRegex = "^https?\:\/\/([a-z0-9\-]+\.)*roblox\.com(.+)?$"
+export const RobloxWWWRegex = "^https?\:\/\/www\.roblox\.com"
 export const RobloxPresenceRegex = "^https?\:\/\/presence\.roblox\.com"
 
 // Error messages

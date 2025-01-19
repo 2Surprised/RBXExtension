@@ -5,7 +5,7 @@
 // TODO: Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
-import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
+import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWebsiteRegex, RobloxWWWRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
 let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
@@ -16,24 +16,24 @@ const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 5000
 async function attachDebugger(details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
     isTryingToAttach = true
-    let tabId = 0
-    // Only happens when attachDebugger is called by chrome.tabs.query()
-    if (Array.isArray(details)) {
-        for (const tab of details) {
-            if (tab.status !== 'unloaded') {
-                tabId = tab.id
-                break;
+    let tabId = 0; // This semicolon is necessary, or a TypeError will be thrown because of the IIFE
+    (function getTabId() {
+        if (!Array.isArray(details)) {
+            ({ tabId } = details)
+        } else {
+            // Only happens when attachDebugger is called by chrome.tabs.query()
+            for (const tab of details) {
+                if (tab.status !== 'unloaded') {
+                    tabId = tab.id
+                    break;
+                }
             }
         }
-    } else {
-        ({ tabId } = details)
-    }
+    })()
     if (!tabId > 0) {
         isTryingToAttach = false
         return;
     }
-    const tab = await chrome.tabs.get(tabId)
-    tabTitle = tab.title
     try {
         await chrome.debugger.attach(
             { tabId: tabId },
@@ -52,15 +52,22 @@ async function attachDebugger(details) {
         if (error.message === 'Cannot access a chrome:// URL') return;
         console.error(error)
     }
+    chrome.webRequest.onBeforeRequest.removeListener(attachDebugger)
     isTryingToAttach = false
     isDebuggerAlreadyAttached = true
     attachedTabId = tabId
-    chrome.webRequest.onBeforeRequest.removeListener(attachDebugger)
-    console.log(`Attached to ${tabTitle}!`)
+    const tab = await chrome.tabs.get(tabId)
+    tabTitle = tab.title
+    console.log(`The debugger has been attached to: ${tabTitle}`)
 }
 
-// TODO: Use chrome.tabs.onUpdated to check if a user has navigated away from roblox.com, and detach
-//       the debugger if so. Page reloads and navigations within the tab do not trigger a detach.
+function onDetach() {
+    isDebuggerAlreadyAttached = false
+    attachedTabId = ''
+    console.log('The debugger has been detached.')
+    attemptToAttachDebugger()
+}
+
 // TODO: Implement warning when friend activity tracker is unable to work
 // On startup, attach debugger (Cannot be an IIFE because it is anonymous and cannot be called again)
 function attemptToAttachDebugger() {
@@ -69,11 +76,16 @@ function attemptToAttachDebugger() {
 }
 attemptToAttachDebugger()
 // On detach, attempt to attach again
-chrome.debugger.onDetach.addListener(() => {
-    isDebuggerAlreadyAttached = false
-    attachedTabId = ''
-    console.log('The debugger has been detached.')
-    attemptToAttachDebugger()
+chrome.debugger.onDetach.addListener(onDetach)
+// When navigation attempt happens, check if the tab is still www.roblox.com
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (tabId !== attachedTabId) return;
+    tabTitle = tab.title
+    if (!changeInfo.url) return;
+    if (!changeInfo.url.match(RobloxWWWRegex)) {
+        // This does not trigger the onDetach event for the debugger, so the callback is necessary
+        chrome.debugger.detach({ tabId: tabId }, onDetach)
+    }
 })
 
 chrome.debugger.onEvent.addListener(async (source, method, params) => {
