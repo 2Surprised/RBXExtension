@@ -58,7 +58,7 @@ async function attachDebugger(details) {
     attachedTabId = tabId
     const tab = await chrome.tabs.get(tabId)
     tabTitle = tab.title
-    console.log(`The debugger has been attached to: ${tabTitle}`)
+    console.log(`Currently attached to: ${tabTitle}`)
 }
 
 function onDetach() {
