@@ -16,8 +16,22 @@ const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 5000
 async function attachDebugger(details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
     isTryingToAttach = true
-    const { tabId } = details
-    if (!tabId > 0) return;
+    let tabId = 0
+    // Only happens when attachDebugger is called by chrome.tabs.query()
+    if (Array.isArray(details)) {
+        for (const tab of details) {
+            if (tab.status !== 'unloaded') {
+                tabId = tab.id
+                break;
+            }
+        }
+    } else {
+        ({ tabId } = details)
+    }
+    if (!tabId > 0) {
+        isTryingToAttach = false
+        return;
+    }
     const tab = await chrome.tabs.get(tabId)
     tabTitle = tab.title
     try {
@@ -45,15 +59,21 @@ async function attachDebugger(details) {
     console.log(`Attached to ${tabTitle}!`)
 }
 
-// TODO: Use chrome.debugger.getTargets() for more robust implementation
-// On startup, attach debugger
-chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://*.roblox.com/*" ] })
-
+// TODO: Use chrome.tabs.onUpdated to check if a user has navigated away from roblox.com, and detach
+//       the debugger if so. Page reloads and navigations within the tab do not trigger a detach.
+// TODO: Implement warning when friend activity tracker is unable to work
+// On startup, attach debugger (Cannot be an IIFE because it is anonymous and cannot be called again)
+function attemptToAttachDebugger() {
+    chrome.tabs.query({ url: "https://www.roblox.com/*" }, attachDebugger)
+    chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://www.roblox.com/*" ] })
+}
+attemptToAttachDebugger()
+// On detach, attempt to attach again
 chrome.debugger.onDetach.addListener(() => {
     isDebuggerAlreadyAttached = false
     attachedTabId = ''
-    chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://*.roblox.com/*" ] })
     console.log('The debugger has been detached.')
+    attemptToAttachDebugger()
 })
 
 chrome.debugger.onEvent.addListener(async (source, method, params) => {
