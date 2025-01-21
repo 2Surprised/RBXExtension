@@ -19,24 +19,28 @@ let attachedTabId = ''
 async function attachDebugger(details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
     isTryingToAttach = true
-    let tabId = 0; // This semicolon is necessary, or a TypeError will be thrown because of the IIFE
+    let tabId = 0
+    let tab = {}
 
-    (function getTabId() {
-        if (!Array.isArray(details)) {
-            // !! TODO: chrome.webRequest.onBeforeRequest can trigger on tabs that aren't www.roblox.com.
-            //          Check if the tab being attached to matches the RobloxWWWRegex.
-            // Only happens when attachDebugger is called by chrome.webRequest.onBeforeRequest
-            ({ tabId } = details)
-        } else {
-            // Only happens when attachDebugger is called by chrome.tabs.query()
-            for (const tab of details) {
-                if (tab.status !== 'unloaded') {
-                    tabId = tab.id
-                    break;
-                }
+    if (!Array.isArray(details)) {
+        // Only happens when attachDebugger is called by chrome.webRequest.onBeforeRequest
+        // chrome.webRequest.onBeforeRequest can trigger on tabs that aren't www.roblox.com
+        const tabInfo = await chrome.tabs.get(details.tabId)
+        if (!tabInfo.url.match(RobloxWWWRegex)) {
+            isTryingToAttach = false
+            return;
+        }
+        ({ tabId } = details)
+        tab = tabInfo
+    } else {
+        // Only happens when attachDebugger is called by chrome.tabs.query()
+        for (const tab of details) {
+            if (tab.status !== 'unloaded') {
+                tabId = tab.id
+                break;
             }
         }
-    })()
+    }
 
     if (!tabId > 0) {
         isTryingToAttach = false
@@ -62,7 +66,7 @@ async function attachDebugger(details) {
     attachedTabId = tabId
     chrome.storage.session.set({ debuggerState: 'attached' })
 
-    const tab = await chrome.tabs.get(tabId)
+    if (JSON.stringify(tab) === '{}') { tab = await chrome.tabs.get(tabId) }
     tabTitle = tab.title
     console.log(`Currently attached to: ${tabTitle}`)
 }
@@ -118,7 +122,6 @@ function alertIfDebuggerIsDetached(action = 'warn') {
 
 // When feature is enabled/disabled, attach/remove debugger
 chrome.storage.sync.onChanged.addListener(changes => {
-    console.log('sync changes', changes)
     if (!changes.enableFriendActivityTracker) return;
     if (changes.enableFriendActivityTracker.newValue === false) {
         if (!attachedTabId) return;
