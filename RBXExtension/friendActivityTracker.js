@@ -102,7 +102,7 @@ function alertIfDebuggerIsDetached(action = 'warn') {
         chrome.notifications.create({
             iconUrl: './utils/RBLX_Tilt_Primary_Black.png',
             title: 'Friend Activity Tracker is disabled!',
-            message: 'You will no longer receive notifications on friend activity!',
+            message: 'You will no longer receive notifications on friend activity.',
             contextMessage: 'To reenable, make sure to keep the website open and stay logged in!',
             priority: 2,
             type: 'basic',
