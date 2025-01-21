@@ -12,7 +12,8 @@
         "debugger",
         "webRequest",
         "tabs",
-        "notifications"
+        "notifications",
+        "storage"
     ],
     "host_permissions": [
         "https://*.roblox.com/*",

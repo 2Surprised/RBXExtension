@@ -5,6 +5,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+        <script src="popupWorker.js"></script>
     </head>
     <body>
         <div>
@@ -19,17 +20,24 @@
         <hr>
         <div>
             <h2 class="lexend-deca-large">Options:</h2>
-            <p class="lexend-deca-thin">Note: This is a placeholder and does not currently work.</p>
+            <p class="lexend-deca-thin">
+                Each checkbox represents a feature that is offered by Roblox+. To disable a feature, simply
+                untick its respective checkbox.
+            </p>
             <form>
-                <label class="options lexend-deca-thin">
-                    <input type="checkbox" id="user-activity-tracker" />
-                    User Activity Tracker
-                </label>
-                <label class="options lexend-deca-thin">
-                    <input type="checkbox" id="avatar-headshot-redirect" />
-                    Auto Enlargement of Avatar Images
-                </label>
-                <button class="options lexend-deca-medium" id="save">Save</button>
+                <div class="checkbox-field">
+                    <input type="checkbox" id="friend-activity-tracker" />
+                    <label for="friend-activity-tracker" class="options lexend-deca-thin">
+                        Friend Activity Tracker
+                    </label>
+                </div>
+                <div class="checkbox-field">
+                    <input type="checkbox" id="avatar-headshot-redirect" on />
+                    <label for="avatar-headshot-redirect" class="options lexend-deca-thin">
+                        (WIP) Automatic Enlargement of Avatar Images In New Tabs
+                    </label>
+                </div>
+                <!-- <button class="options lexend-deca-medium" id="save">Save</button> -->
             </form>
         </div>
     </body>

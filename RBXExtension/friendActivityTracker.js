@@ -1,14 +1,16 @@
+// TODO: Prevent authenticated user from appearing in notifications
 // TODO: Prevent userhub websocket from disconnecting, or reopen connection when disconnected
+// TODO: Implement warning when friend activity tracker is unable to work
 // TODO: Prevent false positives as a result of the Presence API returning invalid data.
 //       Check in with the Games API to check if a friend has truly left a game, as more
 //       often than not, the friend never left the game they were in.
-// TODO: Add user settings option to disable activity tracker
+// TODO: >> Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
-import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWebsiteRegex, RobloxWWWRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
+import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
 const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
 const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
-const MAXIMUM_USER_PRESENCES_AT_ONE_TIME = 3
+const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3
 let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
@@ -21,6 +23,7 @@ async function attachDebugger(details) {
 
     (function getTabId() {
         if (!Array.isArray(details)) {
+            // Only happens when attachDebugger is called by chrome.webRequest.onBeforeRequest
             ({ tabId } = details)
         } else {
             // Only happens when attachDebugger is called by chrome.tabs.query()
@@ -61,6 +64,11 @@ async function attachDebugger(details) {
     console.log(`Currently attached to: ${tabTitle}`)
 }
 
+function attemptToAttachDebugger() {
+    chrome.tabs.query({ url: "https://www.roblox.com/*" }, attachDebugger)
+    chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://www.roblox.com/*" ] })
+}
+
 function onDetach() {
     isDebuggerAlreadyAttached = false
     attachedTabId = ''
@@ -68,16 +76,32 @@ function onDetach() {
     attemptToAttachDebugger()
 }
 
-// TODO: Implement warning when friend activity tracker is unable to work
-function attemptToAttachDebugger() {
-    chrome.tabs.query({ url: "https://www.roblox.com/*" }, attachDebugger)
-    chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://www.roblox.com/*" ] })
+function onDetachWithoutReattach() {
+    isDebuggerAlreadyAttached = false
+    attachedTabId = ''
+    console.log('The debugger has been disabled.')
 }
 
-// On startup, attach debugger
-attemptToAttachDebugger()
-// On detach, attempt to attach again
-chrome.debugger.onDetach.addListener(onDetach)
+// On startup, attach debugger if feature is enabled
+(async function init() {
+    const items = await chrome.storage.sync.get({ enableFriendActivityTracker: true })
+    if (items.enableFriendActivityTracker) {
+        attemptToAttachDebugger()
+        // On detach, attempt to attach again
+        chrome.debugger.onDetach.addListener(onDetach)
+    }
+})()
+
+// When feature is enabled/disabled, attach/remove debugger
+chrome.storage.onChanged.addListener((changes, areaName) => {
+    if (areaName !== 'sync') return;
+    if (!changes.enableFriendActivityTracker) return;
+    if (changes.enableFriendActivityTracker.newValue === false) {
+        chrome.debugger.detach({ tabId: attachedTabId }, onDetachWithoutReattach)
+    } else {
+        attemptToAttachDebugger()
+    }
+})
 
 // Detach debugger if no longer on www.roblox.com
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
@@ -86,7 +110,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (!changeInfo.url) return;
     if (!changeInfo.url.match(RobloxWWWRegex)) {
         // This does not trigger the onDetach event for the debugger, so the callback is necessary
-        chrome.debugger.detach({ tabId: tabId }, onDetach)
+        chrome.debugger.detach({ tabId: attachedTabId }, onDetach)
     }
 })
 
@@ -140,7 +164,7 @@ chrome.debugger.onEvent.addListener(async (source, method, params) => {
 function isFriendActivity(responseBody) {
     try {
         const object = JSON.parse(`${responseBody}`)
-        if (object.userPresences && object.userPresences.length <= MAXIMUM_USER_PRESENCES_AT_ONE_TIME) {
+        if (object.userPresences && object.userPresences.length <= MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST) {
             sendActivityAlert(object.userPresences)
         }
     } catch (error) {
