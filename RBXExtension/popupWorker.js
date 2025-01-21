@@ -1,13 +1,23 @@
 let friendActivityTrackerCheckbox = {}
-let avatarHeadshotRedirectCheckbox = {}
+let friendActivityTrackerLabel = {}
+let friendActivityTrackerLabelText = ''
+let avatarHeadshotURLRedirectCheckbox = {}
+let avatarHeadshotURLRedirectLabel = {}
+let avatarHeadshotURLRedirectLabelText = ''
+const greenEnabledText = '(<span class="green">Enabled</span>)'
+const redDisabledText = '(<span class="red">Disabled</span>)'
 
 function init() {
     friendActivityTrackerCheckbox = document.getElementById('friend-activity-tracker')
-    avatarHeadshotRedirectCheckbox = document.getElementById('avatar-headshot-redirect')
-    
+    friendActivityTrackerLabel = document.getElementById('friend-activity-tracker-label')
+    friendActivityTrackerLabelText = friendActivityTrackerLabel.innerHTML
+    avatarHeadshotURLRedirectCheckbox = document.getElementById('avatar-headshot-url-redirect')
+    avatarHeadshotURLRedirectLabel = document.getElementById('avatar-headshot-url-redirect-label')
+    avatarHeadshotURLRedirectLabelText = avatarHeadshotURLRedirectLabel.innerHTML
+
     async function saveOptions() {
         const isFriendActivityTrackerEnabled = friendActivityTrackerCheckbox.checked
-        const isAvatarHeadshotURLRedirectEnabled = avatarHeadshotRedirectCheckbox.checked
+        const isAvatarHeadshotURLRedirectEnabled = avatarHeadshotURLRedirectCheckbox.checked
         await chrome.storage.sync.set(
             {
                 enableFriendActivityTracker: isFriendActivityTrackerEnabled,
@@ -17,18 +27,36 @@ function init() {
     }
 
     document.getElementById('friend-activity-tracker').addEventListener('change', saveOptions)
-    document.getElementById('avatar-headshot-redirect').addEventListener('change', saveOptions)
+    document.getElementById('avatar-headshot-url-redirect').addEventListener('change', saveOptions)
+
+    chrome.storage.session.onChanged.addListener(changes => {
+        if (!changes.debuggerState) return;
+        if (changes.debuggerState.newValue === 'attached') {
+            friendActivityTrackerLabel.innerHTML = `${friendActivityTrackerLabelText} ${greenEnabledText}`
+        } else {
+            friendActivityTrackerLabel.innerHTML = `${friendActivityTrackerLabelText} ${redDisabledText}`
+        }
+    })
 }
 
 async function restoreOptions() {
-    const items = await chrome.storage.sync.get(
-        {
-            enableFriendActivityTracker: true,
-            enableAvatarHeadshotURLRedirect: true
+    chrome.storage.sync.get({
+        enableFriendActivityTracker: true,
+        enableAvatarHeadshotURLRedirect: true
+    })
+    .then(items => {
+        friendActivityTrackerCheckbox.checked = items.enableFriendActivityTracker
+        avatarHeadshotURLRedirectCheckbox.checked = items.enableAvatarHeadshotURLRedirect
+    })
+
+    chrome.storage.session.get({ debuggerState: 'detached' })
+    .then(items => {
+        if (items.debuggerState === 'attached') {
+            friendActivityTrackerLabel.innerHTML = `${friendActivityTrackerLabelText} ${greenEnabledText}`
+        } else {
+            friendActivityTrackerLabel.innerHTML = `${friendActivityTrackerLabelText} ${redDisabledText}`
         }
-    )
-    friendActivityTrackerCheckbox.checked = items.enableFriendActivityTracker
-    avatarHeadshotRedirectCheckbox.checked = items.enableAvatarHeadshotURLRedirect
+    })
 }
 
 document.addEventListener('DOMContentLoaded', init)

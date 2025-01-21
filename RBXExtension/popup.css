@@ -69,6 +69,14 @@ label.options {
     user-select: none;
 }
 
+span.green {
+    color: greenyellow;
+}
+
+span.red {
+    color: red;
+}
+
 .checkbox-field:last-child {
     margin-bottom: 5px;
 }

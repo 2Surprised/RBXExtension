@@ -1,13 +1,13 @@
 // TODO: Prevent authenticated user from appearing in notifications
+// !! TODO: Prevent debugger from attaching to login screen page
 // TODO: Prevent userhub websocket from disconnecting, or reopen connection when disconnected
-// TODO: Implement warning when friend activity tracker is unable to work
 // TODO: Prevent false positives as a result of the Presence API returning invalid data.
 //       Check in with the Games API to check if a friend has truly left a game, as more
 //       often than not, the friend never left the game they were in.
-// TODO: >> Add user settings option to disable activity tracker
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
+const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 2000
 const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
 const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
 const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3
@@ -23,6 +23,8 @@ async function attachDebugger(details) {
 
     (function getTabId() {
         if (!Array.isArray(details)) {
+            // !! TODO: chrome.webRequest.onBeforeRequest can trigger on tabs that aren't www.roblox.com.
+            //          Check if the tab being attached to matches the RobloxWWWRegex.
             // Only happens when attachDebugger is called by chrome.webRequest.onBeforeRequest
             ({ tabId } = details)
         } else {
@@ -58,6 +60,7 @@ async function attachDebugger(details) {
     isTryingToAttach = false
     isDebuggerAlreadyAttached = true
     attachedTabId = tabId
+    chrome.storage.session.set({ debuggerState: 'attached' })
 
     const tab = await chrome.tabs.get(tabId)
     tabTitle = tab.title
@@ -74,16 +77,37 @@ function onDetach() {
     attachedTabId = ''
     console.log('The debugger has been detached.')
     attemptToAttachDebugger()
+    alertIfDebuggerIsDetached('warn')
 }
 
 function onDetachWithoutReattach() {
     isDebuggerAlreadyAttached = false
     attachedTabId = ''
     console.log('The debugger has been disabled.')
+    alertIfDebuggerIsDetached('suppress')
+}
+
+// action = 'warn' || 'suppress'
+function alertIfDebuggerIsDetached(action = 'warn') {
+    chrome.storage.session.set({ debuggerState: 'detached' })
+    if (action !== 'warn') return;
+    setTimeout(() => {
+        if (isDebuggerAlreadyAttached) return;
+        chrome.notifications.create({
+            iconUrl: './utils/RBLX_Tilt_Primary_Black.png',
+            title: 'Friend Activity Tracker is disabled!',
+            message: 'This feature only works on www.roblox.com.',
+            contextMessage: 'If you want to reenable this feature, make sure to keep www.roblox.com open at all times!',
+            priority: 2,
+            type: 'basic',
+            silent: false
+        })
+    }, ALERT_TIMER_FOR_DETACHED_DEBUGGER)
 }
 
 // On startup, attach debugger if feature is enabled
 (async function init() {
+    chrome.storage.session.set({ debuggerState: 'detached' })
     const items = await chrome.storage.sync.get({ enableFriendActivityTracker: true })
     if (items.enableFriendActivityTracker) {
         attemptToAttachDebugger()
@@ -93,10 +117,11 @@ function onDetachWithoutReattach() {
 })()
 
 // When feature is enabled/disabled, attach/remove debugger
-chrome.storage.onChanged.addListener((changes, areaName) => {
-    if (areaName !== 'sync') return;
+chrome.storage.sync.onChanged.addListener(changes => {
+    console.log('sync changes', changes)
     if (!changes.enableFriendActivityTracker) return;
     if (changes.enableFriendActivityTracker.newValue === false) {
+        if (!attachedTabId) return;
         chrome.debugger.detach({ tabId: attachedTabId }, onDetachWithoutReattach)
     } else {
         attemptToAttachDebugger()
