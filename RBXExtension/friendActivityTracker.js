@@ -1,12 +1,14 @@
 // TODO: Prevent authenticated user from appearing in notifications
-// !! TODO: Prevent debugger from attaching to login screen page
-// TODO: Prevent userhub websocket from disconnecting, or reopen connection when disconnected
 // TODO: Prevent false positives as a result of the Presence API returning invalid data.
 //       Check in with the Games API to check if a friend has truly left a game, as more
 //       often than not, the friend never left the game they were in.
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
-import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
+import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxLoginRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
+// Fun fact: Even though RobloxLoginRegexMatch prevents the debugger from attaching to roblox.com/login
+// tabs, the userhub websocket still works when the page is accessed through the Account Switcher feature.
+// This just avoids a lengthy implementation just to check if the user is logged in or not.
+const RobloxLoginRegexMatch = new RegExp(RobloxLoginRegex)
 const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 2000
 const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
 const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
@@ -26,7 +28,7 @@ async function attachDebugger(details) {
         // Only happens when attachDebugger is called by chrome.webRequest.onBeforeRequest
         // chrome.webRequest.onBeforeRequest can trigger on tabs that aren't www.roblox.com
         const tabInfo = await chrome.tabs.get(details.tabId)
-        if (!tabInfo.url.match(RobloxWWWRegex)) {
+        if (!tabInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(tabInfo.url)) {
             isTryingToAttach = false
             return;
         }
@@ -35,7 +37,7 @@ async function attachDebugger(details) {
     } else {
         // Only happens when attachDebugger is called by chrome.tabs.query()
         for (const tab of details) {
-            if (tab.status !== 'unloaded') {
+            if (tab.status !== 'unloaded' && !RobloxLoginRegexMatch.test(tab.url)) {
                 tabId = tab.id
                 break;
             }
@@ -100,8 +102,8 @@ function alertIfDebuggerIsDetached(action = 'warn') {
         chrome.notifications.create({
             iconUrl: './utils/RBLX_Tilt_Primary_Black.png',
             title: 'Friend Activity Tracker is disabled!',
-            message: 'This feature only works on www.roblox.com.',
-            contextMessage: 'If you want to reenable this feature, make sure to keep www.roblox.com open at all times!',
+            message: 'You will no longer receive notifications on friend activity!',
+            contextMessage: 'To reenable, make sure to keep the website open and stay logged in!',
             priority: 2,
             type: 'basic',
             silent: false
@@ -136,7 +138,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (tabId !== attachedTabId) return;
     tabTitle = tab.title
     if (!changeInfo.url) return;
-    if (!changeInfo.url.match(RobloxWWWRegex)) {
+    if (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(changeInfo.url)) {
         // This does not trigger the onDetach event for the debugger, so the callback is necessary
         chrome.debugger.detach({ tabId: attachedTabId }, onDetach)
     }
