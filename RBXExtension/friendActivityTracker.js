@@ -18,6 +18,7 @@ let isDebuggerAlreadyAttached = false
 let tabTitle = ''
 let attachedTabId = ''
 
+// TODO: Rewrite this horrible code
 async function attachDebugger(details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
     isTryingToAttach = true
