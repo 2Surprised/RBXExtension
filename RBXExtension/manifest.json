@@ -5,7 +5,7 @@
     "version": "1.0",
     "action": {
         "default_title": "Roblox+",
-        "default_popup": "popup.html"
+        "default_popup": "/popup/popup.html"
     },
     "permissions": [
         "declarativeNetRequest",
@@ -20,7 +20,7 @@
         "https://*.rbxcdn.com/*"
     ],
     "background": {
-        "service_worker": "./serviceWorker.js",
+        "service_worker": "serviceWorker.js",
         "type": "module"
     },
     "declarative_net_request": {
@@ -28,21 +28,21 @@
             {
                 "id": "ruleset_AvatarHeadshotURLRedirect",
                 "enabled": true,
-                "path": "avatarHeadshotURLRedirect.json"
+                "path": "/rulesets/avatarHeadshotURLRedirect.json"
             },
             {
                 "id": "ruleset_FriendCarouselExtension",
                 "enabled": true,
-                "path": "friendCarouselExtension.json"
+                "path": "/rulesets/friendCarouselExtension.json"
             }
         ]
     },
     "web_accessible_resources": [
         {
             "resources": [
-                "./friendCarousel/custom/lengthAndPopover.js",
-                "./friendCarousel/custom/scroll.css",
-                "./utils/RBLX_Tilt_Primary_Black.png"
+                "/friendCarousel/custom/lengthAndPopover.js",
+                "/friendCarousel/custom/scroll.css",
+                "/utils/RBLX_Tilt_Primary_Black.png"
             ],
             "matches": [ "https://*.roblox.com/*" ]
         }

@@ -1,3 +1,7 @@
+// TODO: Implement notes system for friends
+// TODO: Completely overhaul the Roblox website chat
+// TODO: Save chat history of friends
+
 // TODO: Prevent authenticated user from appearing in notifications
 // TODO: Prevent false positives as a result of the Presence API returning invalid data.
 //       Check in with the Games API to check if a friend has truly left a game, as more

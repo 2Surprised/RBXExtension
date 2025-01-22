@@ -1,1 +1,0 @@
-// TODO: Implement notes system for friends
