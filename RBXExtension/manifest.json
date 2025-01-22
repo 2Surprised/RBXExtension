@@ -20,7 +20,7 @@
         "https://*.rbxcdn.com/*"
     ],
     "background": {
-        "service_worker": "friendActivityTracker.js",
+        "service_worker": "./serviceWorker.js",
         "type": "module"
     },
     "declarative_net_request": {
@@ -40,9 +40,9 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "friendCarousel/custom/lengthAndPopover.js",
-                "friendCarousel/custom/scroll.css",
-                "utils/RBLX_Tilt_Primary_Black.png"
+                "./friendCarousel/custom/lengthAndPopover.js",
+                "./friendCarousel/custom/scroll.css",
+                "./utils/RBLX_Tilt_Primary_Black.png"
             ],
             "matches": [ "https://*.roblox.com/*" ]
         }
