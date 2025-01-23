@@ -8,11 +8,6 @@ const enum ErrorMessage {
     AvatarIconFail = 'Failed to fetch avatar icon.'
 }
 
-const enum AlertIfDebuggerIsDetachedAction {
-    Warn = 'warn',
-    Suppress = 'suppress'
-}
-
 interface ResponseBody {
     body: string,
     base64Encoded: boolean
