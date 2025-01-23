@@ -1,5 +1,4 @@
 // TODO: Implement best friends system
-// TODO: Save chat history of friends
 // TODO: Implement notes system for friends/followers/following
 // TODO: Completely overhaul the Roblox website chat
 
@@ -53,7 +52,7 @@ async function FriendActivityTracker(enable: boolean) {
     // tabs, the userhub websocket still works when the page is accessed through the Account Switcher feature.
     // This just avoids a lengthy implementation just to check if the user is logged in or not.
     const RobloxLoginRegexMatch = new RegExp(RobloxLoginRegex)
-    const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 5000
+    const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 10000
     const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
     const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
     const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3

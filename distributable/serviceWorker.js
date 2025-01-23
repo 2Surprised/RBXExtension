@@ -39,7 +39,7 @@ let tabTitle = '';
 let attachedTabId = 0;
 async function FriendActivityTracker(enable) {
     const RobloxLoginRegexMatch = new RegExp(RobloxLoginRegex);
-    const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 5000;
+    const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 10000;
     const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000;
     const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000;
     const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3;
