@@ -1,15 +1,35 @@
 import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxLoginRegex, RobloxPresenceRegex, removeValueFromArray } from "./utils/utility.js";
 (async function init() {
-    const items = await chrome.storage.sync.get({ enableFriendActivityTracker: true });
+    const items = await chrome.storage.sync.get({
+        enableFriendActivityTracker: true,
+        enableFriendCarouselExtension: true,
+        enableAvatarHeadshotURLRedirect: true
+    });
     if (items.enableFriendActivityTracker) {
         FriendActivityTracker(true);
     }
+    if (items.enableFriendCarouselExtension) {
+        FriendCarouselExtension(true);
+    }
+    if (items.enableAvatarHeadshotURLRedirect) {
+        AvatarHeadshotURLRedirect(true);
+    }
     chrome.storage.sync.onChanged.addListener(changes => {
-        if (!changes.enableFriendActivityTracker)
-            return;
-        changes.enableFriendActivityTracker.newValue === true ?
-            FriendActivityTracker(true) :
-            FriendActivityTracker(false);
+        if ('enableFriendActivityTracker' in changes) {
+            changes.enableFriendActivityTracker.newValue === true ?
+                FriendActivityTracker(true) :
+                FriendActivityTracker(false);
+        }
+        if ('enableFriendCarouselExtension' in changes) {
+            changes.enableFriendCarouselExtension.newValue === true ?
+                FriendCarouselExtension(true) :
+                FriendCarouselExtension(false);
+        }
+        if ('enableAvatarHeadshotURLRedirect' in changes) {
+            changes.enableAvatarHeadshotURLRedirect.newValue === true ?
+                AvatarHeadshotURLRedirect(true) :
+                AvatarHeadshotURLRedirect(false);
+        }
     });
 })();
 let isFriendActivityTrackerInitialExecution = true;
@@ -19,7 +39,7 @@ let tabTitle = '';
 let attachedTabId = 0;
 async function FriendActivityTracker(enable) {
     const RobloxLoginRegexMatch = new RegExp(RobloxLoginRegex);
-    const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 2000;
+    const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 5000;
     const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000;
     const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000;
     const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3;
@@ -223,5 +243,29 @@ async function FriendActivityTracker(enable) {
                 silent: false
             }, (notifId => { notificationId = notifId; }));
         }
+    }
+}
+function FriendCarouselExtension(enable) {
+    if (enable) {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            enableRulesetIds: ['ruleset_FriendCarouselExtension']
+        });
+    }
+    else {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            disableRulesetIds: ['ruleset_FriendCarouselExtension']
+        });
+    }
+}
+function AvatarHeadshotURLRedirect(enable) {
+    if (enable) {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            enableRulesetIds: ['ruleset_AvatarHeadshotURLRedirect']
+        });
+    }
+    else {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            disableRulesetIds: ['ruleset_AvatarHeadshotURLRedirect']
+        });
     }
 }
