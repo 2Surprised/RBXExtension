@@ -2,11 +2,11 @@ const greenEnabledText = '(<span class="green">Enabled</span>)'
 const redDisabledText = '(<span class="red">Disabled</span>)'
 
 function init() {
-    const friendActivityTrackerCheckbox = document.getElementById('friend-activity-tracker')
-    const friendActivityTrackerLabel = document.getElementById('friend-activity-tracker-label')
+    const friendActivityTrackerCheckbox = document.getElementById('friend-activity-tracker') as HTMLInputElement
+    const friendActivityTrackerLabel = document.getElementById('friend-activity-tracker-label') as HTMLLabelElement
     const friendActivityTrackerLabelText = friendActivityTrackerLabel.innerHTML
-    const friendCarouselExtensionCheckbox = document.getElementById('friend-carousel-extension')
-    const avatarHeadshotURLRedirectCheckbox = document.getElementById('avatar-headshot-url-redirect');
+    const friendCarouselExtensionCheckbox = document.getElementById('friend-carousel-extension') as HTMLInputElement
+    const avatarHeadshotURLRedirectCheckbox = document.getElementById('avatar-headshot-url-redirect') as HTMLInputElement
 
     (async function restoreOptions() {
         chrome.storage.sync.get({

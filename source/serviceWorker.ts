@@ -1,4 +1,5 @@
-// TODO: Implement notes system for friends
+// TODO: Implement best friends system
+// TODO: Implement notes system for friends/followers/following
 // TODO: Completely overhaul the Roblox website chat
 // TODO: Save chat history of friends
 
@@ -8,7 +9,7 @@
 //       often than not, the friend never left the game they were in.
 // TODO: Add user settings option to disable subplace tracker
 // TODO: Add user settings option to disable automated notification deletion
-import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxLoginRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js'
+import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxLoginRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.ts'
 // Fun fact: Even though RobloxLoginRegexMatch prevents the debugger from attaching to roblox.com/login
 // tabs, the userhub websocket still works when the page is accessed through the Account Switcher feature.
 // This just avoids a lengthy implementation just to check if the user is logged in or not.
@@ -20,36 +21,34 @@ const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3
 let isTryingToAttach = false
 let isDebuggerAlreadyAttached = false
 let tabTitle = ''
-let attachedTabId = ''
+let attachedTabId = 0
 
-// TODO: Rewrite this horrible code
-async function attachDebugger(details) {
+async function attachDebugger(tabs?: chrome.tabs.Tab[], details?: chrome.webRequest.WebRequestBodyDetails) {
     if (isTryingToAttach || isDebuggerAlreadyAttached) return;
     isTryingToAttach = true
     let tabId = 0
-    let tab = {}
+    let tab: chrome.tabs.Tab | undefined;
 
-    if (!Array.isArray(details)) {
-        // Only happens when attachDebugger is called by chrome.webRequest.onBeforeRequest
-        // chrome.webRequest.onBeforeRequest can trigger on tabs that aren't www.roblox.com
-        const tabInfo = await chrome.tabs.get(details.tabId)
-        if (!tabInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(tabInfo.url)) {
-            isTryingToAttach = false
-            return;
-        }
-        ({ tabId } = details)
-        tab = tabInfo
-    } else {
-        // Only happens when attachDebugger is called by chrome.tabs.query()
-        for (const tab of details) {
-            if (tab.status !== 'unloaded' && !RobloxLoginRegexMatch.test(tab.url)) {
-                tabId = tab.id
+    if (tabs) {
+        for (const tabInQuestion of tabs) {
+            if (tabInQuestion.status !== 'unloaded' && !RobloxLoginRegexMatch.test(tabInQuestion.url!)) {
+                tabId = tabInQuestion.id!
+                tab = tabInQuestion
                 break;
             }
         }
+    } else {
+        const tabInQuestion = await chrome.tabs.get(details!.tabId)
+        // chrome.webRequest.onBeforeRequest can trigger on tabs that aren't www.roblox.com
+        if (!tabInQuestion.url?.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(tabInQuestion.url)) {
+            isTryingToAttach = false
+            return;
+        }
+        ({ tabId } = details!)
+        tab = tabInQuestion
     }
 
-    if (!tabId > 0) {
+    if (!(tabId > 0)) {
         isTryingToAttach = false
         return;
     }
@@ -63,43 +62,43 @@ async function attachDebugger(details) {
         // This error can be safely ignored, as the debugger is simply trying to attach to a
         // still unloading chrome:// tab. After a few tries, it'll successfully attach to the
         // newly loaded in tab.
+        // @ts-expect-error: No need to handle unknown error type
         if (error.message === 'Cannot access a chrome:// URL') return;
         console.error(error)
     }
 
+    // @ts-expect-error: removeListener doesn't return anything
     chrome.webRequest.onBeforeRequest.removeListener(attachDebugger)
     isTryingToAttach = false
     isDebuggerAlreadyAttached = true
     attachedTabId = tabId
     chrome.storage.session.set({ debuggerState: 'attached' })
 
-    if (JSON.stringify(tab) === '{}') { tab = await chrome.tabs.get(tabId) }
-    tabTitle = tab.title
+    tabTitle = tab!.title!
     console.log(`Currently attached to: ${tabTitle}`)
 }
 
 function attemptToAttachDebugger() {
-    chrome.tabs.query({ url: "https://www.roblox.com/*" }, attachDebugger)
-    chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: [ "https://www.roblox.com/*" ] })
+    chrome.tabs.query({ url: "https://www.roblox.com/*" }, (tabs) => { attachDebugger(tabs, undefined) })
+    chrome.webRequest.onBeforeRequest.addListener((details) => { attachDebugger(undefined, details) }, { urls: [ "https://www.roblox.com/*" ] })
 }
 
 function onDetach() {
     isDebuggerAlreadyAttached = false
-    attachedTabId = ''
+    attachedTabId = 0
     console.log('The debugger has been detached.')
     attemptToAttachDebugger()
-    alertIfDebuggerIsDetached('warn')
+    alertIfDebuggerIsDetached(AlertIfDebuggerIsDetachedAction.Warn)
 }
 
 function onDetachWithoutReattach() {
     isDebuggerAlreadyAttached = false
-    attachedTabId = ''
+    attachedTabId = 0
     console.log('The debugger has been disabled.')
-    alertIfDebuggerIsDetached('suppress')
+    alertIfDebuggerIsDetached(AlertIfDebuggerIsDetachedAction.Suppress)
 }
 
-// action = 'warn' || 'suppress'
-function alertIfDebuggerIsDetached(action = 'warn') {
+function alertIfDebuggerIsDetached(action: AlertIfDebuggerIsDetachedAction) {
     chrome.storage.session.set({ debuggerState: 'detached' })
     if (action !== 'warn') return;
     setTimeout(() => {
@@ -141,7 +140,7 @@ chrome.storage.sync.onChanged.addListener(changes => {
 // Detach debugger if no longer on www.roblox.com
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (tabId !== attachedTabId) return;
-    tabTitle = tab.title
+    tabTitle = tab.title!
     if (!changeInfo.url) return;
     if (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(changeInfo.url)) {
         // This does not trigger the onDetach event for the debugger, so the callback is necessary
@@ -149,7 +148,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
 })
 
-chrome.debugger.onEvent.addListener(async (source, method, params) => {
+chrome.debugger.onEvent.addListener(async (source, method, params: any) => {
     const { requestId } = params
 
     if (method === 'Network.responseReceived' &&
@@ -177,7 +176,7 @@ chrome.debugger.onEvent.addListener(async (source, method, params) => {
                 source,
                 'Network.getResponseBody',
                 { requestId: requestId }
-            )
+            ) as ResponseBody
             const responseBody = result.body
             isFriendActivity(responseBody)
         }
@@ -196,14 +195,15 @@ chrome.debugger.onEvent.addListener(async (source, method, params) => {
     }
 })
 
-function isFriendActivity(responseBody) {
+function isFriendActivity(responseBody: string) {
     try {
-        const object = JSON.parse(`${responseBody}`)
-        if (object.userPresences && object.userPresences.length <= MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST) {
-            sendActivityAlert(object.userPresences)
+        const object = JSON.parse(responseBody)
+        if ('userPresences' in object && object.userPresences.length <= MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST) {
+            const userPresences: UserPresencesResponse = object
+            sendActivityAlert(userPresences.userPresences)
         }
     } catch (error) {
-        if (!error instanceof SyntaxError) {
+        if (!(error instanceof SyntaxError)) {
             console.warn(error)
         }
     }
@@ -212,9 +212,9 @@ function isFriendActivity(responseBody) {
 // TODO: Implement session cache to prevent unnecessary strain on API
 // TODO: Implement filter for game activity with user-friendly interface
 // TODO: Add buttons to launch game client from notification
-const recentUserPresences = []
+const recentUserPresences: string[] = []
 
-async function sendActivityAlert(userPresences) {
+async function sendActivityAlert(userPresences: UserPresence[]) {
     for (const userPresence of userPresences) {
         // Prevents duplicate notifications from coming through
         if (recentUserPresences.includes(JSON.stringify(userPresence))) continue;
@@ -249,7 +249,7 @@ async function sendActivityAlert(userPresences) {
                 placeUrl = games[1].url
             }
             const userObjectPromise = getUserFromUserId(userId)
-            const imageUrlPromise = getAvatarIconUrlFromUserId(userId, 'avatar-headshot', 100)
+            const imageUrlPromise = getAvatarIconUrlFromUserId(userId, AvatarIconStyle.avatarHeadshot, AvatarIconSize.Hundred)
             const responses = await Promise.all([userObjectPromise, imageUrlPromise])
             const userObject = responses[0]
             const imageUrl = responses[1]
@@ -257,7 +257,7 @@ async function sendActivityAlert(userPresences) {
             userDisplayName = userObject.displayName
         })()
 
-        notificationId = await chrome.notifications.create({
+        chrome.notifications.create({
             iconUrl: imageDataUrl,
             title: !isSubPlace ? `${userDisplayName} is playing!` : `${userDisplayName} is in a subplace!`,
             message: !isSubPlace ? `Now in: ${rootPlaceName}` : `Now in: ${subPlaceName}`,
@@ -265,6 +265,6 @@ async function sendActivityAlert(userPresences) {
             priority: 2,
             type: 'basic',
             silent: false
-        })
+        }, (notifId => { notificationId = notifId }))
     }
 }

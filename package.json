@@ -1,5 +1,9 @@
 {
+  "type": "module",
   "dependencies": {
     "@types/chrome": "^0.0.299"
+  },
+  "scripts": {
+    "build": "copyfiles source/**/* -u 1 -e \"**/*.ts\" distributable && tsc"
   }
 }

@@ -1,4 +1,4 @@
-import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxLoginRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.js';
+import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxLoginRegex, RobloxPresenceRegex, removeValueFromArray } from "./utils/utility.js";
 const RobloxLoginRegexMatch = new RegExp(RobloxLoginRegex);
 const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 2000;
 const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000;
@@ -7,31 +7,32 @@ const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3;
 let isTryingToAttach = false;
 let isDebuggerAlreadyAttached = false;
 let tabTitle = '';
-let attachedTabId = '';
-async function attachDebugger(details) {
+let attachedTabId = 0;
+async function attachDebugger(tabs, details) {
     if (isTryingToAttach || isDebuggerAlreadyAttached)
         return;
     isTryingToAttach = true;
     let tabId = 0;
-    let tab = {};
-    if (!Array.isArray(details)) {
-        const tabInfo = await chrome.tabs.get(details.tabId);
-        if (!tabInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(tabInfo.url)) {
-            isTryingToAttach = false;
-            return;
-        }
-        ({ tabId } = details);
-        tab = tabInfo;
-    }
-    else {
-        for (const tab of details) {
-            if (tab.status !== 'unloaded' && !RobloxLoginRegexMatch.test(tab.url)) {
-                tabId = tab.id;
+    let tab;
+    if (tabs) {
+        for (const tabInQuestion of tabs) {
+            if (tabInQuestion.status !== 'unloaded' && !RobloxLoginRegexMatch.test(tabInQuestion.url)) {
+                tabId = tabInQuestion.id;
+                tab = tabInQuestion;
                 break;
             }
         }
     }
-    if (!tabId > 0) {
+    else {
+        const tabInQuestion = await chrome.tabs.get(details.tabId);
+        if (!tabInQuestion.url?.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(tabInQuestion.url)) {
+            isTryingToAttach = false;
+            return;
+        }
+        ({ tabId } = details);
+        tab = tabInQuestion;
+    }
+    if (!(tabId > 0)) {
         isTryingToAttach = false;
         return;
     }
@@ -50,30 +51,27 @@ async function attachDebugger(details) {
     isDebuggerAlreadyAttached = true;
     attachedTabId = tabId;
     chrome.storage.session.set({ debuggerState: 'attached' });
-    if (JSON.stringify(tab) === '{}') {
-        tab = await chrome.tabs.get(tabId);
-    }
     tabTitle = tab.title;
     console.log(`Currently attached to: ${tabTitle}`);
 }
 function attemptToAttachDebugger() {
-    chrome.tabs.query({ url: "https://www.roblox.com/*" }, attachDebugger);
-    chrome.webRequest.onBeforeRequest.addListener(attachDebugger, { urls: ["https://www.roblox.com/*"] });
+    chrome.tabs.query({ url: "https://www.roblox.com/*" }, (tabs) => { attachDebugger(tabs, undefined); });
+    chrome.webRequest.onBeforeRequest.addListener((details) => { attachDebugger(undefined, details); }, { urls: ["https://www.roblox.com/*"] });
 }
 function onDetach() {
     isDebuggerAlreadyAttached = false;
-    attachedTabId = '';
+    attachedTabId = 0;
     console.log('The debugger has been detached.');
     attemptToAttachDebugger();
-    alertIfDebuggerIsDetached('warn');
+    alertIfDebuggerIsDetached("warn");
 }
 function onDetachWithoutReattach() {
     isDebuggerAlreadyAttached = false;
-    attachedTabId = '';
+    attachedTabId = 0;
     console.log('The debugger has been disabled.');
-    alertIfDebuggerIsDetached('suppress');
+    alertIfDebuggerIsDetached("suppress");
 }
-function alertIfDebuggerIsDetached(action = 'warn') {
+function alertIfDebuggerIsDetached(action) {
     chrome.storage.session.set({ debuggerState: 'detached' });
     if (action !== 'warn')
         return;
@@ -149,13 +147,14 @@ chrome.debugger.onEvent.addListener(async (source, method, params) => {
 });
 function isFriendActivity(responseBody) {
     try {
-        const object = JSON.parse(`${responseBody}`);
-        if (object.userPresences && object.userPresences.length <= MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST) {
-            sendActivityAlert(object.userPresences);
+        const object = JSON.parse(responseBody);
+        if ('userPresences' in object && object.userPresences.length <= MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST) {
+            const userPresences = object;
+            sendActivityAlert(userPresences.userPresences);
         }
     }
     catch (error) {
-        if (!error instanceof SyntaxError) {
+        if (!(error instanceof SyntaxError)) {
             console.warn(error);
         }
     }
@@ -192,14 +191,14 @@ async function sendActivityAlert(userPresences) {
                 placeUrl = games[1].url;
             }
             const userObjectPromise = getUserFromUserId(userId);
-            const imageUrlPromise = getAvatarIconUrlFromUserId(userId, 'avatar-headshot', 100);
+            const imageUrlPromise = getAvatarIconUrlFromUserId(userId, "avatar-headshot", 100);
             const responses = await Promise.all([userObjectPromise, imageUrlPromise]);
             const userObject = responses[0];
             const imageUrl = responses[1];
             imageDataUrl = await getDataUrlFromWebResource(imageUrl);
             userDisplayName = userObject.displayName;
         })();
-        notificationId = await chrome.notifications.create({
+        chrome.notifications.create({
             iconUrl: imageDataUrl,
             title: !isSubPlace ? `${userDisplayName} is playing!` : `${userDisplayName} is in a subplace!`,
             message: !isSubPlace ? `Now in: ${rootPlaceName}` : `Now in: ${subPlaceName}`,
@@ -207,6 +206,6 @@ async function sendActivityAlert(userPresences) {
             priority: 2,
             type: 'basic',
             silent: false
-        });
+        }, (notifId => { notificationId = notifId; }));
     }
 }
