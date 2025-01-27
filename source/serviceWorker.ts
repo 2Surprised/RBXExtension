@@ -56,7 +56,7 @@ async function FriendActivityTracker(enable: boolean) {
     const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 10000
     const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
     const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
-    const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 5
+    const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3
 
     if (!enable) {
         if (isDebuggerAlreadyAttached) {

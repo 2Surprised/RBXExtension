@@ -669,6 +669,7 @@
     position: relative;
     scrollbar-width: thin;
     scrollbar-color: #8787873b #f1f1f100;
+    pointer-events: none;
 }
 
 .content .friends-carousel-list-container {
@@ -705,7 +706,8 @@
     margin-bottom: 16px;
     margin-left: 3px;
     margin-right: 3px;
-    cursor: pointer
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 .content .friends-carousel-tile:hover {
