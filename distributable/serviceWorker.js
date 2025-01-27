@@ -42,7 +42,7 @@ async function FriendActivityTracker(enable) {
     const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 10000;
     const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000;
     const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000;
-    const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3;
+    const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 5;
     if (!enable) {
         if (isDebuggerAlreadyAttached) {
             chrome.debugger.detach({ tabId: attachedTabId });
@@ -51,10 +51,47 @@ async function FriendActivityTracker(enable) {
         return;
     }
     if (isFriendActivityTrackerInitialExecution) {
+        isFriendActivityTrackerInitialExecution = false;
         chrome.storage.session.set({ debuggerState: 'detached' });
         chrome.debugger.onDetach.addListener(() => { onDetach(true); });
+        chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+            if (tabId !== attachedTabId)
+                return;
+            tabTitle = tab.title;
+            if (!changeInfo.url)
+                return;
+            if (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(changeInfo.url)) {
+                chrome.debugger.detach({ tabId: attachedTabId });
+                onDetach(true);
+            }
+        });
+        chrome.debugger.onEvent.addListener(async (source, method, params) => {
+            const { requestId } = params;
+            if (method === 'Network.responseReceived' &&
+                params.response.url.match(RobloxPresenceRegex) &&
+                params.response.status === 200) {
+                if (params.type === 'Preflight')
+                    return;
+                if (params.response.headers["content-length"] === 0)
+                    return;
+                async function getResponseBodyAndPassOnData() {
+                    const result = await chrome.debugger.sendCommand(source, 'Network.getResponseBody', { requestId: requestId });
+                    const responseBody = result.body;
+                    isFriendActivity(responseBody);
+                }
+                try {
+                    await getResponseBodyAndPassOnData();
+                }
+                catch (error) {
+                    console.warn('Failed to retrieve response body, will retry in a few seconds.', requestId, params, error);
+                    setTimeout(() => {
+                        getResponseBodyAndPassOnData()
+                            .catch(error => console.error('Failed to retrieve response body.', requestId, params, error));
+                    }, RETRY_TIMER_FOR_FAILED_REQUESTS);
+                }
+            }
+        });
         attemptToAttachDebugger();
-        isFriendActivityTrackerInitialExecution = false;
     }
     else {
         attemptToAttachDebugger();
@@ -145,43 +182,6 @@ async function FriendActivityTracker(enable) {
             });
         }, ALERT_TIMER_FOR_DETACHED_DEBUGGER);
     }
-    chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-        if (tabId !== attachedTabId)
-            return;
-        tabTitle = tab.title;
-        if (!changeInfo.url)
-            return;
-        if (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(changeInfo.url)) {
-            chrome.debugger.detach({ tabId: attachedTabId });
-            onDetach(true);
-        }
-    });
-    chrome.debugger.onEvent.addListener(async (source, method, params) => {
-        const { requestId } = params;
-        if (method === 'Network.responseReceived' &&
-            params.response.url.match(RobloxPresenceRegex) &&
-            params.response.status === 200) {
-            if (params.type === 'Preflight')
-                return;
-            if (params.response.headers["content-length"] === 0)
-                return;
-            async function getResponseBodyAndPassOnData() {
-                const result = await chrome.debugger.sendCommand(source, 'Network.getResponseBody', { requestId: requestId });
-                const responseBody = result.body;
-                isFriendActivity(responseBody);
-            }
-            try {
-                await getResponseBodyAndPassOnData();
-            }
-            catch (error) {
-                console.warn('Failed to retrieve response body, will retry in a few seconds.', requestId, params, error);
-                setTimeout(() => {
-                    getResponseBodyAndPassOnData()
-                        .catch(error => console.error('Failed to retrieve response body.', requestId, params, error));
-                }, RETRY_TIMER_FOR_FAILED_REQUESTS);
-            }
-        }
-    });
     function isFriendActivity(responseBody) {
         try {
             const object = JSON.parse(responseBody);

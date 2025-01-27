@@ -42,6 +42,7 @@ let tabTitle = ''
 let attachedTabId = 0
 
 async function FriendActivityTracker(enable: boolean) {
+    // !! TODO: Fix issue with duplicate notifications when enabling/disabling feature without restarting
     // TODO: Prevent authenticated user from appearing in notifications
     // TODO: Prevent false positives as a result of the Presence API returning invalid data.
     //       Check in with the Games API to check if a friend has truly left a game, as more
@@ -55,7 +56,7 @@ async function FriendActivityTracker(enable: boolean) {
     const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 10000
     const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
     const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
-    const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3
+    const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 5
 
     if (!enable) {
         if (isDebuggerAlreadyAttached) {
@@ -66,10 +67,75 @@ async function FriendActivityTracker(enable: boolean) {
     }
 
     if (isFriendActivityTrackerInitialExecution) {
-        chrome.storage.session.set({ debuggerState: 'detached' })
-        chrome.debugger.onDetach.addListener(() => { onDetach(true) })
-        attemptToAttachDebugger()
         isFriendActivityTrackerInitialExecution = false
+        chrome.storage.session.set({ debuggerState: 'detached' })
+
+        // Add event listeners only on initial execution, preventing subsequent executions from
+        // registering them again. Event listeners aren't removed when the feature is disabled because
+        // the implementation would be slightly messy.
+        // (See comments on attemptToAttachDebuggerCallback for more information)
+
+        chrome.debugger.onDetach.addListener(() => { onDetach(true) })
+
+        // Detach debugger if no longer on www.roblox.com
+        chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+            if (tabId !== attachedTabId) return;
+            tabTitle = tab.title!
+            if (!changeInfo.url) return;
+            if (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(changeInfo.url)) {
+                chrome.debugger.detach({ tabId: attachedTabId })
+                onDetach(true)
+            }
+        })
+
+        chrome.debugger.onEvent.addListener(async (source, method, params: any) => {
+            const { requestId } = params
+    
+            if (method === 'Network.responseReceived' &&
+                params.response.url.match(RobloxPresenceRegex) &&
+                params.response.status === 200
+            ) {
+                // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
+                // These guard nodes prevent "No resource with given identifier",
+                // and "No data found for resource with given identifier" errors.
+                // Some are not required since the second and third conditionals above
+                // already remove them from the equation.
+                if (params.type === 'Preflight') return;
+                // "unknown" seems to be caused by local files being fetched, and any redirects to local files,
+                // which somehow causes the remote debugging protocol to be unable to retrieve their contents.
+                // Oddly enough, it seems like many other requests from the disk cache succeed, so the local
+                // files might be stored in long-term storage instead of in caches and RAM.
+                // if (params.response.securityState === 'unknown') return; // (Not required)
+                if (params.response.headers["content-length"] === 0) return;
+                // if (params.response.status === 204) return; // Ignore HTTP 204 No Content successes (Not required)
+                // The document will have no data when the response is first received, while fonts never have data
+                // if (params.type === 'Document' || params.type === 'Font') return; // (Not required)
+    
+                async function getResponseBodyAndPassOnData() {
+                    const result = await chrome.debugger.sendCommand(
+                        source,
+                        'Network.getResponseBody',
+                        { requestId: requestId }
+                    ) as ResponseBody
+                    const responseBody = result.body
+                    isFriendActivity(responseBody)
+                }
+    
+                try {
+                    await getResponseBodyAndPassOnData()
+                } catch (error) {
+                    console.warn('Failed to retrieve response body, will retry in a few seconds.', requestId, params, error)
+                    // This is a hacky solution, but if the original retrieval of the response body fails,
+                    // this will simply wait a few seconds before attempting another retrieval.
+                    setTimeout(() => {
+                        getResponseBodyAndPassOnData()
+                        .catch(error => console.error('Failed to retrieve response body.', requestId, params, error))
+                    }, RETRY_TIMER_FOR_FAILED_REQUESTS)
+                }
+            }
+        })
+
+        attemptToAttachDebugger()
     } else {
         attemptToAttachDebugger()
     }
@@ -176,64 +242,6 @@ async function FriendActivityTracker(enable: boolean) {
             })
         }, ALERT_TIMER_FOR_DETACHED_DEBUGGER)
     }
-
-    // Detach debugger if no longer on www.roblox.com
-    chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-        if (tabId !== attachedTabId) return;
-        tabTitle = tab.title!
-        if (!changeInfo.url) return;
-        if (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(changeInfo.url)) {
-            chrome.debugger.detach({ tabId: attachedTabId })
-            onDetach(true)
-        }
-    })
-
-    chrome.debugger.onEvent.addListener(async (source, method, params: any) => {
-        const { requestId } = params
-
-        if (method === 'Network.responseReceived' &&
-            params.response.url.match(RobloxPresenceRegex) &&
-            params.response.status === 200
-        ) {
-            // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
-            // These guard nodes prevent "No resource with given identifier",
-            // and "No data found for resource with given identifier" errors.
-            // Some are not required since the second and third conditionals above
-            // already remove them from the equation.
-            if (params.type === 'Preflight') return;
-            // "unknown" seems to be caused by local files being fetched, and any redirects to local files,
-            // which somehow causes the remote debugging protocol to be unable to retrieve their contents.
-            // Oddly enough, it seems like many other requests from the disk cache succeed, so the local
-            // files might be stored in long-term storage instead of in caches and RAM.
-            // if (params.response.securityState === 'unknown') return; // (Not required)
-            if (params.response.headers["content-length"] === 0) return;
-            // if (params.response.status === 204) return; // Ignore HTTP 204 No Content successes (Not required)
-            // The document will have no data when the response is first received, while fonts never have data
-            // if (params.type === 'Document' || params.type === 'Font') return; // (Not required)
-
-            async function getResponseBodyAndPassOnData() {
-                const result = await chrome.debugger.sendCommand(
-                    source,
-                    'Network.getResponseBody',
-                    { requestId: requestId }
-                ) as ResponseBody
-                const responseBody = result.body
-                isFriendActivity(responseBody)
-            }
-
-            try {
-                await getResponseBodyAndPassOnData()
-            } catch (error) {
-                console.warn('Failed to retrieve response body, will retry in a few seconds.', requestId, params, error)
-                // This is a hacky solution, but if the original retrieval of the response body fails,
-                // this will simply wait a few seconds before attempting another retrieval.
-                setTimeout(() => {
-                    getResponseBodyAndPassOnData()
-                    .catch(error => console.error('Failed to retrieve response body.', requestId, params, error))
-                }, RETRY_TIMER_FOR_FAILED_REQUESTS)
-            }
-        }
-    })
 
     function isFriendActivity(responseBody: string) {
         try {
