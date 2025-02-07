@@ -10027,8 +10027,8 @@
                 style: {
                     position: "absolute",
                     top: ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetHeight) || 0) + ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetTop) || 0),
-                    // e is the "left" variable | DROPDOWN_EDGE_PADDING is lowered from its original value of 24
-                    left: (e = ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetLeft) || 0) + ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetWidth) || 0) / 2 - o / 2) < 0 ? 5 : e,
+                    // e is the "left" variable
+                    left: (e = ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetLeft) || 0) + ((null === (e = u.current) || void 0 === e ? void 0 : e.offsetWidth) || 0) / 2 - o / 2) < 0 ? 0 : e + o > document.getElementsByClassName("friends-carousel-container")[0].scrollWidth ? document.getElementsByClassName("friends-carousel-container")[0].scrollWidth - (o + 24) : e,
                     zIndex: 1002,
                     width: o
                 },
