@@ -40,8 +40,8 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "/friendCarousel/custom/lengthAndPopover.js",
-                "/friendCarousel/custom/scroll.css",
+                "/friendCarousel/custom/length.js",
+                "/friendCarousel/custom/scrollAndPopover.css",
                 "/utils/RBLX_Tilt_Primary_Black.png"
             ],
             "matches": [ "https://*.roblox.com/*" ]

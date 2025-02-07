@@ -180,11 +180,11 @@
 }
 
 .light-theme .game-card-friend-info .info-avatar .avatar {
-    border: 2px solid #f2f4f5
+    border: 2px solid #fff
 }
 
 .dark-theme .game-card-friend-info .info-avatar .avatar {
-    border: 2px solid #232527
+    border: 2px solid #121215
 }
 
 .game-card-friend-info .info-avatar .avatar-card:first-child {
@@ -263,11 +263,11 @@
 }
 
 .light-theme .game-card-loading .game-card-name.game-name-title.shimmer {
-    background-color: rgba(0,0,0,.1)
+    background-color: rgba(27,37,75,.12)
 }
 
 .dark-theme .game-card-loading .game-card-name.game-name-title.shimmer {
-    background-color: rgba(57,59,61,.5)
+    background-color: rgba(208,217,251,.12)
 }
 
 .game-card-loading .game-card-name.game-name-title.shimmer.game-name-title-half {
@@ -671,6 +671,7 @@
     scrollbar-color: #8787873b #f1f1f100;
 }
 
+
 .content .friends-carousel-list-container {
     width: 100%;
     display: flex;
@@ -714,8 +715,7 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
     margin-bottom: 16px;
     margin-left: 3px;
     margin-right: 3px;
-    cursor: pointer;
-    pointer-events: auto;
+    cursor: pointer
 }
 
 .content .friends-carousel-tile:hover {
@@ -787,19 +787,19 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .friend-tile-dropdown {
-    background-color: #fff;
+    background-color: #f7f7f8;
     border-radius: 5px
 }
 
 .dark-theme .friend-tile-dropdown {
-    background-color: #393b3d;
+    background-color: #272930;
     border-radius: 5px
 }
 
 .light-theme .friend-tile-dropdown-button {
     border: 0;
     border-top: .5px solid rgba(0,0,0,.1);
-    color: rgba(0,0,0,.6)
+    color: #6a6f81
 }
 
 .dark-theme .friend-tile-dropdown-button,.light-theme .friend-tile-dropdown-button {
@@ -815,7 +815,7 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 .dark-theme .friend-tile-dropdown-button {
     border: 0;
     border-top: .5px solid hsla(0,0%,100%,.1);
-    color: hsla(0,0%,100%,.7)
+    color: #bcbec8
 }
 
 .light-theme .friend-tile-dropdown-button:hover {
@@ -866,11 +866,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .interest-catcher-container .header-container {
-    background-color: #f2f4f5
+    background-color: #fff
 }
 
 .dark-theme .interest-catcher-container .header-container {
-    background-color: #232527
+    background-color: #121215
 }
 
 @media(max-width: 991px) {
@@ -885,11 +885,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .interest-catcher-container .header-container .header-text-container .header-subtext {
-    color: #606162
+    color: #494d5a
 }
 
 .dark-theme .interest-catcher-container .header-container .header-text-container .header-subtext {
-    color: #bdbebe
+    color: #d5d7dd
 }
 
 .interest-catcher-container .header-container .header-buttons-container {
@@ -907,11 +907,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .interest-catcher-container .header-container .header-buttons-container .skip-button {
-    color: #393b3d
+    color: #202227
 }
 
 .dark-theme .interest-catcher-container .header-container .header-buttons-container .skip-button {
-    color: #fff
+    color: #f7f7f8
 }
 
 .interest-catcher-container .header-container .header-buttons-container .continue-button {
@@ -967,13 +967,13 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .interaction-item {
-    color: #606162
+    color: #494d5a
 }
 
 .light-theme .interaction-item:focus,.light-theme .interaction-item:hover {
     background-color: rgba(0,0,0,.1);
     box-shadow: none;
-    color: #393b3d
+    color: #202227
 }
 
 .light-theme .interaction-item.active,.light-theme .interaction-item:active {
@@ -982,13 +982,13 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .dark-theme .interaction-item {
-    color: #bdbebe
+    color: #d5d7dd
 }
 
 .dark-theme .interaction-item:focus,.dark-theme .interaction-item:hover {
     background-color: hsla(0,0%,100%,.1);
     box-shadow: none;
-    color: #fff
+    color: #f7f7f8
 }
 
 .dark-theme .interaction-item.active,.dark-theme .interaction-item:active {
@@ -1122,11 +1122,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .horizontal-scroller .scroller .spacer {
-    background-color: #f2f4f5
+    background-color: #fff
 }
 
 .dark-theme .horizontal-scroller .scroller .spacer {
-    background-color: #232527
+    background-color: #121215
 }
 
 .horizontal-scroller .scroller.next .spacer {
@@ -1257,8 +1257,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .hover-game-tile.focused.old-hover.light-theme {
-    background-color: #fff;
-    color: #393b3d
+    background-color: #f7f7f8;
+    color: #202227
 }
 
 .hover-game-tile.focused.old-hover.light-theme.remove-panel {
@@ -1266,8 +1266,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.focused.old-hover {
-    background-color: #fff;
-    color: #393b3d
+    background-color: #f7f7f8;
+    color: #202227
 }
 
 .light-theme .hover-game-tile.focused.old-hover.remove-panel {
@@ -1275,8 +1275,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .hover-game-tile.focused.old-hover.dark-theme {
-    background-color: #393b3d;
-    color: #fff
+    background-color: #272930;
+    color: #f7f7f8
 }
 
 .hover-game-tile.focused.old-hover.dark-theme.remove-panel {
@@ -1284,8 +1284,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .dark-theme .hover-game-tile.focused.old-hover {
-    background-color: #393b3d;
-    color: #fff
+    background-color: #272930;
+    color: #f7f7f8
 }
 
 .dark-theme .hover-game-tile.focused.old-hover.remove-panel {
@@ -1297,8 +1297,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .hover-game-tile.focused.old-hover .featured-game-container.light-theme {
-    background-color: #fff;
-    color: #393b3d
+    background-color: #f7f7f8;
+    color: #202227
 }
 
 .hover-game-tile.focused.old-hover .featured-game-container.light-theme.remove-panel {
@@ -1306,8 +1306,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.focused.old-hover .featured-game-container {
-    background-color: #fff;
-    color: #393b3d
+    background-color: #f7f7f8;
+    color: #202227
 }
 
 .light-theme .hover-game-tile.focused.old-hover .featured-game-container.remove-panel {
@@ -1315,8 +1315,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .hover-game-tile.focused.old-hover .featured-game-container.dark-theme {
-    background-color: #393b3d;
-    color: #fff
+    background-color: #272930;
+    color: #f7f7f8
 }
 
 .hover-game-tile.focused.old-hover .featured-game-container.dark-theme.remove-panel {
@@ -1324,8 +1324,8 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .dark-theme .hover-game-tile.focused.old-hover .featured-game-container {
-    background-color: #393b3d;
-    color: #fff
+    background-color: #272930;
+    color: #f7f7f8
 }
 
 .dark-theme .hover-game-tile.focused.old-hover .featured-game-container.remove-panel {
@@ -1391,11 +1391,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile .featured-game-container .featured-game-icon-container .game-card-image-pill,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .featured-game-icon-container .game-card-image-pill,.light-theme .hover-game-tile.grid-tile .featured-game-container .featured-game-icon-container .game-card-image-pill,.light-theme .hover-game-tile.interest-tile .featured-game-container .featured-game-icon-container .game-card-image-pill {
-    background-color: #dee1e3
+    background-color: #f7f7f8
 }
 
 .dark-theme .hover-game-tile.event-tile .featured-game-container .featured-game-icon-container .game-card-image-pill,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .featured-game-icon-container .game-card-image-pill,.dark-theme .hover-game-tile.grid-tile .featured-game-container .featured-game-icon-container .game-card-image-pill,.dark-theme .hover-game-tile.interest-tile .featured-game-container .featured-game-icon-container .game-card-image-pill {
-    background-color: #191b1d
+    background-color: #191a1f
 }
 
 .hover-game-tile.event-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info,.hover-game-tile.experience-events-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info,.hover-game-tile.grid-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info,.hover-game-tile.interest-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info {
@@ -1409,11 +1409,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label,.light-theme .hover-game-tile.grid-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label,.light-theme .hover-game-tile.interest-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label {
-    color: #393b3d
+    color: #202227
 }
 
 .dark-theme .hover-game-tile.event-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label,.dark-theme .hover-game-tile.grid-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label,.dark-theme .hover-game-tile.interest-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label {
-    color: #fff
+    color: #f7f7f8
 }
 
 .hover-game-tile.event-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label.icon-playing-counts-gray,.hover-game-tile.experience-events-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label.icon-playing-counts-gray,.hover-game-tile.grid-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label.icon-playing-counts-gray,.hover-game-tile.interest-tile .featured-game-container .featured-game-icon-container .game-card-image-pill .game-card-info .info-label.icon-playing-counts-gray {
@@ -1564,11 +1564,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container {
-    color: rgba(0,0,0,.6)
+    color: #6a6f81
 }
 
 .dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container {
-    color: hsla(0,0%,100%,.7)
+    color: #bcbec8
 }
 
 .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container .games-info-tooltip,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container .games-info-tooltip,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container .games-info-tooltip,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container .games-info-tooltip {
@@ -1605,18 +1605,18 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs {
-    background-color: #f2f4f5
+    background-color: #fff
 }
 
 .dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs {
-    background-color: #232527
+    background-color: #121215
 }
 
 .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count {
     width: 20px;
     height: 20px;
     object-fit: cover;
-    background-color: #606162;
+    background-color: #353741;
     transition: border .2s cubic-bezier(0,0,0,1)
 }
 
@@ -1627,11 +1627,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count {
-    border: 1px solid #f2f4f5
+    border: 1px solid #fff
 }
 
 .dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count {
-    border: 1px solid #232527
+    border: 1px solid #121215
 }
 
 .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count {
@@ -1652,7 +1652,7 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-count-container .avatar-count,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card.avatar-card-online .avatar-headshot-xs .avatar-count {
-    box-shadow: 0 0 0 1px #00b06f
+    box-shadow: 0 0 0 1px #39c582
 }
 
 .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card:first-child,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card:first-child,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card:first-child,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card:first-child {
@@ -1777,11 +1777,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.light-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.light-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.light-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.light-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs {
-    background-color: #fff
+    background-color: #f7f7f8
 }
 
 .dark-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.dark-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.dark-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs,.dark-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container,.dark-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs {
-    background-color: #393b3d
+    background-color: #272930
 }
 
 .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count {
@@ -1795,11 +1795,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.light-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.light-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.light-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.light-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count {
-    border: 1px solid #fff
+    border: 1px solid #f7f7f8
 }
 
 .dark-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count,.dark-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-card-image,.dark-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-count-container .avatar-count,.dark-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-card-image,.dark-theme .hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-avatar .avatar-card .avatar-headshot-xs .avatar-count {
-    border: 1px solid #393b3d
+    border: 1px solid #272930
 }
 
 .hover-game-tile.event-tile.focused.old-hover .featured-game-container .game-card-image-pill.hover-only,.hover-game-tile.event-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .hover-metadata,.hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .game-card-image-pill.hover-only,.hover-game-tile.experience-events-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .hover-metadata,.hover-game-tile.grid-tile.focused.old-hover .featured-game-container .game-card-image-pill.hover-only,.hover-game-tile.grid-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .hover-metadata,.hover-game-tile.interest-tile.focused.old-hover .featured-game-container .game-card-image-pill.hover-only,.hover-game-tile.interest-tile.focused.old-hover .featured-game-container .info-metadata-container .wide-game-tile-metadata .hover-metadata {
@@ -1839,11 +1839,13 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile .wide-event-play-button.event-unfollow-button,.light-theme .hover-game-tile.experience-events-tile .wide-event-play-button.event-unfollow-button,.light-theme .hover-game-tile.grid-tile .wide-event-play-button.event-unfollow-button,.light-theme .hover-game-tile.interest-tile .wide-event-play-button.event-unfollow-button {
-    border-color: #393b3d
+    border-color: #202227;
+    color: #202227
 }
 
 .dark-theme .hover-game-tile.event-tile .wide-event-play-button.event-unfollow-button,.dark-theme .hover-game-tile.experience-events-tile .wide-event-play-button.event-unfollow-button,.dark-theme .hover-game-tile.grid-tile .wide-event-play-button.event-unfollow-button,.dark-theme .hover-game-tile.interest-tile .wide-event-play-button.event-unfollow-button {
-    border-color: #fff
+    border-color: #f7f7f8;
+    color: #f7f7f8
 }
 
 .hover-game-tile.event-tile .wide-event-play-button.event-follow-button,.hover-game-tile.experience-events-tile .wide-event-play-button.event-follow-button,.hover-game-tile.grid-tile .wide-event-play-button.event-follow-button,.hover-game-tile.interest-tile .wide-event-play-button.event-follow-button {
@@ -1851,13 +1853,13 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile .wide-event-play-button.event-follow-button,.light-theme .hover-game-tile.experience-events-tile .wide-event-play-button.event-follow-button,.light-theme .hover-game-tile.grid-tile .wide-event-play-button.event-follow-button,.light-theme .hover-game-tile.interest-tile .wide-event-play-button.event-follow-button {
-    color: #f2f4f5;
-    background-color: #393b3d
+    color: #fff;
+    background-color: #202227
 }
 
 .dark-theme .hover-game-tile.event-tile .wide-event-play-button.event-follow-button,.dark-theme .hover-game-tile.experience-events-tile .wide-event-play-button.event-follow-button,.dark-theme .hover-game-tile.grid-tile .wide-event-play-button.event-follow-button,.dark-theme .hover-game-tile.interest-tile .wide-event-play-button.event-follow-button {
-    color: #232527;
-    background-color: #fff
+    color: #121215;
+    background-color: #f7f7f8
 }
 
 .hover-game-tile.event-tile.image-overlay.focused .featured-game-icon-container:before,.hover-game-tile.experience-events-tile.image-overlay.focused .featured-game-icon-container:before,.hover-game-tile.grid-tile.image-overlay.focused .featured-game-icon-container:before,.hover-game-tile.interest-tile.image-overlay.focused .featured-game-icon-container:before {
@@ -1952,19 +1954,19 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.event-tile.image-overlay .play-button-container .play-button.notification-button,.light-theme .hover-game-tile.experience-events-tile.image-overlay .play-button-container .play-button.notification-button,.light-theme .hover-game-tile.grid-tile.image-overlay .play-button-container .play-button.notification-button,.light-theme .hover-game-tile.interest-tile.image-overlay .play-button-container .play-button.notification-button {
-    background-color: #bdbebe
+    background-color: #bcbec8
 }
 
 .dark-theme .hover-game-tile.event-tile.image-overlay .play-button-container .play-button.notification-button,.dark-theme .hover-game-tile.experience-events-tile.image-overlay .play-button-container .play-button.notification-button,.dark-theme .hover-game-tile.grid-tile.image-overlay .play-button-container .play-button.notification-button,.dark-theme .hover-game-tile.interest-tile.image-overlay .play-button-container .play-button.notification-button {
-    background-color: #656668
+    background-color: #494d5a
 }
 
 .light-theme .hover-game-tile.event-tile.image-overlay .play-button-container .play-button.notification-button.notification-on,.light-theme .hover-game-tile.experience-events-tile.image-overlay .play-button-container .play-button.notification-button.notification-on,.light-theme .hover-game-tile.grid-tile.image-overlay .play-button-container .play-button.notification-button.notification-on,.light-theme .hover-game-tile.interest-tile.image-overlay .play-button-container .play-button.notification-button.notification-on {
-    background-color: #393b3d
+    background-color: #202227
 }
 
 .dark-theme .hover-game-tile.event-tile.image-overlay .play-button-container .play-button.notification-button.notification-on,.dark-theme .hover-game-tile.experience-events-tile.image-overlay .play-button-container .play-button.notification-button.notification-on,.dark-theme .hover-game-tile.grid-tile.image-overlay .play-button-container .play-button.notification-button.notification-on,.dark-theme .hover-game-tile.interest-tile.image-overlay .play-button-container .play-button.notification-button.notification-on {
-    background-color: #fff
+    background-color: #f7f7f8
 }
 
 .hover-game-tile.event-tile.image-overlay .play-button-container .play-button.notification-button:hover,.hover-game-tile.experience-events-tile.image-overlay .play-button-container .play-button.notification-button:hover,.hover-game-tile.grid-tile.image-overlay .play-button-container .play-button.notification-button:hover,.hover-game-tile.interest-tile.image-overlay .play-button-container .play-button.notification-button:hover {
@@ -2002,11 +2004,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .game-sort-with-mural .game-carousel.wide-game-tile-carousel .hover-game-tile.event-tile .featured-game-container .game-card-link .info-container {
-    background: #fff
+    background: #f7f7f8
 }
 
 .dark-theme .game-sort-with-mural .game-carousel.wide-game-tile-carousel .hover-game-tile.event-tile .featured-game-container .game-card-link .info-container {
-    background: #393b3d
+    background: #272930
 }
 
 .game-sort-with-mural .game-carousel.wide-game-tile-carousel .hover-game-tile.event-tile .featured-game-container .game-card-link .info-container .info-metadata-container {
@@ -2043,11 +2045,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .hover-game-tile.contained-tile .featured-game-container .game-card-link .info-container {
-    background: #fff
+    background: #f7f7f8
 }
 
 .dark-theme .hover-game-tile.contained-tile .featured-game-container .game-card-link .info-container {
-    background: #393b3d
+    background: #272930
 }
 
 .hover-game-tile.contained-tile .featured-game-container .game-card-link .info-container .info-metadata-container {
@@ -2091,22 +2093,22 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 
 .light-theme .hover-game-tile.interest-tile .featured-game-container .tile-interest-button {
     background-color: rgba(0,0,0,.1);
-    color: #393b3d;
+    color: #202227;
     border-color: transparent
 }
 
 .light-theme .hover-game-tile.interest-tile .featured-game-container .tile-interest-button:hover {
-    background-color: rgba(57,59,61,.2)
+    background-color: rgba(27,37,75,.12)
 }
 
 .dark-theme .hover-game-tile.interest-tile .featured-game-container .tile-interest-button {
     background-color: hsla(0,0%,100%,.1);
-    color: #fff;
+    color: #f7f7f8;
     border-color: transparent
 }
 
 .dark-theme .hover-game-tile.interest-tile .featured-game-container .tile-interest-button:hover {
-    background-color: hsla(0,0%,100%,.2)
+    background-color: rgba(208,217,251,.12)
 }
 
 .game-sort-header-container {
@@ -2159,11 +2161,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .game-sort-carousel-wrapper .game-sort-mural-wrapper .game-sort-mural-gradient {
-    background: linear-gradient(transparent,#f2f4f5)
+    background: linear-gradient(transparent,#fff)
 }
 
 .dark-theme .game-sort-carousel-wrapper .game-sort-mural-wrapper .game-sort-mural-gradient {
-    background: linear-gradient(transparent,#232527)
+    background: linear-gradient(transparent,#121215)
 }
 
 .home-page-games-list {
@@ -2457,13 +2459,13 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .filters-container .filter-items-container .filter-select.btn-primary-md {
-    background-color: #393b3d;
+    background-color: #272930;
     color: #fff
 }
 
 .light-theme .filters-container .filter-items-container .filter-select.btn-secondary-md {
-    background-color: #fff;
-    color: #606162
+    background-color: #f7f7f8;
+    color: #494d5a
 }
 
 .light-theme .filters-container .filter-items-container .filter-select.btn-secondary-md:hover {
@@ -2472,12 +2474,12 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 
 .dark-theme .filters-container .filter-items-container .filter-select.btn-primary-md {
     background-color: #fff;
-    color: #393b3d
+    color: #272930
 }
 
 .dark-theme .filters-container .filter-items-container .filter-select.btn-secondary-md {
-    background-color: #393b3d;
-    color: #bdbebe
+    background-color: #272930;
+    color: #d5d7dd
 }
 
 .dark-theme .filters-container .filter-items-container .filter-select.btn-secondary-md:hover {
@@ -2522,13 +2524,13 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .filters-container .filter-items-container .filters-modal-container {
-    background-color: #fff;
-    border: 1px solid #bdbebe
+    background-color: #f7f7f8;
+    border: 1px solid #bcbec8
 }
 
 .dark-theme .filters-container .filter-items-container .filters-modal-container {
-    background-color: #393b3d;
-    border: 1px solid #656668
+    background-color: #272930;
+    border: 1px solid #494d5a
 }
 
 .filters-container .filter-items-container .filters-modal-container .header-container {
@@ -2567,13 +2569,13 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .filters-container .filter-items-container .filters-modal-container .filter-options-container {
-    background-color: #fff;
-    color: #606162
+    background-color: #f7f7f8;
+    color: #494d5a
 }
 
 .dark-theme .filters-container .filter-items-container .filters-modal-container .filter-options-container {
-    background-color: #393b3d;
-    color: #bdbebe
+    background-color: #272930;
+    color: #d5d7dd
 }
 
 .filters-container .filter-items-container .filters-modal-container .filter-options-container .filter-option {
@@ -2600,11 +2602,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .filters-container .filter-items-container .filters-modal-container .filter-options-container .filter-option.selected-option {
-    color: #393b3d
+    color: #202227
 }
 
 .dark-theme .filters-container .filter-items-container .filters-modal-container .filter-options-container .filter-option.selected-option {
-    color: #fff
+    color: #f7f7f8
 }
 
 .filters-container .filter-items-container .filters-modal-container .filter-options-container .filter-option .filter-option-name {
@@ -2619,11 +2621,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .filters-container .filter-items-container .filters-modal-container .filter-options-container .filter-option-divider {
-    border-top: 1px solid #bdbebe
+    border-top: 1px solid #bcbec8
 }
 
 .dark-theme .filters-container .filter-items-container .filters-modal-container .filter-options-container .filter-option-divider {
-    border-top: 1px solid #656668
+    border-top: 1px solid #494d5a
 }
 
 .filters-container .filter-items-container .filters-modal-container .action-buttons-container {
@@ -2637,18 +2639,18 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 
 .dark-theme .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button,.light-theme .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button {
     border-color: transparent;
-    background-color: #00b06f;
+    background-color: #335fff;
     color: #fff
 }
 
 .light-theme .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button:disabled {
-    background-color: #393b3d;
+    background-color: #272930;
     color: #fff
 }
 
 .dark-theme .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button:disabled {
     background-color: #fff;
-    color: #393b3d
+    color: #272930
 }
 
 .games-list-container {
@@ -2832,11 +2834,11 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .light-theme .game-home-page-container .game-home-page-loading-title {
-    background-color: rgba(0,0,0,.1)
+    background-color: rgba(27,37,75,.12)
 }
 
 .dark-theme .game-home-page-container .game-home-page-loading-title {
-    background-color: rgba(57,59,61,.5)
+    background-color: rgba(208,217,251,.12)
 }
 
 .game-home-page-container .game-home-page-loading-carousel {
@@ -2848,7 +2850,7 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 }
 
 .game-home-page-container .friend-carousel-container {
-    margin-bottom: 2%;
+    margin-bottom: 18px
 }
 
 .game-home-page-container .friend-carousel-container:after,.game-home-page-container .friend-carousel-container:before {

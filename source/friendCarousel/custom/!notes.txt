@@ -1,1 +1,0 @@
-JS lines modified are from FriendsList.tsx and FriendTilePopover.tsx
