@@ -2843,6 +2843,19 @@
     clear: both
 }
 
+.game-home-page-container .sdui-feed-item-container {
+    margin-bottom: 36px
+}
+
+.game-home-page-container .sdui-feed-item-container .thumbnail-2d-container.sdui-thumbnail-container {
+    background-color: transparent
+}
+
+.game-home-page-container .sdui-feed-item-container .sdui-play-button-container .play-button-text {
+    font-size: 14px;
+    font-weight: 600
+}
+
 @media(max-width: 991px) {
     .game-home-page-container {
         padding:0 15px

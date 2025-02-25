@@ -671,7 +671,6 @@
     scrollbar-color: #8787873b #f1f1f100;
 }
 
-
 .content .friends-carousel-list-container {
     width: 100%;
     display: flex;
@@ -687,7 +686,7 @@
     display: flex;
     overflow: hidden;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-start
 }
 
 .content .react-friends-carousel-container {
@@ -2860,6 +2859,19 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 
 .game-home-page-container .friend-carousel-container:after {
     clear: both
+}
+
+.game-home-page-container .sdui-feed-item-container {
+    margin-bottom: 36px
+}
+
+.game-home-page-container .sdui-feed-item-container .thumbnail-2d-container.sdui-thumbnail-container {
+    background-color: transparent
+}
+
+.game-home-page-container .sdui-feed-item-container .sdui-play-button-container .play-button-text {
+    font-size: 14px;
+    font-weight: 600
 }
 
 @media(max-width: 991px) {
