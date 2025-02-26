@@ -868,7 +868,7 @@
  */
             A = R.nmd(A),
             function() {
-                var Hi, zi = "Expected a function", Vi = "__lodash_hash_undefined__", Wi = "__lodash_placeholder__", qi = 128, Ji = 9007199254740991, $i = NaN, Ki = 4294967295, Yi = [["ary", qi], ["bind", 1], ["bindKey", 2], ["curry", 8], ["curryRight", 16], ["flip", 512], ["partial", 32], ["partialRight", 64], ["rearg", 256]], Zi = "[object Arguments]", Xi = "[object Array]", Qi = "[object Boolean]", ea = "[object Date]", ta = "[object Error]", na = "[object Function]", ra = "[object GeneratorFunction]", oa = "[object Map]", ia = "[object Number]", aa = "[object Object]", la = "[object Promise]", sa = "[object RegExp]", ua = "[object Set]", ca = "[object String]", da = "[object Symbol]", fa = "[object WeakMap]", pa = "[object ArrayBuffer]", ma = "[object DataView]", va = "[object Float32Array]", ha = "[object Float64Array]", ga = "[object Int8Array]", ya = "[object Int16Array]", ba = "[object Int32Array]", Ia = "[object Uint8Array]", wa = "[object Uint8ClampedArray]", Sa = "[object Uint16Array]", Ea = "[object Uint32Array]", Pa = /\b__p \+= '';/g, Ca = /\b(__p \+=) '' \+/g, _a = /(__e\(.*?\)|\b__t\)) \+\n'';/g, Ta = /&(?:amp|lt|gt|quot|#39);/g, xa = /[&<>"']/g, Na = RegExp(Ta.source), Aa = RegExp(xa.source), Oa = /<%-([\s\S]+?)%>/g, Ra = /<%([\s\S]+?)%>/g, ka = /<%=([\s\S]+?)%>/g, Da = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, La = /^\w*$/, Ma = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g, Ua = /[\\^$.*+?()[\]{}|]/g, Ba = RegExp(Ua.source), Fa = /^\s+/, n = /\s/, Ga = /\{(?:\n\/\* \[wrapped with .+\] \*\/)?\n?/, ja = /\{\n\/\* \[wrapped with (.+)\] \*/, Ha = /,? & /, za = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g, Va = /[()=,{}\[\]\/\s]/, Wa = /\\(\\)?/g, qa = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g, Ja = /\w*$/, $a = /^[-+]0x[0-9a-f]+$/i, Ka = /^0b[01]+$/i, Ya = /^\[object .+?Constructor\]$/, Za = /^0o[0-7]+$/i, Xa = /^(?:0|[1-9]\d*)$/, Qa = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g, el = /($^)/, tl = /['\n\r\u2028\u2029\\]/g, e = "\\ud800-\\udfff", t = "\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff", r = "\\u2700-\\u27bf", o = "a-z\\xdf-\\xf6\\xf8-\\xff", i = "A-Z\\xc0-\\xd6\\xd8-\\xde", a = "\\ufe0e\\ufe0f", l = "\\xac\\xb1\\xd7\\xf7\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf\\u2000-\\u206f \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000", s = "['’]", u = "[" + e + "]", c = "[" + l + "]", d = "[" + t + "]", f = "\\d+", p = "[" + r + "]", m = "[" + o + "]", v = "[^" + e + l + f + r + o + i + "]", h = "\\ud83c[\\udffb-\\udfff]", g = "[^" + e + "]", y = "(?:\\ud83c[\\udde6-\\uddff]){2}", b = "[\\ud800-\\udbff][\\udc00-\\udfff]", I = "[" + i + "]", w = "\\u200d", S = "(?:" + m + "|" + v + ")", l = "(?:" + I + "|" + v + ")", r = "(?:['’](?:d|ll|m|re|s|t|ve))?", o = "(?:['’](?:D|LL|M|RE|S|T|VE))?", i = "(?:" + d + "|" + h + ")" + "?", v = "[" + a + "]?", i = v + i + ("(?:" + w + "(?:" + [g, y, b].join("|") + ")" + v + i + ")*"), p = "(?:" + [p, y, b].join("|") + ")" + i, u = "(?:" + [g + d + "?", d, y, b, u].join("|") + ")", nl = RegExp(s, "g"), rl = RegExp(d, "g"), E = RegExp(h + "(?=" + h + ")|" + u + i, "g"), ol = RegExp([I + "?" + m + "+" + r + "(?=" + [c, I, "$"].join("|") + ")", l + "+" + o + "(?=" + [c, I + S, "$"].join("|") + ")", I + "?" + S + "+" + r, I + "+" + o, "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])", "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])", f, p].join("|"), "g"), P = RegExp("[" + w + e + t + a + "]"), il = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/, al = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"], ll = -1, sl = {};
+                var Hi, zi = "Expected a function", Vi = "__lodash_hash_undefined__", Wi = "__lodash_placeholder__", qi = 128, Ji = 9007199254740991, $i = NaN, Ki = 4294967295, Yi = [["ary", qi], ["bind", 1], ["bindKey", 2], ["curry", 8], ["curryRight", 16], ["flip", 512], ["partial", 32], ["partialRight", 64], ["rearg", 256]], Zi = "[object Arguments]", Xi = "[object Array]", Qi = "[object Boolean]", ea = "[object Date]", ta = "[object Error]", na = "[object Function]", ra = "[object GeneratorFunction]", oa = "[object Map]", ia = "[object Number]", aa = "[object Object]", la = "[object Promise]", sa = "[object RegExp]", ua = "[object Set]", ca = "[object String]", da = "[object Symbol]", fa = "[object WeakMap]", pa = "[object ArrayBuffer]", ma = "[object DataView]", va = "[object Float32Array]", ha = "[object Float64Array]", ga = "[object Int8Array]", ya = "[object Int16Array]", ba = "[object Int32Array]", Ia = "[object Uint8Array]", wa = "[object Uint8ClampedArray]", Sa = "[object Uint16Array]", Ea = "[object Uint32Array]", Pa = /\b__p \+= '';/g, Ca = /\b(__p \+=) '' \+/g, _a = /(__e\(.*?\)|\b__t\)) \+\n'';/g, Ta = /&(?:amp|lt|gt|quot|#39);/g, xa = /[&<>"']/g, Na = RegExp(Ta.source), Aa = RegExp(xa.source), Oa = /<%-([\s\S]+?)%>/g, Ra = /<%([\s\S]+?)%>/g, ka = /<%=([\s\S]+?)%>/g, Da = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, La = /^\w*$/, Ma = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g, Ua = /[\\^$.*+?()[\]{}|]/g, Fa = RegExp(Ua.source), Ba = /^\s+/, n = /\s/, Ga = /\{(?:\n\/\* \[wrapped with .+\] \*\/)?\n?/, ja = /\{\n\/\* \[wrapped with (.+)\] \*/, Ha = /,? & /, za = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g, Va = /[()=,{}\[\]\/\s]/, Wa = /\\(\\)?/g, qa = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g, Ja = /\w*$/, $a = /^[-+]0x[0-9a-f]+$/i, Ka = /^0b[01]+$/i, Ya = /^\[object .+?Constructor\]$/, Za = /^0o[0-7]+$/i, Xa = /^(?:0|[1-9]\d*)$/, Qa = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g, el = /($^)/, tl = /['\n\r\u2028\u2029\\]/g, e = "\\ud800-\\udfff", t = "\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff", r = "\\u2700-\\u27bf", o = "a-z\\xdf-\\xf6\\xf8-\\xff", i = "A-Z\\xc0-\\xd6\\xd8-\\xde", a = "\\ufe0e\\ufe0f", l = "\\xac\\xb1\\xd7\\xf7\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf\\u2000-\\u206f \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000", s = "['’]", u = "[" + e + "]", c = "[" + l + "]", d = "[" + t + "]", f = "\\d+", p = "[" + r + "]", m = "[" + o + "]", v = "[^" + e + l + f + r + o + i + "]", h = "\\ud83c[\\udffb-\\udfff]", g = "[^" + e + "]", y = "(?:\\ud83c[\\udde6-\\uddff]){2}", b = "[\\ud800-\\udbff][\\udc00-\\udfff]", I = "[" + i + "]", w = "\\u200d", S = "(?:" + m + "|" + v + ")", l = "(?:" + I + "|" + v + ")", r = "(?:['’](?:d|ll|m|re|s|t|ve))?", o = "(?:['’](?:D|LL|M|RE|S|T|VE))?", i = "(?:" + d + "|" + h + ")" + "?", v = "[" + a + "]?", i = v + i + ("(?:" + w + "(?:" + [g, y, b].join("|") + ")" + v + i + ")*"), p = "(?:" + [p, y, b].join("|") + ")" + i, u = "(?:" + [g + d + "?", d, y, b, u].join("|") + ")", nl = RegExp(s, "g"), rl = RegExp(d, "g"), E = RegExp(h + "(?=" + h + ")|" + u + i, "g"), ol = RegExp([I + "?" + m + "+" + r + "(?=" + [c, I, "$"].join("|") + ")", l + "+" + o + "(?=" + [c, I + S, "$"].join("|") + ")", I + "?" + S + "+" + r, I + "+" + o, "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])", "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])", f, p].join("|"), "g"), P = RegExp("[" + w + e + t + a + "]"), il = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/, al = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"], ll = -1, sl = {};
                 sl[va] = sl[ha] = sl[ga] = sl[ya] = sl[ba] = sl[Ia] = sl[wa] = sl[Sa] = sl[Ea] = !0,
                 sl[Zi] = sl[Xi] = sl[pa] = sl[Qi] = sl[ma] = sl[ea] = sl[ta] = sl[na] = sl[oa] = sl[ia] = sl[aa] = sl[sa] = sl[ua] = sl[ca] = sl[fa] = !1;
                 var ul = {};
@@ -984,7 +984,7 @@
                             return !0;
                     return !1
                 }
-                var x = Fl("length");
+                var x = Bl("length");
                 function kl(e, r, t) {
                     var o;
                     return t(e, function(e, t, n) {
@@ -1019,11 +1019,11 @@
                 function Ul(e) {
                     return e != e
                 }
-                function Bl(e, t) {
+                function Fl(e, t) {
                     var n = null == e ? 0 : e.length;
                     return n ? jl(e, t) / n : $i
                 }
-                function Fl(t) {
+                function Bl(t) {
                     return function(e) {
                         return null == e ? Hi : e[t]
                     }
@@ -1053,7 +1053,7 @@
                     return r
                 }
                 function zl(e) {
-                    return e && e.slice(0, is(e) + 1).replace(Fa, "")
+                    return e && e.slice(0, is(e) + 1).replace(Ba, "")
                 }
                 function Vl(t) {
                     return function(e) {
@@ -1379,8 +1379,8 @@
                       , L = t.clearTimeout !== fl.clearTimeout && t.clearTimeout
                       , M = n && n.now !== fl.Date.now && n.now
                       , U = t.setTimeout !== fl.setTimeout && t.setTimeout
-                      , B = o.ceil
-                      , F = o.floor
+                      , F = o.ceil
+                      , B = o.floor
                       , G = v.getOwnPropertySymbols
                       , j = w ? w.isBuffer : Hi
                       , H = t.isFinite
@@ -1616,7 +1616,7 @@
                         if (l)
                             return l;
                         i.set(n, a),
-                        Fo(n) ? n.forEach(function(e) {
+                        Bo(n) ? n.forEach(function(e) {
                             a.add(Me(e, r, o, e, n, i))
                         }) : Lo(n) && n.forEach(function(e, t) {
                             a.set(t, Me(e, r, o, t, n, i))
@@ -1641,14 +1641,14 @@
                         }
                         return !0
                     }
-                    function Be(e, t, n) {
+                    function Fe(e, t, n) {
                         if ("function" != typeof e)
                             throw new S(zi);
                         return lr(function() {
                             e.apply(Hi, n)
                         }, t)
                     }
-                    function Fe(e, t, n, r) {
+                    function Be(e, t, n, r) {
                         var o = -1
                           , i = _l
                           , a = !0
@@ -2075,7 +2075,7 @@
                         var t
                     }
                     function ut(e) {
-                        return "function" == typeof e ? e : null == e ? Di : "object" == typeof e ? Eo(e) ? vt(e[0], e[1]) : mt(e) : Bi(e)
+                        return "function" == typeof e ? e : null == e ? Di : "object" == typeof e ? Eo(e) ? vt(e[0], e[1]) : mt(e) : Fi(e)
                     }
                     function ct(e) {
                         if (!er(e))
@@ -2159,7 +2159,7 @@
                             : t
                         }) : [Di];
                         var o = -1;
-                        return r = xl(r, Vl(Fn())),
+                        return r = xl(r, Vl(Bn())),
                         function(e, t) {
                             var n = e.length;
                             for (e.sort(t); n--; )
@@ -2216,19 +2216,19 @@
                     function wt(e, t) {
                         for (var n = e ? t.length : 0, r = n - 1; n--; ) {
                             var o, i = t[n];
-                            n != r && i === o || (Kn(o = i) ? A.call(e, i, 1) : Ft(e, i))
+                            n != r && i === o || (Kn(o = i) ? A.call(e, i, 1) : Bt(e, i))
                         }
                         return e
                     }
                     function St(e, t) {
-                        return e + F(K() * (t - e + 1))
+                        return e + B(K() * (t - e + 1))
                     }
                     function Et(e, t) {
                         var n = "";
                         if (!e || t < 1 || Ji < t)
                             return n;
                         for (; t % 2 && (n += e),
-                        (t = F(t / 2)) && (e += e),
+                        (t = B(t / 2)) && (e += e),
                         t; )
                             ;
                         return n
@@ -2311,7 +2311,7 @@
                         if (0 === i)
                             return 0;
                         for (var a = (t = n(t)) != t, l = null === t, s = jo(t), u = t === Hi; o < i; ) {
-                            var c = F((o + i) / 2)
+                            var c = B((o + i) / 2)
                               , d = n(e[c])
                               , f = d !== Hi
                               , p = null === d
@@ -2343,7 +2343,7 @@
                         var t = e + "";
                         return "0" == t && 1 / e == -1 / 0 ? "-0" : t
                     }
-                    function Bt(e, t, n) {
+                    function Ft(e, t, n) {
                         var r = -1
                           , o = _l
                           , i = e.length
@@ -2378,7 +2378,7 @@
                         }
                         return l
                     }
-                    function Ft(e, t) {
+                    function Bt(e, t) {
                         return null == (e = or(e, t = Jt(t, e))) || delete e[vr(xr(t))]
                     }
                     function Gt(e, t, n, r) {
@@ -2398,11 +2398,11 @@
                     function zt(e, t, n) {
                         var r = e.length;
                         if (r < 2)
-                            return r ? Bt(e[0]) : [];
+                            return r ? Ft(e[0]) : [];
                         for (var o = -1, i = E(r); ++o < r; )
                             for (var a = e[o], l = -1; ++l < r; )
-                                l != o && (i[o] = Fe(i[o] || a, e[l], t, n));
-                        return Bt(We(i, 1), t, n)
+                                l != o && (i[o] = Be(i[o] || a, e[l], t, n));
+                        return Ft(We(i, 1), t, n)
                     }
                     function Vt(e, t, n) {
                         for (var r = -1, o = e.length, i = t.length, a = {}; ++r < o; ) {
@@ -2504,7 +2504,7 @@
                         return function(e, t) {
                             var n = Eo(e) ? wl : Oe
                               , r = i ? i() : {};
-                            return n(e, o, Fn(t, 2), r)
+                            return n(e, o, Bn(t, 2), r)
                         }
                     }
                     function ln(l) {
@@ -2587,7 +2587,7 @@
                     function pn(i, a, l) {
                         var s = fn(i);
                         return function e() {
-                            for (var t = arguments.length, n = E(t), r = t, o = Bn(e); r--; )
+                            for (var t = arguments.length, n = E(t), r = t, o = Fn(e); r--; )
                                 n[r] = arguments[r];
                             o = t < 3 && n[0] !== o && n[t - 1] !== o ? [] : ts(n, o);
                             return (t -= o.length) < l ? Pn(i, a, hn, e.placeholder, Hi, n, o, Hi, Hi, l - t) : Il(this && this !== fl && this instanceof e ? s : i, this, n)
@@ -2596,7 +2596,7 @@
                     function mn(i) {
                         return function(e, t, n) {
                             var r, o = v(e);
-                            Co(e) || (r = Fn(t, 3),
+                            Co(e) || (r = Bn(t, 3),
                             e = ci(e),
                             t = function(e) {
                                 return r(o[e], e, o)
@@ -2646,7 +2646,7 @@
                                 for (var n = e.length, r = 0; n--; )
                                     e[n] === t && ++r;
                                 return r
-                            }(n, i = Bn(e))),
+                            }(n, i = Fn(e))),
                             c && (n = tn(n, c, d, I)),
                             f && (n = nn(n, f, p, I)),
                             a -= t,
@@ -2701,7 +2701,7 @@
                     }
                     function bn(r) {
                         return kn(function(e) {
-                            return e = xl(e, Vl(Fn())),
+                            return e = xl(e, Vl(Bn())),
                             Pt(function(t) {
                                 var n = this;
                                 return r(e, function(e) {
@@ -2714,7 +2714,7 @@
                         var n = (t = t === Hi ? " " : Ut(t)).length;
                         if (n < 2)
                             return n ? Et(t, e) : t;
-                        n = Et(t, B(e / rs(t)));
+                        n = Et(t, F(e / rs(t)));
                         return Xl(t) ? Kt(os(n), 0, e).join("") : n.slice(0, e)
                     }
                     function wn(l, e, s, u) {
@@ -2735,7 +2735,7 @@
                             t === Hi ? (t = e,
                             e = 0) : t = qo(t),
                             function(e, t, n, r) {
-                                for (var o = -1, i = W(B((t - e) / (n || 1)), 0), a = E(i); i--; )
+                                for (var o = -1, i = W(F((t - e) / (n || 1)), 0), a = E(i); i--; )
                                     a[r ? i : ++o] = e,
                                     e += n;
                                 return a
@@ -2908,10 +2908,10 @@
                         }
                         return t
                     }
-                    function Bn(e) {
+                    function Fn(e) {
                         return (y.call(pe, "placeholder") ? pe : e).placeholder
                     }
-                    function Fn() {
+                    function Bn() {
                         var e = (e = pe.iteratee || Li) === Li ? ut : e;
                         return arguments.length ? e(arguments[0], arguments[1]) : e
                     }
@@ -2938,14 +2938,14 @@
                             return N.call(t, e)
                         }))
                     }
-                    : Fi
+                    : Bi
                       , Vn = G ? function(e) {
                         for (var t = []; e; )
                             Nl(t, zn(e)),
                             e = T(e);
                         return t
                     }
-                    : Fi
+                    : Bi
                       , Wn = Qe;
                     function qn(e, t, n) {
                         for (var r = -1, o = (t = Jt(t, e)).length, i = !1; ++r < o; ) {
@@ -3131,17 +3131,17 @@
                         t
                     }
                     var yr = Pt(function(e, t) {
-                        return _o(e) ? Fe(e, We(t, 1, _o, !0)) : []
+                        return _o(e) ? Be(e, We(t, 1, _o, !0)) : []
                     })
                       , br = Pt(function(e, t) {
                         var n = xr(t);
                         return _o(n) && (n = Hi),
-                        _o(e) ? Fe(e, We(t, 1, _o, !0), Fn(n, 2)) : []
+                        _o(e) ? Be(e, We(t, 1, _o, !0), Bn(n, 2)) : []
                     })
                       , Ir = Pt(function(e, t) {
                         var n = xr(t);
                         return _o(n) && (n = Hi),
-                        _o(e) ? Fe(e, We(t, 1, _o, !0), Hi, n) : []
+                        _o(e) ? Be(e, We(t, 1, _o, !0), Hi, n) : []
                     });
                     function wr(e, t, n) {
                         var r = null == e ? 0 : e.length;
@@ -3149,7 +3149,7 @@
                             return -1;
                         n = null == n ? 0 : Jo(n);
                         return n < 0 && (n = W(r + n, 0)),
-                        Dl(e, Fn(t, 3), n)
+                        Dl(e, Bn(t, 3), n)
                     }
                     function Sr(e, t, n) {
                         var r = null == e ? 0 : e.length;
@@ -3158,7 +3158,7 @@
                         var o = r - 1;
                         return n !== Hi && (o = Jo(n),
                         o = n < 0 ? W(r + o, 0) : q(o, r - 1)),
-                        Dl(e, Fn(t, 3), o, !0)
+                        Dl(e, Bn(t, 3), o, !0)
                     }
                     function Er(e) {
                         return (null == e ? 0 : e.length) ? We(e, 1) : []
@@ -3174,7 +3174,7 @@
                         var t = xr(e)
                           , n = xl(e, Wt);
                         return t === xr(n) ? t = Hi : n.pop(),
-                        n.length && n[0] === e[0] ? rt(n, Fn(t, 2)) : []
+                        n.length && n[0] === e[0] ? rt(n, Bn(t, 2)) : []
                     })
                       , Tr = Pt(function(e) {
                         var t = xr(e)
@@ -3202,16 +3202,16 @@
                         return null == e ? e : Y.call(e)
                     }
                     var kr = Pt(function(e) {
-                        return Bt(We(e, 1, _o, !0))
+                        return Ft(We(e, 1, _o, !0))
                     })
                       , Dr = Pt(function(e) {
                         var t = xr(e);
                         return _o(t) && (t = Hi),
-                        Bt(We(e, 1, _o, !0), Fn(t, 2))
+                        Ft(We(e, 1, _o, !0), Bn(t, 2))
                     })
                       , Lr = Pt(function(e) {
                         var t = "function" == typeof (t = xr(e)) ? t : Hi;
-                        return Bt(We(e, 1, _o, !0), Hi, t)
+                        return Ft(We(e, 1, _o, !0), Hi, t)
                     });
                     function Mr(t) {
                         if (!t || !t.length)
@@ -3222,7 +3222,7 @@
                             1)
                         }),
                         Hl(n, function(e) {
-                            return xl(t, Fl(e))
+                            return xl(t, Bl(e))
                         })
                     }
                     function Ur(e, t) {
@@ -3233,16 +3233,16 @@
                             return Il(t, Hi, e)
                         })
                     }
-                    var Br = Pt(function(e, t) {
-                        return _o(e) ? Fe(e, t) : []
+                    var Fr = Pt(function(e, t) {
+                        return _o(e) ? Be(e, t) : []
                     })
-                      , Fr = Pt(function(e) {
+                      , Br = Pt(function(e) {
                         return zt(Cl(e, _o))
                     })
                       , Gr = Pt(function(e) {
                         var t = xr(e);
                         return _o(t) && (t = Hi),
-                        zt(Cl(e, _o), Fn(t, 2))
+                        zt(Cl(e, _o), Bn(t, 2))
                     })
                       , jr = Pt(function(e) {
                         var t = "function" == typeof (t = xr(e)) ? t : Hi;
@@ -3286,10 +3286,10 @@
                     var $r = mn(wr)
                       , Kr = mn(Sr);
                     function Yr(e, t) {
-                        return (Eo(e) ? Sl : Ge)(e, Fn(t, 3))
+                        return (Eo(e) ? Sl : Ge)(e, Bn(t, 3))
                     }
                     function Zr(e, t) {
-                        return (Eo(e) ? El : je)(e, Fn(t, 3))
+                        return (Eo(e) ? El : je)(e, Bn(t, 3))
                     }
                     var Xr = an(function(e, t, n) {
                         y.call(e, n) ? e[n].push(t) : ke(e, n, [t])
@@ -3307,7 +3307,7 @@
                         ke(e, n, t)
                     });
                     function to(e, t) {
-                        return (Eo(e) ? xl : pt)(e, Fn(t, 3))
+                        return (Eo(e) ? xl : pt)(e, Bn(t, 3))
                     }
                     var no = an(function(e, t, n) {
                         e[n ? 0 : 1].push(t)
@@ -3343,13 +3343,13 @@
                     }
                     var lo = Pt(function(e, t, n) {
                         var r, o = 1;
-                        return n.length && (r = ts(n, Bn(lo)),
+                        return n.length && (r = ts(n, Fn(lo)),
                         o |= 32),
                         xn(e, o, t, n, r)
                     })
                       , so = Pt(function(e, t, n) {
                         var r, o = 3;
-                        return n.length && (r = ts(n, Bn(so)),
+                        return n.length && (r = ts(n, Fn(so)),
                         o |= 32),
                         xn(t, o, e, n, r)
                     });
@@ -3417,10 +3417,10 @@
                         g
                     }
                     var co = Pt(function(e, t) {
-                        return Be(e, 1, t)
+                        return Fe(e, 1, t)
                     })
                       , fo = Pt(function(e, t, n) {
-                        return Be(e, Ko(t) || 0, n)
+                        return Fe(e, Ko(t) || 0, n)
                     });
                     function po(r, o) {
                         if ("function" != typeof r || null != o && "function" != typeof o)
@@ -3458,7 +3458,7 @@
                     }
                     po.Cache = we;
                     var vo = $t(function(r, o) {
-                        var i = (o = 1 == o.length && Eo(o[0]) ? xl(o[0], Vl(Fn())) : xl(We(o, 1), Vl(Fn()))).length;
+                        var i = (o = 1 == o.length && Eo(o[0]) ? xl(o[0], Vl(Bn())) : xl(We(o, 1), Vl(Bn()))).length;
                         return Pt(function(e) {
                             for (var t = -1, n = q(e.length, i); ++t < n; )
                                 e[t] = o[t].call(this, e[t]);
@@ -3466,11 +3466,11 @@
                         })
                     })
                       , ho = Pt(function(e, t) {
-                        var n = ts(t, Bn(ho));
+                        var n = ts(t, Fn(ho));
                         return xn(e, 32, Hi, t, n)
                     })
                       , go = Pt(function(e, t) {
-                        var n = ts(t, Bn(go));
+                        var n = ts(t, Fn(go));
                         return xn(e, 64, Hi, t, n)
                     })
                       , yo = kn(function(e, t) {
@@ -3545,11 +3545,11 @@
                         e = y.call(e, "constructor") && e.constructor;
                         return "function" == typeof e && e instanceof e && l.call(e) == g
                     }
-                    var Bo = gl ? Vl(gl) : function(e) {
+                    var Fo = gl ? Vl(gl) : function(e) {
                         return Do(e) && Qe(e) == sa
                     }
                     ;
-                    var Fo = yl ? Vl(yl) : function(e) {
+                    var Bo = yl ? Vl(yl) : function(e) {
                         return Do(e) && Wn(e) == ua
                     }
                     ;
@@ -3658,7 +3658,7 @@
                       , si = gn(function(e, t, n) {
                         null != t && "function" != typeof t.toString && (t = h.call(t)),
                         y.call(e, t) ? e[t].push(n) : e[t] = [n]
-                    }, Fn)
+                    }, Bn)
                       , ui = Pt(ot);
                     function ci(e) {
                         return (Co(e) ? Pe : ct)(e)
@@ -3685,7 +3685,7 @@
                         on(t, Ln(t), n),
                         r && (n = Me(n, 7, On));
                         for (var o = e.length; o--; )
-                            Ft(n, e[o]);
+                            Bt(n, e[o]);
                         return n
                     });
                     var vi = kn(function(e, t) {
@@ -3700,7 +3700,7 @@
                         var t = xl(Ln(e), function(e) {
                             return [e]
                         });
-                        return n = Fn(n),
+                        return n = Bn(n),
                         bt(e, t, function(e, t) {
                             return n(e, t[0])
                         })
@@ -3813,8 +3813,8 @@
                     P = bn(xl),
                     ce = bn(Pl),
                     L = bn(Rl);
-                    function Bi(e) {
-                        return Zn(e) ? Fl(vr(e)) : (t = e,
+                    function Fi(e) {
+                        return Zn(e) ? Bl(vr(e)) : (t = e,
                         function(e) {
                             return Ze(e, t)
                         }
@@ -3823,7 +3823,7 @@
                     }
                     Z = Sn(),
                     Q = Sn(!0);
-                    function Fi() {
+                    function Bi() {
                         return []
                     }
                     function Gi() {
@@ -3875,7 +3875,7 @@
                         var r = null == e ? 0 : e.length;
                         if (!r || t < 1)
                             return [];
-                        for (var o = 0, i = 0, a = E(B(r / t)); o < r; )
+                        for (var o = 0, i = 0, a = E(F(r / t)); o < r; )
                             a[i++] = Ot(e, o, o += t);
                         return a
                     }
@@ -3899,7 +3899,7 @@
                     ,
                     pe.cond = function(r) {
                         var o = null == r ? 0 : r.length
-                          , t = Fn();
+                          , t = Bn();
                         return r = o ? xl(r, function(e) {
                             if ("function" != typeof e[1])
                                 throw new S(zi);
@@ -3962,11 +3962,11 @@
                     }
                     ,
                     pe.dropRightWhile = function(e, t) {
-                        return e && e.length ? jt(e, Fn(t, 3), !0, !0) : []
+                        return e && e.length ? jt(e, Bn(t, 3), !0, !0) : []
                     }
                     ,
                     pe.dropWhile = function(e, t) {
-                        return e && e.length ? jt(e, Fn(t, 3), !0) : []
+                        return e && e.length ? jt(e, Bn(t, 3), !0) : []
                     }
                     ,
                     pe.fill = function(e, t, n, r) {
@@ -3984,7 +3984,7 @@
                     }
                     ,
                     pe.filter = function(e, t) {
-                        return (Eo(e) ? Cl : Ve)(e, Fn(t, 3))
+                        return (Eo(e) ? Cl : Ve)(e, Bn(t, 3))
                     }
                     ,
                     pe.flatMap = function(e, t) {
@@ -4049,7 +4049,7 @@
                     pe.map = to,
                     pe.mapKeys = function(e, r) {
                         var o = {};
-                        return r = Fn(r, 3),
+                        return r = Bn(r, 3),
                         $e(e, function(e, t, n) {
                             ke(o, r(e, t, n), e)
                         }),
@@ -4058,7 +4058,7 @@
                     ,
                     pe.mapValues = function(e, r) {
                         var o = {};
-                        return r = Fn(r, 3),
+                        return r = Bn(r, 3),
                         $e(e, function(e, t, n) {
                             ke(o, t, r(e, t, n))
                         }),
@@ -4089,7 +4089,7 @@
                     ,
                     pe.omit = mi,
                     pe.omitBy = function(e, t) {
-                        return hi(e, mo(Fn(t)))
+                        return hi(e, mo(Bn(t)))
                     }
                     ,
                     pe.once = function(e) {
@@ -4111,7 +4111,7 @@
                     pe.partition = no,
                     pe.pick = vi,
                     pe.pickBy = hi,
-                    pe.property = Bi,
+                    pe.property = Fi,
                     pe.propertyOf = function(t) {
                         return function(e) {
                             return null == t ? Hi : Ze(t, e)
@@ -4121,7 +4121,7 @@
                     pe.pull = Nr,
                     pe.pullAll = Ar,
                     pe.pullAllBy = function(e, t, n) {
-                        return e && e.length && t && t.length ? It(e, t, Fn(n, 2)) : e
+                        return e && e.length && t && t.length ? It(e, t, Bn(n, 2)) : e
                     }
                     ,
                     pe.pullAllWith = function(e, t, n) {
@@ -4133,7 +4133,7 @@
                     pe.rangeRight = Q,
                     pe.rearg = yo,
                     pe.reject = function(e, t) {
-                        return (Eo(e) ? Cl : Ve)(e, mo(Fn(t, 3)))
+                        return (Eo(e) ? Cl : Ve)(e, mo(Bn(t, 3)))
                     }
                     ,
                     pe.remove = function(e, t) {
@@ -4143,7 +4143,7 @@
                         var r = -1
                           , o = []
                           , i = e.length;
-                        for (t = Fn(t, 3); ++r < i; ) {
+                        for (t = Bn(t, 3); ++r < i; ) {
                             var a = e[r];
                             t(a, r, e) && (n.push(a),
                             o.push(r))
@@ -4191,12 +4191,12 @@
                     }
                     ,
                     pe.sortedUniqBy = function(e, t) {
-                        return e && e.length ? Lt(e, Fn(t, 2)) : []
+                        return e && e.length ? Lt(e, Bn(t, 2)) : []
                     }
                     ,
                     pe.split = function(e, t, n) {
                         return n && "number" != typeof n && Yn(e, t, n) && (t = n = Hi),
-                        (n = n === Hi ? Ki : n >>> 0) ? (e = Zo(e)) && ("string" == typeof t || null != t && !Bo(t)) && !(t = Ut(t)) && Xl(e) ? Kt(os(e), 0, n) : e.split(t, n) : []
+                        (n = n === Hi ? Ki : n >>> 0) ? (e = Zo(e)) && ("string" == typeof t || null != t && !Fo(t)) && !(t = Ut(t)) && Xl(e) ? Kt(os(e), 0, n) : e.split(t, n) : []
                     }
                     ,
                     pe.spread = function(n, r) {
@@ -4226,11 +4226,11 @@
                     }
                     ,
                     pe.takeRightWhile = function(e, t) {
-                        return e && e.length ? jt(e, Fn(t, 3), !1, !0) : []
+                        return e && e.length ? jt(e, Bn(t, 3), !1, !0) : []
                     }
                     ,
                     pe.takeWhile = function(e, t) {
-                        return e && e.length ? jt(e, Fn(t, 3)) : []
+                        return e && e.length ? jt(e, Bn(t, 3)) : []
                     }
                     ,
                     pe.tap = function(e, t) {
@@ -4263,7 +4263,7 @@
                     pe.toPlainObject = Yo,
                     pe.transform = function(e, r, o) {
                         var t, n = Eo(e), i = n || To(e) || Ho(e);
-                        return r = Fn(r, 4),
+                        return r = Bn(r, 4),
                         null == o && (t = e && e.constructor,
                         o = i ? n ? new t : [] : ko(e) && Ao(t) ? me(T(e)) : {}),
                         (i ? Sl : $e)(e, function(e, t, n) {
@@ -4280,20 +4280,20 @@
                     pe.unionBy = Dr,
                     pe.unionWith = Lr,
                     pe.uniq = function(e) {
-                        return e && e.length ? Bt(e) : []
+                        return e && e.length ? Ft(e) : []
                     }
                     ,
                     pe.uniqBy = function(e, t) {
-                        return e && e.length ? Bt(e, Fn(t, 2)) : []
+                        return e && e.length ? Ft(e, Bn(t, 2)) : []
                     }
                     ,
                     pe.uniqWith = function(e, t) {
                         return t = "function" == typeof t ? t : Hi,
-                        e && e.length ? Bt(e, Hi, t) : []
+                        e && e.length ? Ft(e, Hi, t) : []
                     }
                     ,
                     pe.unset = function(e, t) {
-                        return null == e || Ft(e, t)
+                        return null == e || Bt(e, t)
                     }
                     ,
                     pe.unzip = Mr,
@@ -4312,13 +4312,13 @@
                         return null == e ? [] : Wl(e, di(e))
                     }
                     ,
-                    pe.without = Br,
+                    pe.without = Fr,
                     pe.words = Ai,
                     pe.wrap = function(e, t) {
                         return ho(qt(t), e)
                     }
                     ,
-                    pe.xor = Fr,
+                    pe.xor = Br,
                     pe.xorBy = Gr,
                     pe.xorWith = jr,
                     pe.zip = Hr,
@@ -4389,44 +4389,44 @@
                     }
                     ,
                     pe.escapeRegExp = function(e) {
-                        return (e = Zo(e)) && Ba.test(e) ? e.replace(Ua, "\\$&") : e
+                        return (e = Zo(e)) && Fa.test(e) ? e.replace(Ua, "\\$&") : e
                     }
                     ,
                     pe.every = function(e, t, n) {
                         var r = Eo(e) ? Pl : He;
                         return n && Yn(e, t, n) && (t = Hi),
-                        r(e, Fn(t, 3))
+                        r(e, Bn(t, 3))
                     }
                     ,
                     pe.find = $r,
                     pe.findIndex = wr,
                     pe.findKey = function(e, t) {
-                        return kl(e, Fn(t, 3), $e)
+                        return kl(e, Bn(t, 3), $e)
                     }
                     ,
                     pe.findLast = Kr,
                     pe.findLastIndex = Sr,
                     pe.findLastKey = function(e, t) {
-                        return kl(e, Fn(t, 3), Ke)
+                        return kl(e, Bn(t, 3), Ke)
                     }
                     ,
                     pe.floor = Nt,
                     pe.forEach = Yr,
                     pe.forEachRight = Zr,
                     pe.forIn = function(e, t) {
-                        return null == e ? e : qe(e, Fn(t, 3), di)
+                        return null == e ? e : qe(e, Bn(t, 3), di)
                     }
                     ,
                     pe.forInRight = function(e, t) {
-                        return null == e ? e : Je(e, Fn(t, 3), di)
+                        return null == e ? e : Je(e, Bn(t, 3), di)
                     }
                     ,
                     pe.forOwn = function(e, t) {
-                        return e && $e(e, Fn(t, 3))
+                        return e && $e(e, Bn(t, 3))
                     }
                     ,
                     pe.forOwnRight = function(e, t) {
-                        return e && Ke(e, Fn(t, 3))
+                        return e && Ke(e, Bn(t, 3))
                     }
                     ,
                     pe.get = ii,
@@ -4541,12 +4541,12 @@
                     pe.isObject = ko,
                     pe.isObjectLike = Do,
                     pe.isPlainObject = Uo,
-                    pe.isRegExp = Bo,
+                    pe.isRegExp = Fo,
                     pe.isSafeInteger = function(e) {
                         return Oo(e) && -Ji <= e && e <= Ji
                     }
                     ,
-                    pe.isSet = Fo,
+                    pe.isSet = Bo,
                     pe.isString = Go,
                     pe.isSymbol = jo,
                     pe.isTypedArray = Ho,
@@ -4591,15 +4591,15 @@
                     }
                     ,
                     pe.maxBy = function(e, t) {
-                        return e && e.length ? ze(e, Fn(t, 2), et) : Hi
+                        return e && e.length ? ze(e, Bn(t, 2), et) : Hi
                     }
                     ,
                     pe.mean = function(e) {
-                        return Bl(e, Di)
+                        return Fl(e, Di)
                     }
                     ,
                     pe.meanBy = function(e, t) {
-                        return Bl(e, Fn(t, 2))
+                        return Fl(e, Bn(t, 2))
                     }
                     ,
                     pe.min = function(e) {
@@ -4607,10 +4607,10 @@
                     }
                     ,
                     pe.minBy = function(e, t) {
-                        return e && e.length ? ze(e, Fn(t, 2), ft) : Hi
+                        return e && e.length ? ze(e, Bn(t, 2), ft) : Hi
                     }
                     ,
-                    pe.stubArray = Fi,
+                    pe.stubArray = Bi,
                     pe.stubFalse = Gi,
                     pe.stubObject = function() {
                         return {}
@@ -4639,7 +4639,7 @@
                     pe.pad = function(e, t, n) {
                         e = Zo(e);
                         var r = (t = Jo(t)) ? rs(e) : 0;
-                        return !t || t <= r ? e : In(F(r = (t - r) / 2), n) + e + In(B(r), n)
+                        return !t || t <= r ? e : In(B(r = (t - r) / 2), n) + e + In(F(r), n)
                     }
                     ,
                     pe.padEnd = function(e, t, n) {
@@ -4656,7 +4656,7 @@
                     ,
                     pe.parseInt = function(e, t, n) {
                         return t = n || null == t ? 0 : t && +t,
-                        $(Zo(e).replace(Fa, ""), t || 0)
+                        $(Zo(e).replace(Ba, ""), t || 0)
                     }
                     ,
                     pe.random = function(e, t, n) {
@@ -4682,13 +4682,13 @@
                     pe.reduce = function(e, t, n) {
                         var r = Eo(e) ? Al : Gl
                           , o = arguments.length < 3;
-                        return r(e, Fn(t, 4), n, o, Ge)
+                        return r(e, Bn(t, 4), n, o, Ge)
                     }
                     ,
                     pe.reduceRight = function(e, t, n) {
                         var r = Eo(e) ? Ol : Gl
                           , o = arguments.length < 3;
-                        return r(e, Fn(t, 4), n, o, je)
+                        return r(e, Bn(t, 4), n, o, je)
                     }
                     ,
                     pe.repeat = function(e, t, n) {
@@ -4734,7 +4734,7 @@
                     pe.some = function(e, t, n) {
                         var r = Eo(e) ? Rl : Rt;
                         return n && Yn(e, t, n) && (t = Hi),
-                        r(e, Fn(t, 3))
+                        r(e, Bn(t, 3))
                     }
                     ,
                     pe.sortedIndex = function(e, t) {
@@ -4742,7 +4742,7 @@
                     }
                     ,
                     pe.sortedIndexBy = function(e, t, n) {
-                        return Dt(e, t, Fn(n, 2))
+                        return Dt(e, t, Bn(n, 2))
                     }
                     ,
                     pe.sortedIndexOf = function(e, t) {
@@ -4760,7 +4760,7 @@
                     }
                     ,
                     pe.sortedLastIndexBy = function(e, t, n) {
-                        return Dt(e, t, Fn(n, 2), !0)
+                        return Dt(e, t, Bn(n, 2), !0)
                     }
                     ,
                     pe.sortedLastIndexOf = function(e, t) {
@@ -4786,7 +4786,7 @@
                     }
                     ,
                     pe.sumBy = function(e, t) {
-                        return e && e.length ? jl(e, Fn(t, 2)) : 0
+                        return e && e.length ? jl(e, Bn(t, 2)) : 0
                     }
                     ,
                     pe.template = function(a, e, t) {
@@ -4827,7 +4827,7 @@
                             return [];
                         var n = Ki
                           , r = q(e, Ki);
-                        for (t = Fn(t),
+                        for (t = Bn(t),
                         e -= Ki,
                         r = Hl(r, t); ++n < e; )
                             t(n);
@@ -4862,7 +4862,7 @@
                     }
                     ,
                     pe.trimStart = function(e, t, n) {
-                        return (e = Zo(e)) && (n || t === Hi) ? e.replace(Fa, "") : e && (t = Ut(t)) ? Kt(e = os(e), Jl(e, os(t))).join("") : e
+                        return (e = Zo(e)) && (n || t === Hi) ? e.replace(Ba, "") : e && (t = Ut(t)) ? Kt(e = os(e), Jl(e, os(t))).join("") : e
                     }
                     ,
                     pe.truncate = function(e, t) {
@@ -4880,7 +4880,7 @@
                         n === Hi)
                             return r + o;
                         if (i && (t += r.length - t),
-                        Bo(n)) {
+                        Fo(n)) {
                             if (e.slice(t).search(n)) {
                                 var a, l = r;
                                 for (n.global || (n = p(n.source, Zo(Ja.exec(n)) + "g")),
@@ -4939,7 +4939,7 @@
                         ye.prototype[e] = function(e) {
                             var t = this.clone();
                             return t.__iteratees__.push({
-                                iteratee: Fn(e, 3),
+                                iteratee: Bn(e, 3),
                                 type: n
                             }),
                             t.__filtered__ = t.__filtered__ || r,
@@ -4976,7 +4976,7 @@
                         })
                     }),
                     ye.prototype.reject = function(e) {
-                        return this.filter(mo(Fn(e)))
+                        return this.filter(mo(Bn(e)))
                     }
                     ,
                     ye.prototype.slice = function(e, t) {
@@ -5201,7 +5201,7 @@
         }
     }
       , r = {};
-    function Xa(e) {
+    function al(e) {
         var t = r[e];
         if (void 0 !== t)
             return t.exports;
@@ -5210,11 +5210,11 @@
             loaded: !1,
             exports: {}
         };
-        return n[e].call(t.exports, t, t.exports, Xa),
+        return n[e].call(t.exports, t, t.exports, al),
         t.loaded = !0,
         t.exports
     }
-    Xa.n = function(e) {
+    al.n = function(e) {
         var t = e && e.__esModule ? function() {
             return e.default
         }
@@ -5222,21 +5222,21 @@
             return e
         }
         ;
-        return Xa.d(t, {
+        return al.d(t, {
             a: t
         }),
         t
     }
     ,
-    Xa.d = function(e, t) {
+    al.d = function(e, t) {
         for (var n in t)
-            Xa.o(t, n) && !Xa.o(e, n) && Object.defineProperty(e, n, {
+            al.o(t, n) && !al.o(e, n) && Object.defineProperty(e, n, {
                 enumerable: !0,
                 get: t[n]
             })
     }
     ,
-    Xa.g = function() {
+    al.g = function() {
         if ("object" == typeof globalThis)
             return globalThis;
         try {
@@ -5246,11 +5246,11 @@
                 return window
         }
     }(),
-    Xa.o = function(e, t) {
+    al.o = function(e, t) {
         return Object.prototype.hasOwnProperty.call(e, t)
     }
     ,
-    Xa.nmd = function(e) {
+    al.nmd = function(e) {
         return e.paths = [],
         e.children || (e.children = []),
         e
@@ -5258,7 +5258,7 @@
     ,
     function() {
         "use strict";
-        var I, w, q, D, L, M, J = React, $ = Xa.n(J), e = ReactDOM, O = CoreUtilities, p = ReactUtilities, S = CoreRobloxUtilities, E = window.EventTracker ? EventTracker : {
+        var I, w, q, D, L, M, J = React, $ = al.n(J), e = ReactDOM, O = CoreUtilities, p = ReactUtilities, S = CoreRobloxUtilities, E = window.EventTracker ? EventTracker : {
             fireEvent: console.log,
             start: console.log,
             endSuccess: console.log,
@@ -5436,7 +5436,7 @@
                 return e
             }
             ).apply(this, arguments)
-        }, B = v, T = function() {
+        }, F = v, T = function() {
             return (T = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
@@ -5452,7 +5452,7 @@
                 for (var r = 0, o = Object.getOwnPropertySymbols(e); r < o.length; r++)
                     t.indexOf(o[r]) < 0 && Object.prototype.propertyIsEnumerable.call(e, o[r]) && (n[o[r]] = e[o[r]]);
             return n
-        }, N = S.eventStreamService.eventTypes, A = N.pageLoad, F = N.formInteraction;
+        }, N = S.eventStreamService.eventTypes, A = N.pageLoad, B = N.formInteraction;
         function G(e, n) {
             return e.filter(function(e) {
                 var t;
@@ -5570,6 +5570,7 @@
         It.Algorithm = "algorithm",
         It.AppliedFilters = "appliedFilters",
         It.AttributionId = "attributionId",
+        It.ComponentType = "componentType",
         It.Direction = "direction",
         It.Distance = "distance",
         It.HttpReferrer = "httpReferrer",
@@ -5660,7 +5661,7 @@
             return [{
                 name: m.GameImpressions,
                 type: m.GameImpressions,
-                context: F
+                context: B
             }, ne(T({}, e))]
         }
         ,
@@ -5690,7 +5691,7 @@
             [{
                 name: m.NavigateToSortLink,
                 type: m.NavigateToSortLink,
-                context: F
+                context: B
             }, ne(T({}, e))]
         }
         ,
@@ -5699,7 +5700,7 @@
             [{
                 name: m.SurveyInteraction,
                 type: m.SurveyInteraction,
-                context: F
+                context: B
             }, ne(T({}, e))]
         }
         ,
@@ -5708,7 +5709,7 @@
             [{
                 name: m.SurveyImpression,
                 type: m.SurveyImpression,
-                context: F
+                context: B
             }, ne(T({}, e))]
         }
         ,
@@ -5717,7 +5718,7 @@
             [{
                 name: m.InterestCatcherClick,
                 type: m.InterestCatcherClick,
-                context: F
+                context: B
             }, ne(T({}, e))]
         }
         ,
@@ -5726,7 +5727,7 @@
             [{
                 name: m.FilterImpressions,
                 type: m.FilterImpressions,
-                context: F
+                context: B
             }, ne(T({}, e))]
         }
         ,
@@ -5735,7 +5736,7 @@
             [{
                 name: m.GamesFilterClick,
                 type: m.GamesFilterClick,
-                context: F
+                context: B
             }, ne(T({}, e))]
         }
         ,
@@ -5744,7 +5745,7 @@
             return [{
                 name: m.RequestRefundClick,
                 type: m.RequestRefundClick,
-                context: F
+                context: B
             }, ne(((t = {})[k.PlaceId] = e.placeId,
             t))]
         }
@@ -6004,8 +6005,8 @@
                 })
             })
         }
-          , ge = Xa(9870)
-          , ye = Xa.n(ge)
+          , ge = al(9870)
+          , ye = al.n(ge)
           , be = ReactStyleGuide
           , Ie = be.Button.variants;
         function we(n, r) {
@@ -6246,13 +6247,13 @@
                 }
             }
         }, De = Oe.defaultCacheCriteria, Le = S.dataStores.gamesDataStore, Me = S.dataStores.userDataStoreV2, Ue = (S.dataStores.localeDataStore,
-        S.dataStores.userDataStore.FriendsUserSortType), Be = function() {
+        S.dataStores.userDataStore.FriendsUserSortType), Fe = function() {
             return Me.getFriends({
                 userId: null === Ne.authenticatedUser || void 0 === Ne.authenticatedUser ? void 0 : Ne.authenticatedUser.id,
                 userSort: Ue.StatusFrequents,
                 isGuest: !1
             }, De)
-        }, Fe = function(t) {
+        }, Be = function(t) {
             return Re(void 0, void 0, Promise, function() {
                 return ke(this, function(e) {
                     switch (e.label) {
@@ -6499,7 +6500,7 @@
             }, n(lt))))
         }
         ct.propTypes = {
-            game: (N = Xa.n(it))().shape({
+            game: (N = al.n(it))().shape({
                 universeId: N().number,
                 placeId: N().number,
                 name: N().string,
@@ -6882,7 +6883,7 @@
               , e = Je.ThumbnailGameIconSize.size256
               , s = xe(r, s);
             return $().createElement(be.Link, {
-                url: B(r.placeId, r.name, a(r, t)),
+                url: F(r.placeId, r.name, a(r, t)),
                 tabIndex: o ? 0 : -1,
                 "aria-hidden": !o,
                 className: "game-card-link",
@@ -6945,7 +6946,7 @@
           , Lt = Ye.keyBoardEventCode
           , Mt = Ye.numberOfInGameAvatarIcons
           , Ut = Ye.numberOfInGameNames;
-        function Bt(e) {
+        function Ft(e) {
             var t = e.totalDownVotes
               , n = e.totalUpVotes
               , e = e.playerCount
@@ -6966,7 +6967,7 @@
                 className: "info-label playing-counts-label"
             }, e))
         }
-        function Ft(e) {
+        function Bt(e) {
             var t = e.totalDownVotes
               , n = e.totalUpVotes
               , r = e.translate
@@ -7387,7 +7388,7 @@
                     gameData: v
                 }) : null != o && o.friendActivityTitle ? $().createElement(Ht, {
                     footerText: o.friendActivityTitle
-                }) : $().createElement(Bt, {
+                }) : $().createElement(Ft, {
                     totalUpVotes: o.totalUpVotes,
                     totalDownVotes: o.totalDownVotes,
                     playerCount: o.playerCount
@@ -7576,7 +7577,7 @@
               , N = i[1];
             (0,
             J.useEffect)(function() {
-                u && !Number.isNaN(u) ? N(parseInt(u, 10)) : n.navigationUid && Fe(n.navigationUid).then(function(e) {
+                u && !Number.isNaN(u) ? N(parseInt(u, 10)) : n.navigationUid && Be(n.navigationUid).then(function(e) {
                     null != e && e.rootPlaceId && N(e.rootPlaceId)
                 }).catch(function() {})
             }, [u, n.navigationUid]);
@@ -7590,7 +7591,7 @@
             }
             var c = (0,
             J.useMemo)(function() {
-                return B(x, n.name, o(n, r))
+                return F(x, n.name, o(n, r))
             }, [n, o, r, x])
               , v = o(n, r)
               , O = (0,
@@ -7701,11 +7702,11 @@
                 }) : n.friendVisitedString ? $().createElement(jt, {
                     iconClassName: "icon-pastname",
                     text: n.friendVisitedString
-                }) : l === D.Footer ? $().createElement(Bt, {
+                }) : l === D.Footer ? $().createElement(Ft, {
                     totalUpVotes: n.totalUpVotes,
                     totalDownVotes: n.totalDownVotes,
                     playerCount: n.playerCount
-                }) : $().createElement(Ft, {
+                }) : $().createElement(Bt, {
                     totalUpVotes: n.totalUpVotes,
                     totalDownVotes: n.totalDownVotes,
                     translate: w
@@ -8348,9 +8349,9 @@
         function Un() {
             this.__entries__ = []
         }
-        var Bn = "undefined" != typeof window && "undefined" != typeof document && window.document === document
-          , Fn = void 0 !== Xa.g && Xa.g.Math === Math ? Xa.g : "undefined" != typeof self && self.Math === Math ? self : "undefined" != typeof window && window.Math === Math ? window : Function("return this")()
-          , Gn = "function" == typeof requestAnimationFrame ? requestAnimationFrame.bind(Fn) : function(e) {
+        var Fn = "undefined" != typeof window && "undefined" != typeof document && window.document === document
+          , Bn = void 0 !== al.g && al.g.Math === Math ? al.g : "undefined" != typeof self && self.Math === Math ? self : "undefined" != typeof window && window.Math === Math ? window : Function("return this")()
+          , Gn = "function" == typeof requestAnimationFrame ? requestAnimationFrame.bind(Bn) : function(e) {
             return setTimeout(function() {
                 return e(Date.now())
             }, 1e3 / 60)
@@ -8386,7 +8387,7 @@
         }
         ,
         Wn.prototype.connect_ = function() {
-            Bn && !this.connected_ && (document.addEventListener("transitionend", this.onTransitionEnd_),
+            Fn && !this.connected_ && (document.addEventListener("transitionend", this.onTransitionEnd_),
             window.addEventListener("resize", this.refresh),
             zn ? (this.mutationsObserver_ = new MutationObserver(this.refresh),
             this.mutationsObserver_.observe(document, {
@@ -8400,7 +8401,7 @@
         }
         ,
         Wn.prototype.disconnect_ = function() {
-            Bn && this.connected_ && (document.removeEventListener("transitionend", this.onTransitionEnd_),
+            Fn && this.connected_ && (document.removeEventListener("transitionend", this.onTransitionEnd_),
             window.removeEventListener("resize", this.refresh),
             this.mutationsObserver_ && this.mutationsObserver_.disconnect(),
             this.mutationEventsAdded_ && document.removeEventListener("DOMSubtreeModified", this.refresh),
@@ -8468,7 +8469,7 @@
             return e
         }
           , Jn = function(e) {
-            return e && e.ownerDocument && e.ownerDocument.defaultView || Fn
+            return e && e.ownerDocument && e.ownerDocument.defaultView || Bn
         }
           , $n = er(0, 0, 0, 0);
         function Kn(e) {
@@ -8515,7 +8516,7 @@
         }
         ;
         function Qn(e) {
-            return Bn ? Xn(e) ? er(0, 0, (t = (t = e).getBBox()).width, t.height) : Zn(e) : $n;
+            return Fn ? Xn(e) ? er(0, 0, (t = (t = e).getBBox()).width, t.height) : Zn(e) : $n;
             var t
         }
         function er(e, t, n, r) {
@@ -8651,7 +8652,7 @@
                 return (e = ar.get(this))[t].apply(e, arguments)
             }
         });
-        var oe = void 0 !== Fn.ResizeObserver ? Fn.ResizeObserver : lr
+        var oe = void 0 !== Bn.ResizeObserver ? Bn.ResizeObserver : lr
           , sr = null !== (te = window.ResizeObserver) && void 0 !== te ? te : oe
           , ur = function() {
             var e = (0,
@@ -8744,28 +8745,28 @@
               , U = e[1]
               , _ = ur()
               , e = _[0]
-              , B = _[1]
-              , F = (0,
+              , F = _[1]
+              , B = (0,
             J.useMemo)(function() {
                 if (L && f)
                     return f;
                 var e = null === (e = null === (e = null == S ? void 0 : S.current) || void 0 === e ? void 0 : e.getBoundingClientRect()) || void 0 === e ? void 0 : e.width;
-                return void 0 !== B && void 0 !== e ? Math.max(1, Math.floor((B + M) / (e + M))) : 0
-            }, [B, M, f, L]);
+                return void 0 !== F && void 0 !== e ? Math.max(1, Math.floor((F + M) / (e + M))) : 0
+            }, [F, M, f, L]);
             (0,
             J.useEffect)(function() {
                 A(0 <= k),
-                s || void 0 !== B && void 0 !== U && Math.abs(k) + B + pr >= U ? R(!0) : R(!1)
-            }, [k, B, U, null == t ? void 0 : t.length, s]);
+                s || void 0 !== F && void 0 !== U && Math.abs(k) + F + pr >= U ? R(!0) : R(!1)
+            }, [k, F, U, null == t ? void 0 : t.length, s]);
             var G = (0,
             J.useCallback)(function() {
-                P + cr * F >= (null == t ? void 0 : t.length) && l && !s && l()
-            }, [P, F, l, s, null == t ? void 0 : t.length])
+                P + cr * B >= (null == t ? void 0 : t.length) && l && !s && l()
+            }, [P, B, l, s, null == t ? void 0 : t.length])
               , j = (0,
             J.useCallback)(function() {
                 var e = null === (e = null === (e = null == S ? void 0 : S.current) || void 0 === e ? void 0 : e.getBoundingClientRect()) || void 0 === e ? void 0 : e.width;
-                return void 0 === e ? 0 : Math.floor(F) * (e + M)
-            }, [F, M])
+                return void 0 === e ? 0 : Math.floor(B) * (e + M)
+            }, [B, M])
               , H = (0,
             J.useCallback)(function() {
                 var t;
@@ -8774,25 +8775,25 @@
                     return Math.min(e + t, 0)
                 }),
                 C(function(e) {
-                    return e - F
+                    return e - B
                 }))
-            }, [j, N, F])
+            }, [j, N, B])
               , z = (0,
             J.useCallback)(function() {
                 var t;
                 O || (t = j(),
                 D(function(e) {
-                    return b && o === K.HomePage ? void 0 !== U && void 0 !== B ? Math.max(e - t, -1 * (U - B)) : e - t : void 0 !== U ? Math.max(e - t, -1 * U) : e - t
+                    return b && o === K.HomePage ? void 0 !== U && void 0 !== F ? Math.max(e - t, -1 * (U - F)) : e - t : void 0 !== U ? Math.max(e - t, -1 * U) : e - t
                 }),
                 C(function(e) {
-                    return e + F
+                    return e + B
                 }),
                 G())
-            }, [G, j, O, F, B, U, o, b])
+            }, [G, j, O, B, F, U, o, b])
               , V = (0,
             J.useCallback)(function(e) {
-                return P <= e && e < P + F
-            }, [P, F])
+                return P <= e && e < P + B
+            }, [P, B])
               , W = (0,
             J.useCallback)(function(e) {
                 T || (x(!0),
@@ -9221,7 +9222,7 @@
                             e.label = 1;
                         case 1:
                             return e.trys.push([1, 4, , 5]),
-                            [4, Be()];
+                            [4, Fe()];
                         case 2:
                             return t = e.sent().userData,
                             0 === (n = t ? t.map(function(e) {
@@ -9897,7 +9898,7 @@
                 title: o.name
             }, o.name), n ? $().createElement(Gt, {
                 footerData: n
-            }) : $().createElement(Bt, {
+            }) : $().createElement(Ft, {
                 totalUpVotes: o.totalUpVotes,
                 totalDownVotes: o.totalDownVotes,
                 playerCount: o.playerCount
@@ -9973,8 +9974,8 @@
             isInterestedUniverse: void 0,
             toggleInterest: void 0
         };
-        var Br = te
-          , Fr = (0,
+        var Fr = te
+          , Br = (0,
         J.forwardRef)(function(e, t) {
             var n = e.gameData
               , r = e.translate
@@ -10010,7 +10011,7 @@
                 ref: t,
                 className: g
             }, n.map(function(e, t) {
-                return $().createElement(Br, {
+                return $().createElement(Fr, {
                     ref: function(e) {
                         (!0 === o && 1 === t || !1 === o && 0 === t) && a && (a.current = e)
                     },
@@ -10037,8 +10038,8 @@
                 loadData: l
             }))
         });
-        Fr.displayName = "GameGrid",
-        Fr.defaultProps = {
+        Br.displayName = "GameGrid",
+        Br.defaultProps = {
             friendsPresence: [],
             componentType: void 0,
             playerCountStyle: void 0,
@@ -10051,7 +10052,7 @@
             interestedUniverses: void 0,
             toggleInterest: void 0
         };
-        var Gr = Fr
+        var Gr = Br
           , jr = function() {
             return (jr = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
@@ -10115,7 +10116,7 @@
                 className: "container-header"
             }, $().createElement("h2", null, o.topic, o.topicId === $e.adSortHomePageId && $().createElement(wt, {
                 tooltipText: p(tt.LabelSponsoredAdsDisclosureStatic) || "Sponsored experiences are paid for by Creators. They may be shown to you based on general information about your device type, location, and demographics."
-            }))), $().createElement(Fr, {
+            }))), $().createElement(Br, {
                 ref: m,
                 tileRef: v,
                 gameData: r,
@@ -10211,7 +10212,7 @@
             isExpandHomeContentEnabled: void 0
         };
         var Vr = ge
-          , Wr = Xa(5250);
+          , Wr = al(5250);
         function qr(e) {
             return (qr = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
@@ -10306,7 +10307,7 @@
                 }
                 )(Array.from(a).filter(function(e) {
                     return !o.has(e)
-                }), no).filter(function(e) {
+                }), ro).filter(function(e) {
                     return 0 < e.length
                 }).forEach(function(n) {
                     r(n),
@@ -10330,7 +10331,7 @@
                 });
                 return s.current = Kr({
                     elements: i,
-                    threshold: ro
+                    threshold: oo
                 }, function(e, t) {
                     c.cancel();
                     var n, r, o = (n = t,
@@ -10359,9 +10360,9 @@
                 }
             }, [t, e, a, c])
         }
-        Xa(1315);
-        var Zr, Xr, Qr, eo, to, no = 25, ro = .5;
-        function oo(o) {
+        al(1315);
+        var Zr, Xr, Qr, eo, to, no, ro = 25, oo = .5;
+        function io(o) {
             return Object.keys(o).reduce(function(e, t) {
                 var n, r, n = (n = o[t],
                 r = !1,
@@ -10370,7 +10371,7 @@
                 e
             }, {})
         }
-        function io(e) {
+        function ao(e) {
             var t = e.friendsCount
               , n = e.profileUserId
               , r = e.isOwnUser
@@ -10390,10 +10391,10 @@
         it.ItemAction = "itemAction",
         (te = Xr = Xr || {}).Home = "home",
         te.UserProfile = "userProfile",
-        (oe = {}).HomePageSessionInfo = "homePageSessionInfo",
+        (oe = Qr = Qr || {}).HomePageSessionInfo = "homePageSessionInfo",
         oe.DiscoverPageSessionInfo = "discoverPageSessionInfo",
         oe.GameSearchSessionInfo = "gameSearchSessionInfo",
-        (ge = Qr = Qr || {}).ContentType = "contentType",
+        (ge = eo = eo || {}).ContentType = "contentType",
         ge.Context = "context",
         ge.CollectionId = "collectionId",
         ge.CollectionPosition = "collectionPosition",
@@ -10403,7 +10404,7 @@
         it.Offline = "offline",
         (te = {}).Friend = "friend",
         te.NotFriend = "notFriend",
-        (oe = eo = eo || {}).ItemIds = "itemIds",
+        (oe = to = to || {}).ItemIds = "itemIds",
         oe.ItemPositions = "itemPositions",
         oe.RowNumbers = "rowNumbers",
         oe.FeedRowNumbers = "feedRowNumbers",
@@ -10414,7 +10415,7 @@
         ge.PresenceUniverseIds = "presenceUniverseIds",
         ge.FriendStatuses = "friendStatuses",
         ge.SourceCarousel = "sourceCarousel",
-        (it = to = to || {}).ItemId = "itemId",
+        (it = no = no || {}).ItemId = "itemId",
         it.ItemPosition = "itemPosition",
         it.RowNumber = "rowNumber",
         it.FeedRowNumber = "feedRowNumber",
@@ -10425,7 +10426,7 @@
         te.PresenceUniverseId = "presenceUniverseId",
         te.FriendStatus = "friendStatus",
         te.SourceCarousel = "sourceCarousel";
-        var ao = function(e, a, l, s) {
+        var lo = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
                     try {
@@ -10452,7 +10453,7 @@
             }
             )
         }
-          , lo = function(n, r) {
+          , so = function(n, r) {
             var o, i, a, l = {
                 label: 0,
                 sent: function() {
@@ -10545,16 +10546,16 @@
                 }
             }
         }
-          , so = function(e, t) {
+          , uo = function(e, t) {
             for (var n = 0, r = t.length, o = e.length; n < r; n++,
             o++)
                 e[o] = t[n];
             return e
         }
-          , uo = function(n) {
-            return ao(void 0, void 0, Promise, function() {
+          , co = function(n) {
+            return lo(void 0, void 0, Promise, function() {
                 var t;
-                return lo(this, function(e) {
+                return so(this, function(e) {
                     switch (e.label) {
                     case 0:
                         return t = {
@@ -10569,16 +10570,16 @@
                 })
             })
         }
-          , co = function(m, v) {
-            return ao(void 0, void 0, Promise, function() {
+          , fo = function(m, v) {
+            return lo(void 0, void 0, Promise, function() {
                 var t, a, l, s, u, c, d, f, p;
-                return lo(this, function(e) {
+                return so(this, function(e) {
                     switch (e.label) {
                     case 0:
                         return v ? [4, (i = m,
-                        ao(void 0, void 0, Promise, function() {
+                        lo(void 0, void 0, Promise, function() {
                             var t;
-                            return lo(this, function(e) {
+                            return so(this, function(e) {
                                 switch (e.label) {
                                 case 0:
                                     return t = {
@@ -10611,9 +10612,9 @@
                         }),
                         [4, (n = m,
                         o = v,
-                        ao(void 0, void 0, Promise, function() {
+                        lo(void 0, void 0, Promise, function() {
                             var t;
-                            return lo(this, function(e) {
+                            return so(this, function(e) {
                                 switch (e.label) {
                                 case 0:
                                     return t = P.EnvironmentUrls.friendsApi + "/v1/users/" + n + "/friends/find",
@@ -10643,11 +10644,11 @@
                         }).map(function(e) {
                             return e.id
                         }),
-                        f = so(so([], d), f),
+                        f = uo(uo([], d), f),
                         [4, (r = f,
-                        ao(void 0, void 0, Promise, function() {
+                        lo(void 0, void 0, Promise, function() {
                             var t, n;
-                            return lo(this, function(e) {
+                            return so(this, function(e) {
                                 switch (e.label) {
                                 case 0:
                                     return t = {
@@ -10690,7 +10691,7 @@
                 })
             })
         }
-          , fo = function(e, a, l, s) {
+          , po = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
                     try {
@@ -10717,7 +10718,7 @@
             }
             )
         }
-          , po = function(n, r) {
+          , mo = function(n, r) {
             var o, i, a, l = {
                 label: 0,
                 sent: function() {
@@ -10810,15 +10811,15 @@
                 }
             }
         }
-          , mo = P.EnvironmentUrls.chatApi
-          , vo = function() {
-            return fo(void 0, void 0, Promise, function() {
+          , vo = P.EnvironmentUrls.chatApi
+          , ho = function() {
+            return po(void 0, void 0, Promise, function() {
                 var t;
-                return po(this, function(e) {
+                return mo(this, function(e) {
                     switch (e.label) {
                     case 0:
                         return [4, O.httpService.get({
-                            url: mo + "/v1/metadata",
+                            url: vo + "/v1/metadata",
                             withCredentials: !0
                         })];
                     case 1:
@@ -10834,8 +10835,8 @@
             feature: "Feature.PeopleList"
         }
           , ge = RobloxPresence
-          , ho = Xa.n(ge);
-        function go(e) {
+          , go = al.n(ge);
+        function yo(e) {
             var t = e.id
               , n = e.displayName
               , r = e.userProfileUrl
@@ -10845,7 +10846,7 @@
               , e = e.translate;
             return $().createElement("div", {
                 className: "friend-tile-content"
-            }, $().createElement(Io, {
+            }, $().createElement(wo, {
                 id: t,
                 translate: e,
                 userProfileUrl: r,
@@ -10874,7 +10875,7 @@
                 className: "friends-carousel-tile-experience"
             }, o))))
         }
-        function yo(e) {
+        function bo(e) {
             var n = e.friend
               , t = e.displayName
               , r = e.userProfileUrl
@@ -10913,9 +10914,9 @@
                 size: be.Button.sizes.small,
                 width: be.Button.widths.full,
                 onClick: function() {
-                    return wo(void 0, void 0, void 0, function() {
+                    return So(void 0, void 0, void 0, function() {
                         var t;
-                        return So(this, function(e) {
+                        return Eo(this, function(e) {
                             switch (e.label) {
                             case 0:
                                 return (t = n.presence.gameId || "",
@@ -10969,7 +10970,7 @@
                 className: "icon icon-viewdetails"
             }), " ", e("Label.ViewProfile")))))
         }
-        function bo(e) {
+        function Io(e) {
             function t() {
                 l(!0)
             }
@@ -11028,7 +11029,7 @@
                 containerClass: "avatar-card-image"
             });
             return $().createElement(be.AvatarCardItem.Headshot, {
-                statusIcon: $().createElement(ho().PresenceStatusIcon, {
+                statusIcon: $().createElement(go().PresenceStatusIcon, {
                     translate: o,
                     userId: t
                 }),
@@ -11040,8 +11041,8 @@
         ).defaultProps = {
             handleImageClick: void 0
         };
-        var Io = it
-          , wo = function(e, a, l, s) {
+        var wo = it
+          , So = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
                     try {
@@ -11068,7 +11069,7 @@
             }
             )
         }
-          , So = function(n, r) {
+          , Eo = function(n, r) {
             var o, i, a, l = {
                 label: 0,
                 sent: function() {
@@ -11161,8 +11162,8 @@
                 }
             }
         };
-        function Eo(e) {
-            return (Eo = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        function Po(e) {
+            return (Po = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
             }
             : function(e) {
@@ -11170,7 +11171,7 @@
             }
             )(e)
         }
-        function Po(e, t) {
+        function Co(e, t) {
             return function(e) {
                 if (Array.isArray(e))
                     return e
@@ -11201,24 +11202,24 @@
                 if (!e)
                     return;
                 if ("string" == typeof e)
-                    return Co(e, t);
+                    return _o(e, t);
                 var n = Object.prototype.toString.call(e).slice(8, -1);
                 "Object" === n && e.constructor && (n = e.constructor.name);
                 if ("Map" === n || "Set" === n)
                     return Array.from(e);
                 if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-                    return Co(e, t)
+                    return _o(e, t)
             }(e, t) || function() {
                 throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
             }()
         }
-        function Co(e, t) {
+        function _o(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var n = 0, r = new Array(t); n < t; n++)
                 r[n] = e[n];
             return r
         }
-        function _o(e, t) {
+        function To(e, t) {
             var n = e.elements
               , r = e.threshold;
             try {
@@ -11234,12 +11235,12 @@
             } catch (e) {}
             return function() {}
         }
-        function To(t, e, r) {
-            var n = Po((0,
+        function xo(t, e, r) {
+            var n = Co((0,
             J.useState)(new Set), 2)
               , o = n[0]
               , i = n[1]
-              , a = (n = Po((0,
+              , a = (n = Co((0,
             J.useState)(new Set), 2))[0]
               , l = n[1]
               , s = (0,
@@ -11277,9 +11278,9 @@
                 var e, i = Array.from(null !== (e = null == t || null === (e = t.current) || void 0 === e ? void 0 : e.children) && void 0 !== e ? e : []).filter(function(e) {
                     return e instanceof HTMLElement
                 });
-                return s.current = _o({
+                return s.current = To({
                     elements: i,
-                    threshold: Fo
+                    threshold: Go
                 }, function(e, t) {
                     c.cancel();
                     var n, r, o = (n = t,
@@ -11308,21 +11309,21 @@
                 }
             }, [t, e, a, c])
         }
-        Xa(6870);
-        var xo, No, Ao, Oo, Ro, ko, Do, Lo, Mo, Uo, Bo = 25, Fo = .5;
-        function Go(o) {
+        al(6870);
+        var No, Ao, Oo, Ro, ko, Do, Lo, Mo, Uo, Fo, Bo = 25, Go = .5;
+        function jo(o) {
             return Object.keys(o).reduce(function(e, t) {
                 var n, r, n = (n = o[t],
                 r = !1,
-                Array.isArray(n) && !r ? n.join(",") : "object" === Eo(n) && n ? JSON.stringify(n) : "number" == typeof n || "string" == typeof n ? n : "boolean" == typeof n ? n ? 1 : 0 : void 0);
+                Array.isArray(n) && !r ? n.join(",") : "object" === Po(n) && n ? JSON.stringify(n) : "number" == typeof n || "string" == typeof n ? n : "boolean" == typeof n ? n ? 1 : 0 : void 0);
                 return void 0 !== n && (e[t] = n),
                 e
             }, {})
         }
-        function jo(e, t, n) {
-            return t ? Ro.InGame : e && "Studio" === n ? Ro.InStudio : e ? Ro.Online : Ro.Offline
+        function Ho(e, t, n) {
+            return t ? ko.InGame : e && "Studio" === n ? ko.InStudio : e ? ko.Online : ko.Offline
         }
-        function Ho(e) {
+        function zo(e) {
             var t = e.friend
               , n = e.friendIndex
               , r = e.isOwnUser
@@ -11336,21 +11337,21 @@
               , d = e.totalNumberOfFriends
               , f = P.EnvironmentUrls.websiteUrl + "/users/" + t.id + "/profile"
               , p = t.combinedName
-              , m = ho().usePresence(t.id, void 0)
+              , m = go().usePresence(t.id, void 0)
               , v = null != m && null != m.gameId
               , h = v ? m.lastLocation : null
               , e = null != h && 15 < h.length ? h.slice(0, 15) + "..." : h
               , g = v ? P.EnvironmentUrls.websiteUrl + "/games/" + (null !== (g = m.placeId) && void 0 !== g ? g : "") : ""
-              , d = Wo(t, n, a, l, s, u, c, d);
+              , d = qo(t, n, a, l, s, u, c, d);
             return $().createElement("div", {
                 className: "friends-carousel-tile"
-            }, $().createElement(bo, {
+            }, $().createElement(Io, {
                 trigger: $().createElement("button", {
                     type: "button",
                     className: "options-dropdown",
                     id: "friend-tile-button",
                     onClick: function() {}
-                }, $().createElement(go, {
+                }, $().createElement(yo, {
                     id: t.id,
                     displayName: p,
                     userProfileUrl: f,
@@ -11359,7 +11360,7 @@
                     hasVerifiedBadge: t.hasVerifiedBadge,
                     sendClickEvent: d
                 })),
-                content: r ? $().createElement(yo, {
+                content: r ? $().createElement(bo, {
                     friend: t,
                     isInGame: v,
                     universeId: null !== (m = m.universeId) && void 0 !== m ? m : 0,
@@ -11373,7 +11374,7 @@
                 dropdownWidth: null == e ? 240 : 315
             }))
         }
-        function zo(e) {
+        function Vo(e) {
             var n = e.friendsList
               , r = e.isOwnUser
               , o = e.translate
@@ -11401,7 +11402,7 @@
                 null != t && null != n && (t = 50,
                 f(n.slice(0, t)))
             }, [null === (p = d.current) || void 0 === p ? void 0 : p.offsetWidth, n]),
-            Jo(v, n, a, l, s, u, c),
+            $o(v, n, a, l, s, u, c),
             $().createElement("div", null, $().createElement("div", {
                 ref: function(e) {
                     return d.current = e,
@@ -11416,7 +11417,7 @@
             }, t.map(function(e, t) {
                 return $().createElement("div", {
                     key: e.id
-                }, $().createElement(Ho, {
+                }, $().createElement(zo, {
                     friend: e,
                     friendIndex: t,
                     translate: o,
@@ -11431,48 +11432,48 @@
                 }))
             }))))
         }
-        (te = xo = xo || {}).ItemImpressions = "itemImpressions",
+        (te = No = No || {}).ItemImpressions = "itemImpressions",
         te.ItemAction = "itemAction",
         (ge = {}).Home = "home",
         ge.UserProfile = "userProfile",
-        (it = No = No || {}).HomePageSessionInfo = "homePageSessionInfo",
+        (it = Ao = Ao || {}).HomePageSessionInfo = "homePageSessionInfo",
         it.DiscoverPageSessionInfo = "discoverPageSessionInfo",
         it.GameSearchSessionInfo = "gameSearchSessionInfo",
-        (te = Ao = Ao || {}).ContentType = "contentType",
+        (te = Oo = Oo || {}).ContentType = "contentType",
         te.Context = "context",
         te.CollectionId = "collectionId",
         te.CollectionPosition = "collectionPosition",
-        (Oo = Oo || {}).User = "User",
-        (ge = Ro = Ro || {}).Online = "online",
+        (Ro = Ro || {}).User = "User",
+        (ge = ko = ko || {}).Online = "online",
         ge.InGame = "inGame",
         ge.InStudio = "inStudio",
         ge.Offline = "offline",
-        (it = ko = ko || {}).Friend = "friend",
+        (it = Do = Do || {}).Friend = "friend",
         it.NotFriend = "notFriend",
-        (te = Do = Do || {}).ItemIds = "itemIds",
+        (te = Lo = Lo || {}).ItemIds = "itemIds",
         te.ItemPositions = "itemPositions",
         te.RowNumbers = "rowNumbers",
         te.FeedRowNumbers = "feedRowNumbers",
         te.PositionsInRow = "positionsInRow",
         te.PositionsInTopic = "positionsInTopic",
         te.TotalNumberOfItems = "totalNumberOfItems",
-        (ge = Lo = Lo || {}).Presences = "presences",
+        (ge = Mo = Mo || {}).Presences = "presences",
         ge.PresenceUniverseIds = "presenceUniverseIds",
         ge.FriendStatuses = "friendStatuses",
         ge.SourceCarousel = "sourceCarousel",
-        (it = Mo = Mo || {}).ItemId = "itemId",
+        (it = Uo = Uo || {}).ItemId = "itemId",
         it.ItemPosition = "itemPosition",
         it.RowNumber = "rowNumber",
         it.FeedRowNumber = "feedRowNumber",
         it.PositionInRow = "positionInRow",
         it.PositionInTopic = "positionInTopic",
         it.TotalNumberOfItems = "totalNumberOfItems",
-        (te = Uo = Uo || {}).Presence = "presence",
+        (te = Fo = Fo || {}).Presence = "presence",
         te.PresenceUniverseId = "presenceUniverseId",
         te.FriendStatus = "friendStatus",
         te.SourceCarousel = "sourceCarousel";
-        var Vo = function() {
-            return (Vo = Object.assign || function(e) {
+        var Wo = function() {
+            return (Wo = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -11480,38 +11481,38 @@
             }
             ).apply(this, arguments)
         }
-          , Wo = function(n, r, o, i, a, l, s, u) {
+          , qo = function(n, r, o, i, a, l, s, u) {
             var t = (0,
             J.useCallback)(function() {
                 var e, t = {};
-                return t[Ao.Context] = i,
-                t[Ao.ContentType] = Oo.User,
-                t[Ao.CollectionId] = l,
-                t[Ao.CollectionPosition] = void 0 !== s ? s + 1 : -1,
-                t[Mo.TotalNumberOfItems] = u,
-                t[Mo.ItemId] = n.id.toString(),
-                t[Mo.ItemPosition] = r + 1,
-                t[Mo.PositionInTopic] = r + 1,
-                t[Mo.RowNumber] = 1,
-                t[Uo.Presence] = jo(null === (e = n.presence) || void 0 === e ? void 0 : e.isOnline, null === (e = n.presence) || void 0 === e ? void 0 : e.isInGame, null === (e = n.presence) || void 0 === e ? void 0 : e.lastLocation),
-                t[Uo.PresenceUniverseId] = null !== (e = null === (e = n.presence) || void 0 === e ? void 0 : e.universeId) && void 0 !== e ? e : -1,
-                t[Uo.FriendStatus] = "friend",
-                t[Uo.SourceCarousel] = o,
-                t[No.HomePageSessionInfo] = a,
+                return t[Oo.Context] = i,
+                t[Oo.ContentType] = Ro.User,
+                t[Oo.CollectionId] = l,
+                t[Oo.CollectionPosition] = void 0 !== s ? s + 1 : -1,
+                t[Uo.TotalNumberOfItems] = u,
+                t[Uo.ItemId] = n.id.toString(),
+                t[Uo.ItemPosition] = r + 1,
+                t[Uo.PositionInTopic] = r + 1,
+                t[Uo.RowNumber] = 1,
+                t[Fo.Presence] = Ho(null === (e = n.presence) || void 0 === e ? void 0 : e.isOnline, null === (e = n.presence) || void 0 === e ? void 0 : e.isInGame, null === (e = n.presence) || void 0 === e ? void 0 : e.lastLocation),
+                t[Fo.PresenceUniverseId] = null !== (e = null === (e = n.presence) || void 0 === e ? void 0 : e.universeId) && void 0 !== e ? e : -1,
+                t[Fo.FriendStatus] = "friend",
+                t[Fo.SourceCarousel] = o,
+                t[Ao.HomePageSessionInfo] = a,
                 t
             }, [n, r, a, l, s, o, i, u]);
             return (0,
             J.useCallback)(function() {
                 var e = t();
                 S.eventStreamService.sendEvent({
-                    name: xo.ItemAction,
-                    type: xo.ItemAction,
+                    name: No.ItemAction,
+                    type: No.ItemAction,
                     context: i
-                }, Go(Vo({}, e)))
+                }, jo(Wo({}, e)))
             }, [t, i])
         }
-          , qo = function() {
-            return (qo = Object.assign || function(e) {
+          , Jo = function() {
+            return (Jo = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -11519,42 +11520,42 @@
             }
             ).apply(this, arguments)
         }
-          , Jo = function(e, n, r, o, i, a, l) {
+          , $o = function(e, n, r, o, i, a, l) {
             var t = (0,
             J.useCallback)(function(e) {
                 if (n) {
                     var t = e.filter(function(e) {
                         return e < n.length
                     });
-                    return (e = {})[Ao.Context] = o,
-                    e[Ao.ContentType] = Oo.User,
-                    e[Ao.CollectionId] = a,
-                    e[Ao.CollectionPosition] = void 0 !== l ? l + 1 : -1,
-                    e[Do.TotalNumberOfItems] = n.length,
-                    e[Do.ItemIds] = t.map(function(e) {
+                    return (e = {})[Oo.Context] = o,
+                    e[Oo.ContentType] = Ro.User,
+                    e[Oo.CollectionId] = a,
+                    e[Oo.CollectionPosition] = void 0 !== l ? l + 1 : -1,
+                    e[Lo.TotalNumberOfItems] = n.length,
+                    e[Lo.ItemIds] = t.map(function(e) {
                         return null !== (e = null === (e = null === (e = n[e]) || void 0 === e ? void 0 : e.id) || void 0 === e ? void 0 : e.toString()) && void 0 !== e ? e : "-1"
                     }),
-                    e[Do.ItemPositions] = t.map(function(e) {
+                    e[Lo.ItemPositions] = t.map(function(e) {
                         return e + 1
                     }),
-                    e[Do.PositionsInTopic] = t.map(function(e) {
+                    e[Lo.PositionsInTopic] = t.map(function(e) {
                         return e + 1
                     }),
-                    e[Do.RowNumbers] = t.map(function() {
+                    e[Lo.RowNumbers] = t.map(function() {
                         return 1
                     }),
-                    e[Lo.Presences] = t.map(function(e) {
+                    e[Mo.Presences] = t.map(function(e) {
                         var t;
-                        return jo(null === (t = null === (t = n[e]) || void 0 === t ? void 0 : t.presence) || void 0 === t ? void 0 : t.isOnline, null === (t = null === (t = n[e]) || void 0 === t ? void 0 : t.presence) || void 0 === t ? void 0 : t.isInGame, null === (e = null === (e = n[e]) || void 0 === e ? void 0 : e.presence) || void 0 === e ? void 0 : e.lastLocation)
+                        return Ho(null === (t = null === (t = n[e]) || void 0 === t ? void 0 : t.presence) || void 0 === t ? void 0 : t.isOnline, null === (t = null === (t = n[e]) || void 0 === t ? void 0 : t.presence) || void 0 === t ? void 0 : t.isInGame, null === (e = null === (e = n[e]) || void 0 === e ? void 0 : e.presence) || void 0 === e ? void 0 : e.lastLocation)
                     }),
-                    e[Lo.PresenceUniverseIds] = t.map(function(e) {
+                    e[Mo.PresenceUniverseIds] = t.map(function(e) {
                         return null !== (e = null === (e = null === (e = n[e]) || void 0 === e ? void 0 : e.presence) || void 0 === e ? void 0 : e.universeId) && void 0 !== e ? e : -1
                     }),
-                    e[Lo.FriendStatuses] = t.map(function() {
-                        return ko.Friend
+                    e[Mo.FriendStatuses] = t.map(function() {
+                        return Do.Friend
                     }),
-                    e[Lo.SourceCarousel] = r,
-                    e[No.HomePageSessionInfo] = i,
+                    e[Mo.SourceCarousel] = r,
+                    e[Ao.HomePageSessionInfo] = i,
                     e
                 }
             }, [n, i, a, l, r, o])
@@ -11562,15 +11563,15 @@
             J.useCallback)(function(e) {
                 e = t(e);
                 void 0 !== e ? S.eventStreamService.sendEvent({
-                    name: xo.ItemImpressions,
-                    type: xo.ItemImpressions,
+                    name: No.ItemImpressions,
+                    type: No.ItemImpressions,
                     context: o
-                }, Go(qo({}, e))) : (0,
+                }, jo(Jo({}, e))) : (0,
                 E.fireEvent)("WebHomePageFriendsCarouselItemImpressionsUndefinedError")
             }, [t, o]);
-            To(e, null !== (e = null == n ? void 0 : n.length) && void 0 !== e ? e : 0, s)
+            xo(e, null !== (e = null == n ? void 0 : n.length) && void 0 !== e ? e : 0, s)
         }
-          , $o = function(e, a, l, s) {
+          , Ko = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
                     try {
@@ -11597,7 +11598,7 @@
             }
             )
         }
-          , Ko = function(n, r) {
+          , Yo = function(n, r) {
             var o, i, a, l = {
                 label: 0,
                 sent: function() {
@@ -11717,16 +11718,16 @@
               , h = u[1];
             return (0,
             J.useEffect)(function() {
-                $o(void 0, void 0, void 0, function() {
+                Ko(void 0, void 0, void 0, function() {
                     var n, r, a, l, s, u, c;
-                    return Ko(this, function(e) {
+                    return Yo(this, function(e) {
                         switch (e.label) {
                         case 0:
-                            return u = [uo(d), co(d, f), vo(), (o = d,
+                            return u = [co(d), fo(d, f), ho(), (o = d,
                             i = f,
-                            $o(void 0, void 0, void 0, function() {
+                            Ko(void 0, void 0, void 0, function() {
                                 var t, n, r;
-                                return Ko(this, function(e) {
+                                return Yo(this, function(e) {
                                     switch (e.label) {
                                     case 0:
                                         if (i)
@@ -11794,12 +11795,12 @@
                 className: "friends-carousel-0-friends"
             }) : $().createElement("div", {
                 className: "react-friends-carousel-container"
-            }, $().createElement(io, {
+            }, $().createElement(ao, {
                 friendsCount: s,
                 translate: t,
                 profileUserId: d,
                 isOwnUser: f
-            }), $().createElement(zo, {
+            }), $().createElement(Vo, {
                 friendsList: c,
                 translate: t,
                 isOwnUser: f,
@@ -11814,36 +11815,36 @@
         ).defaultProps = {
             translate: void 0
         };
-        var Yo = (0,
+        var Zo = (0,
         p.withTranslations)(ge, oe);
-        function Zo(e) {
+        function Xo(e) {
             var t = e.homePageSessionInfo
               , n = e.sortId
               , r = e.sortPosition
               , o = (e = document.querySelector('meta[name="user-data"]')) ? e.getAttribute("data-userid") : Number(null !== (o = P.CurrentUser.userId) && void 0 !== o ? o : "0");
             return $().createElement("div", {
                 className: "friend-carousel-container"
-            }, $().createElement(Yo, {
+            }, $().createElement(Zo, {
                 profileUserId: o,
                 isOwnUser: !0,
-                carouselName: ni.WebHomeFriendsCarousel,
+                carouselName: ri.WebHomeFriendsCarousel,
                 eventContext: Xr.Home,
                 homePageSessionInfo: t,
                 sortId: n,
                 sortPosition: r
             }))
         }
-        function Xo(e) {
+        function Qo(e) {
             var t = e.sortId
               , n = e.sortPosition
               , e = dn();
-            return $().createElement(Zo, {
+            return $().createElement(Xo, {
                 homePageSessionInfo: e,
                 sortId: t,
                 sortPosition: n
             })
         }
-        function Qo(e) {
+        function ei(e) {
             var t = e.option
               , n = e.isSelected
               , r = e.setSelectedOptionId
@@ -11867,7 +11868,7 @@
                 className: "icon-radio-check-circle"
             }))
         }
-        function ei(e) {
+        function ti(e) {
             var t = e.filter
               , n = e.dropdownContainerRef
               , r = e.selectedOptionId
@@ -11895,7 +11896,7 @@
             }, [u, n])
               , d = (0,
             J.useCallback)(function(e) {
-                e.key === ri.keyBoardEventCode.escape && u()
+                e.key === oi.keyBoardEventCode.escape && u()
             }, [u]);
             return (0,
             J.useEffect)(function() {
@@ -11924,7 +11925,7 @@
             }, t.filterOptions.map(function(e, t) {
                 return $().createElement($().Fragment, {
                     key: e.optionId
-                }, $().createElement(Qo, {
+                }, $().createElement(ei, {
                     option: e,
                     isSelected: r === e.optionId,
                     setSelectedOptionId: o,
@@ -11943,7 +11944,7 @@
                 isDisabled: r === t.selectedOptionId
             }, s(et.ActionApply) || "Apply")))
         }
-        function ti(e) {
+        function ni(e) {
             var r = e.filter
               , t = e.updateFilterValue
               , o = e.sendFilterClickEvent
@@ -11980,7 +11981,7 @@
                 className: "filter-display-text"
             }, e), $().createElement("span", {
                 className: a ? "icon-expand-arrow-selected" : "icon-expand-arrow"
-            })), a && $().createElement(ei, {
+            })), a && $().createElement(ti, {
                 filter: r,
                 dropdownContainerRef: i,
                 selectedOptionId: s,
@@ -11991,12 +11992,12 @@
                 translate: n
             }))
         }
-        (it = Oi = Oi || {}).WebHomeFriendsCarousel = "WebHomeFriendsCarousel",
+        (it = Mi = Mi || {}).WebHomeFriendsCarousel = "WebHomeFriendsCarousel",
         it.WebProfileFriendsCarousel = "WebProfileFriendsCarousel";
-        var ni = Oi
-          , ri = Qe
-          , oi = function() {
-            return (oi = Object.assign || function(e) {
+        var ri = Mi
+          , oi = Qe
+          , ii = function() {
+            return (ii = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -12004,7 +12005,7 @@
             }
             ).apply(this, arguments)
         }
-          , ii = function(i, a, e) {
+          , ai = function(i, a, e) {
             var l = dn()
               , t = (0,
             J.useRef)(null)
@@ -12044,7 +12045,7 @@
             var o = (0,
             J.useCallback)(function(e, t, n, r) {
                 var o;
-                return oi(((o = {})[k.ButtonName] = t,
+                return ii(((o = {})[k.ButtonName] = t,
                 o[k.GameSetTypeId] = i.topicId,
                 o[k.GameSetTargetId] = i.gameSetTargetId,
                 o[k.SortPos] = a,
@@ -12069,7 +12070,7 @@
               , i = e.fetchGamesPageData
               , e = (0,
             J.useRef)(null)
-              , a = ii(o, t, e);
+              , a = ai(o, t, e);
             return $().createElement("div", {
                 ref: e,
                 className: "filters-container"
@@ -12080,7 +12081,7 @@
             }, o.topic)), $().createElement("div", {
                 className: "filter-items-container"
             }, o.filters.map(function(r) {
-                return $().createElement(ti, {
+                return $().createElement(ni, {
                     key: r.filterId,
                     filter: r,
                     updateFilterValue: function(e) {
@@ -12099,11 +12100,11 @@
         ).defaultProps = {
             fetchGamesPageData: void 0
         };
-        var ai, li = te, si = "webDiscoverySduiError";
-        function ui(e, t) {
+        var li, si = te, ui = "webDiscoverySduiError";
+        function ci(e, t) {
             return void 0 === e || "number" != typeof e && "boolean" != typeof e ? void 0 !== e && "string" == typeof e ? e : t : e.toString()
         }
-        function ci(e, t) {
+        function di(e, t) {
             if ("number" == typeof e)
                 return e;
             if ("string" == typeof e) {
@@ -12113,16 +12114,38 @@
             }
             return t
         }
-        function di(e, t, n) {
-            return e = bi(bi(bi({}, t), e), n),
-            n = bi(bi({}, e), {
-                id: ui(e.id, Ii.id),
-                itemPosition: ci(e.itemPosition, Ii.itemPosition)
-            }),
-            void 0 === (e = n).id || void 0 === e.itemPosition || e.itemPosition < 0 ? (yi(ai.AnalyticsBuilderInvalidItemAnalyticsData, "Item analytics data is invalid: " + JSON.stringify(n)),
-            bi(bi({}, Ii), n)) : n
+        function fi(e, t) {
+            if ("boolean" == typeof e)
+                return e;
+            if ("string" != typeof e)
+                return "number" == typeof e ? 1 === e || 0 !== e && (Ei(li.ParseBooleanFieldInvalidNumber, "Invalid number value for boolean field: " + e),
+                t) : (Ei(li.ParseBooleanFieldInvalidType, "Invalid type for boolean field: " + typeof e + ", input: " + (e ? JSON.stringify(e) : "undefined")),
+                t);
+            var n = e.toLowerCase();
+            return "true" === n || "t" === n || "false" !== n && "f" !== n && (Ei(li.ParseBooleanFieldInvalidString, "Invalid string value for boolean field: " + e),
+            t)
         }
-        function fi(e) {
+        function pi(n) {
+            var r = {};
+            return Object.keys(n).forEach(function(e) {
+                var t = n[e];
+                null == t || "string" != typeof t && "number" != typeof t && "boolean" != typeof t ? Ei(li.AnalyticsParsingDiscardedInvalidParam, "Discarding invalid event parameter key: " + e + ", value: " + JSON.stringify(t) + ", type: " + typeof t) : r[e] = t
+            }),
+            r
+        }
+        function mi(e, t, n) {
+            return null != t && t.analyticsData && void 0 !== (null == t ? void 0 : t.analyticsData[e]) && null !== (null == t ? void 0 : t.analyticsData[e]) ? t.analyticsData[e] : null != t && t.ancestorAnalyticsData && void 0 !== (null == t ? void 0 : t.ancestorAnalyticsData[e]) && null !== (null == t ? void 0 : t.ancestorAnalyticsData[e]) ? t.ancestorAnalyticsData[e] : n
+        }
+        function vi(e, t, n) {
+            return e = Pi(Pi(Pi({}, t), e), n),
+            n = Pi(Pi({}, e), {
+                id: ci(e.id, Ci.id),
+                itemPosition: di(e.itemPosition, Ci.itemPosition)
+            }),
+            void 0 === (e = n).id || void 0 === e.itemPosition || e.itemPosition < 0 ? (Ei(li.AnalyticsBuilderInvalidItemAnalyticsData, "Item analytics data is invalid: " + JSON.stringify(n)),
+            Pi(Pi({}, Ci), n)) : n
+        }
+        function hi(e) {
             var t = (o = e.gradient).startColor
               , n = o.endColor
               , r = o.startOpacity
@@ -12130,7 +12153,7 @@
               , o = o.degree
               , i = "linear-gradient(".concat(o, "deg, ").concat(t).concat(Math.round(255 * r).toString(16).padStart(2, "0"), ", ").concat(n).concat(Math.round(255 * e).toString(16).padStart(2, "0"), ")")
               , e = (0,
-            xi.makeStyles)()(function() {
+            ki.makeStyles)()(function() {
                 return {
                     heroUnitGradient: {
                         background: i,
@@ -12149,7 +12172,7 @@
                 className: e
             })
         }
-        function pi(e) {
+        function gi(e) {
             var t = e.title
               , n = e.subtitle
               , r = e.heroUnitRef
@@ -12157,7 +12180,7 @@
               , i = e.bottomRowComponent
               , a = e.overlayPillComponent
               , l = (u = (0,
-            xi.makeStyles)()(function() {
+            ki.makeStyles)()(function() {
                 return {
                     heroUnitContentContainer: {
                         height: "".concat(336, "px"),
@@ -12186,7 +12209,7 @@
                     heroUnitTitle: {
                         color: "white",
                         position: "relative",
-                        textShadow: "".concat(Ai),
+                        textShadow: "".concat(Li),
                         fontFamily: "Builder Sans",
                         fontSize: "40px",
                         fontWeight: 700,
@@ -12198,7 +12221,7 @@
                     },
                     heroUnitSubtitle: {
                         color: "white",
-                        textShadow: "".concat(Ai),
+                        textShadow: "".concat(Li),
                         marginTop: "2px",
                         position: "relative",
                         fontFamily: "Builder Sans",
@@ -12217,7 +12240,7 @@
             return J.createElement("div", {
                 className: l,
                 ref: r
-            }, J.createElement(fi, {
+            }, J.createElement(hi, {
                 gradient: o
             }), a, J.createElement("div", {
                 className: s
@@ -12227,10 +12250,10 @@
                 className: u
             }, n)), i)
         }
-        function mi(e) {
+        function yi(e) {
             var t = e.backgroundImageComponent
               , e = (n = (0,
-            xi.makeStyles)()(function() {
+            ki.makeStyles)()(function() {
                 return {
                     heroUnitBackgroundWindow: {
                         height: "".concat(336, "px"),
@@ -12274,7 +12297,7 @@
                 className: n
             }, t))
         }
-        function vi(e) {
+        function bi(e) {
             var t = e.title
               , n = e.subtitle
               , r = e.foregroundImageComponent
@@ -12286,7 +12309,7 @@
               , u = J.useRef(null)
               , c = J.useRef(null)
               , d = (f = (0,
-            xi.makeStyles)()(function() {
+            ki.makeStyles)()(function() {
                 return {
                     heroUnitContainer: {
                         width: "100%",
@@ -12337,7 +12360,7 @@
                     e = t(e),
                     c.current && c.current.style.setProperty("--scroll", e.toString()))
                 }
-                var t = Ni(.25, .25, .5, 1);
+                var t = Di(.25, .25, .5, 1);
                 return e(),
                 window.addEventListener("scroll", e),
                 window.addEventListener("resize", e),
@@ -12346,7 +12369,7 @@
                     window.removeEventListener("resize", e)
                 }
             }, []),
-            J.createElement(xi.Container, {
+            J.createElement(ki.Container, {
                 ref: c,
                 disableGutters: !0,
                 maxWidth: !1,
@@ -12355,11 +12378,11 @@
                 "data-testid": "hero-unit"
             }, J.createElement("div", {
                 className: f
-            }), J.createElement(mi, {
+            }), J.createElement(yi, {
                 backgroundImageComponent: o
             }), J.createElement("div", {
                 className: e
-            }, r), J.createElement(pi, {
+            }, r), J.createElement(gi, {
                 title: t,
                 subtitle: n,
                 heroUnitRef: u,
@@ -12368,13 +12391,13 @@
                 overlayPillComponent: s
             }))
         }
-        function hi(e) {
+        function Ii(e) {
             var t = e.title
               , n = e.subtitle
               , r = e.leftAssetComponent
               , o = e.rightButtonComponent
               , i = (u = (0,
-            xi.makeStyles)()(function() {
+            ki.makeStyles)()(function() {
                 return {
                     attributionRowContainer: {
                         display: "flex",
@@ -12408,7 +12431,7 @@
                         fontSize: "14px",
                         fontWeight: 700,
                         lineHeight: "19.6px",
-                        textShadow: "".concat(Ai)
+                        textShadow: "".concat(Li)
                     },
                     assetSubtitle: {
                         marginTop: "auto",
@@ -12417,7 +12440,7 @@
                         fontSize: "14px",
                         fontWeight: 400,
                         lineHeight: "19.6px",
-                        textShadow: "".concat(Ai)
+                        textShadow: "".concat(Li)
                     }
                 }
             })().classes).attributionRowContainer
@@ -12440,10 +12463,10 @@
                 className: s
             }, o))
         }
-        function gi(e) {
+        function wi(e) {
             var t = e.pillText
               , e = (n = (0,
-            xi.makeStyles)()(function() {
+            ki.makeStyles)()(function() {
                 return {
                     heroUnitPill: {
                         width: "76px",
@@ -12471,7 +12494,24 @@
                 className: n
             }, t))
         }
-        (ge = ai = ai || {}).AnalyticsBuilderInvalidCollectionAnalyticsData = "AnalyticsBuilderInvalidCollectionAnalyticsData",
+        function Si(e) {
+            var t = fi(mi("adFlag", e, !1), !1)
+              , n = di(mi("itemPosition", e, -1), -1)
+              , r = null != e && e.getCollectionData ? e.getCollectionData() : void 0
+              , o = null !== (i = null == r ? void 0 : r.collectionPosition) && void 0 !== i ? i : di(mi("collectionPosition", e, -1), -1)
+              , i = null !== (a = null == r ? void 0 : r.totalNumberOfItems) && void 0 !== a ? a : di(mi("totalNumberOfItems", e, -1), -1)
+              , r = null !== (a = null == r ? void 0 : r.collectionId) && void 0 !== a ? a : di(mi("collectionId", e, -1), -1)
+              , a = ci(mi(Qr.HomePageSessionInfo, e, ""), "");
+            return (e = {})[k.IsAd] = t,
+            e[k.Position] = n,
+            e[k.SortPos] = o,
+            e[k.NumberOfLoadedTiles] = i,
+            e[k.GameSetTypeId] = r,
+            e[k.Page] = K.HomePage,
+            e[U.HomePageSessionInfo] = a,
+            e
+        }
+        (ge = li = li || {}).AnalyticsBuilderInvalidCollectionAnalyticsData = "AnalyticsBuilderInvalidCollectionAnalyticsData",
         ge.AnalyticsBuilderInvalidItemAnalyticsData = "AnalyticsBuilderInvalidItemAnalyticsData",
         ge.AnalyticsParsingDiscardedInvalidParam = "AnalyticsParsingDiscardedInvalidParam",
         ge.AssetImageMissingAssetUrl = "AssetImageMissingAssetUrl",
@@ -12479,6 +12519,10 @@
         ge.BuildBaseImpressionParamsMissingItem = "BuildBaseImpressionParamsMissingItem",
         ge.BuildItemImpressionParamsMissingItem = "BuildItemImpressionParamsMissingItem",
         ge.ComponentNotFound = "ComponentNotFound",
+        ge.InvalidPageForSessionAnalytics = "InvalidPageForSessionAnalytics",
+        ge.ParseBooleanFieldInvalidNumber = "ParseBooleanFieldInvalidNumber",
+        ge.ParseBooleanFieldInvalidString = "ParseBooleanFieldInvalidString",
+        ge.ParseBooleanFieldInvalidType = "ParseBooleanFieldInvalidType",
         ge.PropParseFailure = "PropParseFailure",
         ge.PropParserNotFound = "PropParserNotFound",
         ge.ReportItemActionMissingCollectionData = "ReportItemActionMissingCollectionData",
@@ -12500,7 +12544,7 @@
         ge.SingleItemCollectionItemImpressedButMissing = "SingleItemCollectionItemImpressedButMissing",
         ge.SingleItemCollectionMissingItem = "SingleItemCollectionMissingItem",
         ge.VerticalFeedMissingFeedItems = "VerticalFeedMissingFeedItems";
-        var yi = function(e, t) {
+        var Ei = function(e, t) {
             (0,
             E.fireEvent)(e);
             t = {
@@ -12508,13 +12552,13 @@
                 errorMessage: t
             };
             S.eventStreamService.sendEvent({
-                name: si,
-                type: si,
+                name: ui,
+                type: ui,
                 context: Xr.Home
-            }, oo(t))
+            }, io(t))
         }
-          , bi = function() {
-            return (bi = Object.assign || function(e) {
+          , Pi = function() {
+            return (Pi = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -12522,19 +12566,19 @@
             }
             ).apply(this, arguments)
         }
-          , Ii = {
+          , Ci = {
             id: "Unknown",
             itemPosition: -1
         }
-          , wi = {
+          , _i = {
             collectionId: -1,
             contentType: "Unknown",
             itemsPerRow: -1,
             collectionPosition: -1,
             totalNumberOfItems: -1
         }
-          , Si = function() {
-            return (Si = Object.assign || function(e) {
+          , Ti = function() {
+            return (Ti = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -12542,8 +12586,8 @@
             }
             ).apply(this, arguments)
         }
-          , Ei = [Qr.CollectionId, Qr.CollectionPosition, Qr.ContentType, "id", "itemPosition", "itemsPerRow", "rowNumber", eo.TotalNumberOfItems]
-          , Pi = function(e, t, n) {
+          , xi = [eo.CollectionId, eo.CollectionPosition, eo.ContentType, "id", "itemPosition", "itemsPerRow", "rowNumber", to.TotalNumberOfItems]
+          , Ni = function(e, t, n) {
             var r, o, i, a, l, s, u, c, d, f, p;
             n && t ? 0 !== e.length ? (p = e,
             r = t,
@@ -12562,16 +12606,16 @@
                 c.push(t.itemPosition + 1),
                 f.push(t.itemPosition + 1),
                 void 0 !== i && 0 < i ? (t = Math.floor(e / i),
-                d.push(t + 1)) : d.push(1)) : yi(ai.BuildBaseImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + l)
+                d.push(t + 1)) : d.push(1)) : Ei(li.BuildBaseImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + l)
             }),
-            (p = {})[Qr.CollectionId] = l,
-            p[Qr.CollectionPosition] = a,
-            p[Qr.ContentType] = o,
-            p[eo.TotalNumberOfItems] = s,
-            p[eo.ItemIds] = u.join(","),
-            p[eo.ItemPositions] = c.join(","),
-            p[eo.RowNumbers] = d.join(","),
-            p[eo.PositionsInTopic] = f.join(","),
+            (p = {})[eo.CollectionId] = l,
+            p[eo.CollectionPosition] = a,
+            p[eo.ContentType] = o,
+            p[to.TotalNumberOfItems] = s,
+            p[to.ItemIds] = u.join(","),
+            p[to.ItemPositions] = c.join(","),
+            p[to.RowNumbers] = d.join(","),
+            p[to.PositionsInTopic] = f.join(","),
             p = p,
             e = function(r, o, i) {
                 var a = {};
@@ -12580,11 +12624,11 @@
                     null != t ? Object.entries(t).forEach(function(e) {
                         var t = e[0]
                           , e = e[1];
-                        Ei.includes(t) || null == e || (a[t] || (a[t] = r.map(function() {
+                        xi.includes(t) || null == e || (a[t] || (a[t] = r.map(function() {
                             return ""
                         })),
                         a[t][n] = e.toString())
-                    }) : yi(ai.BuildItemImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + i)
+                    }) : Ei(li.BuildItemImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + i)
                 });
                 var n = {};
                 return Object.entries(a).forEach(function(e) {
@@ -12594,15 +12638,15 @@
                 }),
                 n
             }(e, t, n.collectionId),
-            p = Si(Si(Si({}, e), n), p),
+            p = Ti(Ti(Ti({}, e), n), p),
             S.eventStreamService.sendEvent({
                 name: Zr.ItemImpressions,
                 type: Zr.ItemImpressions,
                 context: Xr.Home
-            }, oo(Si({}, p)))) : yi(ai.ReportItemImpressionsNoIndexesToSend, "No indexes to send for collection " + n.collectionId) : yi(ai.ReportItemImpressionsMissingData, "Missing collection " + JSON.stringify(n) + " or item " + JSON.stringify(t) + " data when sending impressions for collection " + (null !== (n = null == n ? void 0 : n.collectionId) && void 0 !== n ? n : "undefined"))
+            }, io(Ti({}, p)))) : Ei(li.ReportItemImpressionsNoIndexesToSend, "No indexes to send for collection " + n.collectionId) : Ei(li.ReportItemImpressionsMissingData, "Missing collection " + JSON.stringify(n) + " or item " + JSON.stringify(t) + " data when sending impressions for collection " + (null !== (n = null == n ? void 0 : n.collectionId) && void 0 !== n ? n : "undefined"))
         }
-          , Ci = function() {
-            return (Ci = Object.assign || function(e) {
+          , Ai = function() {
+            return (Ai = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -12610,40 +12654,34 @@
             }
             ).apply(this, arguments)
         }
-          , _i = function(e, t, n) {
-            var r = di(null !== (l = t.analyticsData) && void 0 !== l ? l : {}, null !== (s = t.ancestorAnalyticsData) && void 0 !== s ? s : {}, void 0)
+          , Oi = function(e, t, n) {
+            var r = vi(null !== (l = t.analyticsData) && void 0 !== l ? l : {}, null !== (s = t.ancestorAnalyticsData) && void 0 !== s ? s : {}, void 0)
               , o = null !== (u = null != n ? n : t.getCollectionData && t.getCollectionData()) && void 0 !== u ? u : null;
-            o || yi(ai.ReportItemActionMissingCollectionData, "Collection data is missing when sending action " + JSON.stringify(e));
-            var i, a, l, s, u, c, d, f = null != o ? o : wi, n = (a = (i = r).itemPosition,
-            l = f.contentType,
-            s = f.collectionPosition,
-            n = f.collectionId,
-            t = f.totalNumberOfItems,
+            o || Ei(li.ReportItemActionMissingCollectionData, "Collection data is missing when sending action " + JSON.stringify(e));
+            var i, a, l, s, u, c = null != o ? o : _i, n = (a = (i = r).itemPosition,
+            l = c.contentType,
+            s = c.collectionPosition,
+            n = c.collectionId,
+            t = c.totalNumberOfItems,
             u = e.actionType,
-            i ? ((o = {})[Qr.CollectionId] = n,
-            o[Qr.CollectionPosition] = s,
-            o[Qr.ContentType] = l,
-            o[to.TotalNumberOfItems] = t,
-            o[to.ItemId] = i.id,
-            o[to.ItemPosition] = a + 1,
-            o[to.PositionInTopic] = a + 1,
+            i ? ((o = {})[eo.CollectionId] = n,
+            o[eo.CollectionPosition] = s,
+            o[eo.ContentType] = l,
+            o[no.TotalNumberOfItems] = t,
+            o[no.ItemId] = i.id,
+            o[no.ItemPosition] = a + 1,
+            o[no.PositionInTopic] = a + 1,
             o.actionType = u,
-            o) : (yi(ai.BuildBaseActionParamsMissingItem, "Item is nil when sending action for collection " + n),
-            {})), n = Ci(Ci(Ci(Ci({}, r), f), (c = e.actionParams,
-            d = {},
-            Object.keys(c).forEach(function(e) {
-                var t = c[e];
-                null == t || "string" != typeof t && "number" != typeof t && "boolean" != typeof t ? yi(ai.AnalyticsParsingDiscardedInvalidParam, "Discarding invalid event parameter key: " + e + ", value: " + JSON.stringify(t) + ", type: " + typeof t) : d[e] = t
-            }),
-            d)), n);
+            o) : (Ei(li.BuildBaseActionParamsMissingItem, "Item is nil when sending action for collection " + n),
+            {})), n = Ai(Ai(Ai(Ai({}, r), c), pi(e.actionParams)), n);
             S.eventStreamService.sendEvent({
                 name: Zr.ItemAction,
                 type: Zr.ItemAction,
                 context: Xr.Home
-            }, oo(Ci({}, n)))
+            }, io(Ai({}, n)))
         }
-          , Ti = function() {
-            return (Ti = Object.assign || function(e) {
+          , Ri = function() {
+            return (Ri = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -12652,17 +12690,17 @@
             ).apply(this, arguments)
         }
           , oe = function(e) {
-            var n = e.componentConfig
+            var r = e.componentConfig
               , t = e.analyticsContext
-              , r = e.item
-              , o = e.children
+              , o = e.item
+              , n = e.children
               , i = (0,
             J.useRef)(null)
               , a = (0,
             J.useRef)(null)
               , l = (0,
             J.useCallback)(function(e, t) {
-                _i(e, t, i.current)
+                Oi(e, t, i.current)
             }, [i])
               , s = (0,
             J.useCallback)(function() {
@@ -12670,7 +12708,7 @@
             }, [i])
               , u = (0,
             J.useMemo)(function() {
-                return Ti(Ti({}, t), {
+                return Ri(Ri({}, t), {
                     logAction: l,
                     getCollectionAnalyticsData: s
                 })
@@ -12679,54 +12717,68 @@
             J.useMemo)(function() {
                 var e;
                 return function(e, t, n, r, o) {
-                    t = bi(bi({}, e), t),
-                    r = bi(bi({}, t), {
-                        collectionId: ci(t.collectionId, wi.collectionId),
-                        collectionPosition: ci(t.collectionPosition, -1),
-                        contentType: ui(t.contentType, wi.contentType),
+                    t = Pi(Pi({}, e), t),
+                    r = Pi(Pi({}, t), {
+                        collectionId: di(t.collectionId, _i.collectionId),
+                        collectionPosition: di(t.collectionPosition, -1),
+                        contentType: ci(t.contentType, _i.contentType),
                         itemsPerRow: r,
                         totalNumberOfItems: o
                     });
-                    return void 0 === (o = r).collectionId || o.collectionId < 0 || void 0 === o.contentType || void 0 === o.itemsPerRow || o.itemsPerRow < 0 || void 0 === o.collectionPosition || o.collectionPosition < 0 || void 0 === o.totalNumberOfItems || o.totalNumberOfItems < 0 ? (yi(ai.AnalyticsBuilderInvalidCollectionAnalyticsData, "Collection analytics data for component type " + n + " is invalid: " + JSON.stringify(r)),
-                    bi(bi({}, wi), r)) : r
-                }(null !== (e = u.ancestorAnalyticsData) && void 0 !== e ? e : {}, null !== (e = u.analyticsData) && void 0 !== e ? e : {}, n.componentType, 1, 1)
-            }, [u.ancestorAnalyticsData, u.analyticsData, n.componentType]);
+                    return void 0 === (o = r).collectionId || o.collectionId < 0 || void 0 === o.contentType || void 0 === o.itemsPerRow || o.itemsPerRow < 0 || void 0 === o.collectionPosition || o.collectionPosition < 0 || void 0 === o.totalNumberOfItems || o.totalNumberOfItems < 0 ? (Ei(li.AnalyticsBuilderInvalidCollectionAnalyticsData, "Collection analytics data for component type " + n + " is invalid: " + JSON.stringify(r)),
+                    Pi(Pi({}, _i), r)) : r
+                }(null !== (e = u.ancestorAnalyticsData) && void 0 !== e ? e : {}, null !== (e = u.analyticsData) && void 0 !== e ? e : {}, r.componentType, 1, 1)
+            }, [u.ancestorAnalyticsData, u.analyticsData, r.componentType]);
             var c = (0,
             J.useCallback)(function(e) {
-                r ? Pi(e, [a.current], i.current) : yi(ai.SingleItemCollectionItemImpressedButMissing, "SingleItemCollection onItemImpressed missing item " + JSON.stringify(r) + " with config " + JSON.stringify(n))
-            }, [r, n, i, a])
+                var t, n;
+                o ? (i.current && ("Game" !== (n = i.current.contentType) && "HeroUnit" !== n || null !== (t = a.current) && void 0 !== t && t.universeId && ((n = {})[k.RootPlaceIds] = [di(null === (t = a.current) || void 0 === t ? void 0 : t.placeId, -1)],
+                n[k.UniverseIds] = [di(null === (t = a.current) || void 0 === t ? void 0 : t.universeId, -1)],
+                n[k.AdsPositions] = [!0 === fi(null === (t = a.current) || void 0 === t ? void 0 : t.adFlag, !1) ? 1 : 0],
+                n[k.AdFlags] = [!0 === fi(null === (t = a.current) || void 0 === t ? void 0 : t.adFlag, !1) ? 1 : 0],
+                n[k.AbsPositions] = [0],
+                n[k.SortPos] = null !== (t = null === (t = i.current) || void 0 === t ? void 0 : t.collectionPosition) && void 0 !== t ? t : -1,
+                n[k.GameSetTypeId] = null === (t = i.current) || void 0 === t ? void 0 : t.collectionId,
+                n[k.Page] = K.HomePage,
+                n[k.ComponentType] = "HeroUnit",
+                n[U.HomePageSessionInfo] = ci(null === (t = i.current) || void 0 === t ? void 0 : t[Qr.HomePageSessionInfo], ""),
+                n = n,
+                n = ee.gameImpressions(n),
+                S.eventStreamService.sendEvent.apply(S.eventStreamService, n))),
+                Ni(e, [a.current], i.current)) : Ei(li.SingleItemCollectionItemImpressedButMissing, "SingleItemCollection onItemImpressed missing item " + JSON.stringify(o) + " with config " + JSON.stringify(r))
+            }, [o, r, i, a])
               , d = (0,
             J.useRef)(null);
             Yr(d, 1, c);
             e = (0,
             J.useMemo)(function() {
                 var e;
-                if (!r)
-                    return yi(ai.SingleItemCollectionMissingItem, "SingleItemCollection missing item " + JSON.stringify(r) + " with config " + JSON.stringify(n)),
+                if (!o)
+                    return Ei(li.SingleItemCollectionMissingItem, "SingleItemCollection missing item " + JSON.stringify(o) + " with config " + JSON.stringify(r)),
                     $().createElement($().Fragment, null);
                 var t = {
                     itemPosition: 0
                 };
-                return a.current = di(null !== (e = r.analyticsData) && void 0 !== e ? e : {}, null !== (e = i.current) && void 0 !== e ? e : {}, t),
-                $().createElement(Xi, {
-                    componentConfig: r,
+                return a.current = vi(null !== (e = o.analyticsData) && void 0 !== e ? e : {}, null !== (e = i.current) && void 0 !== e ? e : {}, t),
+                $().createElement(aa, {
+                    componentConfig: o,
                     parentAnalyticsContext: u,
                     localAnalyticsData: t
                 })
-            }, [r, n, u, i]),
+            }, [o, r, u, i]),
             c = (0,
             J.useMemo)(function() {
-                return $().Children.map(o, function(e, t) {
+                return $().Children.map(n, function(e, t) {
                     if (!$().isValidElement(e))
-                        return yi("SingleItemCollectionChildNotReactElement", "SingleItemCollectionChildNotReactElement " + JSON.stringify(n) + " child " + JSON.stringify(e) + " is not a valid React element"),
+                        return Ei("SingleItemCollectionChildNotReactElement", "SingleItemCollectionChildNotReactElement " + JSON.stringify(r) + " child " + JSON.stringify(e) + " is not a valid React element"),
                         e;
-                    t = n.componentType + "-child-" + t;
-                    return $().cloneElement(e, Ti(Ti({}, e.props), {
+                    t = r.componentType + "-child-" + t;
+                    return $().cloneElement(e, Ri(Ri({}, e.props), {
                         key: t,
                         parentAnalyticsContext: u
                     }))
                 })
-            }, [o, u, n]);
+            }, [n, u, r]);
             return $().createElement("div", {
                 ref: d
             }, e, c)
@@ -12736,18 +12788,18 @@
               , n = e.analyticsContext
               , e = e.feedItems;
             return e ? $().createElement("div", null, e.map(function(e, t) {
-                return $().createElement(Xi, {
+                return $().createElement(aa, {
                     key: e.componentType + "--" + t,
                     componentConfig: e,
                     parentAnalyticsContext: n
                 })
-            })) : (yi(ai.VerticalFeedMissingFeedItems, "SCI missing feedItems " + JSON.stringify(e) + " with config " + JSON.stringify(t)),
+            })) : (Ei(li.VerticalFeedMissingFeedItems, "SCI missing feedItems " + JSON.stringify(e) + " with config " + JSON.stringify(t)),
             $().createElement($().Fragment, null))
         }
-          , xi = WebBlox
-          , Ni = Xa(4777)
-          , Ai = "2px 2px 4px rgba(0, 0, 0, 0.15)"
-          , Oi = function(e) {
+          , ki = WebBlox
+          , Di = al(4777)
+          , Li = "2px 2px 4px rgba(0, 0, 0, 0.15)"
+          , Mi = function(e) {
             var t = e.title
               , n = e.subtitle
               , r = e.bottomRowComponent
@@ -12761,7 +12813,7 @@
               , d = e.children
               , f = (0,
             J.useMemo)(function() {
-                return u ? $().createElement(hi, {
+                return u ? $().createElement(Ii, {
                     title: u.title,
                     subtitle: u.subtitle,
                     leftAssetComponent: u.image,
@@ -12770,13 +12822,13 @@
             }, [u, c])
               , p = (0,
             J.useMemo)(function() {
-                return s ? $().createElement(gi, {
+                return s ? $().createElement(wi, {
                     pillText: s
                 }) : $().createElement($().Fragment, null)
             }, [s]);
             return (0,
             J.useMemo)(function() {
-                return $().createElement(vi, {
+                return $().createElement(bi, {
                     title: t,
                     subtitle: n,
                     foregroundImageComponent: i,
@@ -12787,16 +12839,47 @@
                     bottomRowComponent: null != r ? r : f
                 }, d)
             }, [a, l, r, f, i, o, n, t, d, p])
+        }
+          , Ui = function() {
+            return (Ui = Object.assign || function(e) {
+                for (var t, n = 1, r = arguments.length; n < r; n++)
+                    for (var o in t = arguments[n])
+                        Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
+                return e
+            }
+            ).apply(this, arguments)
+        }
+          , Qe = function(e, t) {
+            var n, r = null === (o = null == e ? void 0 : e.actionParams) || void 0 === o ? void 0 : o.placeId, o = "number" == typeof (n = r) ? n : "string" == typeof n ? parseInt(n, 10) : void 0;
+            void 0 !== o ? (n = t,
+            t = pi(null !== (e = null == (t = e) ? void 0 : t.actionParams) && void 0 !== e ? e : {}),
+            e = di(null !== (e = t.placeId) && void 0 !== e ? e : mi("placeId", n, -1), -1),
+            t = di(null !== (t = t.universeId) && void 0 !== t ? t : mi("universeId", n, -1), -1),
+            n = Si(n),
+            n = Ui(Ui({}, n), ((n = {})[k.PlaceId] = e,
+            n[k.UniverseId] = t,
+            n)),
+            n = v(o, "", n),
+            window.location.href = n) : Ei(li.SduiActionOpenGameDetailsInvalidId, "Invalid id " + JSON.stringify(r) + " to open game details")
+        }
+          , Fi = function() {
+            return (Fi = Object.assign || function(e) {
+                for (var t, n = 1, r = arguments.length; n < r; n++)
+                    for (var o in t = arguments[n])
+                        Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
+                return e
+            }
+            ).apply(this, arguments)
         };
-        function Ri(n, r, o) {
-            var i, e = Ki[n], a = Di({}, r);
+        function Bi(n, r, o) {
+            var i, e = ra[n], a = ji({}, r);
             return !e || (i = e.propParsers) && Object.keys(r).forEach(function(e) {
                 var t;
-                void 0 !== r[e] && i[e] && ((t = i[e]) && "function" == typeof t ? void 0 !== (t = t(r[e], o)) ? a[e] = t : yi(ai.PropParseFailure, "Failed to parse prop " + e + " with value " + JSON.stringify(r[e]) + " using for component " + n) : yi(ai.PropParserNotFound, "Prop parser not found for prop " + e + " and component " + n))
+                void 0 !== r[e] && i[e] && ((t = i[e]) && "function" == typeof t ? void 0 !== (t = t(r[e], o)) ? a[e] = t : Ei(li.PropParseFailure, "Failed to parse prop " + e + " with value " + JSON.stringify(r[e]) + " using for component " + n) : Ei(li.PropParserNotFound, "Prop parser not found for prop " + e + " and component " + n))
             }),
             a
         }
-        function ki(e) {
+        function Gi(e) {
             var t = e.assetId
               , n = (o = (0,
             J.useState)(""))[0]
@@ -12818,36 +12901,46 @@
             o ? $().createElement(be.Loading, null) : n ? $().createElement("img", {
                 src: n,
                 alt: "asset"
-            }) : (yi(ai.AssetImageMissingAssetUrl, "AssetImage missing asset url for assetId " + t),
+            }) : (Ei(li.AssetImageMissingAssetUrl, "AssetImage missing asset url for assetId " + t),
             $().createElement("img", {
                 src: "",
                 alt: "asset"
             }))
         }
-        (Qe = function(e) {
-            var t = e.universeId
-              , n = e.placeId
-              , r = e.width
-              , o = e.playableText
-              , i = e.hidePlayableIcon
-              , a = P.PlayButton.usePlayabilityStatus
-              , l = P.PlayButton.PlayabilityStatuses
-              , e = P.PlayButton.PlayButton
-              , a = a(t.toString())[0];
-            return void 0 === a || a !== l.Playable ? $().createElement($().Fragment, null) : $().createElement("div", {
+        (te = function(e) {
+            var n = e.analyticsContext
+              , r = e.universeId
+              , o = e.placeId
+              , t = e.width
+              , i = e.playableText
+              , a = e.hidePlayableIcon
+              , l = P.PlayButton.usePlayabilityStatus
+              , s = P.PlayButton.PlayabilityStatuses
+              , u = P.PlayButton.PlayButton
+              , e = l(r.toString())[0]
+              , l = (0,
+            J.useMemo)(function() {
+                var e, t = Si(n);
+                return Fi(Fi({}, t), ((e = {})[k.IsAd] = (null !== (t = t[k.IsAd]) && void 0 !== t && t).toString(),
+                e[k.PlaceId] = di(o, -1),
+                e[k.UniverseId] = di(r, -1),
+                e[k.PlayContext] = K.HomePage,
+                e))
+            }, [n, o, r]);
+            return void 0 === e || e !== s.Playable ? $().createElement($().Fragment, null) : $().createElement("div", {
                 className: "sdui-play-button-container",
                 "data-testid": "sdui-play-button-container",
-                style: r ? {
-                    width: r + "px"
+                style: t ? {
+                    width: t + "px"
                 } : {}
-            }, $().createElement(e, {
-                universeId: t.toString(),
-                placeId: n.toString(),
-                eventProperties: {},
-                status: a,
+            }, $().createElement(u, {
+                universeId: r.toString(),
+                placeId: o.toString(),
+                eventProperties: l,
+                status: e,
                 disableLoadingState: !0,
-                buttonText: o,
-                hideIcon: i
+                buttonText: i,
+                hideIcon: a
             }))
         }
         ).defaultProps = {
@@ -12855,9 +12948,9 @@
             playableText: void 0,
             hidePlayableIcon: void 0
         };
-        var te = Qe
-          , Di = function() {
-            return (Di = Object.assign || function(e) {
+        var ge = te
+          , ji = function() {
+            return (ji = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -12865,15 +12958,10 @@
             }
             ).apply(this, arguments)
         };
-        (Ca = Ca || {}).OpenGameDetails = "OpenGameDetails";
-        var Li, Mi = ((ge = {})[Ca.OpenGameDetails] = function(e) {
-            var t, e = null === (t = null == e ? void 0 : e.actionParams) || void 0 === t ? void 0 : t.placeId, t = "number" == typeof (t = e) ? t : "string" == typeof t ? parseInt(t, 10) : void 0;
-            void 0 !== t ? (t = v(t, "", {}),
-            window.location.href = t) : yi(ai.SduiActionOpenGameDetailsInvalidId, "Invalid id " + JSON.stringify(e) + " to open game details")
-        }
-        ,
-        ge);
-        function Ui(e, t) {
+        (ea = ea || {}).OpenGameDetails = "OpenGameDetails";
+        var Hi, zi = ((te = {})[ea.OpenGameDetails] = Qe,
+        te);
+        function Vi(e, t) {
             if (void 0 !== e && (r = null === (n = null === (r = null == e ? void 0 : e.feed) || void 0 === r ? void 0 : r.props) || void 0 === n ? void 0 : n.feedItems,
             Array.isArray(r) && r.every(function(e) {
                 return "object" == typeof e && null !== e
@@ -12884,51 +12972,51 @@
                 });
                 if (r)
                     return r;
-                yi(ai.ServerDrivenFeedItemMissingItem, "SDUI feed items " + JSON.stringify(n) + " missing matching feed item with key " + t)
+                Ei(li.ServerDrivenFeedItemMissingItem, "SDUI feed items " + JSON.stringify(n) + " missing matching feed item with key " + t)
             } else
-                yi(ai.ServerDrivenFeedItemMissingFeedOrFeedItems, "SDUI missing feed items, root is " + JSON.stringify(e))
+                Ei(li.ServerDrivenFeedItemMissingFeedOrFeedItems, "SDUI missing feed items, root is " + JSON.stringify(e))
         }
-        function Bi(e) {
-            return !!(e && "object" == typeof e && e.componentType && Yi(e.componentType))
+        function Wi(e) {
+            return !!(e && "object" == typeof e && e.componentType && oa(e.componentType))
         }
-        function Fi(e) {
+        function qi(e) {
             if ("string" != typeof e)
-                return yi(ai.SduiParseAssetUrlInvalidInput, "Invalid asset url input " + JSON.stringify(e) + ". Input must be a string."),
+                return Ei(li.SduiParseAssetUrlInvalidInput, "Invalid asset url input " + JSON.stringify(e) + ". Input must be a string."),
                 {
                     assetType: void 0,
                     assetTarget: "0"
                 };
             var t = e.split("//");
-            if (2 === t.length && (e.includes(Li.RbxAsset) || e.includes(Li.RbxThumb))) {
-                if (t[0].includes(Li.RbxAsset))
+            if (2 === t.length && (e.includes(Hi.RbxAsset) || e.includes(Hi.RbxThumb))) {
+                if (t[0].includes(Hi.RbxAsset))
                     return {
-                        assetType: Li.RbxAsset,
+                        assetType: Hi.RbxAsset,
                         assetTarget: t[1]
                     };
-                if (t[0].includes(Li.RbxThumb))
+                if (t[0].includes(Hi.RbxThumb))
                     return {
-                        assetType: Li.RbxThumb,
+                        assetType: Hi.RbxThumb,
                         assetTarget: t[1]
                     }
             }
-            return yi(ai.SduiParseAssetUrlInvalidFormat, "Invalid asset url format " + e),
+            return Ei(li.SduiParseAssetUrlInvalidFormat, "Invalid asset url format " + e),
             {
                 assetType: void 0,
                 assetTarget: "0"
             }
         }
-        function Gi(e) {
+        function Ji(e) {
             if ("string" != typeof e)
                 return $().createElement($().Fragment, null);
-            var t, n, r = Fi(e), o = r.assetType, i = r.assetTarget;
-            if (o === Li.RbxAsset) {
+            var t, n, r = qi(e), o = r.assetType, i = r.assetTarget;
+            if (o === Hi.RbxAsset) {
                 var a = i;
-                return $().createElement(ki, {
+                return $().createElement(Gi, {
                     assetId: a
                 })
             }
-            if (o !== Li.RbxThumb)
-                return yi(ai.SduiParseAssetUrlIntoComponentInvalidAssetType, "Invalid asset type " + JSON.stringify(o) + ". Only RbxThumb and RbxAsset are supported."),
+            if (o !== Hi.RbxThumb)
+                return Ei(li.SduiParseAssetUrlIntoComponentInvalidAssetType, "Invalid asset type " + JSON.stringify(o) + ". Only RbxThumb and RbxAsset are supported."),
                 $().createElement($().Fragment, null);
             var o = (r = (l = (l = i).split("&"),
             n = {},
@@ -12946,9 +13034,9 @@
             })).thumbnailType
               , i = r.w
               , l = r.h;
-            return void 0 === (a = r.id) || void 0 === o || void 0 === i || void 0 === l ? (yi(ai.SduiParseAssetUrlIntoComponentInvalidRbxThumb, "Invalid rbxthumb url " + JSON.stringify(e) + ". At least one of thumbnailType " + (null != o ? o : "undefined") + " id " + (null != a ? a : "undefined") + ", w " + (null != i ? i : "undefined") + ", or h " + (null != l ? l : "undefined") + " is invalid"),
+            return void 0 === (a = r.id) || void 0 === o || void 0 === i || void 0 === l ? (Ei(li.SduiParseAssetUrlIntoComponentInvalidRbxThumb, "Invalid rbxthumb url " + JSON.stringify(e) + ". At least one of thumbnailType " + (null != o ? o : "undefined") + " id " + (null != a ? a : "undefined") + ", w " + (null != i ? i : "undefined") + ", or h " + (null != l ? l : "undefined") + " is invalid"),
             $().createElement($().Fragment, null)) : (t = i + "x" + l,
-            void 0 !== (e = null === (e = Wi[e = o]) || void 0 === e ? void 0 : e.find(function(e) {
+            void 0 !== (e = null === (e = Xi[e = o]) || void 0 === e ? void 0 : e.find(function(e) {
                 return e === t
             })) ? $().createElement(Je.Thumbnail2d, {
                 containerClass: "sdui-thumbnail-container",
@@ -12956,12 +13044,12 @@
                 targetId: a,
                 format: Je.ThumbnailFormat.webp,
                 size: e
-            }) : (yi(ai.SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType, "No supported thumbnail size " + i + "x" + l + " for type " + o),
+            }) : (Ei(li.SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType, "No supported thumbnail size " + i + "x" + l + " for type " + o),
             $().createElement($().Fragment, null)))
         }
-        function ji(e, t, n) {
-            if (!Bi(e))
-                return yi(ai.SduiComponentBuildPropsAndChildrenInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to build React props and children"),
+        function $i(e, t, n) {
+            if (!Wi(e))
+                return Ei(li.SduiComponentBuildPropsAndChildrenInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to build React props and children"),
                 {
                     props: {},
                     children: null
@@ -12969,24 +13057,24 @@
             var r, o, i = e.componentType, n = (r = t,
             a = n,
             n = (t = e).analyticsData,
-            t = qi(qi({}, n), null != a ? a : {}),
+            t = Qi(Qi({}, n), null != a ? a : {}),
             n = r.logAction,
             a = r.getCollectionData,
             {
                 analyticsData: t,
-                ancestorAnalyticsData: qi(qi({}, r.ancestorAnalyticsData), r.analyticsData),
+                ancestorAnalyticsData: Qi(Qi({}, r.ancestorAnalyticsData), r.analyticsData),
                 logAction: n,
                 getCollectionData: a
-            }), a = qi(qi({}, e.props), {
+            }), a = Qi(Qi({}, e.props), {
                 componentConfig: e,
                 analyticsContext: n
             });
             return {
-                props: Ri(i, a, n),
+                props: Bi(i, a, n),
                 children: (o = n,
                 (e = e).children ? e.children.map(function(e, t) {
                     t = e.componentType + "-" + t;
-                    return $().createElement(Xi, {
+                    return $().createElement(aa, {
                         key: t,
                         componentConfig: e,
                         parentAnalyticsContext: o
@@ -12994,46 +13082,46 @@
                 }) : null)
             }
         }
-        (Qe = Li = Li || {}).RbxAsset = "rbxassetid",
-        Qe.RbxThumb = "rbxthumb";
-        var Hi, zi = function() {
-            return (zi = Object.assign || function(e) {
+        (ea = Hi = Hi || {}).RbxAsset = "rbxassetid",
+        ea.RbxThumb = "rbxthumb";
+        var Ki, Yi = function() {
+            return (Yi = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Vi = {
+        }, Zi = {
             startColor: "#000000",
             endColor: "#000000",
             startOpacity: 0,
             endOpacity: 1,
             degree: 180
-        }, Wi = ((Ca = {})[Je.ThumbnailTypes.gameIcon] = Object.values(Je.ThumbnailGameIconSize),
-        Ca[Je.ThumbnailTypes.assetThumbnail] = Object.values(Je.ThumbnailAssetsSize),
-        Ca), ge = {
+        }, Xi = ((Qe = {})[Je.ThumbnailTypes.gameIcon] = Object.values(Je.ThumbnailGameIconSize),
+        Qe[Je.ThumbnailTypes.assetThumbnail] = Object.values(Je.ThumbnailAssetsSize),
+        Qe), te = {
             parseUiComponent: function(e, t) {
-                return Bi(e) ? $().createElement(Xi, {
+                return Wi(e) ? $().createElement(aa, {
                     componentConfig: e,
                     parentAnalyticsContext: t
-                }) : (yi(ai.SduiParseUiComponentInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to parse UI component"),
+                }) : (Ei(li.SduiParseUiComponentInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to parse UI component"),
                 $().createElement($().Fragment, null))
             },
             parseCallback: function(t, n) {
                 if (!function(e) {
-                    if (e && "object" == typeof e && (e.actionType && e.actionParams && Mi[e.actionType]))
+                    if (e && "object" == typeof e && (e.actionType && e.actionParams && zi[e.actionType]))
                         return !0;
                     return !1
                 }(t))
-                    return yi(ai.SduiParseCallbackInvalidConfig, "Invalid action config " + JSON.stringify(t) + " to parse callback"),
+                    return Ei(li.SduiParseCallbackInvalidConfig, "Invalid action config " + JSON.stringify(t) + " to parse callback"),
                     function() {}
                     ;
-                var r = Mi[t.actionType];
+                var r = zi[t.actionType];
                 return function() {
                     var e = n.logAction;
-                    e ? e(t, n) : _i(t, n, null),
-                    r(t)
+                    e ? e(t, n) : Oi(t, n, null),
+                    r(t, n)
                 }
             },
             parseHeroUnitAsset: function(e) {
@@ -13047,37 +13135,37 @@
                         title: "Hero Unit Asset Title",
                         subtitle: "Hero Unit Asset Subtitle"
                     };
-                var t = Gi(e.image);
-                return zi(zi({}, e), {
+                var t = Ji(e.image);
+                return Yi(Yi({}, e), {
                     image: t
                 })
             },
-            parseAssetUrl: Fi,
-            parseAssetUrlIntoComponent: Gi,
+            parseAssetUrl: qi,
+            parseAssetUrlIntoComponent: Ji,
             parseGradient: function(e) {
                 if (!(t = e) || "object" != typeof t || (!t.startColor || "string" != typeof t.startColor || !t.endColor || "string" != typeof t.endColor || void 0 === t.startOpacity || "number" != typeof t.startOpacity || void 0 === t.endOpacity || "number" != typeof t.endOpacity || void 0 === t.degree || "number" != typeof t.degree))
-                    return yi(ai.SduiParseGradientInvalidConfig, "Invalid gradient config " + JSON.stringify(e)),
-                    Vi;
-                var t = zi(zi({}, e), {
+                    return Ei(li.SduiParseGradientInvalidConfig, "Invalid gradient config " + JSON.stringify(e)),
+                    Zi;
+                var t = Yi(Yi({}, e), {
                     degree: (e.degree - 90 + 360) % 360
                 });
                 return e.startColor.startsWith("#") || (t.startColor = "#" + e.startColor),
                 e.endColor.startsWith("#") || (t.endColor = "#" + e.endColor),
                 t
             }
-        }, qi = function() {
-            return (qi = Object.assign || function(e) {
+        }, Qi = function() {
+            return (Qi = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Qe = function(r) {
+        }, ea = function(r) {
             var e = $().memo(function(n) {
                 return (0,
                 J.useMemo)(function() {
-                    var e = ji(n.componentConfig, n.parentAnalyticsContext, n.localAnalyticsData)
+                    var e = $i(n.componentConfig, n.parentAnalyticsContext, n.localAnalyticsData)
                       , t = e.props
                       , e = e.children;
                     return $().createElement(r, t, e)
@@ -13086,64 +13174,64 @@
             return e.displayName = "SduiWrapped" + (r.displayName || r.name),
             e
         };
-        (Ca = Hi = Hi || {}).SingleItemCollection = "SingleItemCollection",
-        Ca.VerticalFeed = "VerticalFeed",
-        Ca.HeroUnit = "HeroUnit",
-        Ca.PlayButton = "PlayButton";
-        var Ji, $i, Ki = ((Ca = {})[Hi.SingleItemCollection] = {
-            component: Qe(oe),
+        (Qe = Ki = Ki || {}).SingleItemCollection = "SingleItemCollection",
+        Qe.VerticalFeed = "VerticalFeed",
+        Qe.HeroUnit = "HeroUnit",
+        Qe.PlayButton = "PlayButton";
+        var ta, na, ra = ((Qe = {})[Ki.SingleItemCollection] = {
+            component: ea(oe),
             propParsers: {}
         },
-        Ca[Hi.VerticalFeed] = {
-            component: Qe(it),
+        Qe[Ki.VerticalFeed] = {
+            component: ea(it),
             propParsers: {}
         },
-        Ca[Hi.PlayButton] = {
-            component: Qe(te),
+        Qe[Ki.PlayButton] = {
+            component: ea(ge),
             propParsers: {}
         },
-        Ca[Hi.HeroUnit] = {
-            component: Qe(Oi),
+        Qe[Ki.HeroUnit] = {
+            component: ea(Mi),
             propParsers: {
-                backgroundComponent: ge.parseUiComponent,
-                bottomRowComponent: ge.parseUiComponent,
-                ctaButtonComponent: ge.parseUiComponent,
-                headerComponent: ge.parseUiComponent,
-                onActivated: ge.parseCallback,
-                overlayComponent: ge.parseUiComponent,
-                asset: ge.parseHeroUnitAsset,
-                gradient: ge.parseGradient,
-                foregroundImage: ge.parseAssetUrlIntoComponent,
-                backgroundImage: ge.parseAssetUrlIntoComponent
+                backgroundComponent: te.parseUiComponent,
+                bottomRowComponent: te.parseUiComponent,
+                ctaButtonComponent: te.parseUiComponent,
+                headerComponent: te.parseUiComponent,
+                onActivated: te.parseCallback,
+                overlayComponent: te.parseUiComponent,
+                asset: te.parseHeroUnitAsset,
+                gradient: te.parseGradient,
+                foregroundImage: te.parseAssetUrlIntoComponent,
+                backgroundImage: te.parseAssetUrlIntoComponent
             }
         },
-        Ca), Yi = function(e) {
-            return Ki[e] ? Ki[e].component : null
-        }, Zi = function() {
-            return (Zi = Object.assign || function(e) {
+        Qe), oa = function(e) {
+            return ra[e] ? ra[e].component : null
+        }, ia = function() {
+            return (ia = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Xi = function(e) {
+        }, aa = function(e) {
             var n = e.componentConfig
               , r = e.parentAnalyticsContext
               , o = e.localAnalyticsData;
             return (0,
             J.useMemo)(function() {
                 var e = n.componentType
-                  , t = Yi(e);
-                return t ? $().createElement(t, Zi({
+                  , t = oa(e);
+                return t ? $().createElement(t, ia({
                     componentConfig: n,
                     parentAnalyticsContext: r,
                     localAnalyticsData: o
-                }, n.props)) : (yi(ai.ComponentNotFound, "Component not found for type " + e + " using config " + JSON.stringify(n)),
+                }, n.props)) : (Ei(li.ComponentNotFound, "Component not found for type " + e + " using config " + JSON.stringify(n)),
                 $().createElement($().Fragment, null))
             }, [n, r, o])
-        }, ge = (Ji = function(e, t) {
-            return (Ji = Object.setPrototypeOf || {
+        }, te = (ta = function(e, t) {
+            return (ta = Object.setPrototypeOf || {
                 __proto__: []
             }instanceof Array && function(e, t) {
                 e.__proto__ = t
@@ -13161,56 +13249,75 @@
             function n() {
                 this.constructor = e
             }
-            Ji(e, t),
+            ta(e, t),
             e.prototype = null === t ? Object.create(t) : (n.prototype = t.prototype,
             new n)
         }
         );
-        function Qi(e) {
-            e = $i.call(this, e) || this;
+        function la(e) {
+            e = na.call(this, e) || this;
             return e.state = {
                 hasError: !1
             },
             e
         }
-        function ea(e) {
+        function sa(e) {
             var n = e.sort
-              , t = e.sduiRoot
-              , r = (0,
+              , r = e.sduiRoot
+              , o = e.currentPage
+              , i = dn()
+              , t = (0,
             J.useMemo)(function() {
-                var e = Ui(t, n.feedItemKey);
-                return e ? $().createElement("div", {
+                var e = Vi(r, n.feedItemKey);
+                if (!e)
+                    return $().createElement($().Fragment, null);
+                var t = ca({}, function(e, t) {
+                    var n;
+                    switch (t) {
+                    case K.HomePage:
+                        return (n = {})[Qr.HomePageSessionInfo] = e,
+                        n;
+                    case K.GamesPage:
+                        return (n = {})[Qr.DiscoverPageSessionInfo] = e,
+                        n;
+                    default:
+                        return Ei(li.InvalidPageForSessionAnalytics, "Invalid page context for session analytics: " + (t ? JSON.stringify(t) : "undefined") + " with session info: " + e),
+                        {}
+                    }
+                }(i, o));
+                return $().createElement("div", {
                     className: "sdui-feed-item-container"
-                }, $().createElement(Xi, {
+                }, $().createElement(aa, {
                     componentConfig: e,
-                    parentAnalyticsContext: {}
-                })) : $().createElement($().Fragment, null)
-            }, [n, t])
+                    parentAnalyticsContext: {},
+                    localAnalyticsData: t
+                }))
+            }, [n, r, i, o])
               , e = (0,
             J.useCallback)(function(e, t) {
-                yi(ai.SduiFeedItemBoundaryError, "Error rendering feed item for sort " + JSON.stringify(n) + " with error message " + e + " and callstack " + t)
+                Ei(li.SduiFeedItemBoundaryError, "Error rendering feed item for sort " + JSON.stringify(n) + " with error message " + e + " and callstack " + t)
             }, [n]);
-            return $().createElement(ta, {
+            return $().createElement(ua, {
                 fallback: $().createElement($().Fragment, null),
                 logError: e
-            }, r)
+            }, t)
         }
-        var ta = ($i = $().Component,
-        ge(Qi, $i),
-        Qi.getDerivedStateFromError = function() {
+        var ua = (na = $().Component,
+        te(la, na),
+        la.getDerivedStateFromError = function() {
             return {
                 hasError: !0
             }
         }
         ,
-        Qi.prototype.componentDidCatch = function(e, t) {
+        la.prototype.componentDidCatch = function(e, t) {
             e = e.message,
             t = t.componentStack;
             (0,
             this.props.logError)(e, t)
         }
         ,
-        Qi.prototype.render = function() {
+        la.prototype.render = function() {
             var e = this.state.hasError
               , t = this.props
               , n = t.fallback
@@ -13218,8 +13325,17 @@
             return e ? n : t
         }
         ,
-        Qi);
-        function na() {
+        la)
+          , ca = function() {
+            return (ca = Object.assign || function(e) {
+                for (var t, n = 1, r = arguments.length; n < r; n++)
+                    for (var o in t = arguments[n])
+                        Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
+                return e
+            }
+            ).apply(this, arguments)
+        };
+        function da() {
             return $().createElement("div", {
                 className: "grid-item-container game-card-container game-card-loading"
             }, $().createElement("div", {
@@ -13230,7 +13346,7 @@
                 className: "game-card-name game-name-title game-name-title-half shimmer"
             }))
         }
-        function ra(o) {
+        function fa(o) {
             var i = dn();
             (0,
             J.useEffect)(function() {
@@ -13257,7 +13373,7 @@
                 }
             }, [o, i])
         }
-        (Ca = function(e) {
+        (Qe = function(e) {
             var t = e.translate
               , n = e.sort
               , r = e.positionId
@@ -13304,21 +13420,22 @@
                     isExpandHomeContentEnabled: c
                 });
             case w.FriendCarousel:
-                return $().createElement(Xo, {
+                return $().createElement(Qo, {
                     sortId: n.topicId,
                     sortPosition: r
                 });
             case w.Pills:
-                return $().createElement(li, {
+                return $().createElement(si, {
                     sort: n,
                     positionId: r,
                     translate: t,
                     fetchGamesPageData: v
                 });
             case w.Sdui:
-                return $().createElement(ea, {
+                return $().createElement(sa, {
                     sort: n,
-                    sduiRoot: m
+                    sduiRoot: m,
+                    currentPage: o
                 });
             default:
                 return null
@@ -13334,8 +13451,8 @@
             fetchGamesPageData: void 0,
             isNewScrollArrowsEnabled: void 0
         };
-        var oa = Ca
-          , ia = function(e, o, r) {
+        var pa = Qe
+          , ma = function(e, o, r) {
             var t = (0,
             J.useState)(new Map)
               , i = t[0]
@@ -13443,7 +13560,7 @@
                 startingRowNumbersMap: t
             }
         }
-          , aa = function() {
+          , va = function() {
             try {
                 return {
                     cpuCores: null === navigator || void 0 === navigator ? void 0 : navigator.hardwareConcurrency,
@@ -13466,13 +13583,13 @@
                 return {}
             }
         }
-          , ge = {
+          , te = {
             common: [],
             feature: "Feature.ContactUpsell"
         }
-          , la = (P.EnvironmentUrls.apiGatewayUrl,
+          , ha = (P.EnvironmentUrls.apiGatewayUrl,
         P.EnvironmentUrls.voiceApi);
-        function sa(e, t, n, r, o, i, a) {
+        function ga(e, t, n, r, o, i, a) {
             try {
                 var l = e[i](a)
                   , s = l.value
@@ -13481,7 +13598,7 @@
             }
             l.done ? t(s) : Promise.resolve(s).then(r, o)
         }
-        var ua = function() {
+        var ya = function() {
             var l, e = (l = regeneratorRuntime.mark(function e(t, n) {
                 var r, o;
                 return regeneratorRuntime.wrap(function(e) {
@@ -13491,7 +13608,7 @@
                             return r = {
                                 retryable: !0,
                                 withCredentials: !0,
-                                url: "".concat(la, "/v1/settings/user-opt-in")
+                                url: "".concat(ha, "/v1/settings/user-opt-in")
                             },
                             o = {
                                 isUserOptIn: t,
@@ -13515,10 +13632,10 @@
                 return new Promise(function(t, n) {
                     var r = l.apply(e, a);
                     function o(e) {
-                        sa(r, t, n, o, i, "next", e)
+                        ga(r, t, n, o, i, "next", e)
                     }
                     function i(e) {
-                        sa(r, t, n, o, i, "throw", e)
+                        ga(r, t, n, o, i, "throw", e)
                     }
                     o(void 0)
                 }
@@ -13529,7 +13646,7 @@
                 return e.apply(this, arguments)
             }
         }();
-        function ca(e, t, n, r, o, i, a) {
+        function ba(e, t, n, r, o, i, a) {
             try {
                 var l = e[i](a)
                   , s = l.value
@@ -13538,7 +13655,7 @@
             }
             l.done ? t(s) : Promise.resolve(s).then(r, o)
         }
-        function da(t, e) {
+        function Ia(t, e) {
             var n, r = Object.keys(t);
             return Object.getOwnPropertySymbols && (n = Object.getOwnPropertySymbols(t),
             e && (n = n.filter(function(e) {
@@ -13547,10 +13664,10 @@
             r.push.apply(r, n)),
             r
         }
-        function fa(r) {
+        function wa(r) {
             for (var e = 1; e < arguments.length; e++) {
                 var o = null != arguments[e] ? arguments[e] : {};
-                e % 2 ? da(Object(o), !0).forEach(function(e) {
+                e % 2 ? Ia(Object(o), !0).forEach(function(e) {
                     var t, n;
                     t = r,
                     e = o[n = e],
@@ -13560,13 +13677,13 @@
                         configurable: !0,
                         writable: !0
                     }) : t[n] = e
-                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : da(Object(o)).forEach(function(e) {
+                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : Ia(Object(o)).forEach(function(e) {
                     Object.defineProperty(r, e, Object.getOwnPropertyDescriptor(o, e))
                 })
             }
             return r
         }
-        function pa(e, n) {
+        function Sa(e, n) {
             switch (e) {
             case "ContactMethodEmail":
                 return {
@@ -13589,7 +13706,7 @@
                     primaryButton: {
                         text: "Action.AddPhone",
                         onClick: function(e) {
-                            return null === P.UpsellService || void 0 === P.UpsellService ? void 0 : P.UpsellService.renderPhoneUpsell(fa({
+                            return null === P.UpsellService || void 0 === P.UpsellService ? void 0 : P.UpsellService.renderPhoneUpsell(wa({
                                 addPhoneAlwaysShowLegalText: !0,
                                 addPhoneRequireLegalTextCheckbox: n,
                                 addPhoneHeadingKey: "Action.AddPhoneVoice",
@@ -13604,7 +13721,7 @@
                                             case 0:
                                                 return e.prev = 0,
                                                 e.next = 3,
-                                                ua(!0, !1);
+                                                ya(!0, !1);
                                             case 3:
                                                 if (e.t1 = t = e.sent,
                                                 e.t0 = null === e.t1,
@@ -13642,10 +13759,10 @@
                                     return new Promise(function(t, n) {
                                         var r = l.apply(e, a);
                                         function o(e) {
-                                            ca(r, t, n, o, i, "next", e)
+                                            ba(r, t, n, o, i, "next", e)
                                         }
                                         function i(e) {
-                                            ca(r, t, n, o, i, "throw", e)
+                                            ba(r, t, n, o, i, "throw", e)
                                         }
                                         o(void 0)
                                     }
@@ -13675,7 +13792,7 @@
                         onClick: null === P.UpsellService || void 0 === P.UpsellService ? void 0 : P.UpsellService.renderEmailUpsell,
                         buttonClickBtnLog: "email"
                     },
-                    buttonStackOrientation: Ia
+                    buttonStackOrientation: Na
                 };
             case "ContactMethodPhoneNumberEmailVerticalLayout":
                 return {
@@ -13689,7 +13806,7 @@
                         onClick: null === P.UpsellService || void 0 === P.UpsellService ? void 0 : P.UpsellService.renderEmailUpsell,
                         buttonClickBtnLog: "email"
                     },
-                    buttonStackOrientation: ba
+                    buttonStackOrientation: xa
                 };
             case "FacebookSunset":
                 return {
@@ -13703,7 +13820,7 @@
                 return null
             }
         }
-        var ma = {
+        var Ea = {
             ContactMethodEmail: "ContactMethodEmail",
             ContactMethodPhoneNumber: "ContactMethodPhoneNumber",
             ContactMethodPhoneNumberVoiceOptIn: "ContactMethodPhoneNumberVoiceOptIn",
@@ -13713,7 +13830,7 @@
             FacebookSunset: "FacebookSunset",
             ContactMethodMandatoryEmailPhone: "ContactMethodMandatoryEmailPhone"
         }
-          , va = {
+          , Pa = {
             ContactMethodEmail: "Label.DontGetLockedOut",
             ContactMethodPhoneNumber: "Label.DontGetLockedOut",
             ContactMethodPhoneNumberVoiceOptIn: "Header.UnlockVoiceChat",
@@ -13722,7 +13839,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "Label.DontGetLockedOut",
             FacebookSunset: ""
         }
-          , ha = {
+          , Ca = {
             ContactMethodEmail: "Description.HomePageUpsellCardAddEmailText",
             ContactMethodPhoneNumber: "Description.HomePageUpsellCardAddPhoneText",
             ContactMethodPhoneNumberVoiceOptIn: "Description.UnlockVoiceChat.3",
@@ -13731,7 +13848,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "Label.RecoverYourAccount",
             FacebookSunset: "Description.FacebookSetPasswordUpsellText"
         }
-          , ga = {
+          , _a = {
             ContactMethodEmail: "homePageUpsellCard",
             ContactMethodPhoneNumber: "homePageUpsellCard",
             ContactMethodPhoneNumberVoiceOptIn: "homePageUpsellCard",
@@ -13740,7 +13857,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "homePageUpsellCard",
             FacebookSunset: "facebookSunsetCard"
         }
-          , ya = {
+          , Ta = {
             ContactMethodEmail: "email",
             ContactMethodPhoneNumber: "phone",
             ContactMethodPhoneNumberVoiceOptIn: "phone",
@@ -13749,9 +13866,9 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "emailOrPhone",
             FacebookSunset: "facebook"
         }
-          , ba = "vertical"
-          , Ia = "horizontal"
-          , wa = {
+          , xa = "vertical"
+          , Na = "horizontal"
+          , Aa = {
             ContactMethodEmail: "upsell-card-lock-icon-image",
             ContactMethodPhoneNumber: "upsell-card-lock-icon-image",
             ContactMethodPhoneNumberVoiceOptIn: "icon-voice-mic-unmuted",
@@ -13760,7 +13877,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "upsell-card-lock-icon-image",
             FacebookSunset: ""
         };
-        function Sa(t, e) {
+        function Oa(t, e) {
             var n, r = Object.keys(t);
             return Object.getOwnPropertySymbols && (n = Object.getOwnPropertySymbols(t),
             e && (n = n.filter(function(e) {
@@ -13769,10 +13886,10 @@
             r.push.apply(r, n)),
             r
         }
-        function Ea(r) {
+        function Ra(r) {
             for (var e = 1; e < arguments.length; e++) {
                 var o = null != arguments[e] ? arguments[e] : {};
-                e % 2 ? Sa(Object(o), !0).forEach(function(e) {
+                e % 2 ? Oa(Object(o), !0).forEach(function(e) {
                     var t, n;
                     t = r,
                     e = o[n = e],
@@ -13782,27 +13899,27 @@
                         configurable: !0,
                         writable: !0
                     }) : t[n] = e
-                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : Sa(Object(o)).forEach(function(e) {
+                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : Oa(Object(o)).forEach(function(e) {
                     Object.defineProperty(r, e, Object.getOwnPropertyDescriptor(o, e))
                 })
             }
             return r
         }
-        function Pa(e, t, n, r, o) {
+        function ka(e, t, n, r, o) {
             o = 4 < arguments.length && void 0 !== o ? o : void 0,
-            S.eventStreamService.sendEventWithTarget(e.type, ga[n], Ea(Ea({}, e.params), {}, {
+            S.eventStreamService.sendEventWithTarget(e.type, _a[n], Ra(Ra({}, e.params), {}, {
                 origin: t,
                 section: r,
                 btn: o
             }))
         }
-        var Ca = S.eventStreamService.eventTypes
-          , _a = "mandatory"
-          , Ta = "homepage"
-          , xa = {
+        var Qe = S.eventStreamService.eventTypes
+          , Da = "mandatory"
+          , La = "homepage"
+          , Ma = {
             cardShown: {
                 name: "cardShown",
-                type: Ca.modalAction,
+                type: Qe.modalAction,
                 params: {
                     aType: "shown"
                 }
@@ -13813,170 +13930,6 @@
                 params: {}
             }
         };
-        function Na(e, t) {
-            return function(e) {
-                if (Array.isArray(e))
-                    return e
-            }(e) || function(e, t) {
-                if ("undefined" == typeof Symbol || !(Symbol.iterator in Object(e)))
-                    return;
-                var n = []
-                  , r = !0
-                  , o = !1
-                  , i = void 0;
-                try {
-                    for (var a, l = e[Symbol.iterator](); !(r = (a = l.next()).done) && (n.push(a.value),
-                    !t || n.length !== t); r = !0)
-                        ;
-                } catch (e) {
-                    o = !0,
-                    i = e
-                } finally {
-                    try {
-                        r || null == l.return || l.return()
-                    } finally {
-                        if (o)
-                            throw i
-                    }
-                }
-                return n
-            }(e, t) || function(e, t) {
-                if (!e)
-                    return;
-                if ("string" == typeof e)
-                    return Aa(e, t);
-                var n = Object.prototype.toString.call(e).slice(8, -1);
-                "Object" === n && e.constructor && (n = e.constructor.name);
-                if ("Map" === n || "Set" === n)
-                    return Array.from(e);
-                if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-                    return Aa(e, t)
-            }(e, t) || function() {
-                throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
-            }()
-        }
-        function Aa(e, t) {
-            (null == t || t > e.length) && (t = e.length);
-            for (var n = 0, r = new Array(t); n < t; n++)
-                r[n] = e[n];
-            return r
-        }
-        function Oa(e) {
-            var t = e.translate
-              , n = e.cardType
-              , r = e.origin
-              , o = e.titleTextOverride
-              , i = e.bodyTextOverride
-              , a = e.requireExplicitVoiceConsent
-              , l = Na((0,
-            J.useState)(!1), 2)
-              , s = l[0]
-              , u = l[1]
-              , c = ya[n];
-            (0,
-            J.useEffect)(function() {
-                Pa(xa.cardShown, r, n, c)
-            }, []);
-            var e = pa(n, a)
-              , d = null == e ? void 0 : e.primaryButton
-              , l = d ? $().createElement(be.Button, {
-                className: "btn-primary-md",
-                id: "upsell-card-primary-button",
-                onClick: function() {
-                    Pa(xa.buttonClick, r, n, c, d.buttonClickBtnLog),
-                    d.onClick(function(e) {
-                        u(e)
-                    })
-                }
-            }, t(d.text)) : null
-              , f = null == e ? void 0 : e.secondaryButton
-              , a = f ? $().createElement(be.Button, {
-                className: "btn-secondary-md",
-                id: "upsell-card-secondary-button",
-                onClick: function() {
-                    Pa(xa.buttonClick, r, n, c, f.buttonClickBtnLog),
-                    f.onClick(function(e) {
-                        u(e)
-                    })
-                }
-            }, t(f.text)) : null
-              , e = null !== (e = null == e ? void 0 : e.buttonStackOrientation) && void 0 !== e ? e : Ia
-              , a = $().createElement("div", {
-                className: e === Ia ? "upsell-card-horizontal-button-list" : "upsell-card-vertical-button-list"
-            }, l, a)
-              , o = Ra(o) ? t(va[n]) : o
-              , i = Ra(i) ? t(ha[n]) : i
-              , o = $().createElement("div", {
-                className: "upsell-card-text-content-group"
-            }, va[n] ? $().createElement("div", {
-                className: "font-header-1"
-            }, " ", o) : null, $().createElement("div", {
-                className: "upsell-card-content"
-            }, " ", i))
-              , i = wa[n] ? $().createElement("div", {
-                className: "home-page-upsell-card-image ".concat(wa[n])
-            }) : null;
-            return s ? null : $().createElement("div", {
-                className: "home-page-upsell-card-banner-container"
-            }, $().createElement("div", {
-                className: "banner-contents"
-            }, $().createElement("div", {
-                className: "icon-and-text"
-            }, i, $().createElement("div", {
-                className: "banner-content-container"
-            }, o)), $().createElement("div", {
-                className: "add-email-btn-container"
-            }, a), $().createElement("div", {
-                id: "facebookSunsetModal-container"
-            })))
-        }
-        function Ra(e) {
-            return !e || 0 === e.length
-        }
-        Oa.defaultProps = {
-            origin: "homepage",
-            titleTextOverride: "",
-            bodyTextOverride: "",
-            requireExplicitVoiceConsent: !0
-        },
-        Oa.propTypes = {
-            translate: N().func.isRequired,
-            cardType: N().string.isRequired,
-            titleTextOverride: N().string,
-            bodyTextOverride: N().string,
-            origin: N().string,
-            requireExplicitVoiceConsent: N().bool
-        };
-        var ka = Oa
-          , Da = function(e) {
-            return !![ma.ContactMethodEmail, ma.ContactMethodPhoneNumber, ma.ContactMethodPhoneNumberEmailHorizontalLayout, ma.ContactMethodPhoneNumberEmailHorizontalLayoutAltContent1, ma.ContactMethodPhoneNumberEmailVerticalLayout, ma.ContactMethodPhoneNumberVoiceOptIn, ma.FacebookSunset].includes(e)
-        };
-        function La(e, t, n, r, o, i, a) {
-            try {
-                var l = e[i](a)
-                  , s = l.value
-            } catch (e) {
-                return void n(e)
-            }
-            l.done ? t(s) : Promise.resolve(s).then(r, o)
-        }
-        function Ma(l) {
-            return function() {
-                var e = this
-                  , a = arguments;
-                return new Promise(function(t, n) {
-                    var r = l.apply(e, a);
-                    function o(e) {
-                        La(r, t, n, o, i, "next", e)
-                    }
-                    function i(e) {
-                        La(r, t, n, o, i, "throw", e)
-                    }
-                    o(void 0)
-                }
-                )
-            }
-        }
         function Ua(e, t) {
             return function(e) {
                 if (Array.isArray(e))
@@ -14008,46 +13961,210 @@
                 if (!e)
                     return;
                 if ("string" == typeof e)
-                    return Ba(e, t);
+                    return Fa(e, t);
                 var n = Object.prototype.toString.call(e).slice(8, -1);
                 "Object" === n && e.constructor && (n = e.constructor.name);
                 if ("Map" === n || "Set" === n)
                     return Array.from(e);
                 if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-                    return Ba(e, t)
+                    return Fa(e, t)
             }(e, t) || function() {
                 throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
             }()
         }
-        function Ba(e, t) {
+        function Fa(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var n = 0, r = new Array(t); n < t; n++)
                 r[n] = e[n];
             return r
         }
-        function Fa(e) {
+        function Ba(e) {
             var t = e.translate
-              , n = ma.ContactMethodMandatoryEmailPhone
-              , r = Ua((0,
+              , n = e.cardType
+              , r = e.origin
+              , o = e.titleTextOverride
+              , i = e.bodyTextOverride
+              , a = e.requireExplicitVoiceConsent
+              , l = Ua((0,
+            J.useState)(!1), 2)
+              , s = l[0]
+              , u = l[1]
+              , c = Ta[n];
+            (0,
+            J.useEffect)(function() {
+                ka(Ma.cardShown, r, n, c)
+            }, []);
+            var e = Sa(n, a)
+              , d = null == e ? void 0 : e.primaryButton
+              , l = d ? $().createElement(be.Button, {
+                className: "btn-primary-md",
+                id: "upsell-card-primary-button",
+                onClick: function() {
+                    ka(Ma.buttonClick, r, n, c, d.buttonClickBtnLog),
+                    d.onClick(function(e) {
+                        u(e)
+                    })
+                }
+            }, t(d.text)) : null
+              , f = null == e ? void 0 : e.secondaryButton
+              , a = f ? $().createElement(be.Button, {
+                className: "btn-secondary-md",
+                id: "upsell-card-secondary-button",
+                onClick: function() {
+                    ka(Ma.buttonClick, r, n, c, f.buttonClickBtnLog),
+                    f.onClick(function(e) {
+                        u(e)
+                    })
+                }
+            }, t(f.text)) : null
+              , e = null !== (e = null == e ? void 0 : e.buttonStackOrientation) && void 0 !== e ? e : Na
+              , a = $().createElement("div", {
+                className: e === Na ? "upsell-card-horizontal-button-list" : "upsell-card-vertical-button-list"
+            }, l, a)
+              , o = Ga(o) ? t(Pa[n]) : o
+              , i = Ga(i) ? t(Ca[n]) : i
+              , o = $().createElement("div", {
+                className: "upsell-card-text-content-group"
+            }, Pa[n] ? $().createElement("div", {
+                className: "font-header-1"
+            }, " ", o) : null, $().createElement("div", {
+                className: "upsell-card-content"
+            }, " ", i))
+              , i = Aa[n] ? $().createElement("div", {
+                className: "home-page-upsell-card-image ".concat(Aa[n])
+            }) : null;
+            return s ? null : $().createElement("div", {
+                className: "home-page-upsell-card-banner-container"
+            }, $().createElement("div", {
+                className: "banner-contents"
+            }, $().createElement("div", {
+                className: "icon-and-text"
+            }, i, $().createElement("div", {
+                className: "banner-content-container"
+            }, o)), $().createElement("div", {
+                className: "add-email-btn-container"
+            }, a), $().createElement("div", {
+                id: "facebookSunsetModal-container"
+            })))
+        }
+        function Ga(e) {
+            return !e || 0 === e.length
+        }
+        Ba.defaultProps = {
+            origin: "homepage",
+            titleTextOverride: "",
+            bodyTextOverride: "",
+            requireExplicitVoiceConsent: !0
+        },
+        Ba.propTypes = {
+            translate: N().func.isRequired,
+            cardType: N().string.isRequired,
+            titleTextOverride: N().string,
+            bodyTextOverride: N().string,
+            origin: N().string,
+            requireExplicitVoiceConsent: N().bool
+        };
+        var ja = Ba
+          , Ha = function(e) {
+            return !![Ea.ContactMethodEmail, Ea.ContactMethodPhoneNumber, Ea.ContactMethodPhoneNumberEmailHorizontalLayout, Ea.ContactMethodPhoneNumberEmailHorizontalLayoutAltContent1, Ea.ContactMethodPhoneNumberEmailVerticalLayout, Ea.ContactMethodPhoneNumberVoiceOptIn, Ea.FacebookSunset].includes(e)
+        };
+        function za(e, t, n, r, o, i, a) {
+            try {
+                var l = e[i](a)
+                  , s = l.value
+            } catch (e) {
+                return void n(e)
+            }
+            l.done ? t(s) : Promise.resolve(s).then(r, o)
+        }
+        function Va(l) {
+            return function() {
+                var e = this
+                  , a = arguments;
+                return new Promise(function(t, n) {
+                    var r = l.apply(e, a);
+                    function o(e) {
+                        za(r, t, n, o, i, "next", e)
+                    }
+                    function i(e) {
+                        za(r, t, n, o, i, "throw", e)
+                    }
+                    o(void 0)
+                }
+                )
+            }
+        }
+        function Wa(e, t) {
+            return function(e) {
+                if (Array.isArray(e))
+                    return e
+            }(e) || function(e, t) {
+                if ("undefined" == typeof Symbol || !(Symbol.iterator in Object(e)))
+                    return;
+                var n = []
+                  , r = !0
+                  , o = !1
+                  , i = void 0;
+                try {
+                    for (var a, l = e[Symbol.iterator](); !(r = (a = l.next()).done) && (n.push(a.value),
+                    !t || n.length !== t); r = !0)
+                        ;
+                } catch (e) {
+                    o = !0,
+                    i = e
+                } finally {
+                    try {
+                        r || null == l.return || l.return()
+                    } finally {
+                        if (o)
+                            throw i
+                    }
+                }
+                return n
+            }(e, t) || function(e, t) {
+                if (!e)
+                    return;
+                if ("string" == typeof e)
+                    return qa(e, t);
+                var n = Object.prototype.toString.call(e).slice(8, -1);
+                "Object" === n && e.constructor && (n = e.constructor.name);
+                if ("Map" === n || "Set" === n)
+                    return Array.from(e);
+                if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+                    return qa(e, t)
+            }(e, t) || function() {
+                throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
+            }()
+        }
+        function qa(e, t) {
+            (null == t || t > e.length) && (t = e.length);
+            for (var n = 0, r = new Array(t); n < t; n++)
+                r[n] = e[n];
+            return r
+        }
+        function Ja(e) {
+            var t = e.translate
+              , n = Ea.ContactMethodMandatoryEmailPhone
+              , r = Wa((0,
             J.useState)(null), 2)
               , o = r[0]
               , i = r[1]
-              , a = Ua((0,
+              , a = Wa((0,
             J.useState)(""), 2)
               , l = a[0]
               , s = a[1]
-              , e = Ua((0,
+              , e = Wa((0,
             J.useState)(""), 2)
               , r = e[0]
               , u = e[1]
-              , a = Ua((0,
+              , a = Wa((0,
             J.useState)(!1), 2)
               , e = a[0]
               , c = a[1];
             return (0,
             J.useEffect)(function() {
                 var e = function() {
-                    var e = Ma(regeneratorRuntime.mark(function e() {
+                    var e = Va(regeneratorRuntime.mark(function e() {
                         var t;
                         return regeneratorRuntime.wrap(function(e) {
                             for (; ; )
@@ -14079,7 +14196,7 @@
                     }
                 }()
                   , t = function() {
-                    var e = Ma(regeneratorRuntime.mark(function e() {
+                    var e = Va(regeneratorRuntime.mark(function e() {
                         var t;
                         return regeneratorRuntime.wrap(function(e) {
                             for (; ; )
@@ -14113,11 +14230,11 @@
             (0,
             J.useEffect)(function() {
                 o === n && null !== P.UpsellService && void 0 !== P.UpsellService && P.UpsellService.renderContactMethodPromptModal({
-                    origin: Ta,
-                    section: _a
+                    origin: La,
+                    section: Da
                 })
             }, [o]),
-            Da(o) ? $().createElement(ka, {
+            Ha(o) ? $().createElement(ja, {
                 translate: t,
                 cardType: o,
                 titleTextOverride: l,
@@ -14125,19 +14242,19 @@
                 requireExplicitVoiceConsent: e
             }) : null
         }
-        Fa.propTypes = {
+        Ja.propTypes = {
             translate: N().func.isRequired
         };
-        var Ga = Fa;
-        function ja(e) {
+        var $a = Ja;
+        function Ka(e) {
             var t = e.translate
               , e = e.context;
-            return $().createElement(Ga, {
+            return $().createElement($a, {
                 translate: t,
                 context: e
             })
         }
-        function Ha(e) {
+        function Ya(e) {
             var t, o = e.sort, n = e.itemsPerRow, r = e.toggleInterest, i = e.interestedUniverses, a = e.homePageSessionInfo, l = e.translate, s = (0,
             J.useRef)(null), u = (0,
             J.useRef)(null), c = wr().contentMetadata, d = (0,
@@ -14173,7 +14290,7 @@
                     var t = e.filter(function(e) {
                         return e < (null == d ? void 0 : d.length)
                     });
-                    return qa(qa(qa(((e = {})[k.RootPlaceIds] = t.map(function(e) {
+                    return el(el(el(((e = {})[k.RootPlaceIds] = t.map(function(e) {
                         return d[e].placeId
                     }),
                     e[k.UniverseIds] = t.map(function(e) {
@@ -14212,7 +14329,7 @@
                 toggleInterest: p
             })
         }
-        function za(e) {
+        function Za(e) {
             var t = e.sort
               , n = e.itemsPerRow
               , r = e.fetchRecommendations
@@ -14287,7 +14404,7 @@
                 onClick: d,
                 isDisabled: !(null != i && i.size),
                 className: "continue-button"
-            }, e))), $().createElement(Ha, {
+            }, e))), $().createElement(Ya, {
                 sort: t,
                 itemsPerRow: n,
                 translate: o,
@@ -14302,31 +14419,31 @@
                 homePageSessionInfo: l
             }))
         }
-        ja.defaultProps = {
-            context: ma.ContactMethod
+        Ka.defaultProps = {
+            context: Ea.ContactMethod
         },
-        ja.propTypes = {
+        Ka.propTypes = {
             translate: N().func.isRequired,
             context: N().string
         };
-        var Va, Wa = (0,
-        p.withTranslations)(ja, ge), qa = function() {
-            return (qa = Object.assign || function(e) {
+        var Xa, Qa = (0,
+        p.withTranslations)(Ka, te), el = function() {
+            return (el = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Ja = function() {
-            return (Ja = Object.assign || function(e) {
+        }, tl = function() {
+            return (tl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, $a = $e.maxTilesPerCarouselPage, Ka = _, Ya = C, Za = (Va = (0,
+        }, nl = $e.maxTilesPerCarouselPage, rl = _, ol = C, il = (Xa = (0,
         p.withTranslations)(function(e) {
             var n = e.translate
               , t = dn()
@@ -14340,7 +14457,7 @@
               , s = a[1]
               , u = (0,
             J.useMemo)(function() {
-                return aa()
+                return va()
             }, [])
               , c = (0,
             J.useMemo)(function() {
@@ -14375,10 +14492,10 @@
               , p = f[1];
             (0,
             J.useEffect)(function() {
-                fe(Ka.homePageWeb, Ya.homePageWeb).then(function(e) {
+                fe(rl.homePageWeb, ol.homePageWeb).then(function(e) {
                     p(e)
                 }).catch(function() {
-                    p(Ya.homePageWeb)
+                    p(ol.homePageWeb)
                 })
             }, []);
             var m = null == e ? void 0 : e.IsExpandHomeContentEnabled
@@ -14388,20 +14505,20 @@
             J.useCallback)(function(n) {
                 i(function(e) {
                     var t;
-                    return e && Ja(Ja({}, e), {
-                        contentMetadata: ((t = {})[I.Game] = Ja(Ja({}, e.contentMetadata[I.Game]), n[I.Game]),
-                        t[I.CatalogAsset] = Ja(Ja({}, e.contentMetadata[I.CatalogAsset]), n[I.CatalogAsset]),
-                        t[I.CatalogBundle] = Ja(Ja({}, e.contentMetadata[I.CatalogBundle]), n[I.CatalogBundle]),
+                    return e && tl(tl({}, e), {
+                        contentMetadata: ((t = {})[I.Game] = tl(tl({}, e.contentMetadata[I.Game]), n[I.Game]),
+                        t[I.CatalogAsset] = tl(tl({}, e.contentMetadata[I.CatalogAsset]), n[I.CatalogAsset]),
+                        t[I.CatalogBundle] = tl(tl({}, e.contentMetadata[I.CatalogBundle]), n[I.CatalogBundle]),
                         t)
                     })
                 })
             }, [])
-              , a = ia(o, m, v)
+              , a = ma(o, m, v)
               , f = a.homeFeedRef
               , g = a.gridRecommendationsMap
               , y = a.itemsPerRowMap
               , b = a.startingRowNumbersMap;
-            ra(K.HomePage);
+            fa(K.HomePage);
             e = (0,
             J.useMemo)(function() {
                 return !(null == o || !o.sorts) && o.sorts.every(function(e) {
@@ -14433,9 +14550,9 @@
                 }), $().createElement("div", {
                     className: "game-home-page-loading-carousel"
                 }, Array.from({
-                    length: $a
+                    length: nl
                 }, function(e, t) {
-                    return $().createElement(na, {
+                    return $().createElement(da, {
                         key: t
                     })
                 })));
@@ -14452,7 +14569,7 @@
                             contentMetadata: o.contentMetadata,
                             appendContentMetadata: r
                         }
-                    }, $().createElement(za, {
+                    }, $().createElement(Za, {
                         sort: l,
                         itemsPerRow: y.get(a),
                         fetchRecommendations: d,
@@ -14469,17 +14586,17 @@
                     contentMetadata: o.contentMetadata,
                     appendContentMetadata: r
                 }
-            }, $().createElement(Wa, {
+            }, $().createElement(Qa, {
                 translate: n,
                 context: void 0
-            }), e && $().createElement(Zo, {
+            }), e && $().createElement(Xo, {
                 homePageSessionInfo: t,
                 sortId: void 0,
                 sortPosition: 0
             }), o.sorts.map(function(e, t) {
                 return $().createElement($().Fragment, {
                     key: t
-                }, $().createElement(oa, {
+                }, $().createElement(pa, {
                     translate: n,
                     sort: e,
                     positionId: t,
@@ -14495,17 +14612,17 @@
             }))))
         }, It),
         function(e) {
-            return $().createElement(cn, null, $().createElement(Va, mn({}, e)))
+            return $().createElement(cn, null, $().createElement(Xa, mn({}, e)))
         }
         );
         (0,
         O.ready)(function() {
             l() && (0,
-            e.render)($().createElement(Za, null), l())
+            e.render)($().createElement(il, null), l())
         })
     }()
 }();
-//# sourceMappingURL=https://js.rbxcdn.com/fa0e01d7a32e05134e10f532407fa908-placesList.bundle.min.js.map
+//# sourceMappingURL=https://js.rbxcdn.com/e901a38c1101614361bca19281deac03-placesList.bundle.min.js.map
 
 /* Bundle detector */
 window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("PlacesList");
