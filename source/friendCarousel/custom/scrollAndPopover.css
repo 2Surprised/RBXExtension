@@ -14,7 +14,7 @@
     width: 100%
 }
 
-.grid-item-container {
+.game-card-container.grid-item-container {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -22,11 +22,11 @@
     width: 100%
 }
 
-.grid-item-container>a {
+.game-card-container.grid-item-container>a {
     width: 100%
 }
 
-.grid-item-container>a .game-card-thumb-container {
+.game-card-container.grid-item-container>a .game-card-thumb-container {
     float: none;
     height: 0;
     padding-bottom: 100%;
@@ -34,7 +34,7 @@
     width: 100%
 }
 
-.grid-item-container>a .game-card-thumb-container img {
+.game-card-container.grid-item-container>a .game-card-thumb-container img {
     position: absolute
 }
 
@@ -243,34 +243,34 @@
     }
 }
 
-.game-card-loading {
+.grid-item-container.game-card-container.game-card-loading {
     align-items: flex-start;
     padding-right: 14px
 }
 
-.game-card-loading .game-card-thumb-container:before {
+.grid-item-container.game-card-container.game-card-loading .game-card-thumb-container:before {
     background: none
 }
 
-.game-card-loading .game-card-thumb-container {
+.grid-item-container.game-card-container.game-card-loading .game-card-thumb-container {
     margin-bottom: 5px
 }
 
-.game-card-loading .game-card-name.game-name-title.shimmer {
+.grid-item-container.game-card-container.game-card-loading .game-card-name.game-name-title.shimmer {
     height: 22px;
     margin: 0 0 5px;
     width: 100%
 }
 
-.light-theme .game-card-loading .game-card-name.game-name-title.shimmer {
+.light-theme .grid-item-container.game-card-container.game-card-loading .game-card-name.game-name-title.shimmer {
     background-color: rgba(27,37,75,.12)
 }
 
-.dark-theme .game-card-loading .game-card-name.game-name-title.shimmer {
+.dark-theme .grid-item-container.game-card-container.game-card-loading .game-card-name.game-name-title.shimmer {
     background-color: rgba(208,217,251,.12)
 }
 
-.game-card-loading .game-card-name.game-name-title.shimmer.game-name-title-half {
+.grid-item-container.game-card-container.game-card-loading .game-card-name.game-name-title.shimmer.game-name-title-half {
     width: 70%
 }
 
