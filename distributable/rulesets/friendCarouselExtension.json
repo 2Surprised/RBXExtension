@@ -19,6 +19,18 @@
             "redirect": { "extensionPath": "/friendCarousel/custom/scrollAndPopover.css" }
         },
         "condition": {
+            "urlFilter": "https://css.rbxcdn.com/65cfc7e33cd8b815b70ce6197d6317bf3020fb847b875125c9cb3f6a788d0be5.css",
+            "resourceTypes": ["stylesheet"]
+        }
+    },
+    {
+        "id": 3,
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": { "extensionPath": "/friendCarousel/custom/scrollAndPopover2.css" }
+        },
+        "condition": {
             "urlFilter": "https://css.rbxcdn.com/a0af423fd4aa368ebdc946181d3460905b18d1c6781d281abace2b6a0bacf5c9.css",
             "resourceTypes": ["stylesheet"]
         }

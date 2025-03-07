@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Roblox+",
     "description": "Improves the user experience on the Roblox website.",
-    "version": "2.8.3",
+    "version": "2.8.4",
     "action": {
         "default_title": "Roblox+",
         "default_popup": "/popup/popup.html"
@@ -42,6 +42,7 @@
             "resources": [
                 "/friendCarousel/custom/length.js",
                 "/friendCarousel/custom/scrollAndPopover.css",
+                "/friendCarousel/custom/scrollAndPopover2.css",
                 "/utils/RBLX_Tilt_Primary_Black.png"
             ],
             "matches": [ "https://*.roblox.com/*" ]
