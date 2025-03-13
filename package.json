@@ -4,6 +4,6 @@
     "@types/chrome": "^0.0.299"
   },
   "scripts": {
-    "build": "copyfiles source/**/* -u 1 -e \"**/*.ts\" distributable && tsc"
+    "build": "rmdir /s /q distributable && copyfiles source/**/* -u 1 -e \"**/*.ts\" distributable && tsc"
   }
 }

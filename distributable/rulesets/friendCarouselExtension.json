@@ -19,7 +19,7 @@
             "redirect": { "extensionPath": "/friendCarousel/custom/scrollAndPopover.css" }
         },
         "condition": {
-            "urlFilter": "https://css.rbxcdn.com/65cfc7e33cd8b815b70ce6197d6317bf3020fb847b875125c9cb3f6a788d0be5.css",
+            "urlFilter": "https://css.rbxcdn.com/c86c8e6173b1b8419cd7ce974f9de96bc28c4b10859dfe9a5287dc3ee0181e8c.css",
             "resourceTypes": ["stylesheet"]
         }
     },
