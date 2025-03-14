@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Roblox+",
     "description": "Improves the user experience on the Roblox website.",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "action": {
         "default_title": "Roblox+",
         "default_popup": "/popup/popup.html"
