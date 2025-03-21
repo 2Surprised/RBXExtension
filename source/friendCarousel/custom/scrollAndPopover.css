@@ -313,7 +313,8 @@
 
 @media(min-width: 991px) {
     .search-landing-container {
-        position:fixed;
+        min-width:800px;
+        position: fixed;
         left: 50%;
         margin-top: 0;
         transform: translateX(-50%)
@@ -452,7 +453,7 @@
     margin-left: auto
 }
 
-.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg,.game-card-link .game-card-name-info .play-button {
+.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg,.game-card-link .game-card-name-info .play-button {
     align-items: center;
     border-radius: 8px;
     display: flex;
@@ -466,11 +467,15 @@
     width: 44px
 }
 
-.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg.purchase-button,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg.purchase-button,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg.purchase-button,.game-card-link .game-card-name-info .play-button.purchase-button {
+.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg.purchase-button,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg.purchase-button,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg.purchase-button,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg.purchase-button,.game-card-link .game-card-name-info .play-button.purchase-button {
     padding-inline:8px;width: fit-content
 }
 
-.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-robux-white,.game-card-link .game-card-name-info .play-button .icon-common-play,.game-card-link .game-card-name-info .play-button .icon-robux-white {
+.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .btn-text,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .btn-text,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .btn-text,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .btn-text,.game-card-link .game-card-name-info .play-button .btn-text {
+    padding-left: 5px
+}
+
+.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-common-play,.game-card-link .game-card-name-info .play-button .icon-common-play {
     background-size: 100% auto;
     width: 28px;
     height: 28px;
@@ -478,7 +483,15 @@
     background-size: 200% auto
 }
 
-.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private-primary,.game-card-link .game-card-name-info .play-button .icon-status-private,.game-card-link .game-card-name-info .play-button .icon-status-private-primary {
+.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-robux-white,.game-card-link .game-card-name-info .play-button .icon-robux-white {
+    background-size: 100% auto;
+    width: 28px;
+    height: 28px;
+    background-position: 0 -56px;
+    background-size: 200% auto
+}
+
+.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-private-primary,.game-card-link .game-card-name-info .play-button .icon-status-private,.game-card-link .game-card-name-info .play-button .icon-status-private-primary {
     background-size: 100% auto;
     width: 36px;
     height: 36px;
@@ -486,7 +499,7 @@
     background-size: 200% auto
 }
 
-.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .play-button .icon-status-unavailable,.game-card-link .game-card-name-info .play-button .icon-status-unavailable-secondary {
+.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .play-button .icon-status-unavailable,.game-card-link .game-card-name-info .play-button .icon-status-unavailable-secondary {
     background-size: 100% auto;
     width: 36px;
     height: 36px;
@@ -567,14 +580,14 @@
 }
 
 @media(max-width: 543px) {
-    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg,.game-card-link .game-card-name-info .play-button {
+    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg,.game-card-link .game-card-name-info .play-button {
         border-radius:4px;
         height: 27px;
         margin-top: 3px;
         width: 27px
     }
 
-    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-robux-white,.game-card-link .game-card-name-info .play-button .icon-common-play,.game-card-link .game-card-name-info .play-button .icon-robux-white {
+    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-common-play,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-common-play,.game-card-link .game-card-name-info .play-button .icon-common-play {
         background-size: 100% auto;
         width: 18px;
         height: 18px;
@@ -582,7 +595,7 @@
         background-size: 200% auto
     }
 
-    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private-primary,.game-card-link .game-card-name-info .play-button .icon-status-private,.game-card-link .game-card-name-info .play-button .icon-status-private-primary {
+    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-private-primary,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-robux-white,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-private,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-private-primary,.game-card-link .game-card-name-info .play-button .icon-robux-white,.game-card-link .game-card-name-info .play-button .icon-status-private,.game-card-link .game-card-name-info .play-button .icon-status-private-primary {
         background-size: 100% auto;
         width: 18px;
         height: 18px;
@@ -590,7 +603,7 @@
         background-size: 200% auto
     }
 
-    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .play-button .icon-status-unavailable,.game-card-link .game-card-name-info .play-button .icon-status-unavailable-secondary {
+    .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-action-needed-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-unplayable-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-unavailable,.game-card-link .game-card-name-info .btn-full-width.btn-economy-robux-white-lg .icon-status-unavailable-secondary,.game-card-link .game-card-name-info .play-button .icon-status-unavailable,.game-card-link .game-card-name-info .play-button .icon-status-unavailable-secondary {
         background-size: 100% auto;
         width: 18px;
         height: 18px;
@@ -2274,15 +2287,11 @@
 .content .friends-carousel-list-container-not-full {
     width: 100%;
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-direction: row;
     justify-content: flex-start;
     transform: rotateX(180deg);
     padding-top: 15px;
-}
-
-.content .react-friends-carousel-container {
-    height: 187px
 }
 
 /* https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered/74816531#74816531 */
@@ -2294,6 +2303,10 @@ body:has(.friends-carousel-tile:hover) .friends-carousel-list-container {
 /* This is to undo that horrible, random offset that happens for who knows what reason. */
 body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
     transform: translate(0px, -0.4px)
+}
+
+.content .react-friends-carousel-container {
+    height: 187px
 }
 
 @media(max-width: 991px) {

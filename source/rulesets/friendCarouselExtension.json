@@ -7,7 +7,7 @@
             "redirect": { "extensionPath": "/friendCarousel/custom/length.js" }
         },
         "condition": {
-            "urlFilter": "https://js.rbxcdn.com/f3f32d30e5479650c85fcc49a743abfb9446fa9a44cd20f6fdede1dcca7b83f6.js",
+            "urlFilter": "https://js.rbxcdn.com/bd7bdb32e65e034410d75ea96389df4e609cbaad110f10e14b49d8a63637d667.js",
             "resourceTypes": ["script"]
         }
     },
@@ -19,19 +19,7 @@
             "redirect": { "extensionPath": "/friendCarousel/custom/scrollAndPopover.css" }
         },
         "condition": {
-            "urlFilter": "https://css.rbxcdn.com/c86c8e6173b1b8419cd7ce974f9de96bc28c4b10859dfe9a5287dc3ee0181e8c.css",
-            "resourceTypes": ["stylesheet"]
-        }
-    },
-    {
-        "id": 3,
-        "priority": 1,
-        "action": {
-            "type": "redirect",
-            "redirect": { "extensionPath": "/friendCarousel/custom/scrollAndPopover2.css" }
-        },
-        "condition": {
-            "urlFilter": "https://css.rbxcdn.com/fe90cdf5a1ab9f62962a06c4444ede772457ff93c35e8f31ae5bb9aacc841f0a.css",
+            "urlFilter": "https://css.rbxcdn.com/df9a376522ff4c39e6d789e6bcc3d4b2817bdac228020ee6fb4990807031f319.css",
             "resourceTypes": ["stylesheet"]
         }
     }
