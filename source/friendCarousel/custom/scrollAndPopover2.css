@@ -3251,3 +3251,19 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 .places-list-placeholder .spinner {
     margin: 106px auto
 }
+
+.reminder-of-norms-dialog-modal .modal-header.reminder-of-norms-dialog-title {
+    text-align: center
+}
+
+.reminder-of-norms-dialog-modal .reminder-of-norms-dialog-body.modal-body {
+    padding: 20px 20px 0
+}
+
+.reminder-of-norms-dialog-modal .reminder-of-norms-dialog-body.modal-body .dialog-body-abuse-type,.reminder-of-norms-dialog-modal .reminder-of-norms-dialog-body.modal-body .dialog-body-guideline-reminder {
+    padding-bottom: 20px
+}
+
+.reminder-of-norms-dialog-modal .reminder-of-norms-confirm-button {
+    width: 360px
+}
