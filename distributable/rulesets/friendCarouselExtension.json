@@ -7,7 +7,7 @@
             "redirect": { "extensionPath": "/friendCarousel/custom/length.js" }
         },
         "condition": {
-            "urlFilter": "https://js.rbxcdn.com/6839a0acd61bfee765c43c3159b3d276c056666790a80f01f50a7de7247beda5.js",
+            "urlFilter": "https://js.rbxcdn.com/4ff4e49e32a5763df1b2a9a93cdc3368a9b4610aabb8b2602218062e4dd79af5.js",
             "resourceTypes": ["script"]
         }
     },
