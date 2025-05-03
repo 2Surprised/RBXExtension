@@ -12894,7 +12894,7 @@
                 style: {
                     position: "absolute",
                     top: ((null === (e = s.current) || void 0 === e ? void 0 : e.offsetHeight) || 0) + ((null === (e = s.current) || void 0 === e ? void 0 : e.offsetTop) || 0),
-                    left: (e = ((null === (e = s.current) || void 0 === e ? void 0 : e.offsetLeft) || 0) + ((null === (e = s.current) || void 0 === e ? void 0 : e.offsetWidth) || 0) / 2 - i / 2) < 0 ? 0 : e + i > document.getElementsByClassName("friends-carousel-container")[0].scrollWidth ? document.getElementsByClassName("friends-carousel-container")[0].scrollWidth - (i + 24) : e,
+                    left: (e = ((null === (e = s.current) || void 0 === e ? void 0 : e.offsetLeft) || 0) + ((null === (e = s.current) || void 0 === e ? void 0 : e.offsetWidth) || 0) / 2 - i / 2) < 0 ? 24 : e + i > window.innerWidth ? window.innerWidth - (i + 24) : e,
                     zIndex: 1002,
                     width: i
                 },
@@ -13459,7 +13459,7 @@
             X.useEffect)(function() {
                 var e, t = null === (e = f.current) || void 0 === e ? void 0 : e.offsetWidth;
                 h(110 * (null !== (e = null == n ? void 0 : n.length) && void 0 !== e ? e : 0) > (null != t ? t : 0)),
-                null != t && null != n && (t = 50,
+                null != t && null != n && (t = Math.floor(t / 110),
                 m(n.slice(0, t)))
             }, [null === (v = f.current) || void 0 === v ? void 0 : v.offsetWidth, n]),
             Ki(g, n, a, l, s, u, c),

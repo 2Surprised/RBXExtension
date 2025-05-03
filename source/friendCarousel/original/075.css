@@ -286,6 +286,41 @@
     width: 70%
 }
 
+.dark-theme .sdui-icon.icon-current-players-16x16,.dark-theme .sdui-icon.icon-push-right-16x16,.dark-theme .sdui-icon.icon-rating-16x16 {
+    background-image: url(https://images.rbxcdn.com/44acd0c6195597cdc307a3f60efab0e3-common_sm_dark_12032018.svg)
+}
+
+.light-theme .sdui-icon.icon-current-players-16x16,.light-theme .sdui-icon.icon-push-right-16x16,.light-theme .sdui-icon.icon-rating-16x16 {
+    background-image: url(https://images.rbxcdn.com/ca3888e4e17a9df7b25d5bfe2110c1c9-common_sm_light_12032018.svg)
+}
+
+.sdui-icon.icon-rating-16x16 {
+    background-position: 0 -32px
+}
+
+.sdui-icon.icon-current-players-16x16,.sdui-icon.icon-rating-16x16 {
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 200% auto;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px
+}
+
+.sdui-icon.icon-current-players-16x16 {
+    background-position: 0 -48px
+}
+
+.sdui-icon.icon-push-right-16x16 {
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 200% auto;
+    background-position: 0 -16px;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px
+}
+
 .game-grid.expand-home-content,.game-grid.game-details-page-events-grid {
     column-gap: 16px;
     display: grid;
@@ -880,131 +915,6 @@
 
 .friend-tile-spacer {
     width: 5px
-}
-
-@font-face {
-    font-family: Builder Sans;
-    src: url(https://css.rbxcdn.com/b386a6bfc8e0077f1187ab64fa702226-BuilderSans-Thin.woff2) format("woff2"),url(https://css.rbxcdn.com/0774273a9a07ff6dea86332b42898ae6-BuilderSans-Thin.woff) format("woff");
-    font-weight: 100;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Sans;
-    src: url(https://css.rbxcdn.com/f1cad4800853bba09a023250de102801-BuilderSans-Light.woff2) format("woff2"),url(https://css.rbxcdn.com/fd780b5ee50e93a0002581937ceb74f9-BuilderSans-Light.woff) format("woff");
-    font-weight: 300;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Sans;
-    src: url(https://css.rbxcdn.com/e1f6e032096b2924e561c3928b9dc73d-BuilderSans-Regular.woff2) format("woff2"),url(https://css.rbxcdn.com/3a390ad6e476846a971ab5923cb9ff1e-BuilderSans-Regular.woff) format("woff");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Sans;
-    src: url(https://css.rbxcdn.com/cc7ad65e0558327d8fbe8ade40ab94e8-BuilderSans-Medium.woff2) format("woff2"),url(https://css.rbxcdn.com/0c1b1b913a2ad4b51e9a8aced52b4362-BuilderSans-Medium.woff) format("woff");
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Sans;
-    src: url(https://css.rbxcdn.com/60df02cbc9b6a531c2d3cf32025a4dc8-BuilderSans-Bold.woff2) format("woff2"),url(https://css.rbxcdn.com/27762afe0183d3d8ede503d4f5ad00b5-BuilderSans-Bold.woff) format("woff");
-    font-weight: 700;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Sans;
-    src: url(https://css.rbxcdn.com/b715a5dd019d1b8771a3031ff85c972b-BuilderSans-ExtraBold.woff2) format("woff2"),url(https://css.rbxcdn.com/041f792b40f49fc31c78d68dd72d3f83-BuilderSans-ExtraBold.woff) format("woff");
-    font-weight: 800;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Comic Neue;
-    src: url(https://css.rbxcdn.com/96921a1d68b61dbafc17e0511fe73de3-ComicNeue-Light.woff2) format("woff2"),url(https://css.rbxcdn.com/f4d5949b358eac62216b9979de96e92b-ComicNeue-Light.woff) format("woff");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-    font-family: Comic Neue;
-    src: url(https://css.rbxcdn.com/ae8fd5d0c116e571c03feea4f92ec8c0-ComicNeue-Italic.woff2) format("woff2"),url(https://css.rbxcdn.com/4612c651c3ab1f7be53a9e6f71df760a-ComicNeue-Italic.woff) format("woff");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap
-}
-
-@font-face {
-    font-family: Comic Neue;
-    src: url(https://css.rbxcdn.com/07661bd208eed16aa0ff49baa5e5a55d-ComicNeue-Bold.woff2) format("woff2"),url(https://css.rbxcdn.com/4ad34ad8d2bd06594f076d2a0e90961d-ComicNeue-Bold.woff) format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-    font-family: Comic Neue;
-    src: url(https://css.rbxcdn.com/caea6a8f9dfa7b38e20f5edf5231d021-ComicNeue-BoldItalic.woff2) format("woff2"),url(https://css.rbxcdn.com/d0d7ebf55d732298f65974320a50c8c3-ComicNeue-BoldItalic.woff) format("woff");
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap
-}
-
-@font-face {
-    font-family: Comic Neue;
-    src: url(https://css.rbxcdn.com/0b8ae53a9fb10f2a4136b1dec9d67d20-ComicNeue-LightItalic.woff2) format("woff2"),url(https://css.rbxcdn.com/3214b33f20664895e7564d864fbff152-ComicNeue-LightItalic.woff) format("woff");
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap
-}
-
-@font-face {
-    font-family: Comic Neue;
-    src: url(https://css.rbxcdn.com/3a5dc227e0041312161a6fea7ee68c32-ComicNeue-Regular.woff2) format("woff2"),url(https://css.rbxcdn.com/f610f878af60d5c909cc335e07caadaf-ComicNeue-Regular.woff) format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-    font-family: Builder Extended;
-    src: url(https://css.rbxcdn.com/6e7af7977c785c3ce8ad18c4124cadab-BuilderExtended-Regular.woff2) format("woff2"),url(https://css.rbxcdn.com/2e2756030023a05b8efaf221411e5429-BuilderExtended-Regular.woff) format("woff");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Extended;
-    src: url(https://css.rbxcdn.com/77a45947c4bf361ca71c38db765cff12-BuilderExtended-Bold.woff2) format("woff2"),url(https://css.rbxcdn.com/7642305ba5fa4a92d72012afa4da4475-BuilderExtended-Bold.woff) format("woff");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Extended;
-    src: url(https://css.rbxcdn.com/e54e468352f348e18a229f8c3e22dd2a-BuilderExtended-Light.woff2) format("woff2"),url(https://css.rbxcdn.com/ad1cd1e639d1d3237c9f7f2d64625f03-BuilderExtended-Light.woff) format("woff");
-    font-weight: 300;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Extended;
-    src: url(https://css.rbxcdn.com/2bddb1435f5ef24e4beac9e897f55cec-BuilderExtended-SemiBold.woff2) format("woff2"),url(https://css.rbxcdn.com/f1765a157a15faea5191e8fb10ec6049-BuilderExtended-SemiBold.woff) format("woff");
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Builder Extended;
-    src: url(https://css.rbxcdn.com/93f77665b18e5e961ea4186ba7e5164a-BuilderExtended-ExtraBold.woff2) format("woff2"),url(https://css.rbxcdn.com/64c5eaaf39f9884bf4ac61c3dd8356c4-BuilderExtended-ExtraBold.woff) format("woff");
-    font-weight: 800;
-    font-style: normal
 }
 
 .thumbnail-2d-container.sdui-thumbnail-image-container {
@@ -2303,6 +2213,10 @@
     margin-right: -12px
 }
 
+.game-sort-carousel-wrapper.game-sort-with-mural {
+    overflow-y: hidden
+}
+
 .game-sort-carousel-wrapper .game-sort-mural-wrapper {
     position: absolute;
     top: -20px;
@@ -2335,6 +2249,10 @@
 
 .home-page-games-list {
     margin-bottom: 36px
+}
+
+.home-page-games-list .game-card-thumb-container:before {
+    content: none
 }
 
 .home-page-games-list .home-page-carousel .game-card {
@@ -3219,6 +3137,11 @@
     position: absolute;
     top: 60%;
     transform: translateY(-50%)
+}
+
+.home-sort-header-container .info-tooltip-container .games-info-tooltip {
+    display: flex;
+    align-items: center
 }
 
 .home-container {
