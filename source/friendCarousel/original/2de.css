@@ -3124,6 +3124,10 @@
     vertical-align: top
 }
 
+.info-tooltip-container.icon-centered {
+    display: flex
+}
+
 #games-info-tooltip .tooltip-inner {
     text-align: left;
     color: #fff;
@@ -3139,7 +3143,7 @@
     transform: translateY(-50%)
 }
 
-.home-sort-header-container .info-tooltip-container .games-info-tooltip {
+.games-info-tooltip.icon-centered {
     display: flex;
     align-items: center
 }
