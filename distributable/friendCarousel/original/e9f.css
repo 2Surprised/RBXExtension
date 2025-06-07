@@ -2760,23 +2760,25 @@
     z-index: 0
 }
 
-.touch .horizontal-scroller {
-    width: 100%
-}
+@media(pointer: coarse)and (not (any-pointer:fine)) {
+    .horizontal-scroller {
+        width:100%
+    }
 
-.touch .horizontal-scroll-window {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    scrollbar-width: none
-}
+    .horizontal-scroll-window {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none
+    }
 
-.touch .scroller {
-    display: none
-}
+    .scroller {
+        display: none
+    }
 
-.touch ::-webkit-scrollbar {
-    display: none
+    ::-webkit-scrollbar {
+        display: none
+    }
 }
 
 .scroll-loading {

@@ -5411,7 +5411,7 @@
         }
     }
       , r = {};
-    function Ou(e) {
+    function Du(e) {
         var t = r[e];
         if (void 0 !== t)
             return t.exports;
@@ -5420,11 +5420,11 @@
             loaded: !1,
             exports: {}
         };
-        return n[e].call(t.exports, t, t.exports, Ou),
+        return n[e].call(t.exports, t, t.exports, Du),
         t.loaded = !0,
         t.exports
     }
-    Ou.n = function(e) {
+    Du.n = function(e) {
         var t = e && e.__esModule ? function() {
             return e.default
         }
@@ -5432,21 +5432,21 @@
             return e
         }
         ;
-        return Ou.d(t, {
+        return Du.d(t, {
             a: t
         }),
         t
     }
     ,
-    Ou.d = function(e, t) {
+    Du.d = function(e, t) {
         for (var n in t)
-            Ou.o(t, n) && !Ou.o(e, n) && Object.defineProperty(e, n, {
+            Du.o(t, n) && !Du.o(e, n) && Object.defineProperty(e, n, {
                 enumerable: !0,
                 get: t[n]
             })
     }
     ,
-    Ou.g = function() {
+    Du.g = function() {
         if ("object" == typeof globalThis)
             return globalThis;
         try {
@@ -5456,11 +5456,11 @@
                 return window
         }
     }(),
-    Ou.o = function(e, t) {
+    Du.o = function(e, t) {
         return Object.prototype.hasOwnProperty.call(e, t)
     }
     ,
-    Ou.nmd = function(e) {
+    Du.nmd = function(e) {
         return e.paths = [],
         e.children || (e.children = []),
         e
@@ -5468,7 +5468,7 @@
     ,
     function() {
         "use strict";
-        var C, w, E, $, D, L, M, K = React, X = Ou.n(K), e = ReactDOM, A = CoreUtilities, P = window.EventTracker ? EventTracker : {
+        var C, w, E, $, D, L, M, K = React, X = Du.n(K), e = ReactDOM, A = CoreUtilities, P = window.EventTracker ? EventTracker : {
             fireEvent: console.log,
             start: console.log,
             endSuccess: console.log,
@@ -5583,6 +5583,7 @@
         yr.InterestGrid = "InterestGrid",
         yr.Pills = "Pills",
         yr.Sdui = "sdui",
+        yr.SongCarousel = "SongCarousel",
         (E = E || {}).Carousel = "Carousel",
         (br = {}).Sponsored = "Sponsored",
         br.SponsoredGame = "SponsoredGame",
@@ -5857,21 +5858,21 @@
         xi.ButtonName = "buttonName",
         xi.IsInterested = "isInterested",
         xi.InterestedUniverseIds = "interestedUniverseIds",
-        (xl = g = g || {}).GameImpressions = "gameImpressions",
-        xl.GameDetailReferral = "gameDetailReferral",
-        xl.SortDetailReferral = "sortDetailReferral",
-        xl.FeedScroll = "feedScroll",
-        xl.NavigateToSortLink = "navigateToSortLink",
-        xl.SurveyInteraction = "surveyInteraction",
-        xl.SurveyImpression = "surveyImpression",
-        xl.InterestCatcherClick = "interestCatcherClick",
-        xl.FilterImpressions = "filterImpressions",
-        xl.GamesFilterClick = "gamesFilterClick",
-        xl.RequestRefundClick = "requestRefundClick",
-        (nl = F = F || {}).HomePageSessionInfo = "homePageSessionInfo",
-        nl.GameSearchSessionInfo = "gameSearchSessionInfo",
-        nl.DiscoverPageSessionInfo = "discoverPageSessionInfo",
-        nl.SearchLandingPageSessionInfo = "searchLandingPageSessionInfo",
+        (_l = g = g || {}).GameImpressions = "gameImpressions",
+        _l.GameDetailReferral = "gameDetailReferral",
+        _l.SortDetailReferral = "sortDetailReferral",
+        _l.FeedScroll = "feedScroll",
+        _l.NavigateToSortLink = "navigateToSortLink",
+        _l.SurveyInteraction = "surveyInteraction",
+        _l.SurveyImpression = "surveyImpression",
+        _l.InterestCatcherClick = "interestCatcherClick",
+        _l.FilterImpressions = "filterImpressions",
+        _l.GamesFilterClick = "gamesFilterClick",
+        _l.RequestRefundClick = "requestRefundClick",
+        (rl = F = F || {}).HomePageSessionInfo = "homePageSessionInfo",
+        rl.GameSearchSessionInfo = "gameSearchSessionInfo",
+        rl.DiscoverPageSessionInfo = "discoverPageSessionInfo",
+        rl.SearchLandingPageSessionInfo = "searchLandingPageSessionInfo",
         (Qn = {}).Submission = "submission",
         Qn.Cancellation = "cancellation",
         (yr = S = S || {}).Horizontal = "horizontal",
@@ -6227,8 +6228,8 @@
                 })
             })
         }
-          , he = Ou(4452)
-          , ge = Ou.n(he)
+          , he = Du(4452)
+          , ge = Du.n(he)
           , ye = ReactStyleGuide
           , be = ye.Button.variants;
         function Ie(n, r) {
@@ -6537,15 +6538,15 @@
         (xi = Se = Se || {}).INVALID = "Invalid",
         xi.IMAGE_TOP_LEFT = "ImageTopLeft",
         xi.IMAGE_BOTTOM_LEFT = "ImageBottomLeft",
-        (xl = Ce = Ce || {}).Home = "Home",
-        xl.Games = "Games",
-        (nl = {}).Invalid = "Invalid",
-        nl.HasLootBoxes = "HasLootBoxes",
-        nl.HasInGameTrading = "HasInGameTrading",
-        nl.IsUsingLootBoxApi = "IsUsingLootBoxApi",
-        nl.IsUsingInGameTradingApi = "IsUsingInGameTradingApi",
-        nl.HasAllowedExternalLinkReferences = "HasAllowedExternalLinkReferences",
-        nl.IsUsingAllowedExternalLinkReferencesApi = "IsUsingAllowedExternalLinkReferencesApi",
+        (_l = Ce = Ce || {}).Home = "Home",
+        _l.Games = "Games",
+        (rl = {}).Invalid = "Invalid",
+        rl.HasLootBoxes = "HasLootBoxes",
+        rl.HasInGameTrading = "HasInGameTrading",
+        rl.IsUsingLootBoxApi = "IsUsingLootBoxApi",
+        rl.IsUsingInGameTradingApi = "IsUsingInGameTradingApi",
+        rl.HasAllowedExternalLinkReferences = "HasAllowedExternalLinkReferences",
+        rl.IsUsingAllowedExternalLinkReferencesApi = "IsUsingAllowedExternalLinkReferencesApi",
         (Qn = {}).MorphToR6 = "MorphToR6",
         Qn.PlayerChoice = "PlayerChoice",
         Qn.MorphToR15 = "MorphToR15",
@@ -6665,7 +6666,9 @@
             LabelSupported: "Label.Supported",
             LabelVoiceChat: "Label.VoiceChat",
             HeadingRefund: "Heading.Refund",
-            ActionRequestRefund: "Action.RequestRefund"
+            ActionRequestRefund: "Action.RequestRefund",
+            HeadingNotice: "Body.NotesTitle",
+            InExperiencePurchase: "Notes.InExperiencePurchase"
         }
           , oe = PropTypes
           , lt = "Label.ContextMenuTitle"
@@ -6728,7 +6731,7 @@
             }, n(st))))
         }
         dt.propTypes = {
-            game: (te = Ou.n(oe))().shape({
+            game: (te = Du.n(oe))().shape({
                 universeId: te().number,
                 placeId: te().number,
                 name: te().string,
@@ -6970,44 +6973,44 @@
             }
             ).apply(this, arguments)
         }
-          , Et = ((xl = {})[$.GridTile] = {
+          , Et = ((_l = {})[$.GridTile] = {
             minTileWidth: 233,
             columnGap: 16,
             minTilesPerRow: 2,
             maxTilesPerRow: 6
         },
-        xl[$.EventTile] = {
+        _l[$.EventTile] = {
             minTileWidth: 233,
             columnGap: 16,
             minTilesPerRow: 4,
             maxTilesPerRow: 4
         },
-        xl[$.InterestTile] = {
+        _l[$.InterestTile] = {
             minTileWidth: 311,
             columnGap: 16,
             minTilesPerRow: 2,
             maxTilesPerRow: 6
         },
-        xl[$.AppGameTileNoMetadata] = {
+        _l[$.AppGameTileNoMetadata] = {
             minTileWidth: 150,
             columnGap: 16,
             minTilesPerRow: 3,
             maxTilesPerRow: 12
         },
-        xl[$.ExperienceEventsTile] = {
+        _l[$.ExperienceEventsTile] = {
             minTileWidth: 233,
             columnGap: 16,
             minTilesPerRow: 2,
             maxTilesPerRow: 3
         },
-        xl)
-          , Pt = wt(wt({}, Et), ((nl = {})[$.EventTile] = {
+        _l)
+          , Pt = wt(wt({}, Et), ((rl = {})[$.EventTile] = {
             minTileWidth: 300,
             columnGap: 16,
             minTilesPerRow: 2,
             maxTilesPerRow: 4
         },
-        nl))
+        rl))
           , Tt = {
             minTileWidth: 150,
             columnGap: 16,
@@ -7780,7 +7783,7 @@
             shouldPurchaseNavigateToDetails: !1
         };
         var on = xi;
-        (xl = X().forwardRef(function(e, t) {
+        (_l = X().forwardRef(function(e, t) {
             var n = e.gameData
               , r = e.id
               , o = e.buildEventProperties
@@ -7984,7 +7987,7 @@
                 className: "icon-heart"
             }), X().createElement("span", null, S(it.ActionInterestCatcherInterested)))))
         })).displayName = "WideGameTile";
-        var an = xl
+        var an = _l
           , ln = function() {
             return (ln = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
@@ -8003,7 +8006,7 @@
                     t.indexOf(o[r]) < 0 && Object.prototype.propertyIsEnumerable.call(e, o[r]) && (n[o[r]] = e[o[r]]);
             return n
         };
-        (nl = (0,
+        (rl = (0,
         K.forwardRef)(function(e, t) {
             var n = e.componentType
               , r = sn(e, ["componentType"]);
@@ -8026,7 +8029,7 @@
                 }, r))
             }
         })).displayName = "GameTileTypeMap";
-        var un = nl
+        var un = rl
           , cn = (0,
         K.forwardRef)(function(e, t) {
             var n = e.gameData
@@ -8246,8 +8249,8 @@
           , gn = Je.linkStartDelimiter
           , yn = Je.linkEndDelimiter
           , bn = WebBlox
-          , In = Ou(4777)
-          , Sn = Ou(8550);
+          , In = Du(4777)
+          , Sn = Du(8550);
         function Cn(e, t) {
             var n;
             if ("undefined" == typeof Symbol || null == e[Symbol.iterator]) {
@@ -8418,7 +8421,7 @@
             this.__entries__ = []
         }
         var Nn = "undefined" != typeof window && "undefined" != typeof document && window.document === document
-          , kn = void 0 !== Ou.g && Ou.g.Math === Math ? Ou.g : "undefined" != typeof self && self.Math === Math ? self : "undefined" != typeof window && window.Math === Math ? window : Function("return this")()
+          , kn = void 0 !== Du.g && Du.g.Math === Math ? Du.g : "undefined" != typeof self && self.Math === Math ? self : "undefined" != typeof window && window.Math === Math ? window : Function("return this")()
           , An = "function" == typeof requestAnimationFrame ? requestAnimationFrame.bind(kn) : function(e) {
             return setTimeout(function() {
                 return e(Date.now())
@@ -8721,7 +8724,7 @@
             }
         });
         var Qn = void 0 !== kn.ResizeObserver ? kn.ResizeObserver : Zn
-          , er = Ou(8601);
+          , er = Du(8601);
         function tr(e, t) {
             return function(e) {
                 if (Array.isArray(e))
@@ -9591,37 +9594,37 @@
         xi.Medium = "Medium",
         xi.Large = "Large",
         xi.XLarge = "XLarge";
-        var _r, Nr = (ir(xl = {}, vr.XSmall, {
+        var _r, Nr = (ir(_l = {}, vr.XSmall, {
             minItemWidth: 80,
             minItemCount: 3,
             maxItemCount: 20,
             fractionalItemAmount: .15
         }),
-        ir(xl, vr.Small, {
+        ir(_l, vr.Small, {
             minItemWidth: 150,
             minItemCount: 3,
             maxItemCount: 12,
             fractionalItemAmount: .15
         }),
-        ir(xl, vr.Medium, {
+        ir(_l, vr.Medium, {
             minItemWidth: 233,
             minItemCount: 2,
             maxItemCount: 6,
             fractionalItemAmount: .15
         }),
-        ir(xl, vr.Large, {
+        ir(_l, vr.Large, {
             minItemWidth: 300,
             minItemCount: 1,
             maxItemCount: 4,
             fractionalItemAmount: .3
         }),
-        ir(xl, vr.XLarge, {
+        ir(_l, vr.XLarge, {
             minItemWidth: 300,
             minItemCount: 1,
             maxItemCount: 1,
             fractionalItemAmount: .1
         }),
-        xl), kr = (0,
+        _l), kr = (0,
         bn.makeStyles)()(function(e, t) {
             var n = t.itemWidth
               , r = t.columnGap
@@ -9911,10 +9914,10 @@
                 className: u
             }, l))
         }
-        (nl = _r = _r || {}).None = "None",
-        nl.X = "X",
-        nl.Y = "Y",
-        nl.XY = "XY";
+        (rl = _r = _r || {}).None = "None",
+        rl.X = "X",
+        rl.Y = "Y",
+        rl.XY = "XY";
         var Ur = yr
           , Br = br
           , Gr = {
@@ -10683,7 +10686,7 @@
             }
             ).apply(this, arguments)
         }
-          , vo = null !== (xl = window.ResizeObserver) && void 0 !== xl ? xl : Qn
+          , vo = null !== (_l = window.ResizeObserver) && void 0 !== _l ? _l : Qn
           , ho = function() {
             var e = (0,
             K.useState)(void 0)
@@ -10719,7 +10722,7 @@
           , bo = et.wideGameTileGutterWidth
           , Io = et.scrollerWidth
           , So = tt.wideTileHoverGrowWidthPx;
-        (nl = function(e) {
+        (rl = function(e) {
             var t = e.gameData
               , n = e.sort
               , r = e.positionId
@@ -10948,7 +10951,7 @@
             isNewScrollArrowsEnabled: void 0,
             hideScrollBackWhenDisabled: !1
         };
-        var Co = nl
+        var Co = rl
           , wo = function() {
             return (wo = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
@@ -11748,7 +11751,7 @@
             loadData: null
         };
         var jo = RobloxBadges;
-        (xl = function(e) {
+        (_l = function(e) {
             var t = e.universeId
               , n = e.placeId
               , r = e.playButtonEventProperties
@@ -11782,7 +11785,7 @@
             disableLoadingState: !1,
             redirectPurchaseUrl: void 0
         };
-        var Ho = xl
+        var Ho = _l
           , zo = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
@@ -12265,7 +12268,7 @@
         };
         var Zo = et
           , Qo = Je.sortlessGridMaxTilesMetadataToFetch;
-        (nl = function(e) {
+        (rl = function(e) {
             var t = e.translate
               , n = e.sort
               , r = e.positionId
@@ -12320,8 +12323,8 @@
             isExpandHomeContentEnabled: void 0,
             isNewSortHeaderEnabled: void 0
         };
-        var ei = nl
-          , ti = Ou(5250);
+        var ei = rl
+          , ti = Du(5250);
         function ni(e) {
             return (ni = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
@@ -12419,7 +12422,7 @@
                 }
             }, [t, e, l, a])
         }
-        Ou(1315);
+        Du(1315);
         var ii, ai, li, si, ui, ci, di = 25, fi = .5;
         function pi(o) {
             return Object.keys(o).reduce(function(e, t) {
@@ -12469,10 +12472,10 @@
         xi.Context = "context",
         xi.CollectionId = "collectionId",
         xi.CollectionPosition = "collectionPosition",
-        (xl = {}).Online = "online",
-        xl.InGame = "inGame",
-        xl.InStudio = "inStudio",
-        xl.Offline = "offline",
+        (_l = {}).Online = "online",
+        _l.InGame = "inGame",
+        _l.InStudio = "inStudio",
+        _l.Offline = "offline",
         (Qn = {}).Friend = "friend",
         Qn.NotFriend = "notFriend",
         (et = ui = ui || {}).ItemIds = "itemIds",
@@ -12482,10 +12485,10 @@
         et.PositionsInRow = "positionsInRow",
         et.PositionsInTopic = "positionsInTopic",
         et.TotalNumberOfItems = "totalNumberOfItems",
-        (nl = {}).Presences = "presences",
-        nl.PresenceUniverseIds = "presenceUniverseIds",
-        nl.FriendStatuses = "friendStatuses",
-        nl.SourceCarousel = "sourceCarousel",
+        (rl = {}).Presences = "presences",
+        rl.PresenceUniverseIds = "presenceUniverseIds",
+        rl.FriendStatuses = "friendStatuses",
+        rl.SourceCarousel = "sourceCarousel",
         (yr = ci = ci || {}).ItemId = "itemId",
         yr.ItemPosition = "itemPosition",
         yr.RowNumber = "rowNumber",
@@ -12955,7 +12958,7 @@
             feature: "Feature.PeopleList"
         }
           , xi = RobloxPresence
-          , _i = Ou.n(xi);
+          , _i = Du.n(xi);
         function Ni(e) {
             var t = e.id
               , n = e.displayName
@@ -13137,7 +13140,7 @@
                 onBlur: n
             }, o))
         }
-        (xl = function(e) {
+        (_l = function(e) {
             var t = e.id
               , n = e.userProfileUrl
               , r = e.handleImageClick
@@ -13161,7 +13164,7 @@
         ).defaultProps = {
             handleImageClick: void 0
         };
-        var Oi = xl
+        var Oi = _l
           , Ri = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
@@ -13379,7 +13382,7 @@
                 }
             }, [t, e, l, a])
         }
-        Ou(6870);
+        Du(6870);
         var Ui, Bi, Gi, ji, Hi, zi, Wi, Vi, qi, Ji, $i = 25, Ki = .5;
         function Xi(o) {
             return Object.keys(o).reduce(function(e, t) {
@@ -13448,9 +13451,9 @@
         Qn.ItemAction = "itemAction",
         (et = {}).Home = "home",
         et.UserProfile = "userProfile",
-        (nl = Bi = Bi || {}).HomePageSessionInfo = "homePageSessionInfo",
-        nl.DiscoverPageSessionInfo = "discoverPageSessionInfo",
-        nl.GameSearchSessionInfo = "gameSearchSessionInfo",
+        (rl = Bi = Bi || {}).HomePageSessionInfo = "homePageSessionInfo",
+        rl.DiscoverPageSessionInfo = "discoverPageSessionInfo",
+        rl.GameSearchSessionInfo = "gameSearchSessionInfo",
         (yr = Gi = Gi || {}).ContentType = "contentType",
         yr.Context = "context",
         yr.CollectionId = "collectionId",
@@ -13462,13 +13465,13 @@
         br.Offline = "offline",
         (xi = zi = zi || {}).Friend = "friend",
         xi.NotFriend = "notFriend",
-        (xl = Wi = Wi || {}).ItemIds = "itemIds",
-        xl.ItemPositions = "itemPositions",
-        xl.RowNumbers = "rowNumbers",
-        xl.FeedRowNumbers = "feedRowNumbers",
-        xl.PositionsInRow = "positionsInRow",
-        xl.PositionsInTopic = "positionsInTopic",
-        xl.TotalNumberOfItems = "totalNumberOfItems",
+        (_l = Wi = Wi || {}).ItemIds = "itemIds",
+        _l.ItemPositions = "itemPositions",
+        _l.RowNumbers = "rowNumbers",
+        _l.FeedRowNumbers = "feedRowNumbers",
+        _l.PositionsInRow = "positionsInRow",
+        _l.PositionsInTopic = "positionsInTopic",
+        _l.TotalNumberOfItems = "totalNumberOfItems",
         (Qn = Vi = Vi || {}).Presences = "presences",
         Qn.PresenceUniverseIds = "presenceUniverseIds",
         Qn.FriendStatuses = "friendStatuses",
@@ -13481,10 +13484,10 @@
         et.PositionInTopic = "positionInTopic",
         et.TotalNumberOfItems = "totalNumberOfItems",
         et.ActionType = "actionType",
-        (nl = Ji = Ji || {}).Presence = "presence",
-        nl.PresenceUniverseId = "presenceUniverseId",
-        nl.FriendStatus = "friendStatus",
-        nl.SourceCarousel = "sourceCarousel";
+        (rl = Ji = Ji || {}).Presence = "presence",
+        rl.PresenceUniverseId = "presenceUniverseId",
+        rl.FriendStatus = "friendStatus",
+        rl.SourceCarousel = "sourceCarousel";
         var Qi = function() {
             return (Qi = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
@@ -13642,7 +13645,7 @@
             K.useEffect)(function() {
                 var e, t = null === (e = f.current) || void 0 === e ? void 0 : e.offsetWidth;
                 h(110 * (null !== (e = null == n ? void 0 : n.length) && void 0 !== e ? e : 0) > (null != t ? t : 0)),
-                null != t && null != n && (t = 60,
+                null != t && null != n && (t = 50,
                 m(n.slice(0, t)))
             }, [null === (v = f.current) || void 0 === v ? void 0 : v.offsetWidth, n]),
             na(g, n, a, l, s, u, c),
@@ -13680,9 +13683,9 @@
                 }))
             }))))
         }
-        (yr = qs = qs || {}).WebHomeFriendsCarousel = "WebHomeFriendsCarousel",
+        (yr = $s = $s || {}).WebHomeFriendsCarousel = "WebHomeFriendsCarousel",
         yr.WebProfileFriendsCarousel = "WebProfileFriendsCarousel";
-        var ia = qs
+        var ia = $s
           , aa = (x.EnvironmentUrls.friendsApi,
         x.EnvironmentUrls.premiumFeaturesApi,
         x.EnvironmentUrls.usersApi,
@@ -14623,11 +14626,11 @@
             if ("boolean" == typeof e)
                 return e;
             if ("string" != typeof e)
-                return "number" == typeof e ? 1 === e || 0 !== e && (Va(Oa.ParseBooleanFieldInvalidNumber, "Invalid number value for boolean field: " + e),
-                t) : (Va(Oa.ParseBooleanFieldInvalidType, "Invalid type for boolean field: " + typeof e + ", input: " + (e ? JSON.stringify(e) : "undefined")),
+                return "number" == typeof e ? 1 === e || 0 !== e && (qa(Oa.ParseBooleanFieldInvalidNumber, "Invalid number value for boolean field: " + e),
+                t) : (qa(Oa.ParseBooleanFieldInvalidType, "Invalid type for boolean field: " + typeof e + ", input: " + (e ? JSON.stringify(e) : "undefined")),
                 t);
             var n = e.toLowerCase();
-            return "true" === n || "t" === n || "false" !== n && "f" !== n && (Va(Oa.ParseBooleanFieldInvalidString, "Invalid string value for boolean field: " + e),
+            return "true" === n || "t" === n || "false" !== n && "f" !== n && (qa(Oa.ParseBooleanFieldInvalidString, "Invalid string value for boolean field: " + e),
             t)
         }
         function Ua(e) {
@@ -14637,37 +14640,51 @@
             var r = {};
             return Object.keys(n).forEach(function(e) {
                 var t = n[e];
-                Ua(t) ? r[e] = t : Va(Oa.AnalyticsParsingDiscardedInvalidParam, "Discarding invalid event parameter key: " + e + ", value: " + JSON.stringify(t) + ", type: " + typeof t)
+                Ua(t) ? r[e] = t : qa(Oa.AnalyticsParsingDiscardedInvalidParam, "Discarding invalid event parameter key: " + e + ", value: " + JSON.stringify(t) + ", type: " + typeof t)
             }),
             r
         }
-        function Ga(e, t, n) {
+        function Ga(e, t) {
+            var n;
+            switch (t) {
+            case Y.HomePage:
+                return (n = {})[li.HomePageSessionInfo] = e,
+                n;
+            case Y.GamesPage:
+                return (n = {})[li.DiscoverPageSessionInfo] = e,
+                n;
+            default:
+                return qa(Oa.InvalidPageForSessionAnalytics, "Invalid page context for session analytics: " + (t ? JSON.stringify(t) : "undefined") + " with session info: " + e),
+                {}
+            }
+        }
+        function ja(e, t, n) {
             return null != t && t.analyticsData && void 0 !== (null == t ? void 0 : t.analyticsData[e]) && null !== (null == t ? void 0 : t.analyticsData[e]) ? t.analyticsData[e] : null != t && t.ancestorAnalyticsData && void 0 !== (null == t ? void 0 : t.ancestorAnalyticsData[e]) && null !== (null == t ? void 0 : t.ancestorAnalyticsData[e]) ? t.ancestorAnalyticsData[e] : n
         }
-        function ja(e, t, n, r, o) {
-            return t = qa(qa({}, e), t),
-            r = qa(qa({}, t), {
-                collectionId: Ma(t.collectionId, $a.collectionId),
+        function Ha(e, t, n, r, o) {
+            return t = Ja(Ja({}, e), t),
+            r = Ja(Ja({}, t), {
+                collectionId: Ma(t.collectionId, Ka.collectionId),
                 collectionPosition: Ma(t.collectionPosition, -1),
-                contentType: La(t.contentType, $a.contentType),
+                contentType: La(t.contentType, Ka.contentType),
                 itemsPerRow: r,
                 totalNumberOfItems: o
             }),
-            void 0 === (o = r).collectionId || o.collectionId < 0 || void 0 === o.contentType || void 0 === o.collectionPosition || o.collectionPosition < 0 || void 0 === o.totalNumberOfItems || o.totalNumberOfItems < 0 ? (Va(Oa.AnalyticsBuilderInvalidCollectionAnalyticsData, "Collection analytics data for component type " + n + " is invalid: " + JSON.stringify(r)),
-            qa(qa({}, $a), r)) : r
+            void 0 === (o = r).collectionId || o.collectionId < 0 || void 0 === o.contentType || void 0 === o.collectionPosition || o.collectionPosition < 0 || void 0 === o.totalNumberOfItems || o.totalNumberOfItems < 0 ? (qa(Oa.AnalyticsBuilderInvalidCollectionAnalyticsData, "Collection analytics data for component type " + n + " is invalid: " + JSON.stringify(r)),
+            Ja(Ja({}, Ka), r)) : r
         }
-        function Ha(e, t, n) {
-            return e = qa(qa(qa({}, t), e), n),
-            n = qa(qa({}, e), {
-                id: La(e.id, Ja.id),
-                itemPosition: Ma(e.itemPosition, Ja.itemPosition)
+        function za(e, t, n) {
+            return e = Ja(Ja(Ja({}, t), e), n),
+            n = Ja(Ja({}, e), {
+                id: La(e.id, $a.id),
+                itemPosition: Ma(e.itemPosition, $a.itemPosition)
             }),
-            void 0 === (e = n).id || e.itemPosition < 0 ? (Va(Oa.AnalyticsBuilderInvalidItemAnalyticsData, "Item analytics data is invalid: " + JSON.stringify(n)),
-            qa(qa({}, Ja), n)) : n
+            void 0 === (e = n).id || e.itemPosition < 0 ? (qa(Oa.AnalyticsBuilderInvalidItemAnalyticsData, "Item analytics data is invalid: " + JSON.stringify(n)),
+            Ja(Ja({}, $a), n)) : n
         }
-        function za(e) {
-            var t, n = Fa(Ga("adFlag", e, !1), !1), r = La(Ga("adId", e, ""), ""), o = Ma(Ga("itemPosition", e, -1), -1), i = null != e && e.getCollectionData ? e.getCollectionData() : void 0, a = null !== (l = null == i ? void 0 : i.collectionPosition) && void 0 !== l ? l : Ma(Ga("collectionPosition", e, -1), -1), l = null !== (s = null == i ? void 0 : i.totalNumberOfItems) && void 0 !== s ? s : Ma(Ga("totalNumberOfItems", e, -1), -1), i = null !== (s = null == i ? void 0 : i.collectionId) && void 0 !== s ? s : Ma(Ga("collectionId", e, -1), -1), s = La(Ga(li.HomePageSessionInfo, e, ""), "");
-            return tl(tl(((e = {})[R.IsAd] = n,
+        function Wa(e) {
+            var t, n = Fa(ja("adFlag", e, !1), !1), r = La(ja("adId", e, ""), ""), o = Ma(ja("itemPosition", e, -1), -1), i = null != e && e.getCollectionData ? e.getCollectionData() : void 0, a = null !== (l = null == i ? void 0 : i.collectionPosition) && void 0 !== l ? l : Ma(ja("collectionPosition", e, -1), -1), l = null !== (s = null == i ? void 0 : i.totalNumberOfItems) && void 0 !== s ? s : Ma(ja("totalNumberOfItems", e, -1), -1), i = null !== (s = null == i ? void 0 : i.collectionId) && void 0 !== s ? s : Ma(ja("collectionId", e, -1), -1), s = La(ja(li.HomePageSessionInfo, e, ""), "");
+            return nl(nl(((e = {})[R.IsAd] = n,
             e), "" !== r && ((t = {})[R.NativeAdData] = r,
             t)), ((t = {})[R.Position] = o,
             t[R.SortPos] = a,
@@ -14677,72 +14694,72 @@
             t[F.HomePageSessionInfo] = s,
             t))
         }
-        (xl = Oa = Oa || {}).AnalyticsBuilderInvalidCollectionAnalyticsData = "AnalyticsBuilderInvalidCollectionAnalyticsData",
-        xl.AnalyticsBuilderInvalidItemAnalyticsData = "AnalyticsBuilderInvalidItemAnalyticsData",
-        xl.AnalyticsParsingDiscardedInvalidParam = "AnalyticsParsingDiscardedInvalidParam",
-        xl.AssetImageMissingAssetUrl = "AssetImageMissingAssetUrl",
-        xl.BuildBaseActionParamsMissingItem = "BuildBaseActionParamsMissingItem",
-        xl.BuildBaseImpressionParamsInvalidItemsPerRow = "BuildBaseImpressionParamsInvalidItemsPerRow",
-        xl.BuildBaseImpressionParamsMissingItem = "BuildBaseImpressionParamsMissingItem",
-        xl.BuildItemImpressionParamsMissingItem = "BuildItemImpressionParamsMissingItem",
-        xl.CollectionCarouselMissingItem = "CollectionCarouselMissingItem",
-        xl.CollectionCarouselItemMissingComponentType = "CollectionCarouselItemMissingComponentType",
-        xl.CollectionCarouselItemsImpressedButMissing = "CollectionCarouselItemsImpressedButMissing",
-        xl.CollectionCarouselChildNotReactElement = "CollectionCarouselChildNotReactElement",
-        xl.CollectionCarouselHeaderNotReactElement = "CollectionCarouselHeaderNotReactElement",
-        xl.ComponentNotFound = "ComponentNotFound",
-        xl.FriendsPresenceFetchFailure = "FriendsPresenceFetchFailure",
-        xl.InvalidImageQualityLevelConditionValue = "InvalidImageQualityLevelConditionValue",
-        xl.InvalidMaxWidthConditionValue = "InvalidMaxWidthConditionValue",
-        xl.InvalidMinWidthConditionValue = "InvalidMinWidthConditionValue",
-        xl.InvalidPageForSessionAnalytics = "InvalidPageForSessionAnalytics",
-        xl.InvalidParsedMaxWidthConditionValue = "InvalidParsedMaxWidthConditionValue",
-        xl.InvalidParsedMinWidthConditionValue = "InvalidParsedMinWidthConditionValue",
-        xl.InvalidPresenceConditionValue = "InvalidPresenceConditionValue",
-        xl.InvalidPresenceUpdateEvent = "InvalidPresenceUpdateEvent",
-        xl.NestedPropParseFailure = "NestedPropParseFailure",
-        xl.ParseBooleanFieldInvalidNumber = "ParseBooleanFieldInvalidNumber",
-        xl.ParseBooleanFieldInvalidString = "ParseBooleanFieldInvalidString",
-        xl.ParseBooleanFieldInvalidType = "ParseBooleanFieldInvalidType",
-        xl.PropParseFailure = "PropParseFailure",
-        xl.PropParserNotFound = "PropParserNotFound",
-        xl.ReportItemActionMissingCollectionData = "ReportItemActionMissingCollectionData",
-        xl.ReportItemImpressionsMissingData = "ReportItemImpressionsMissingData",
-        xl.ReportItemImpressionsNoIndexesToSend = "ReportItemImpressionsNoIndexesToSend",
-        xl.SduiActionOpenGameDetailsInvalidId = "SduiActionOpenGameDetailsInvalidId",
-        xl.SduiActionOpenSeeAllInvalidCollectionId = "SduiActionOpenSeeAllInvalidCollectionId",
-        xl.SduiActionOpenSeeAllInvalidCollectionName = "SduiActionOpenSeeAllInvalidCollectionName",
-        xl.SduiComponentBuildPropsAndChildrenInvalidConfig = "SduiComponentBuildPropsAndChildrenInvalidConfig",
-        xl.SduiFeedItemBoundaryError = "SduiFeedItemBoundaryError",
-        xl.SduiParseAssetUrlInvalidFormat = "SduiParseAssetUrlInvalidFormat",
-        xl.SduiParseAssetUrlInvalidInput = "SduiParseAssetUrlInvalidInput",
-        xl.SduiParseAssetUrlIntoComponentInvalidAssetType = "SduiParseAssetUrlIntoComponentInvalidAssetType",
-        xl.SduiParseAssetUrlIntoComponentInvalidRbxThumb = "SduiParseAssetUrlIntoComponentInvalidRbxThumb",
-        xl.SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType = "SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType",
-        xl.SduiParseAutomaticSizeInvalidInput = "SduiParseAutomaticSizeInvalidInput",
-        xl.SduiParseCallbackInvalidConfig = "SduiParseCallbackInvalidConfig",
-        xl.SduiParseColorValueInvalidInput = "SduiParseColorValueInvalidInput",
-        xl.SduiParseFoundationTokenInvalidInput = "SduiParseFoundationTokenInvalidInput",
-        xl.SduiParseFoundationTokenInvalidInputPath = "SduiParseFoundationTokenInvalidInputPath",
-        xl.SduiParseFoundationTokenInvalidOutputType = "SduiParseFoundationTokenInvalidOutputType",
-        xl.SduiParseFoundationTokenMissingTokens = "SduiParseFoundationTokenMissingTokens",
-        xl.SduiParseGradientInvalidConfig = "SduiParseGradientInvalidConfig",
-        xl.SduiParseIconInvalidInput = "SduiParseIconInvalidInput",
-        xl.SduiParseUDim2InvalidInput = "SduiParseUDim2InvalidInput",
-        xl.SduiParseVector2InvalidInput = "SduiParseVector2InvalidInput",
-        xl.SduiParseUiComponentInvalidConfig = "SduiParseUiComponentInvalidConfig",
-        xl.ServerDrivenFeedItemMissingFeedOrFeedItems = "ServerDrivenFeedItemMissingFeedOrFeedItems",
-        xl.ServerDrivenFeedItemMissingItem = "ServerDrivenFeedItemMissingItem",
-        xl.SingleItemCollectionItemImpressedButMissing = "SingleItemCollectionItemImpressedButMissing",
-        xl.SingleItemCollectionMissingItem = "SingleItemCollectionMissingItem",
-        xl.TemplateResolutionCircularReference = "TemplateResolutionCircularReference",
-        xl.TemplateResolutionComponentTypeMismatch = "TemplateResolutionComponentTypeMismatch",
-        xl.TemplateResolutionTemplateNotFound = "TemplateResolutionTemplateNotFound",
-        xl.UnsupportedConditionalPropsCondition = "UnsupportedConditionalPropsCondition",
-        xl.UnknownImageQualityLevelConditionValue = "UnknownImageQualityLevelConditionValue",
-        xl.UnknownPresenceConditionKey = "UnknownPresenceConditionKey",
-        xl.UnknownResponsivePropConditionKey = "UnknownResponsivePropConditionKey";
-        var Wa, Va = function(e, t) {
+        (_l = Oa = Oa || {}).AnalyticsBuilderInvalidCollectionAnalyticsData = "AnalyticsBuilderInvalidCollectionAnalyticsData",
+        _l.AnalyticsBuilderInvalidItemAnalyticsData = "AnalyticsBuilderInvalidItemAnalyticsData",
+        _l.AnalyticsParsingDiscardedInvalidParam = "AnalyticsParsingDiscardedInvalidParam",
+        _l.AssetImageMissingAssetUrl = "AssetImageMissingAssetUrl",
+        _l.BuildBaseActionParamsMissingItem = "BuildBaseActionParamsMissingItem",
+        _l.BuildBaseImpressionParamsInvalidItemsPerRow = "BuildBaseImpressionParamsInvalidItemsPerRow",
+        _l.BuildBaseImpressionParamsMissingItem = "BuildBaseImpressionParamsMissingItem",
+        _l.BuildItemImpressionParamsMissingItem = "BuildItemImpressionParamsMissingItem",
+        _l.CollectionCarouselMissingItem = "CollectionCarouselMissingItem",
+        _l.CollectionCarouselItemMissingComponentType = "CollectionCarouselItemMissingComponentType",
+        _l.CollectionCarouselItemsImpressedButMissing = "CollectionCarouselItemsImpressedButMissing",
+        _l.CollectionCarouselChildNotReactElement = "CollectionCarouselChildNotReactElement",
+        _l.CollectionCarouselHeaderNotReactElement = "CollectionCarouselHeaderNotReactElement",
+        _l.ComponentNotFound = "ComponentNotFound",
+        _l.FriendsPresenceFetchFailure = "FriendsPresenceFetchFailure",
+        _l.InvalidImageQualityLevelConditionValue = "InvalidImageQualityLevelConditionValue",
+        _l.InvalidMaxWidthConditionValue = "InvalidMaxWidthConditionValue",
+        _l.InvalidMinWidthConditionValue = "InvalidMinWidthConditionValue",
+        _l.InvalidPageForSessionAnalytics = "InvalidPageForSessionAnalytics",
+        _l.InvalidParsedMaxWidthConditionValue = "InvalidParsedMaxWidthConditionValue",
+        _l.InvalidParsedMinWidthConditionValue = "InvalidParsedMinWidthConditionValue",
+        _l.InvalidPresenceConditionValue = "InvalidPresenceConditionValue",
+        _l.InvalidPresenceUpdateEvent = "InvalidPresenceUpdateEvent",
+        _l.NestedPropParseFailure = "NestedPropParseFailure",
+        _l.ParseBooleanFieldInvalidNumber = "ParseBooleanFieldInvalidNumber",
+        _l.ParseBooleanFieldInvalidString = "ParseBooleanFieldInvalidString",
+        _l.ParseBooleanFieldInvalidType = "ParseBooleanFieldInvalidType",
+        _l.PropParseFailure = "PropParseFailure",
+        _l.PropParserNotFound = "PropParserNotFound",
+        _l.ReportItemActionMissingCollectionData = "ReportItemActionMissingCollectionData",
+        _l.ReportItemImpressionsMissingData = "ReportItemImpressionsMissingData",
+        _l.ReportItemImpressionsNoIndexesToSend = "ReportItemImpressionsNoIndexesToSend",
+        _l.SduiActionOpenGameDetailsInvalidId = "SduiActionOpenGameDetailsInvalidId",
+        _l.SduiActionOpenSeeAllInvalidCollectionId = "SduiActionOpenSeeAllInvalidCollectionId",
+        _l.SduiActionOpenSeeAllInvalidCollectionName = "SduiActionOpenSeeAllInvalidCollectionName",
+        _l.SduiComponentBuildPropsAndChildrenInvalidConfig = "SduiComponentBuildPropsAndChildrenInvalidConfig",
+        _l.SduiFeedItemBoundaryError = "SduiFeedItemBoundaryError",
+        _l.SduiParseAssetUrlInvalidFormat = "SduiParseAssetUrlInvalidFormat",
+        _l.SduiParseAssetUrlInvalidInput = "SduiParseAssetUrlInvalidInput",
+        _l.SduiParseAssetUrlIntoComponentInvalidAssetType = "SduiParseAssetUrlIntoComponentInvalidAssetType",
+        _l.SduiParseAssetUrlIntoComponentInvalidRbxThumb = "SduiParseAssetUrlIntoComponentInvalidRbxThumb",
+        _l.SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType = "SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType",
+        _l.SduiParseAutomaticSizeInvalidInput = "SduiParseAutomaticSizeInvalidInput",
+        _l.SduiParseCallbackInvalidConfig = "SduiParseCallbackInvalidConfig",
+        _l.SduiParseColorValueInvalidInput = "SduiParseColorValueInvalidInput",
+        _l.SduiParseFoundationTokenInvalidInput = "SduiParseFoundationTokenInvalidInput",
+        _l.SduiParseFoundationTokenInvalidInputPath = "SduiParseFoundationTokenInvalidInputPath",
+        _l.SduiParseFoundationTokenInvalidOutputType = "SduiParseFoundationTokenInvalidOutputType",
+        _l.SduiParseFoundationTokenMissingTokens = "SduiParseFoundationTokenMissingTokens",
+        _l.SduiParseGradientInvalidConfig = "SduiParseGradientInvalidConfig",
+        _l.SduiParseIconInvalidInput = "SduiParseIconInvalidInput",
+        _l.SduiParseUDim2InvalidInput = "SduiParseUDim2InvalidInput",
+        _l.SduiParseVector2InvalidInput = "SduiParseVector2InvalidInput",
+        _l.SduiParseUiComponentInvalidConfig = "SduiParseUiComponentInvalidConfig",
+        _l.ServerDrivenFeedItemMissingFeedOrFeedItems = "ServerDrivenFeedItemMissingFeedOrFeedItems",
+        _l.ServerDrivenFeedItemMissingItem = "ServerDrivenFeedItemMissingItem",
+        _l.SingleItemCollectionItemImpressedButMissing = "SingleItemCollectionItemImpressedButMissing",
+        _l.SingleItemCollectionMissingItem = "SingleItemCollectionMissingItem",
+        _l.TemplateResolutionCircularReference = "TemplateResolutionCircularReference",
+        _l.TemplateResolutionComponentTypeMismatch = "TemplateResolutionComponentTypeMismatch",
+        _l.TemplateResolutionTemplateNotFound = "TemplateResolutionTemplateNotFound",
+        _l.UnsupportedConditionalPropsCondition = "UnsupportedConditionalPropsCondition",
+        _l.UnknownImageQualityLevelConditionValue = "UnknownImageQualityLevelConditionValue",
+        _l.UnknownPresenceConditionKey = "UnknownPresenceConditionKey",
+        _l.UnknownResponsivePropConditionKey = "UnknownResponsivePropConditionKey";
+        var Va, qa = function(e, t) {
             (0,
             P.fireEvent)(e);
             t = {
@@ -14754,32 +14771,32 @@
                 type: Da,
                 context: ai.Home
             }, pi(t))
-        }, qa = function() {
-            return (qa = Object.assign || function(e) {
+        }, Ja = function() {
+            return (Ja = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Ja = {
+        }, $a = {
             id: "Unknown",
             itemPosition: -1
-        }, $a = {
+        }, Ka = {
             collectionId: -1,
             contentType: "Unknown",
             itemsPerRow: -1,
             collectionPosition: -1,
             totalNumberOfItems: -1
-        }, Ka = function() {
-            return (Ka = Object.assign || function(e) {
+        }, Xa = function() {
+            return (Xa = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Xa = [si.CollectionId, si.CollectionPosition, si.ContentType, "id", "itemPosition", "itemsPerRow", "rowNumber", ui.TotalNumberOfItems], Ya = function(e, t, n) {
+        }, Ya = [si.CollectionId, si.CollectionPosition, si.ContentType, "id", "itemPosition", "itemsPerRow", "rowNumber", ui.TotalNumberOfItems], Za = function(e, t, n) {
             var r, o, i, a, l, s, u, c, d, f, p;
             n && t ? 0 !== e.length ? (p = e,
             r = t,
@@ -14798,8 +14815,8 @@
                 c.push(t.itemPosition),
                 f.push(t.itemPosition),
                 void 0 !== i && 0 < i ? (t = Math.floor(e / i),
-                d.push(t + 1)) : (Va(Oa.BuildBaseImpressionParamsInvalidItemsPerRow, "itemsPerRow is undefined or not greater than 0 when sending impressions for collection " + l + ": " + JSON.stringify(i)),
-                d.push(1))) : Va(Oa.BuildBaseImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + l)
+                d.push(t + 1)) : (qa(Oa.BuildBaseImpressionParamsInvalidItemsPerRow, "itemsPerRow is undefined or not greater than 0 when sending impressions for collection " + l + ": " + JSON.stringify(i)),
+                d.push(1))) : qa(Oa.BuildBaseImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + l)
             }),
             (p = {})[si.CollectionId] = l,
             p[si.CollectionPosition] = a,
@@ -14817,11 +14834,11 @@
                     null != t ? Object.entries(t).forEach(function(e) {
                         var t = e[0]
                           , e = e[1];
-                        Xa.includes(t) || null == e || (a[t] || (a[t] = r.map(function() {
+                        Ya.includes(t) || null == e || (a[t] || (a[t] = r.map(function() {
                             return ""
                         })),
                         a[t][n] = e.toString())
-                    }) : Va(Oa.BuildItemImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + i)
+                    }) : qa(Oa.BuildItemImpressionParamsMissingItem, "Item at index " + e + " is nil when sending impressions for collection " + i)
                 });
                 var n = {};
                 return Object.entries(a).forEach(function(e) {
@@ -14831,25 +14848,25 @@
                 }),
                 n
             }(e, t, n.collectionId),
-            p = Ka(Ka(Ka({}, e), n), p),
+            p = Xa(Xa(Xa({}, e), n), p),
             T.eventStreamService.sendEvent({
                 name: ii.ItemImpressions,
                 type: ii.ItemImpressions,
                 context: ai.Home
-            }, pi(Ka({}, p)))) : Va(Oa.ReportItemImpressionsNoIndexesToSend, "No indexes to send for collection " + n.collectionId) : Va(Oa.ReportItemImpressionsMissingData, "Missing collection " + JSON.stringify(n) + " or item " + JSON.stringify(t) + " data when sending impressions for collection " + (null !== (n = null == n ? void 0 : n.collectionId) && void 0 !== n ? n : "undefined"))
-        }, Za = function() {
-            return (Za = Object.assign || function(e) {
+            }, pi(Xa({}, p)))) : qa(Oa.ReportItemImpressionsNoIndexesToSend, "No indexes to send for collection " + n.collectionId) : qa(Oa.ReportItemImpressionsMissingData, "Missing collection " + JSON.stringify(n) + " or item " + JSON.stringify(t) + " data when sending impressions for collection " + (null !== (n = null == n ? void 0 : n.collectionId) && void 0 !== n ? n : "undefined"))
+        }, Qa = function() {
+            return (Qa = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Qa = function(e, t, n) {
-            var r = Ha(null !== (l = t.analyticsData) && void 0 !== l ? l : {}, null !== (s = t.ancestorAnalyticsData) && void 0 !== s ? s : {}, void 0)
+        }, el = function(e, t, n) {
+            var r = za(null !== (l = t.analyticsData) && void 0 !== l ? l : {}, null !== (s = t.ancestorAnalyticsData) && void 0 !== s ? s : {}, void 0)
               , o = null !== (u = null != n ? n : t.getCollectionData && t.getCollectionData()) && void 0 !== u ? u : null;
-            o || Va(Oa.ReportItemActionMissingCollectionData, "Collection data is missing when sending action " + JSON.stringify(e));
-            var i, a, l, s, u, c = null != o ? o : $a, n = (a = (i = r).itemPosition,
+            o || qa(Oa.ReportItemActionMissingCollectionData, "Collection data is missing when sending action " + JSON.stringify(e));
+            var i, a, l, s, u, c = null != o ? o : Ka, n = (a = (i = r).itemPosition,
             l = c.contentType,
             s = c.collectionPosition,
             n = c.collectionId,
@@ -14863,15 +14880,15 @@
             o[ci.ItemPosition] = a,
             o[ci.PositionInTopic] = a,
             o[ci.ActionType] = u,
-            o) : (Va(Oa.BuildBaseActionParamsMissingItem, "Item is nil when sending action for collection " + n),
-            {})), n = Za(Za(Za(Za({}, r), c), Ba(e.actionParams)), n);
+            o) : (qa(Oa.BuildBaseActionParamsMissingItem, "Item is nil when sending action for collection " + n),
+            {})), n = Qa(Qa(Qa(Qa({}, r), c), Ba(e.actionParams)), n);
             T.eventStreamService.sendEvent({
                 name: ii.ItemAction,
                 type: ii.ItemAction,
                 context: ai.Home
-            }, pi(Za({}, n)))
-        }, el = function() {
-            return (el = Object.assign || function(e) {
+            }, pi(Qa({}, n)))
+        }, tl = function() {
+            return (tl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -14890,7 +14907,7 @@
             K.useRef)(null)
               , s = (0,
             K.useCallback)(function(e, t) {
-                Qa(e, t, a.current)
+                el(e, t, a.current)
             }, [a])
               , u = (0,
             K.useCallback)(function() {
@@ -14898,7 +14915,7 @@
             }, [a])
               , c = (0,
             K.useMemo)(function() {
-                return el(el({}, t), {
+                return tl(tl({}, t), {
                     logAction: s,
                     getCollectionAnalyticsData: u
                 })
@@ -14906,7 +14923,7 @@
             a.current = (0,
             K.useMemo)(function() {
                 var e;
-                return ja(null !== (e = c.ancestorAnalyticsData) && void 0 !== e ? e : {}, null !== (e = c.analyticsData) && void 0 !== e ? e : {}, r.componentType, 1, 1)
+                return Ha(null !== (e = c.ancestorAnalyticsData) && void 0 !== e ? e : {}, null !== (e = c.analyticsData) && void 0 !== e ? e : {}, r.componentType, 1, 1)
             }, [c.ancestorAnalyticsData, c.analyticsData, r.componentType]);
             var d = (0,
             K.useMemo)(function() {
@@ -14928,7 +14945,7 @@
                 n = n,
                 n = ee.gameImpressions(n),
                 T.eventStreamService.sendEvent.apply(T.eventStreamService, n))),
-                Ya(e, [l.current], a.current)) : Va(Oa.SingleItemCollectionItemImpressedButMissing, "SingleItemCollection onItemImpressed missing item " + JSON.stringify(d) + " with config " + JSON.stringify(r))
+                Za(e, [l.current], a.current)) : qa(Oa.SingleItemCollectionItemImpressedButMissing, "SingleItemCollection onItemImpressed missing item " + JSON.stringify(d) + " with config " + JSON.stringify(r))
             }, [d, r, a, l])
               , p = (0,
             K.useRef)(null);
@@ -14937,13 +14954,13 @@
             K.useMemo)(function() {
                 var e;
                 if (!d)
-                    return Va(Oa.SingleItemCollectionMissingItem, "SingleItemCollection missing item " + JSON.stringify(d) + " with config " + JSON.stringify(r)),
+                    return qa(Oa.SingleItemCollectionMissingItem, "SingleItemCollection missing item " + JSON.stringify(d) + " with config " + JSON.stringify(r)),
                     X().createElement(X().Fragment, null);
                 var t = {
                     itemPosition: 1
                 };
-                return l.current = Ha(null !== (e = d.analyticsData) && void 0 !== e ? e : {}, null !== (e = a.current) && void 0 !== e ? e : {}, t),
-                X().createElement(ss, {
+                return l.current = za(null !== (e = d.analyticsData) && void 0 !== e ? e : {}, null !== (e = a.current) && void 0 !== e ? e : {}, t),
+                X().createElement(us, {
                     componentConfig: d,
                     parentAnalyticsContext: c,
                     sduiContext: n,
@@ -14954,10 +14971,10 @@
             K.useMemo)(function() {
                 return X().Children.map(i, function(e, t) {
                     if (!X().isValidElement(e))
-                        return Va("SingleItemCollectionChildNotReactElement", "SingleItemCollectionChildNotReactElement " + JSON.stringify(r) + " child " + JSON.stringify(e) + " is not a valid React element"),
+                        return qa("SingleItemCollectionChildNotReactElement", "SingleItemCollectionChildNotReactElement " + JSON.stringify(r) + " child " + JSON.stringify(e) + " is not a valid React element"),
                         e;
                     t = r.componentType + "-child-" + t;
-                    return X().cloneElement(e, el(el({}, e.props), {
+                    return X().cloneElement(e, tl(tl({}, e.props), {
                         key: t,
                         parentAnalyticsContext: c
                     }))
@@ -15023,24 +15040,24 @@
                     maxForegroundHeightPercent: m
                 }, v)
             }, [s, u, r, h, l, o, y, b, n, t, v, g, p, m])
-        }, tl = function() {
-            return (tl = Object.assign || function(e) {
+        }, nl = function() {
+            return (nl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, nl = function(e, t) {
+        }, rl = function(e, t) {
             var n = null === (o = null == e ? void 0 : e.actionParams) || void 0 === o ? void 0 : o.placeId
               , r = Ma(n, -1);
             if (r && -1 !== r) {
                 var o = (o = t,
                 t = Ba(null !== (e = null == (t = e) ? void 0 : t.actionParams) && void 0 !== e ? e : {}),
-                e = Ma(null !== (e = t.placeId) && void 0 !== e ? e : Ga("placeId", o, -1), -1),
-                t = Ma(null !== (t = t.universeId) && void 0 !== t ? t : Ga("universeId", o, -1), -1),
-                o = za(o),
-                tl(tl({}, o), ((o = {})[R.PlaceId] = e,
+                e = Ma(null !== (e = t.placeId) && void 0 !== e ? e : ja("placeId", o, -1), -1),
+                t = Ma(null !== (t = t.universeId) && void 0 !== t ? t : ja("universeId", o, -1), -1),
+                o = Wa(o),
+                nl(nl({}, o), ((o = {})[R.PlaceId] = e,
                 o[R.UniverseId] = t,
                 o)));
                 return {
@@ -15048,7 +15065,7 @@
                     linkPath: v(r, "", o)
                 }
             }
-            return Va(Oa.SduiActionOpenGameDetailsInvalidId, "Invalid id " + JSON.stringify(n) + " to open game details"),
+            return qa(Oa.SduiActionOpenGameDetailsInvalidId, "Invalid id " + JSON.stringify(n) + " to open game details"),
             {
                 callback: void 0,
                 linkPath: void 0
@@ -15057,7 +15074,7 @@
             var n = null === (o = null == e ? void 0 : e.actionParams) || void 0 === o ? void 0 : o.collectionName
               , r = La(n, "");
             if (!r)
-                return Va(Oa.SduiActionOpenSeeAllInvalidCollectionName, "Invalid collection name " + JSON.stringify(n) + " to open see all"),
+                return qa(Oa.SduiActionOpenSeeAllInvalidCollectionName, "Invalid collection name " + JSON.stringify(n) + " to open see all"),
                 {
                     callback: void 0,
                     linkPath: void 0
@@ -15065,15 +15082,15 @@
             n = null === (o = null == e ? void 0 : e.actionParams) || void 0 === o ? void 0 : o.collectionId,
             e = Ma(n, -1);
             if (!e || -1 === e)
-                return Va(Oa.SduiActionOpenSeeAllInvalidCollectionId, "Invalid collection id " + JSON.stringify(n) + " to open see all"),
+                return qa(Oa.SduiActionOpenSeeAllInvalidCollectionId, "Invalid collection id " + JSON.stringify(n) + " to open see all"),
                 {
                     callback: void 0,
                     linkPath: void 0
                 };
             var o, n = (o = e,
-            e = Ma(Ga("collectionPosition", n = t, -1), -1),
-            null !== (t = null == (t = null != n && n.getCollectionData ? n.getCollectionData() : void 0) ? void 0 : t.collectionId) && void 0 !== t || Ma(Ga("collectionId", n, -1), -1),
-            t = La(Ga(li.HomePageSessionInfo, n, ""), ""),
+            e = Ma(ja("collectionPosition", n = t, -1), -1),
+            null !== (t = null == (t = null != n && n.getCollectionData ? n.getCollectionData() : void 0) ? void 0 : t.collectionId) && void 0 !== t || Ma(ja("collectionId", n, -1), -1),
+            t = La(ja(li.HomePageSessionInfo, n, ""), ""),
             (n = {})[R.Position] = e,
             n[R.SortId] = o,
             n[R.GameSetTypeId] = o,
@@ -15085,7 +15102,7 @@
                 linkPath: O(r, n[R.Page], n)
             }
         };
-        function rl(e) {
+        function ol(e) {
             var t = e.assetId
               , n = (o = (0,
             K.useState)(""))[0]
@@ -15107,13 +15124,13 @@
             o ? X().createElement(ye.Loading, null) : n ? X().createElement("img", {
                 src: n,
                 alt: "asset"
-            }) : (Va(Oa.AssetImageMissingAssetUrl, "AssetImage missing asset url for assetId " + t),
+            }) : (qa(Oa.AssetImageMissingAssetUrl, "AssetImage missing asset url for assetId " + t),
             X().createElement("img", {
                 src: "",
                 alt: "asset"
             }))
         }
-        function ol(e) {
+        function il(e) {
             var t = e.thumbnailType
               , n = e.targetId
               , r = e.format
@@ -15126,12 +15143,12 @@
                 size: e
             })
         }
-        (qs = Wa = Wa || {}).OpenGameDetails = "OpenGameDetails",
-        qs.OpenSeeAll = "OpenSeeAll",
-        qs.PlayButtonClick = "PlayButtonClick";
-        var il, al, ll, sl = ((br = {})[Wa.OpenGameDetails] = nl,
-        br[Wa.OpenSeeAll] = yr,
-        br[Wa.PlayButtonClick] = function() {
+        ($s = Va = Va || {}).OpenGameDetails = "OpenGameDetails",
+        $s.OpenSeeAll = "OpenSeeAll",
+        $s.PlayButtonClick = "PlayButtonClick";
+        var al, ll, sl, ul = ((br = {})[Va.OpenGameDetails] = rl,
+        br[Va.OpenSeeAll] = yr,
+        br[Va.PlayButtonClick] = function() {
             return {
                 callback: void 0,
                 linkPath: void 0
@@ -15139,7 +15156,7 @@
         }
         ,
         br);
-        function ul(e, t) {
+        function cl(e, t) {
             if (void 0 !== e && (r = null === (n = null === (r = null == e ? void 0 : e.feed) || void 0 === r ? void 0 : r.props) || void 0 === n ? void 0 : n.feedItems,
             Array.isArray(r) && r.every(function(e) {
                 return "object" == typeof e && null !== e
@@ -15150,76 +15167,76 @@
                 });
                 if (r)
                     return r;
-                Va(Oa.ServerDrivenFeedItemMissingItem, "SDUI feed items " + JSON.stringify(n) + " missing matching feed item with key " + t)
+                qa(Oa.ServerDrivenFeedItemMissingItem, "SDUI feed items " + JSON.stringify(n) + " missing matching feed item with key " + t)
             } else
-                Va(Oa.ServerDrivenFeedItemMissingFeedOrFeedItems, "SDUI missing feed items, root is " + JSON.stringify(e))
+                qa(Oa.ServerDrivenFeedItemMissingFeedOrFeedItems, "SDUI missing feed items, root is " + JSON.stringify(e))
         }
-        function cl(e) {
-            return !!(e && "object" == typeof e && e.componentType && ts(e.componentType))
+        function dl(e) {
+            return !!(e && "object" == typeof e && e.componentType && ns(e.componentType))
         }
-        function dl(i, a, l) {
+        function fl(i, a, l) {
             if (!function(e) {
-                if (e && "object" == typeof e && (e.actionType && e.actionParams && sl[e.actionType]))
+                if (e && "object" == typeof e && (e.actionType && e.actionParams && ul[e.actionType]))
                     return !0;
                 return !1
             }(i))
-                return Va(Oa.SduiParseCallbackInvalidConfig, "Invalid action config " + JSON.stringify(i) + " to parse callback"),
+                return qa(Oa.SduiParseCallbackInvalidConfig, "Invalid action config " + JSON.stringify(i) + " to parse callback"),
                 {
                     onActivated: function() {},
                     linkPath: void 0
                 };
             var s = (0,
-            sl[i.actionType])(i, a, l);
+            ul[i.actionType])(i, a, l);
             return {
                 onActivated: function() {
                     return e = s,
                     t = i,
                     r = l,
-                    (o = (n = a).logAction) ? o(t, n) : Qa(t, n, null),
+                    (o = (n = a).logAction) ? o(t, n) : el(t, n, null),
                     void (e.callback && e.callback(t, n, r));
                     var e, t, n, r, o
                 },
                 linkPath: s.linkPath
             }
         }
-        function fl(e) {
+        function pl(e) {
             if ("string" != typeof e)
-                return Va(Oa.SduiParseAssetUrlInvalidInput, "Invalid asset url input " + JSON.stringify(e) + ". Input must be a string."),
+                return qa(Oa.SduiParseAssetUrlInvalidInput, "Invalid asset url input " + JSON.stringify(e) + ". Input must be a string."),
                 {
                     assetType: void 0,
                     assetTarget: "0"
                 };
             var t = e.split("//");
-            if (2 === t.length && (e.includes(ll.RbxAsset) || e.includes(ll.RbxThumb))) {
-                if (t[0].includes(ll.RbxAsset))
+            if (2 === t.length && (e.includes(sl.RbxAsset) || e.includes(sl.RbxThumb))) {
+                if (t[0].includes(sl.RbxAsset))
                     return {
-                        assetType: ll.RbxAsset,
+                        assetType: sl.RbxAsset,
                         assetTarget: t[1]
                     };
-                if (t[0].includes(ll.RbxThumb))
+                if (t[0].includes(sl.RbxThumb))
                     return {
-                        assetType: ll.RbxThumb,
+                        assetType: sl.RbxThumb,
                         assetTarget: t[1]
                     }
             }
-            return Va(Oa.SduiParseAssetUrlInvalidFormat, "Invalid asset url format " + e),
+            return qa(Oa.SduiParseAssetUrlInvalidFormat, "Invalid asset url format " + e),
             {
                 assetType: void 0,
                 assetTarget: "0"
             }
         }
-        function pl(e) {
+        function ml(e) {
             if ("string" != typeof e)
                 return null;
-            var t, n, r = fl(e), o = r.assetType, i = r.assetTarget;
-            if (o === ll.RbxAsset) {
+            var t, n, r = pl(e), o = r.assetType, i = r.assetTarget;
+            if (o === sl.RbxAsset) {
                 var a = i;
-                return X().createElement(rl, {
+                return X().createElement(ol, {
                     assetId: a
                 })
             }
-            if (o !== ll.RbxThumb)
-                return Va(Oa.SduiParseAssetUrlIntoComponentInvalidAssetType, "Invalid asset type " + JSON.stringify(o) + ". Only RbxThumb and RbxAsset are supported."),
+            if (o !== sl.RbxThumb)
+                return qa(Oa.SduiParseAssetUrlIntoComponentInvalidAssetType, "Invalid asset type " + JSON.stringify(o) + ". Only RbxThumb and RbxAsset are supported."),
                 null;
             var o = (r = (l = (l = i).split("&"),
             n = {},
@@ -15237,56 +15254,56 @@
             })).thumbnailType
               , i = r.w
               , l = r.h;
-            return void 0 === (a = r.id) || void 0 === o || void 0 === i || void 0 === l ? (Va(Oa.SduiParseAssetUrlIntoComponentInvalidRbxThumb, "Invalid rbxthumb url " + JSON.stringify(e) + ". At least one of thumbnailType " + (null != o ? o : "undefined") + " id " + (null != a ? a : "undefined") + ", w " + (null != i ? i : "undefined") + ", or h " + (null != l ? l : "undefined") + " is invalid"),
+            return void 0 === (a = r.id) || void 0 === o || void 0 === i || void 0 === l ? (qa(Oa.SduiParseAssetUrlIntoComponentInvalidRbxThumb, "Invalid rbxthumb url " + JSON.stringify(e) + ". At least one of thumbnailType " + (null != o ? o : "undefined") + " id " + (null != a ? a : "undefined") + ", w " + (null != i ? i : "undefined") + ", or h " + (null != l ? l : "undefined") + " is invalid"),
             null) : (t = i + "x" + l,
-            void 0 !== (e = null === (e = Pl[e = o]) || void 0 === e ? void 0 : e.find(function(e) {
+            void 0 !== (e = null === (e = Tl[e = o]) || void 0 === e ? void 0 : e.find(function(e) {
                 return e === t
-            })) ? X().createElement(ol, {
+            })) ? X().createElement(il, {
                 thumbnailType: o,
                 targetId: a,
                 format: qe.ThumbnailFormat.webp,
                 size: e
-            }) : (Va(Oa.SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType, "No supported thumbnail size " + i + "x" + l + " for type " + o),
+            }) : (qa(Oa.SduiParseAssetUrlIntoComponentNoSupportedThumbSizeForType, "No supported thumbnail size " + i + "x" + l + " for type " + o),
             null))
         }
-        function ml(e, t) {
+        function vl(e, t) {
             if (t)
                 if ("string" == typeof e) {
                     for (var n = e.split("."), r = t, o = 0; o < n.length; ++o) {
                         var i = n[o];
                         if (null == r || "object" != typeof r || Array.isArray(r))
-                            return void Va(Oa.SduiParseFoundationTokenInvalidInputPath, "Invalid token path " + e + ". Token path step " + i + " is invalid. Token is " + JSON.stringify(r));
+                            return void qa(Oa.SduiParseFoundationTokenInvalidInputPath, "Invalid token path " + e + ". Token path step " + i + " is invalid. Token is " + JSON.stringify(r));
                         r = r[i]
                     }
                     if (null != r)
                         return r;
-                    Va(Oa.SduiParseFoundationTokenInvalidInputPath, "Invalid token path " + e + ". The final token " + (r ? JSON.stringify(r) : "undefined") + " is invalid.")
+                    qa(Oa.SduiParseFoundationTokenInvalidInputPath, "Invalid token path " + e + ". The final token " + (r ? JSON.stringify(r) : "undefined") + " is invalid.")
                 } else
-                    Va(Oa.SduiParseFoundationTokenInvalidInput, "Invalid input " + JSON.stringify(e) + " for foundation token. Input must be a string.");
+                    qa(Oa.SduiParseFoundationTokenInvalidInput, "Invalid input " + JSON.stringify(e) + " for foundation token. Input must be a string.");
             else
-                Va(Oa.SduiParseFoundationTokenMissingTokens, "Missing tokens in parseFoundationTokenHelper for input " + JSON.stringify(e))
-        }
-        function vl(e) {
-            return !(!e || "object" != typeof e)
+                qa(Oa.SduiParseFoundationTokenMissingTokens, "Missing tokens in parseFoundationTokenHelper for input " + JSON.stringify(e))
         }
         function hl(e) {
-            return "string" == typeof e && /^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/.test(e)
+            return !(!e || "object" != typeof e)
         }
         function gl(e) {
+            return "string" == typeof e && /^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/.test(e)
+        }
+        function yl(e) {
             return "string" == typeof e && /^rgba\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3}),\s*(\d*(?:\.\d+)?)\)$/.test(e)
         }
-        function yl(e, t, n) {
-            return hl(e) || gl(e) ? e : (n = function(e, t) {
-                t = ml(e, t.dependencies.tokens);
+        function bl(e, t, n) {
+            return gl(e) || yl(e) ? e : (n = function(e, t) {
+                t = vl(e, t.dependencies.tokens);
                 if (void 0 !== t && "string" == typeof t)
                     return t;
-                Va(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof t + ". Expected string.")
-            }(e, n)) && (hl(n) || gl(n)) ? n : void Va(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof n + ". Expected color string.")
-        }
-        function bl(e) {
-            return !(!e || "object" != typeof e || void 0 === e.xScale || "number" != typeof e.xScale || void 0 === e.xOffset || "number" != typeof e.xOffset || void 0 === e.yScale || "number" != typeof e.yScale || void 0 === e.yOffset || "number" != typeof e.yOffset)
+                qa(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof t + ". Expected string.")
+            }(e, n)) && (gl(n) || yl(n)) ? n : void qa(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof n + ". Expected color string.")
         }
         function Il(e) {
+            return !(!e || "object" != typeof e || void 0 === e.xScale || "number" != typeof e.xScale || void 0 === e.xOffset || "number" != typeof e.xOffset || void 0 === e.yScale || "number" != typeof e.yScale || void 0 === e.yOffset || "number" != typeof e.yOffset)
+        }
+        function Sl(e) {
             if (e && Array.isArray(e) && 4 === e.length) {
                 e = e.map(Number);
                 return {
@@ -15297,10 +15314,10 @@
                 }
             }
         }
-        function Sl(e) {
+        function Cl(e) {
             return !(!e || "object" != typeof e || void 0 === e.x || "number" != typeof e.x || void 0 === e.y || "number" != typeof e.y)
         }
-        function Cl(e) {
+        function wl(e) {
             if (e && Array.isArray(e) && 2 === e.length) {
                 e = e.map(Number);
                 return {
@@ -15309,14 +15326,14 @@
                 }
             }
         }
-        (oe = il = il || {}).imageQualityLevel = "imageQualityLevel",
+        (oe = al = al || {}).imageQualityLevel = "imageQualityLevel",
         oe.maxWidth = "maxWidth",
         oe.minWidth = "minWidth",
-        (al = al || {}).friendInGame = "friendInGame",
-        (tt = ll = ll || {}).RbxAsset = "rbxassetid",
+        (ll = ll || {}).friendInGame = "friendInGame",
+        (tt = sl = sl || {}).RbxAsset = "rbxassetid",
         tt.RbxThumb = "rbxthumb";
-        var wl = function() {
-            return (wl = Object.assign || function(e) {
+        var El = function() {
+            return (El = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -15324,35 +15341,35 @@
             }
             ).apply(this, arguments)
         }
-          , El = {
+          , Pl = {
             startColor: "#000000",
             endColor: "#000000",
             startOpacity: 0,
             endOpacity: 1,
             degree: 270
         }
-          , Pl = ((xi = {})[qe.ThumbnailTypes.gameIcon] = Object.values(qe.ThumbnailGameIconSize),
+          , Tl = ((xi = {})[qe.ThumbnailTypes.gameIcon] = Object.values(qe.ThumbnailGameIconSize),
         xi[qe.ThumbnailTypes.gameThumbnail] = Object.values(qe.ThumbnailGameThumbnailSize),
         xi[qe.ThumbnailTypes.assetThumbnail] = Object.values(qe.ThumbnailAssetsSize),
         xi[qe.ThumbnailTypes.avatarHeadshot] = Object.values(qe.ThumbnailAvatarHeadshotSize),
         xi)
-          , Tl = {
+          , xl = {
             "icons/status/games/rating_small": "icon-rating-16x16",
             "icons/status/games/people-playing_small": "icon-current-players-16x16",
             "icons/navigation/pushRight_small": "icon-push-right-16x16"
         }
-          , xl = {
+          , _l = {
             parseUiComponent: function(e, t, n) {
                 if (!e || "object" != typeof e)
-                    return Va(Oa.SduiParseUiComponentInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to parse UI component"),
+                    return qa(Oa.SduiParseUiComponentInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to parse UI component"),
                     X().createElement(X().Fragment, null);
-                return X().createElement(ss, {
+                return X().createElement(us, {
                     componentConfig: e,
                     parentAnalyticsContext: t,
                     sduiContext: n
                 })
             },
-            parseCallback: dl,
+            parseCallback: fl,
             parseHeroUnitAsset: function(e) {
                 if (!function(e) {
                     if ("object" == typeof e && (e.image && e.title && e.subtitle))
@@ -15364,18 +15381,18 @@
                         title: "Hero Unit Asset Title",
                         subtitle: "Hero Unit Asset Subtitle"
                     };
-                var t = pl(e.image);
-                return wl(wl({}, e), {
+                var t = ml(e.image);
+                return El(El({}, e), {
                     image: t
                 })
             },
-            parseAssetUrl: fl,
-            parseAssetUrlIntoComponent: pl,
+            parseAssetUrl: pl,
+            parseAssetUrlIntoComponent: ml,
             parseGradient: function(e) {
                 if (!(t = e) || "object" != typeof t || (!t.startColor || "string" != typeof t.startColor || !t.endColor || "string" != typeof t.endColor || void 0 === t.startOpacity || "number" != typeof t.startOpacity || void 0 === t.endOpacity || "number" != typeof t.endOpacity || void 0 === t.degree || "number" != typeof t.degree))
-                    return Va(Oa.SduiParseGradientInvalidConfig, "Invalid gradient config " + JSON.stringify(e)),
-                    El;
-                var t = wl({}, e);
+                    return qa(Oa.SduiParseGradientInvalidConfig, "Invalid gradient config " + JSON.stringify(e)),
+                    Pl;
+                var t = El({}, e);
                 return e.startColor.startsWith("#") || (t.startColor = "#" + e.startColor),
                 e.endColor.startsWith("#") || (t.endColor = "#" + e.endColor),
                 t
@@ -15383,18 +15400,18 @@
             parseFoundationNumberToken: function(e, t, n) {
                 if ("number" == typeof e)
                     return e;
-                n = ml(e, n.dependencies.tokens);
+                n = vl(e, n.dependencies.tokens);
                 if (void 0 !== n && "number" == typeof n)
                     return n;
-                Va(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof n + " for token " + JSON.stringify(n) + " with input " + JSON.stringify(e) + ". Expected number.")
+                qa(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof n + " for token " + JSON.stringify(n) + " with input " + JSON.stringify(e) + ". Expected number.")
             },
             parseFoundationTypographyToken: function(e, t, n) {
-                if (vl(e))
+                if (hl(e))
                     return e;
-                n = ml(e, n.dependencies.tokens);
-                if (void 0 !== n && vl(n))
+                n = vl(e, n.dependencies.tokens);
+                if (void 0 !== n && hl(n))
                     return n;
-                Va(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof n + ". Expected TypographyToken.")
+                qa(Oa.SduiParseFoundationTokenInvalidOutputType, "Invalid output type " + typeof n + ". Expected TypographyToken.")
             },
             parseColorValue: function(e, t, n) {
                 if ("string" == typeof (r = e) && /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(r))
@@ -15402,40 +15419,40 @@
                 var r;
                 if ("string" == typeof (r = e) && /^([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(r))
                     return "#" + e;
-                n = yl(e, 0, n);
+                n = bl(e, 0, n);
                 if (n)
                     return n;
-                Va(Oa.SduiParseColorValueInvalidInput, "Invalid input " + JSON.stringify(e) + " for color value. Input must be a hex color or a foundation color token.")
+                qa(Oa.SduiParseColorValueInvalidInput, "Invalid input " + JSON.stringify(e) + " for color value. Input must be a hex color or a foundation color token.")
             },
             parseUDim2: function(e) {
-                if (bl(e))
+                if (Il(e))
                     return e;
-                var t = Il(e);
-                if (bl(t))
+                var t = Sl(e);
+                if (Il(t))
                     return t;
                 if (e && "string" == typeof e) {
                     t = e.split(","),
-                    t = Il(t);
-                    if (bl(t))
+                    t = Sl(t);
+                    if (Il(t))
                         return t;
-                    Va(Oa.SduiParseUDim2InvalidInput, "Invalid input " + JSON.stringify(e) + " for uDim2. Input must be a string with 4 comma-separated values.")
+                    qa(Oa.SduiParseUDim2InvalidInput, "Invalid input " + JSON.stringify(e) + " for uDim2. Input must be a string with 4 comma-separated values.")
                 } else
-                    Va(Oa.SduiParseUDim2InvalidInput, "Invalid input " + JSON.stringify(e) + " for uDim2. Input must be a string.")
+                    qa(Oa.SduiParseUDim2InvalidInput, "Invalid input " + JSON.stringify(e) + " for uDim2. Input must be a string.")
             },
             parseVector2: function(e) {
-                if (Sl(e))
+                if (Cl(e))
                     return e;
-                var t = Cl(e);
-                if (Sl(t))
+                var t = wl(e);
+                if (Cl(t))
                     return t;
                 if (e && "string" == typeof e) {
                     t = e.split(","),
-                    t = Cl(t);
-                    if (Sl(t))
+                    t = wl(t);
+                    if (Cl(t))
                         return t;
-                    Va(Oa.SduiParseVector2InvalidInput, "Invalid input " + JSON.stringify(e) + " for vector2. Input must be a string with 2 comma-separated values.")
+                    qa(Oa.SduiParseVector2InvalidInput, "Invalid input " + JSON.stringify(e) + " for vector2. Input must be a string with 2 comma-separated values.")
                 } else
-                    Va(Oa.SduiParseVector2InvalidInput, "Invalid input " + JSON.stringify(e) + " for vector2. Input must be a string.")
+                    qa(Oa.SduiParseVector2InvalidInput, "Invalid input " + JSON.stringify(e) + " for vector2. Input must be a string.")
             },
             parseAutomaticSize: function(e) {
                 if (e && "string" == typeof e)
@@ -15449,22 +15466,22 @@
                     case _r.None:
                         return _r.None;
                     default:
-                        return void Va(Oa.SduiParseAutomaticSizeInvalidInput, "Invalid automatic size " + JSON.stringify(e) + ". Expected one of " + Object.values(_r).join(", ") + ".")
+                        return void qa(Oa.SduiParseAutomaticSizeInvalidInput, "Invalid automatic size " + JSON.stringify(e) + ". Expected one of " + Object.values(_r).join(", ") + ".")
                     }
                 else
-                    Va(Oa.SduiParseAutomaticSizeInvalidInput, "Invalid input " + JSON.stringify(e) + " for automatic size. Input must be a string.")
+                    qa(Oa.SduiParseAutomaticSizeInvalidInput, "Invalid input " + JSON.stringify(e) + " for automatic size. Input must be a string.")
             },
             parseIcon: function(e) {
                 if ("string" == typeof e) {
-                    if (Tl[e])
-                        return ge()("sdui-icon", Tl[e]);
-                    Va(Oa.SduiParseIconInvalidInput, "Invalid icon " + JSON.stringify(e) + ". Expected one of " + Object.keys(Tl).join(", ") + ".")
+                    if (xl[e])
+                        return ge()("sdui-icon", xl[e]);
+                    qa(Oa.SduiParseIconInvalidInput, "Invalid icon " + JSON.stringify(e) + ". Expected one of " + Object.keys(xl).join(", ") + ".")
                 } else
-                    Va(Oa.SduiParseIconInvalidInput, "Invalid input " + JSON.stringify(e) + " for icon. Input must be a string.")
+                    qa(Oa.SduiParseIconInvalidInput, "Invalid input " + JSON.stringify(e) + " for icon. Input must be a string.")
             }
         }
-          , _l = function() {
-            return (_l = Object.assign || function(e) {
+          , Nl = function() {
+            return (Nl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -15472,7 +15489,7 @@
             }
             ).apply(this, arguments)
         };
-        function Nl(e) {
+        function kl(e) {
             var t = e.sduiContext
               , n = e.onActivated
               , r = e.textColor
@@ -15500,7 +15517,7 @@
                 rightIconComponent: e
             })
         }
-        function kl(e) {
+        function Al(e) {
             var t = e.sduiContext
               , n = e.analyticsContext
               , r = e.universeId
@@ -15524,7 +15541,7 @@
               , i = (0,
             K.useMemo)(function() {
                 var e = u.map(function(e) {
-                    return X().createElement(ol, {
+                    return X().createElement(il, {
                         key: e.userId,
                         thumbnailType: qe.ThumbnailTypes.avatarHeadshot,
                         targetId: e.userId.toString(),
@@ -15540,9 +15557,9 @@
                     avatarBorderColor: a.Color.System.Success
                 })
             }, [u, s, a]);
-            return X().createElement(Nl, {
+            return X().createElement(kl, {
                 componentConfig: {
-                    componentType: Dl.TileFooter,
+                    componentType: Ll.TileFooter,
                     props: {}
                 },
                 sduiContext: t,
@@ -15553,7 +15570,7 @@
                 onActivated: e
             })
         }
-        function Al(e) {
+        function Ol(e) {
             var t = e.sduiContext
               , n = e.isFocused
               , r = e.isHovered
@@ -15596,7 +15613,7 @@
                 placeholderImageBackgroundColor: t.Color.Surface.Surface_300
             })
         }
-        function Ol(e) {
+        function Rl(e) {
             var t = e.sduiContext
               , n = e.analyticsContext
               , r = e.universeId
@@ -15604,9 +15621,9 @@
             return (0,
             K.useMemo)(function() {
                 return !!(t.dataStore.social.inGameFriendsByUniverseId[r] && 0 < t.dataStore.social.inGameFriendsByUniverseId[r].length)
-            }, [t.dataStore.social.inGameFriendsByUniverseId, r]) ? X().createElement(kl, {
+            }, [t.dataStore.social.inGameFriendsByUniverseId, r]) ? X().createElement(Al, {
                 componentConfig: {
-                    componentType: Dl.GameTileActiveFriendsFooter,
+                    componentType: Ll.GameTileActiveFriendsFooter,
                     props: {}
                 },
                 sduiContext: t,
@@ -15614,9 +15631,9 @@
                 universeId: r
             }) : null != e ? e : null
         }
-        function Rl(e, t, n, r, o, i, a) {
-            if (!cl(e))
-                return Va(Oa.SduiComponentBuildPropsAndChildrenInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to build React props and children"),
+        function Dl(e, t, n, r, o, i, a) {
+            if (!dl(e))
+                return qa(Oa.SduiComponentBuildPropsAndChildrenInvalidConfig, "Invalid component config " + JSON.stringify(e) + " to build React props and children"),
                 {
                     props: {},
                     children: null
@@ -15624,26 +15641,26 @@
             var l, s, u, c = e.componentType, d = (l = t,
             d = r,
             r = (t = e).analyticsData,
-            t = Wl(Wl({}, r), null != d ? d : {}),
+            t = Vl(Vl({}, r), null != d ? d : {}),
             r = l.logAction,
             d = l.getCollectionData,
             {
                 analyticsData: t,
-                ancestorAnalyticsData: Wl(Wl({}, l.ancestorAnalyticsData), l.analyticsData),
+                ancestorAnalyticsData: Vl(Vl({}, l.ancestorAnalyticsData), l.analyticsData),
                 logAction: r,
                 getCollectionData: d
-            }), a = Wl(Wl(Wl(Wl(Wl({}, e.props), {
+            }), a = Vl(Vl(Vl(Vl(Vl({}, e.props), {
                 componentConfig: e,
                 sduiContext: n,
                 analyticsContext: d
             }), o), i), a);
             return {
-                props: zl(c, a, d, n),
+                props: Wl(c, a, d, n),
                 children: (s = d,
                 u = n,
                 (e = e).children ? e.children.map(function(e, t) {
                     var n, t = (null !== (n = e.componentType) && void 0 !== n ? n : "undefined") + "-" + t;
-                    return X().createElement(ss, {
+                    return X().createElement(us, {
                         key: t,
                         componentConfig: e,
                         parentAnalyticsContext: s,
@@ -15652,7 +15669,7 @@
                 }) : null)
             }
         }
-        (qs = function(e) {
+        ($s = function(e) {
             var n = e.analyticsContext
               , t = e.sduiContext
               , r = e.universeId
@@ -15667,15 +15684,15 @@
               , e = (0,
             K.useCallback)(function() {
                 var e = {
-                    actionType: Wa.PlayButtonClick,
+                    actionType: Va.PlayButtonClick,
                     actionParams: {}
                 };
-                dl(e, n, t).onActivated()
+                fl(e, n, t).onActivated()
             }, [n, t])
               , s = (0,
             K.useMemo)(function() {
-                var e, t = za(n);
-                return _l(_l({}, t), ((e = {})[R.IsAd] = (null !== (t = t[R.IsAd]) && void 0 !== t && t).toString(),
+                var e, t = Wa(n);
+                return Nl(Nl({}, t), ((e = {})[R.IsAd] = (null !== (t = t[R.IsAd]) && void 0 !== t && t).toString(),
                 e[R.PlaceId] = Ma(o, -1),
                 e[R.UniverseId] = Ma(r, -1),
                 e[R.PlayContext] = Y.HomePage,
@@ -15703,7 +15720,7 @@
             playableText: void 0,
             hidePlayableIcon: void 0
         };
-        var Dl, nl = qs, yr = function(e) {
+        var Ll, rl = $s, yr = function(e) {
             var t = e.layoutOrder
               , n = e.anchorPoint
               , r = e.automaticSize
@@ -15748,15 +15765,15 @@
                 textOverrides: h,
                 iconOverrides: g
             })
-        }, Ll = function() {
-            return (Ll = Object.assign || function(e) {
+        }, Ml = function() {
+            return (Ml = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Ml = function(e, t) {
+        }, Fl = function(e, t) {
             var n = {};
             for (o in e)
                 Object.prototype.hasOwnProperty.call(e, o) && t.indexOf(o) < 0 && (n[o] = e[o]);
@@ -15772,30 +15789,30 @@
               , i = e.disableDefaultFooterLogic
               , a = e.onActivated
               , l = e.footerComponent
-              , s = Ml(e, ["sduiContext", "analyticsContext", "universeId", "placeId", "disableDefaultFooterLogic", "onActivated", "footerComponent"])
+              , s = Fl(e, ["sduiContext", "analyticsContext", "universeId", "placeId", "disableDefaultFooterLogic", "onActivated", "footerComponent"])
               , u = (0,
             K.useMemo)(function() {
                 if (a)
                     return a;
                 var e = {
-                    actionType: Wa.OpenGameDetails,
+                    actionType: Va.OpenGameDetails,
                     actionParams: {
                         placeId: o,
                         universeId: r
                     }
                 };
-                return dl(e, n, t)
+                return fl(e, n, t)
             }, [a, o, r, n, t])
               , e = (0,
             K.useMemo)(function() {
-                return i ? l : X().createElement(Ol, {
+                return i ? l : X().createElement(Rl, {
                     universeId: r,
                     footerComponent: l,
                     sduiContext: t,
                     analyticsContext: n
                 })
             }, [i, l, r, t, n]);
-            return X().createElement(Al, Ll({}, s, {
+            return X().createElement(Ol, Ml({}, s, {
                 sduiContext: t,
                 analyticsContext: n,
                 onActivated: u,
@@ -15875,20 +15892,20 @@
                 iconComponent: e,
                 containerOverrides: _
             })
-        }, Fl = function() {
-            return (Fl = Object.assign || function(e) {
+        }, Ul = function() {
+            return (Ul = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Ul = function(e, t, n, r) {
+        }, Bl = function(e, t, n, r) {
             var o = (0,
             K.useRef)(null)
               , i = (0,
             K.useCallback)(function(e, t) {
-                Qa(e, t, o.current)
+                el(e, t, o.current)
             }, [o])
               , a = (0,
             K.useCallback)(function() {
@@ -15896,7 +15913,7 @@
             }, [o])
               , l = (0,
             K.useMemo)(function() {
-                return Fl(Fl({}, e), {
+                return Ul(Ul({}, e), {
                     logAction: i,
                     getCollectionAnalyticsData: a
                 })
@@ -15904,31 +15921,31 @@
             return o.current = (0,
             K.useMemo)(function() {
                 var e;
-                return ja(null !== (e = l.ancestorAnalyticsData) && void 0 !== e ? e : {}, null !== (e = l.analyticsData) && void 0 !== e ? e : {}, t, n, r)
+                return Ha(null !== (e = l.ancestorAnalyticsData) && void 0 !== e ? e : {}, null !== (e = l.analyticsData) && void 0 !== e ? e : {}, t, n, r)
             }, [l.ancestorAnalyticsData, l.analyticsData, t, n, r]),
             {
                 collectionAnalyticsContext: l,
                 collectionAnalyticsDataRef: o
             }
-        }, Bl = function() {
-            return (Bl = Object.assign || function(e) {
+        }, Gl = function() {
+            return (Gl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, Gl = function(e, t, n, r) {
+        }, jl = function(e, t, n, r) {
             var o, i, a, l, s = function(e) {
                 var e = null == e ? void 0 : e[0];
-                if ((null == e ? void 0 : e.componentType) === Dl.Tile || (null == e ? void 0 : e.componentType) === Dl.GameTile) {
+                if ((null == e ? void 0 : e.componentType) === Ll.Tile || (null == e ? void 0 : e.componentType) === Ll.GameTile) {
                     e = null === (e = e.props) || void 0 === e ? void 0 : e.imageAspectRatio;
                     if (Ua(e))
                         if (1 < Ma(e, 0))
                             return !0
                 }
                 return !1
-            }(n), u = Bl(Bl(Bl(Bl(((a = {})[R.RootPlaceIds] = e.map(function(e) {
+            }(n), u = Gl(Gl(Gl(Gl(((a = {})[R.RootPlaceIds] = e.map(function(e) {
                 return Ma(null === (e = t[e]) || void 0 === e ? void 0 : e.placeId, -1)
             }),
             a[R.UniverseIds] = e.map(function(e) {
@@ -15967,8 +15984,8 @@
             u[F.HomePageSessionInfo] = La(null == r ? void 0 : r[li.HomePageSessionInfo], ""),
             u)), u = ee.gameImpressions(u);
             T.eventStreamService.sendEvent.apply(T.eventStreamService, u)
-        }, jl = function() {
-            return (jl = Object.assign || function(e) {
+        }, Hl = function() {
+            return (Hl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -15991,7 +16008,7 @@
               , p = (0,
             K.useMemo)(function() {
                 return n ? n.map(function(e) {
-                    return e.templateKey ? o.templateRegistry.resolveTemplateForConfig(e) : a ? o.templateRegistry.resolveTemplateForConfig(jl(jl({}, e), {
+                    return e.templateKey ? o.templateRegistry.resolveTemplateForConfig(e) : a ? o.templateRegistry.resolveTemplateForConfig(Hl(Hl({}, e), {
                         templateKey: a
                     })) : e
                 }) : []
@@ -16002,14 +16019,14 @@
             K.useState)(-1)
               , h = v[0]
               , g = v[1]
-              , y = Ul(t, i.componentType, h, p.length)
+              , y = Bl(t, i.componentType, h, p.length)
               , b = y.collectionAnalyticsContext
               , I = y.collectionAnalyticsDataRef
               , e = (0,
             K.useCallback)(function(e) {
                 var t;
-                p ? ("Game" === (null === (t = I.current) || void 0 === t ? void 0 : t.contentType) && Gl(e, m.current, p, I.current),
-                Ya(e, m.current, I.current)) : Va(Oa.CollectionCarouselItemsImpressedButMissing, "CollectionCarousel with config " + JSON.stringify(i) + " is missing item configs on impression. Configs are " + JSON.stringify(p))
+                p ? ("Game" === (null === (t = I.current) || void 0 === t ? void 0 : t.contentType) && jl(e, m.current, p, I.current),
+                Za(e, m.current, I.current)) : qa(Oa.CollectionCarouselItemsImpressedButMissing, "CollectionCarousel with config " + JSON.stringify(i) + " is missing item configs on impression. Configs are " + JSON.stringify(p))
             }, [p, I, i])
               , v = (0,
             K.useRef)(null);
@@ -16032,19 +16049,19 @@
             h = (0,
             K.useCallback)(function(e, t, n) {
                 if (!e)
-                    return Va(Oa.CollectionCarouselMissingItem, "CollectionCarousel with config " + JSON.stringify(i) + " trying to render item " + JSON.stringify(e) + " that is missing"),
+                    return qa(Oa.CollectionCarouselMissingItem, "CollectionCarousel with config " + JSON.stringify(i) + " trying to render item " + JSON.stringify(e) + " that is missing"),
                     X().createElement(X().Fragment, null);
-                var r = La(Ga("componentType", e.analyticsData, ""), "") || e.componentType;
+                var r = La(ja("componentType", e.analyticsData, ""), "") || e.componentType;
                 if (!r)
-                    return Va(Oa.CollectionCarouselItemMissingComponentType, "CollectionCarousel with config " + JSON.stringify(i) + " is missing item component type on item config " + JSON.stringify(e)),
+                    return qa(Oa.CollectionCarouselItemMissingComponentType, "CollectionCarousel with config " + JSON.stringify(i) + " is missing item component type on item config " + JSON.stringify(e)),
                     X().createElement(X().Fragment, null);
                 r = {
                     itemPosition: t + 1,
                     itemComponentType: r,
                     componentType: r
                 };
-                return m.current[t] = Ha(null !== (t = e.analyticsData) && void 0 !== t ? t : {}, null !== (t = I.current) && void 0 !== t ? t : {}, r),
-                X().createElement(ss, {
+                return m.current[t] = za(null !== (t = e.analyticsData) && void 0 !== t ? t : {}, null !== (t = I.current) && void 0 !== t ? t : {}, r),
+                X().createElement(us, {
                     componentConfig: e,
                     parentAnalyticsContext: b,
                     sduiContext: o,
@@ -16058,10 +16075,10 @@
             K.useMemo)(function() {
                 return X().Children.map(d, function(e, t) {
                     if (!X().isValidElement(e))
-                        return Va(Oa.CollectionCarouselChildNotReactElement, "SduiCollectionCarouselChildNotReactElement " + JSON.stringify(i) + " child " + JSON.stringify(e) + " is not a valid React element"),
+                        return qa(Oa.CollectionCarouselChildNotReactElement, "SduiCollectionCarouselChildNotReactElement " + JSON.stringify(i) + " child " + JSON.stringify(e) + " is not a valid React element"),
                         e;
                     t = i.componentType + "-child-" + t;
-                    return X().cloneElement(e, jl(jl({}, e.props), {
+                    return X().cloneElement(e, Hl(Hl({}, e.props), {
                         key: t,
                         parentAnalyticsContext: b
                     }))
@@ -16069,7 +16086,7 @@
             }, [d, b, i]),
             e = (0,
             K.useMemo)(function() {
-                return c ? X().cloneElement(c, jl(jl({}, c.props), {
+                return c ? X().cloneElement(c, Hl(Hl({}, c.props), {
                     parentAnalyticsContext: b
                 })) : null
             }, [c, b]);
@@ -16089,27 +16106,27 @@
                 onReachedThresholdFromEnd: u,
                 reportHorizontalScrollTelemetry: t
             }), y)
-        }, Hl = function() {
-            return (Hl = Object.assign || function(e) {
+        }, zl = function() {
+            return (zl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, zl = function(o, i, a, l, e) {
-            var t = es[o]
-              , s = Hl({}, i)
+        }, Wl = function(o, i, a, l, e) {
+            var t = ts[o]
+              , s = zl({}, i)
               , u = null != e ? e : null == t ? void 0 : t.propParsers;
             return u && Object.keys(i).forEach(function(e) {
                 var t, n = i[e], r = u[e];
-                void 0 !== n && r && ("function" == typeof r ? void 0 !== (t = r(n, a, l)) ? s[e] = t : Va(Oa.PropParseFailure, "Failed to parse prop " + e + " with value " + JSON.stringify(n) + " for component " + o) : "object" == typeof r ? "object" == typeof (t = n) && null !== t && Object.keys(t).every(function(e) {
+                void 0 !== n && r && ("function" == typeof r ? void 0 !== (t = r(n, a, l)) ? s[e] = t : qa(Oa.PropParseFailure, "Failed to parse prop " + e + " with value " + JSON.stringify(n) + " for component " + o) : "object" == typeof r ? "object" == typeof (t = n) && null !== t && Object.keys(t).every(function(e) {
                     return "string" == typeof e
-                }) ? s[e] = zl(o, n, a, l, r) : Va(Oa.NestedPropParseFailure, "Expected a nested object for prop " + e + " with value " + JSON.stringify(n) + " using for component " + o) : Va(Oa.PropParserNotFound, "Prop parser not found for prop " + e + " and component " + o))
+                }) ? s[e] = Wl(o, n, a, l, r) : qa(Oa.NestedPropParseFailure, "Expected a nested object for prop " + e + " with value " + JSON.stringify(n) + " using for component " + o) : qa(Oa.PropParserNotFound, "Prop parser not found for prop " + e + " and component " + o))
             }),
             s
-        }, Wl = function() {
-            return (Wl = Object.assign || function(e) {
+        }, Vl = function() {
+            return (Vl = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -16120,7 +16137,7 @@
             var e = X().memo(function(n) {
                 return (0,
                 K.useMemo)(function() {
-                    var e = Rl(n.componentConfig, n.parentAnalyticsContext, n.sduiContext, n.localAnalyticsData, n.extraLocalProps, n.responsivePropOverrides, n.conditionalPropOverrides)
+                    var e = Dl(n.componentConfig, n.parentAnalyticsContext, n.sduiContext, n.localAnalyticsData, n.extraLocalProps, n.responsivePropOverrides, n.conditionalPropOverrides)
                       , t = e.props
                       , e = e.children;
                     return X().createElement(r, t, e)
@@ -16129,35 +16146,35 @@
             return e.displayName = "SduiWrapped" + (r.displayName || r.name),
             e
         };
-        function Vl(e, t, n) {
+        function ql(e, t, n) {
             switch (e) {
-            case il.imageQualityLevel:
+            case al.imageQualityLevel:
                 if (!Ua(t))
-                    return Va(Oa.InvalidImageQualityLevelConditionValue, "Invalid image quality level value: " + (t ? JSON.stringify(t) : "undefined")),
+                    return qa(Oa.InvalidImageQualityLevelConditionValue, "Invalid image quality level value: " + (t ? JSON.stringify(t) : "undefined")),
                     !1;
-                var r = ns[La(t, "")];
-                return void 0 === r ? (Va(Oa.UnknownImageQualityLevelConditionValue, "Unknown image quality level: " + t.toString()),
-                !1) : rs === r;
-            case il.maxWidth:
+                var r = rs[La(t, "")];
+                return void 0 === r ? (qa(Oa.UnknownImageQualityLevelConditionValue, "Unknown image quality level: " + t.toString()),
+                !1) : os === r;
+            case al.maxWidth:
                 if (!Ua(t))
-                    return Va(Oa.InvalidMaxWidthConditionValue, "Invalid max width condition value: " + (t ? JSON.stringify(t) : "undefined")),
+                    return qa(Oa.InvalidMaxWidthConditionValue, "Invalid max width condition value: " + (t ? JSON.stringify(t) : "undefined")),
                     !1;
                 var o = Ma(t, -1);
-                return o < 0 ? (Va(Oa.InvalidParsedMaxWidthConditionValue, "Cannot parse max width value: " + t.toString()),
+                return o < 0 ? (qa(Oa.InvalidParsedMaxWidthConditionValue, "Cannot parse max width value: " + t.toString()),
                 !1) : n <= o;
-            case il.minWidth:
+            case al.minWidth:
                 if (!Ua(t))
-                    return Va(Oa.InvalidMinWidthConditionValue, "Invalid min width condition value: " + (t ? JSON.stringify(t) : "undefined")),
+                    return qa(Oa.InvalidMinWidthConditionValue, "Invalid min width condition value: " + (t ? JSON.stringify(t) : "undefined")),
                     !1;
                 o = Ma(t, -1);
-                return o < 0 ? (Va(Oa.InvalidParsedMinWidthConditionValue, "Cannot parse min width value: " + t.toString()),
+                return o < 0 ? (qa(Oa.InvalidParsedMinWidthConditionValue, "Cannot parse min width value: " + t.toString()),
                 !1) : o <= n;
             default:
-                return Va(Oa.UnknownResponsivePropConditionKey, "Unknown responsive prop condition key: " + JSON.stringify(e)),
+                return qa(Oa.UnknownResponsivePropConditionKey, "Unknown responsive prop condition key: " + JSON.stringify(e)),
                 !1
             }
         }
-        function ql(e) {
+        function Jl(e) {
             var t = e.wrappedComponent
               , n = e.componentConfig
               , r = e.parentAnalyticsContext
@@ -16179,7 +16196,7 @@
             }, []),
             e = (0,
             K.useMemo)(function() {
-                return os(n.responsiveProps, l)
+                return is(n.responsiveProps, l)
             }, [n.responsiveProps, l]),
             X().createElement(t, {
                 componentConfig: n,
@@ -16190,10 +16207,10 @@
                 responsivePropOverrides: e
             })
         }
-        function Jl(e) {
-            return is.includes(e)
-        }
         function $l(e) {
+            return as.includes(e)
+        }
+        function Kl(e) {
             var t = e.conditionalProps
               , n = e.setFailedPresenceConditionIndexes
               , o = e.sduiContext;
@@ -16205,15 +16222,15 @@
                     e && Object.entries(e).forEach(function(e) {
                         var t = e[0]
                           , e = e[1];
-                        Jl(t) && (function(e, t, n) {
-                            if (e !== al.friendInGame)
-                                return Va(Oa.UnknownPresenceConditionKey, "Unknown presence condition key: " + JSON.stringify(e)),
+                        $l(t) && (function(e, t, n) {
+                            if (e !== ll.friendInGame)
+                                return qa(Oa.UnknownPresenceConditionKey, "Unknown presence condition key: " + JSON.stringify(e)),
                                 !1;
                             if (!Ua(t))
-                                return Va(Oa.InvalidPresenceConditionValue, "Invalid presence condition value: " + JSON.stringify(t) + ", for key: " + e),
+                                return qa(Oa.InvalidPresenceConditionValue, "Invalid presence condition value: " + JSON.stringify(t) + ", for key: " + e),
                                 !1;
                             var r = La(t, "");
-                            return r ? 0 < (null === (r = n.inGameFriendsByUniverseId[r]) || void 0 === r ? void 0 : r.length) : (Va(Oa.InvalidPresenceConditionValue, "Invalid friend in game condition value: " + JSON.stringify(t) + ", for key: " + e),
+                            return r ? 0 < (null === (r = n.inGameFriendsByUniverseId[r]) || void 0 === r ? void 0 : r.length) : (qa(Oa.InvalidPresenceConditionValue, "Invalid friend in game condition value: " + JSON.stringify(t) + ", for key: " + e),
                             !1)
                         }(t, e, o.dataStore.social) || r.add(n))
                     })
@@ -16225,10 +16242,10 @@
             }, [t, o.dataStore.social, n]),
             null
         }
-        function Kl(e) {
-            return as.includes(e)
-        }
         function Xl(e) {
+            return ls.includes(e)
+        }
+        function Yl(e) {
             var t = e.conditionalProps
               , n = e.setFailedResponsiveConditionIndexes
               , o = (e = (0,
@@ -16252,7 +16269,7 @@
                     e && Object.entries(e).forEach(function(e) {
                         var t = e[0]
                           , e = e[1];
-                        Kl(t) && (Vl(t, e, o) || r.add(n))
+                        Xl(t) && (ql(t, e, o) || r.add(n))
                     })
                 }),
                 n(function(e) {
@@ -16262,7 +16279,7 @@
             }, [t, n, o]),
             null
         }
-        function Yl(e) {
+        function Zl(e) {
             var t = e.wrappedComponent
               , n = e.componentConfig
               , r = e.parentAnalyticsContext
@@ -16284,8 +16301,8 @@
                 };
                 if (!l)
                     return t;
-                var n = Object.keys(al)
-                  , r = Object.keys(il);
+                var n = Object.keys(ll)
+                  , r = Object.keys(al);
                 return l.forEach(function(e) {
                     e = e.conditions;
                     e && Object.keys(e).forEach(function(e) {
@@ -16296,11 +16313,11 @@
             }, [l])
               , p = (0,
             K.useMemo)(function() {
-                return X().createElement(X().Fragment, null, f.hasPresenceCondition && X().createElement($l, {
+                return X().createElement(X().Fragment, null, f.hasPresenceCondition && X().createElement(Kl, {
                     conditionalProps: l,
                     setFailedPresenceConditionIndexes: d,
                     sduiContext: o
-                }), f.hasResponsiveCondition && X().createElement(Xl, {
+                }), f.hasResponsiveCondition && X().createElement(Yl, {
                     conditionalProps: l,
                     setFailedResponsiveConditionIndexes: u
                 }))
@@ -16308,7 +16325,7 @@
               , m = (0,
             K.useCallback)(function(e, t) {
                 return !c.has(t) && !s.has(t) && (!e || Object.keys(e).every(function(e) {
-                    return !(!Jl(e) && !Kl(e)) || (Va(Oa.UnsupportedConditionalPropsCondition, "Unsupported condition: " + e),
+                    return !(!$l(e) && !Xl(e)) || (qa(Oa.UnsupportedConditionalPropsCondition, "Unsupported condition: " + e),
                     !1)
                 }))
             }, [c, s])
@@ -16317,7 +16334,7 @@
                 return l ? l.reduce(function(e, t, n) {
                     var r = t.conditions
                       , t = t.propOverrides;
-                    return t && m(r, n) ? ls(ls({}, e), t) : e
+                    return t && m(r, n) ? ss(ss({}, e), t) : e
                 }, {}) : {}
             }, [l, m])
               , e = (0,
@@ -16333,154 +16350,154 @@
             }, [t, n, r, o, i, a, v]);
             return X().createElement(X().Fragment, null, e, p)
         }
-        (qs = Dl = Dl || {}).SingleItemCollection = "SingleItemCollection",
-        qs.HeroUnit = "HeroUnit",
-        qs.PlayButton = "PlayButton",
-        qs.TextIconRow = "TextIconRow",
-        qs.TileFooter = "TileFooter",
-        qs.GameTileActiveFriendsFooter = "GameTileActiveFriendsFooter",
-        qs.Tile = "Tile",
-        qs.GameTile = "GameTile",
-        qs.SectionHeader = "SectionHeader",
-        qs.CollectionCarousel = "CollectionCarousel";
-        var Zl, Ql, es = ((qs = {})[Dl.SingleItemCollection] = {
+        ($s = Ll = Ll || {}).SingleItemCollection = "SingleItemCollection",
+        $s.HeroUnit = "HeroUnit",
+        $s.PlayButton = "PlayButton",
+        $s.TextIconRow = "TextIconRow",
+        $s.TileFooter = "TileFooter",
+        $s.GameTileActiveFriendsFooter = "GameTileActiveFriendsFooter",
+        $s.Tile = "Tile",
+        $s.GameTile = "GameTile",
+        $s.SectionHeader = "SectionHeader",
+        $s.CollectionCarousel = "CollectionCarousel";
+        var Ql, es, ts = (($s = {})[Ll.SingleItemCollection] = {
             component: xi(Qn),
             propParsers: {}
         },
-        qs[Dl.PlayButton] = {
-            component: xi(nl),
+        $s[Ll.PlayButton] = {
+            component: xi(rl),
             propParsers: {}
         },
-        qs[Dl.HeroUnit] = {
+        $s[Ll.HeroUnit] = {
             component: xi(et),
             propParsers: {
-                backgroundComponent: xl.parseUiComponent,
-                bottomRowComponent: xl.parseUiComponent,
-                ctaButtonComponent: xl.parseUiComponent,
-                headerComponent: xl.parseUiComponent,
-                onActivated: xl.parseCallback,
-                overlayComponent: xl.parseUiComponent,
-                asset: xl.parseHeroUnitAsset,
-                gradient: xl.parseGradient,
-                foregroundImage: xl.parseAssetUrlIntoComponent,
-                backgroundImage: xl.parseAssetUrlIntoComponent
+                backgroundComponent: _l.parseUiComponent,
+                bottomRowComponent: _l.parseUiComponent,
+                ctaButtonComponent: _l.parseUiComponent,
+                headerComponent: _l.parseUiComponent,
+                onActivated: _l.parseCallback,
+                overlayComponent: _l.parseUiComponent,
+                asset: _l.parseHeroUnitAsset,
+                gradient: _l.parseGradient,
+                foregroundImage: _l.parseAssetUrlIntoComponent,
+                backgroundImage: _l.parseAssetUrlIntoComponent
             }
         },
-        qs[Dl.TextIconRow] = {
+        $s[Ll.TextIconRow] = {
             component: xi(yr),
             propParsers: {
-                anchorPoint: xl.parseVector2,
-                automaticSize: xl.parseAutomaticSize,
-                size: xl.parseUDim2,
-                position: xl.parseUDim2,
-                onActivated: xl.parseCallback,
-                textColor: xl.parseColorValue,
-                fontStyle: xl.parseFoundationTypographyToken,
-                gap: xl.parseFoundationNumberToken,
-                icon: xl.parseIcon,
-                iconWidth: xl.parseFoundationNumberToken,
-                iconColor: xl.parseColorValue
+                anchorPoint: _l.parseVector2,
+                automaticSize: _l.parseAutomaticSize,
+                size: _l.parseUDim2,
+                position: _l.parseUDim2,
+                onActivated: _l.parseCallback,
+                textColor: _l.parseColorValue,
+                fontStyle: _l.parseFoundationTypographyToken,
+                gap: _l.parseFoundationNumberToken,
+                icon: _l.parseIcon,
+                iconWidth: _l.parseFoundationNumberToken,
+                iconColor: _l.parseColorValue
             }
         },
-        qs[Dl.TileFooter] = {
-            component: xi(Nl),
-            propParsers: {
-                onActivated: xl.parseCallback,
-                textColor: xl.parseColorValue,
-                fontStyle: xl.parseFoundationTypographyToken,
-                gap: xl.parseFoundationNumberToken,
-                leftIcon: xl.parseIcon,
-                leftIconComponent: xl.parseUiComponent,
-                rightIcon: xl.parseIcon,
-                rightIconComponent: xl.parseUiComponent
-            }
-        },
-        qs[Dl.GameTileActiveFriendsFooter] = {
+        $s[Ll.TileFooter] = {
             component: xi(kl),
             propParsers: {
-                iconWidth: xl.parseFoundationNumberToken,
-                onActivated: xl.parseCallback
+                onActivated: _l.parseCallback,
+                textColor: _l.parseColorValue,
+                fontStyle: _l.parseFoundationTypographyToken,
+                gap: _l.parseFoundationNumberToken,
+                leftIcon: _l.parseIcon,
+                leftIconComponent: _l.parseUiComponent,
+                rightIcon: _l.parseIcon,
+                rightIconComponent: _l.parseUiComponent
             }
         },
-        qs[Dl.Tile] = {
+        $s[Ll.GameTileActiveFriendsFooter] = {
             component: xi(Al),
             propParsers: {
-                image: xl.parseAssetUrlIntoComponent,
-                imageComponent: xl.parseUiComponent,
-                thumbnailOverlayComponent: xl.parseUiComponent,
-                onActivated: xl.parseCallback,
-                titleColor: xl.parseColorValue,
-                titleFont: xl.parseFoundationTypographyToken,
-                titleComponent: xl.parseUiComponent,
-                containmentPadding: xl.parseFoundationNumberToken,
-                cornerRadius: xl.parseFoundationNumberToken,
-                footerComponent: xl.parseUiComponent,
-                ctaButtonComponent: xl.parseUiComponent
+                iconWidth: _l.parseFoundationNumberToken,
+                onActivated: _l.parseCallback
             }
         },
-        qs[Dl.GameTile] = {
+        $s[Ll.Tile] = {
+            component: xi(Ol),
+            propParsers: {
+                image: _l.parseAssetUrlIntoComponent,
+                imageComponent: _l.parseUiComponent,
+                thumbnailOverlayComponent: _l.parseUiComponent,
+                onActivated: _l.parseCallback,
+                titleColor: _l.parseColorValue,
+                titleFont: _l.parseFoundationTypographyToken,
+                titleComponent: _l.parseUiComponent,
+                containmentPadding: _l.parseFoundationNumberToken,
+                cornerRadius: _l.parseFoundationNumberToken,
+                footerComponent: _l.parseUiComponent,
+                ctaButtonComponent: _l.parseUiComponent
+            }
+        },
+        $s[Ll.GameTile] = {
             component: xi(br),
             propParsers: {
-                image: xl.parseAssetUrlIntoComponent,
-                imageComponent: xl.parseUiComponent,
-                thumbnailOverlayComponent: xl.parseUiComponent,
-                onActivated: xl.parseCallback,
-                titleColor: xl.parseColorValue,
-                titleFont: xl.parseFoundationTypographyToken,
-                titleComponent: xl.parseUiComponent,
-                containmentPadding: xl.parseFoundationNumberToken,
-                cornerRadius: xl.parseFoundationNumberToken,
-                footerComponent: xl.parseUiComponent,
-                ctaButtonComponent: xl.parseUiComponent
+                image: _l.parseAssetUrlIntoComponent,
+                imageComponent: _l.parseUiComponent,
+                thumbnailOverlayComponent: _l.parseUiComponent,
+                onActivated: _l.parseCallback,
+                titleColor: _l.parseColorValue,
+                titleFont: _l.parseFoundationTypographyToken,
+                titleComponent: _l.parseUiComponent,
+                containmentPadding: _l.parseFoundationNumberToken,
+                cornerRadius: _l.parseFoundationNumberToken,
+                footerComponent: _l.parseUiComponent,
+                ctaButtonComponent: _l.parseUiComponent
             }
         },
-        qs[Dl.SectionHeader] = {
+        $s[Ll.SectionHeader] = {
             component: xi(oe),
             propParsers: {
-                anchorPoint: xl.parseVector2,
-                automaticSize: xl.parseAutomaticSize,
-                size: xl.parseUDim2,
-                position: xl.parseUDim2,
-                onTitleActivated: xl.parseCallback,
-                titleColor: xl.parseColorValue,
-                titleFontStyle: xl.parseFoundationTypographyToken,
-                titleGap: xl.parseFoundationNumberToken,
-                titleIcon: xl.parseIcon,
-                titleIconWidth: xl.parseFoundationNumberToken,
-                titleComponent: xl.parseUiComponent,
-                onSubtitleActivated: xl.parseCallback,
-                subtitleColor: xl.parseColorValue,
-                subtitleFontStyle: xl.parseFoundationTypographyToken,
-                subtitleGap: xl.parseFoundationNumberToken,
-                subtitleIcon: xl.parseIcon,
-                subtitleIconWidth: xl.parseFoundationNumberToken,
-                subtitleComponent: xl.parseUiComponent,
-                verticalGap: xl.parseFoundationNumberToken,
-                onInfoIconActivated: xl.parseCallback,
-                iconComponent: xl.parseUiComponent
+                anchorPoint: _l.parseVector2,
+                automaticSize: _l.parseAutomaticSize,
+                size: _l.parseUDim2,
+                position: _l.parseUDim2,
+                onTitleActivated: _l.parseCallback,
+                titleColor: _l.parseColorValue,
+                titleFontStyle: _l.parseFoundationTypographyToken,
+                titleGap: _l.parseFoundationNumberToken,
+                titleIcon: _l.parseIcon,
+                titleIconWidth: _l.parseFoundationNumberToken,
+                titleComponent: _l.parseUiComponent,
+                onSubtitleActivated: _l.parseCallback,
+                subtitleColor: _l.parseColorValue,
+                subtitleFontStyle: _l.parseFoundationTypographyToken,
+                subtitleGap: _l.parseFoundationNumberToken,
+                subtitleIcon: _l.parseIcon,
+                subtitleIconWidth: _l.parseFoundationNumberToken,
+                subtitleComponent: _l.parseUiComponent,
+                verticalGap: _l.parseFoundationNumberToken,
+                onInfoIconActivated: _l.parseCallback,
+                iconComponent: _l.parseUiComponent
             }
         },
-        qs[Dl.CollectionCarousel] = {
+        $s[Ll.CollectionCarousel] = {
             component: xi(tt),
             propParsers: {
                 layoutOverrides: {
-                    columnGap: xl.parseFoundationNumberToken,
-                    sideMargin: xl.parseFoundationNumberToken
+                    columnGap: _l.parseFoundationNumberToken,
+                    sideMargin: _l.parseFoundationNumberToken
                 },
-                onScrollToEnd: xl.parseCallback,
-                headerComponent: xl.parseUiComponent
+                onScrollToEnd: _l.parseCallback,
+                headerComponent: _l.parseUiComponent
             }
         },
-        qs), ts = function(e) {
-            return es[e] ? es[e].component : null
-        }, ns = {
+        $s), ns = function(e) {
+            return ts[e] ? ts[e].component : null
+        }, rs = {
             low: 1,
             Low: 1,
             medium: 2,
             Medium: 2,
             high: 3,
             High: 3
-        }, rs = ns.High, os = function(e, n) {
+        }, os = rs.High, is = function(e, n) {
             if (!e)
                 return {};
             e = e.find(function(e) {
@@ -16488,19 +16505,19 @@
                 return !e || Object.entries(e).every(function(e) {
                     var t = e[0]
                       , e = e[1];
-                    return Vl(t, e, n)
+                    return ql(t, e, n)
                 })
             });
             return e ? e.overrides : {}
-        }, is = Object.keys(al), as = Object.keys(il), ls = function() {
-            return (ls = Object.assign || function(e) {
+        }, as = Object.keys(ll), ls = Object.keys(al), ss = function() {
+            return (ss = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, ss = function(e) {
+        }, us = function(e) {
             var t = e.componentConfig
               , n = e.parentAnalyticsContext
               , r = e.sduiContext
@@ -16512,19 +16529,19 @@
             }, [t, r]);
             return (0,
             K.useMemo)(function() {
-                if (!cl(a))
-                    return Va(Oa.SduiComponentBuildPropsAndChildrenInvalidConfig, "Invalid component config " + JSON.stringify(a) + " to build React props and children"),
+                if (!dl(a))
+                    return qa(Oa.SduiComponentBuildPropsAndChildrenInvalidConfig, "Invalid component config " + JSON.stringify(a) + " to build React props and children"),
                     X().createElement(X().Fragment, null);
                 var e = a.componentType
-                  , t = ts(e);
-                return t ? a.conditionalProps ? X().createElement(Yl, {
+                  , t = ns(e);
+                return t ? a.conditionalProps ? X().createElement(Zl, {
                     wrappedComponent: t,
                     componentConfig: a,
                     parentAnalyticsContext: n,
                     sduiContext: r,
                     localAnalyticsData: o,
                     extraLocalProps: i
-                }) : a.responsiveProps ? X().createElement(ql, {
+                }) : a.responsiveProps ? X().createElement(Jl, {
                     wrappedComponent: t,
                     componentConfig: a,
                     parentAnalyticsContext: n,
@@ -16537,11 +16554,11 @@
                     sduiContext: r,
                     localAnalyticsData: o,
                     extraLocalProps: i
-                }) : (Va(Oa.ComponentNotFound, "Component not found for type " + e + " using config " + JSON.stringify(a)),
+                }) : (qa(Oa.ComponentNotFound, "Component not found for type " + e + " using config " + JSON.stringify(a)),
                 X().createElement(X().Fragment, null))
             }, [a, n, r, o, i])
-        }, xl = (Zl = function(e, t) {
-            return (Zl = Object.setPrototypeOf || {
+        }, _l = (Ql = function(e, t) {
+            return (Ql = Object.setPrototypeOf || {
                 __proto__: []
             }instanceof Array && function(e, t) {
                 e.__proto__ = t
@@ -16559,19 +16576,19 @@
             function n() {
                 this.constructor = e
             }
-            Zl(e, t),
+            Ql(e, t),
             e.prototype = null === t ? Object.create(t) : (n.prototype = t.prototype,
             new n)
         }
         );
-        function us(e) {
-            e = Ql.call(this, e) || this;
+        function cs(e) {
+            e = es.call(this, e) || this;
             return e.state = {
                 hasError: !1
             },
             e
         }
-        function cs(e) {
+        function ds(e) {
             var n = {};
             return Object.values(e).forEach(function(e) {
                 var t;
@@ -16583,34 +16600,21 @@
             }),
             n
         }
-        function ds(e) {
+        function fs(e) {
             var n = e.sort
               , r = e.sduiRoot
               , o = e.currentPage
               , i = fn()
-              , a = Ss(null == r ? void 0 : r.templates)
+              , a = ws(null == r ? void 0 : r.templates)
               , t = (0,
             K.useMemo)(function() {
-                var e = ul(r, n.feedItemKey);
+                var e = cl(r, n.feedItemKey);
                 if (!e)
                     return X().createElement(X().Fragment, null);
-                var t = Cs({}, function(e, t) {
-                    var n;
-                    switch (t) {
-                    case Y.HomePage:
-                        return (n = {})[li.HomePageSessionInfo] = e,
-                        n;
-                    case Y.GamesPage:
-                        return (n = {})[li.DiscoverPageSessionInfo] = e,
-                        n;
-                    default:
-                        return Va(Oa.InvalidPageForSessionAnalytics, "Invalid page context for session analytics: " + (t ? JSON.stringify(t) : "undefined") + " with session info: " + e),
-                        {}
-                    }
-                }(i, o));
+                var t = Es({}, Ga(i, o));
                 return X().createElement("div", {
                     className: "sdui-feed-item-container"
-                }, X().createElement(ss, {
+                }, X().createElement(us, {
                     componentConfig: e,
                     parentAnalyticsContext: {},
                     localAnalyticsData: t,
@@ -16619,29 +16623,95 @@
             }, [n, r, i, o, a])
               , e = (0,
             K.useCallback)(function(e, t) {
-                Va(Oa.SduiFeedItemBoundaryError, "Error rendering feed item for sort " + JSON.stringify(n) + " and sdui root " + JSON.stringify(r) + " with error message " + e + " and callstack " + t)
+                qa(Oa.SduiFeedItemBoundaryError, "Error rendering feed item for sort " + JSON.stringify(n) + " and sdui root " + JSON.stringify(r) + " with error message " + e + " and callstack " + t)
             }, [n, r]);
-            return X().createElement(fs, {
+            return X().createElement(ms, {
                 fallback: X().createElement(X().Fragment, null),
                 logError: e
             }, t)
         }
-        var fs = (Ql = X().Component,
-        xl(us, Ql),
-        us.getDerivedStateFromError = function() {
+        function ps(e) {
+            var t = e.sort
+              , n = (e.positionId,
+            e.currentPage)
+              , r = (0,
+            p.useTokens)()
+              , o = ws(void 0)
+              , i = fn()
+              , a = (0,
+            K.useMemo)(function() {
+                return Ga(i, n)
+            }, [i, n])
+              , l = (0,
+            K.useMemo)(function() {
+                return t.songs.map(function(e) {
+                    return {
+                        componentType: Ll.Tile,
+                        analyticsData: {
+                            id: e.assetId
+                        },
+                        props: {
+                            imageAspectRatio: 1,
+                            titleText: e.title,
+                            image: "rbxthumb://type=Asset&id=" + e.albumArtAssetId + "&w=150&h=150",
+                            footerComponent: {
+                                componentType: Ll.TileFooter,
+                                props: {
+                                    leftText: e.artist
+                                }
+                            }
+                        }
+                    }
+                })
+            }, [t.songs])
+              , e = (0,
+            K.useMemo)(function() {
+                var e;
+                return {
+                    componentType: Ll.CollectionCarousel,
+                    props: {
+                        items: l,
+                        layoutOverrides: {
+                            sideMargin: r.Gap.XLarge
+                        },
+                        scrollingEnabledOverride: !0,
+                        collectionItemSize: "Small",
+                        headerComponent: {
+                            componentType: Ll.SectionHeader,
+                            props: {
+                                titleText: t.topic,
+                                titleGap: r.Gap.XSmall,
+                                subtitleText: t.subtitle,
+                                titleIcon: "icons/navigation/pushRight_small",
+                                infoText: null === (e = t.topicLayoutData) || void 0 === e ? void 0 : e.infoText
+                            }
+                        }
+                    }
+                }
+            }, [l, t.subtitle, t.topic, null === (e = t.topicLayoutData) || void 0 === e ? void 0 : e.infoText, r.Gap.XLarge, r.Gap.XSmall]);
+            return 0 === l.length ? null : X().createElement(us, {
+                componentConfig: e,
+                parentAnalyticsContext: {},
+                localAnalyticsData: a,
+                sduiContext: o
+            })
+        }
+        var ms = (es = X().Component,
+        _l(cs, es),
+        cs.getDerivedStateFromError = function() {
             return {
                 hasError: !0
             }
         }
         ,
-        us.prototype.componentDidCatch = function(e, t) {
+        cs.prototype.componentDidCatch = function(e, t) {
             e = e.message,
             t = t.componentStack;
             (0,
             this.props.logError)(e, t)
         }
         ,
-        us.prototype.render = function() {
+        cs.prototype.render = function() {
             var e = this.state.hasError
               , t = this.props
               , n = t.fallback
@@ -16649,9 +16719,9 @@
             return e ? n : t
         }
         ,
-        us)
-          , ps = function() {
-            return (ps = Object.assign || function(e) {
+        cs)
+          , vs = function() {
+            return (vs = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -16659,13 +16729,13 @@
             }
             ).apply(this, arguments)
         }
-          , ms = function(e, t) {
+          , hs = function(e, t) {
             for (var n = 0, r = t.length, o = e.length; n < r; n++,
             o++)
                 e[o] = t[n];
             return e
         }
-          , vs = function(e) {
+          , gs = function(e) {
             var i = (0,
             K.useMemo)(function() {
                 var n = new Map;
@@ -16684,32 +16754,32 @@
                 var r = (0,
                 ti.cloneDeep)(e);
                 if (t && t[n])
-                    return Va(Oa.TemplateResolutionCircularReference, "Circular reference detected for template key: " + n),
+                    return qa(Oa.TemplateResolutionCircularReference, "Circular reference detected for template key: " + n),
                     r.templateKey = void 0,
                     r;
                 var o = t || {};
                 o[n] = !0;
                 t = i.get(n);
                 if (!t)
-                    return Va(Oa.TemplateResolutionTemplateNotFound, "Template not found for template key: " + n + " with config: " + JSON.stringify(e)),
+                    return qa(Oa.TemplateResolutionTemplateNotFound, "Template not found for template key: " + n + " with config: " + JSON.stringify(e)),
                     r.templateKey = void 0,
                     r;
                 t = a(t, o);
                 if (r.templateKey = void 0,
                 e.componentType) {
                     if (e.componentType && t.componentType && e.componentType !== t.componentType)
-                        return Va(Oa.TemplateResolutionComponentTypeMismatch, "Component type mismatch for template key: " + n + ". Template type: " + t.componentType + ", Config type: " + e.componentType),
+                        return qa(Oa.TemplateResolutionComponentTypeMismatch, "Component type mismatch for template key: " + n + ". Template type: " + t.componentType + ", Config type: " + e.componentType),
                         r
                 } else
                     r.componentType = t.componentType;
-                return t.analyticsData && (r.analyticsData = ps(ps({}, t.analyticsData), e.analyticsData)),
+                return t.analyticsData && (r.analyticsData = vs(vs({}, t.analyticsData), e.analyticsData)),
                 t.props && (r.props = null !== (o = t.props,
                 n = e.props,
                 n = o ? (0,
                 ti.merge)((0,
                 ti.cloneDeep)(o), n) : (0,
                 ti.cloneDeep)(n)) && void 0 !== n ? n : {}),
-                t.children && (r.children = ms(ms([], t.children), e.children || [])),
+                t.children && (r.children = hs(hs([], t.children), e.children || [])),
                 r
             }, [i]);
             return (0,
@@ -16719,8 +16789,8 @@
                 }
             }, [a])
         }
-          , hs = function() {
-            return (hs = Object.assign || function(e) {
+          , ys = function() {
+            return (ys = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -16728,7 +16798,7 @@
             }
             ).apply(this, arguments)
         }
-          , gs = function(e, a, l, s) {
+          , bs = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
                     try {
@@ -16755,7 +16825,7 @@
             }
             )
         }
-          , ys = function(n, r) {
+          , Is = function(n, r) {
             var o, i, a, l = {
                 label: 0,
                 sent: function() {
@@ -16848,7 +16918,7 @@
                 }
             }
         }
-          , bs = function() {
+          , Ss = function() {
             var e = (0,
             K.useState)({})
               , t = e[0]
@@ -16861,24 +16931,24 @@
                 "Roblox.Presence.Update" === (t = e).type && "detail"in t && e.detail && a.current ? (n = (0,
                 ti.cloneDeep)(a.current),
                 e.detail.forEach(function(e) {
-                    n[e.userId] && (n[e.userId] = hs(hs({}, n[e.userId]), {
+                    n[e.userId] && (n[e.userId] = ys(ys({}, n[e.userId]), {
                         presence: e
                     }))
                 }),
                 a.current = n,
-                r = cs(n),
+                r = ds(n),
                 i(function(e) {
                     return (0,
                     ti.isEqual)(r, e) ? e : r
-                })) : Va(Oa.InvalidPresenceUpdateEvent, "Invalid presence update event, event is " + JSON.stringify(e) + " and friends details are " + JSON.stringify(a.current))
+                })) : qa(Oa.InvalidPresenceUpdateEvent, "Invalid presence update event, event is " + JSON.stringify(e) + " and friends details are " + JSON.stringify(a.current))
             }, [a]);
             return (0,
             K.useEffect)(function() {
                 var e = _e.deviceMeta.getDeviceMeta();
                 if ((null == e ? void 0 : e.deviceType) === _e.deviceMeta.DeviceTypes.computer && null !== x.CurrentUser && void 0 !== x.CurrentUser && x.CurrentUser.isAuthenticated)
-                    return gs(void 0, void 0, Promise, function() {
+                    return bs(void 0, void 0, Promise, function() {
                         var t, n, r, o;
-                        return ys(this, function(e) {
+                        return Is(this, function(e) {
                             switch (e.label) {
                             case 0:
                                 return e.trys.push([0, 3, , 4]),
@@ -16896,20 +16966,20 @@
                                     var n = r.find(function(e) {
                                         return e.userId === t.id
                                     });
-                                    return n && n.names && (e[t.id] = hs(hs({}, t), {
+                                    return n && n.names && (e[t.id] = ys(ys({}, t), {
                                         displayName: n.names.combinedName,
                                         name: n.names.username
                                     })),
                                     e
                                 }, {}),
                                 a.current = o,
-                                o = cs(o),
+                                o = ds(o),
                                 i(o),
                                 document.addEventListener("Roblox.Presence.Update", l),
                                 [3, 4];
                             case 3:
                                 return o = e.sent(),
-                                Va(Oa.FriendsPresenceFetchFailure, "Failed to get friends details info, error is " + JSON.stringify(o)),
+                                qa(Oa.FriendsPresenceFetchFailure, "Failed to get friends details info, error is " + JSON.stringify(o)),
                                 [3, 4];
                             case 4:
                                 return [2]
@@ -16927,8 +16997,8 @@
                 }
             }, [t])
         }
-          , Is = function() {
-            var e = bs();
+          , Cs = function() {
+            var e = Ss();
             return (0,
             K.useMemo)(function() {
                 return {
@@ -16936,11 +17006,11 @@
                 }
             }, [e])
         }
-          , Ss = function(e) {
+          , ws = function(e) {
             var t = (0,
             p.useTokens)()
-              , n = vs(e)
-              , r = Is()
+              , n = gs(e)
+              , r = Cs()
               , o = (0,
             K.useMemo)(function() {
                 return {
@@ -16956,8 +17026,8 @@
                 }
             }, [o, n, r])
         }
-          , Cs = function() {
-            return (Cs = Object.assign || function(e) {
+          , Es = function() {
+            return (Es = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
@@ -16965,7 +17035,7 @@
             }
             ).apply(this, arguments)
         };
-        function ws() {
+        function Ps() {
             return X().createElement("div", {
                 className: "grid-item-container game-card-container game-card-loading"
             }, X().createElement("div", {
@@ -16976,7 +17046,7 @@
                 className: "game-card-name game-name-title game-name-title-half shimmer"
             }))
         }
-        function Es(o) {
+        function Ts(o) {
             var i = fn();
             (0,
             K.useEffect)(function() {
@@ -17003,7 +17073,7 @@
                 }
             }, [o, i])
         }
-        (qs = function(e) {
+        ($s = function(e) {
             var t = e.translate
               , n = e.sort
               , r = e.positionId
@@ -17057,6 +17127,12 @@
                     sortId: n.topicId,
                     sortPosition: r
                 });
+            case w.SongCarousel:
+                return X().createElement(ps, {
+                    sort: n,
+                    positionId: r,
+                    currentPage: o
+                });
             case w.Pills:
                 return X().createElement(Ra, {
                     sort: n,
@@ -17065,7 +17141,7 @@
                     fetchGamesPageData: h
                 });
             case w.Sdui:
-                return X().createElement(ds, {
+                return X().createElement(fs, {
                     sort: n,
                     sduiRoot: v,
                     currentPage: o
@@ -17085,8 +17161,8 @@
             isNewScrollArrowsEnabled: void 0,
             isNewSortHeaderEnabled: void 0
         };
-        var Ps = qs
-          , Ts = function(e, o, r) {
+        var xs = $s
+          , _s = function(e, o, r) {
             var t = (0,
             K.useState)(new Map)
               , i = t[0]
@@ -17194,7 +17270,7 @@
                 startingRowNumbersMap: t
             }
         }
-          , xs = function() {
+          , Ns = function() {
             try {
                 return {
                     cpuCores: null === navigator || void 0 === navigator ? void 0 : navigator.hardwareConcurrency,
@@ -17217,13 +17293,13 @@
                 return {}
             }
         }
-          , xl = {
+          , _l = {
             common: [],
             feature: "Feature.ContactUpsell"
         }
-          , _s = (x.EnvironmentUrls.apiGatewayUrl,
+          , ks = (x.EnvironmentUrls.apiGatewayUrl,
         x.EnvironmentUrls.voiceApi);
-        function Ns(e, t, n, r, o, i, a) {
+        function As(e, t, n, r, o, i, a) {
             try {
                 var l = e[i](a)
                   , s = l.value
@@ -17232,7 +17308,7 @@
             }
             l.done ? t(s) : Promise.resolve(s).then(r, o)
         }
-        var ks = function() {
+        var Os = function() {
             var l, e = (l = regeneratorRuntime.mark(function e(t, n) {
                 var r, o;
                 return regeneratorRuntime.wrap(function(e) {
@@ -17242,7 +17318,7 @@
                             return r = {
                                 retryable: !0,
                                 withCredentials: !0,
-                                url: "".concat(_s, "/v1/settings/user-opt-in")
+                                url: "".concat(ks, "/v1/settings/user-opt-in")
                             },
                             o = {
                                 isUserOptIn: t,
@@ -17266,10 +17342,10 @@
                 return new Promise(function(t, n) {
                     var r = l.apply(e, a);
                     function o(e) {
-                        Ns(r, t, n, o, i, "next", e)
+                        As(r, t, n, o, i, "next", e)
                     }
                     function i(e) {
-                        Ns(r, t, n, o, i, "throw", e)
+                        As(r, t, n, o, i, "throw", e)
                     }
                     o(void 0)
                 }
@@ -17280,7 +17356,7 @@
                 return e.apply(this, arguments)
             }
         }();
-        function As(e, t, n, r, o, i, a) {
+        function Rs(e, t, n, r, o, i, a) {
             try {
                 var l = e[i](a)
                   , s = l.value
@@ -17289,7 +17365,7 @@
             }
             l.done ? t(s) : Promise.resolve(s).then(r, o)
         }
-        function Os(t, e) {
+        function Ds(t, e) {
             var n, r = Object.keys(t);
             return Object.getOwnPropertySymbols && (n = Object.getOwnPropertySymbols(t),
             e && (n = n.filter(function(e) {
@@ -17298,10 +17374,10 @@
             r.push.apply(r, n)),
             r
         }
-        function Rs(r) {
+        function Ls(r) {
             for (var e = 1; e < arguments.length; e++) {
                 var o = null != arguments[e] ? arguments[e] : {};
-                e % 2 ? Os(Object(o), !0).forEach(function(e) {
+                e % 2 ? Ds(Object(o), !0).forEach(function(e) {
                     var t, n;
                     t = r,
                     e = o[n = e],
@@ -17311,13 +17387,13 @@
                         configurable: !0,
                         writable: !0
                     }) : t[n] = e
-                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : Os(Object(o)).forEach(function(e) {
+                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : Ds(Object(o)).forEach(function(e) {
                     Object.defineProperty(r, e, Object.getOwnPropertyDescriptor(o, e))
                 })
             }
             return r
         }
-        function Ds(e, n) {
+        function Ms(e, n) {
             switch (e) {
             case "ContactMethodEmail":
                 return {
@@ -17340,7 +17416,7 @@
                     primaryButton: {
                         text: "Action.AddPhone",
                         onClick: function(e) {
-                            return null === x.UpsellService || void 0 === x.UpsellService ? void 0 : x.UpsellService.renderPhoneUpsell(Rs({
+                            return null === x.UpsellService || void 0 === x.UpsellService ? void 0 : x.UpsellService.renderPhoneUpsell(Ls({
                                 addPhoneAlwaysShowLegalText: !0,
                                 addPhoneRequireLegalTextCheckbox: n,
                                 addPhoneHeadingKey: "Action.AddPhoneVoice",
@@ -17355,7 +17431,7 @@
                                             case 0:
                                                 return e.prev = 0,
                                                 e.next = 3,
-                                                ks(!0, !1);
+                                                Os(!0, !1);
                                             case 3:
                                                 if (e.t1 = t = e.sent,
                                                 e.t0 = null === e.t1,
@@ -17393,10 +17469,10 @@
                                     return new Promise(function(t, n) {
                                         var r = l.apply(e, a);
                                         function o(e) {
-                                            As(r, t, n, o, i, "next", e)
+                                            Rs(r, t, n, o, i, "next", e)
                                         }
                                         function i(e) {
-                                            As(r, t, n, o, i, "throw", e)
+                                            Rs(r, t, n, o, i, "throw", e)
                                         }
                                         o(void 0)
                                     }
@@ -17426,7 +17502,7 @@
                         onClick: null === x.UpsellService || void 0 === x.UpsellService ? void 0 : x.UpsellService.renderEmailUpsell,
                         buttonClickBtnLog: "email"
                     },
-                    buttonStackOrientation: js
+                    buttonStackOrientation: zs
                 };
             case "ContactMethodPhoneNumberEmailVerticalLayout":
                 return {
@@ -17440,7 +17516,7 @@
                         onClick: null === x.UpsellService || void 0 === x.UpsellService ? void 0 : x.UpsellService.renderEmailUpsell,
                         buttonClickBtnLog: "email"
                     },
-                    buttonStackOrientation: Gs
+                    buttonStackOrientation: Hs
                 };
             case "FacebookSunset":
                 return {
@@ -17454,7 +17530,7 @@
                 return null
             }
         }
-        var Ls = {
+        var Fs = {
             ContactMethodEmail: "ContactMethodEmail",
             ContactMethodPhoneNumber: "ContactMethodPhoneNumber",
             ContactMethodPhoneNumberVoiceOptIn: "ContactMethodPhoneNumberVoiceOptIn",
@@ -17464,7 +17540,7 @@
             FacebookSunset: "FacebookSunset",
             ContactMethodMandatoryEmailPhone: "ContactMethodMandatoryEmailPhone"
         }
-          , Ms = {
+          , Us = {
             ContactMethodEmail: "Label.DontGetLockedOut",
             ContactMethodPhoneNumber: "Label.DontGetLockedOut",
             ContactMethodPhoneNumberVoiceOptIn: "Header.UnlockVoiceChat",
@@ -17473,7 +17549,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "Label.DontGetLockedOut",
             FacebookSunset: ""
         }
-          , Fs = {
+          , Bs = {
             ContactMethodEmail: "Description.HomePageUpsellCardAddEmailText",
             ContactMethodPhoneNumber: "Description.HomePageUpsellCardAddPhoneText",
             ContactMethodPhoneNumberVoiceOptIn: "Description.UnlockVoiceChat.3",
@@ -17482,7 +17558,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "Label.RecoverYourAccount",
             FacebookSunset: "Description.FacebookSetPasswordUpsellText"
         }
-          , Us = {
+          , Gs = {
             ContactMethodEmail: "homePageUpsellCard",
             ContactMethodPhoneNumber: "homePageUpsellCard",
             ContactMethodPhoneNumberVoiceOptIn: "homePageUpsellCard",
@@ -17491,7 +17567,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "homePageUpsellCard",
             FacebookSunset: "facebookSunsetCard"
         }
-          , Bs = {
+          , js = {
             ContactMethodEmail: "email",
             ContactMethodPhoneNumber: "phone",
             ContactMethodPhoneNumberVoiceOptIn: "phone",
@@ -17500,9 +17576,9 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "emailOrPhone",
             FacebookSunset: "facebook"
         }
-          , Gs = "vertical"
-          , js = "horizontal"
-          , Hs = {
+          , Hs = "vertical"
+          , zs = "horizontal"
+          , Ws = {
             ContactMethodEmail: "upsell-card-lock-icon-image",
             ContactMethodPhoneNumber: "upsell-card-lock-icon-image",
             ContactMethodPhoneNumberVoiceOptIn: "icon-voice-mic-unmuted",
@@ -17511,7 +17587,7 @@
             ContactMethodPhoneNumberEmailVerticalLayout: "upsell-card-lock-icon-image",
             FacebookSunset: ""
         };
-        function zs(t, e) {
+        function Vs(t, e) {
             var n, r = Object.keys(t);
             return Object.getOwnPropertySymbols && (n = Object.getOwnPropertySymbols(t),
             e && (n = n.filter(function(e) {
@@ -17520,10 +17596,10 @@
             r.push.apply(r, n)),
             r
         }
-        function Ws(r) {
+        function qs(r) {
             for (var e = 1; e < arguments.length; e++) {
                 var o = null != arguments[e] ? arguments[e] : {};
-                e % 2 ? zs(Object(o), !0).forEach(function(e) {
+                e % 2 ? Vs(Object(o), !0).forEach(function(e) {
                     var t, n;
                     t = r,
                     e = o[n = e],
@@ -17533,27 +17609,27 @@
                         configurable: !0,
                         writable: !0
                     }) : t[n] = e
-                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : zs(Object(o)).forEach(function(e) {
+                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(o)) : Vs(Object(o)).forEach(function(e) {
                     Object.defineProperty(r, e, Object.getOwnPropertyDescriptor(o, e))
                 })
             }
             return r
         }
-        function Vs(e, t, n, r, o) {
+        function Js(e, t, n, r, o) {
             o = 4 < arguments.length && void 0 !== o ? o : void 0,
-            T.eventStreamService.sendEventWithTarget(e.type, Us[n], Ws(Ws({}, e.params), {}, {
+            T.eventStreamService.sendEventWithTarget(e.type, Gs[n], qs(qs({}, e.params), {}, {
                 origin: t,
                 section: r,
                 btn: o
             }))
         }
-        var qs = T.eventStreamService.eventTypes
-          , Js = "mandatory"
-          , $s = "homepage"
-          , Ks = {
+        var $s = T.eventStreamService.eventTypes
+          , Ks = "mandatory"
+          , Xs = "homepage"
+          , Ys = {
             cardShown: {
                 name: "cardShown",
-                type: qs.modalAction,
+                type: $s.modalAction,
                 params: {
                     aType: "shown"
                 }
@@ -17564,7 +17640,7 @@
                 params: {}
             }
         };
-        function Xs(e, t) {
+        function Zs(e, t) {
             return function(e) {
                 if (Array.isArray(e))
                     return e
@@ -17595,46 +17671,46 @@
                 if (!e)
                     return;
                 if ("string" == typeof e)
-                    return Ys(e, t);
+                    return Qs(e, t);
                 var n = Object.prototype.toString.call(e).slice(8, -1);
                 "Object" === n && e.constructor && (n = e.constructor.name);
                 if ("Map" === n || "Set" === n)
                     return Array.from(e);
                 if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-                    return Ys(e, t)
+                    return Qs(e, t)
             }(e, t) || function() {
                 throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
             }()
         }
-        function Ys(e, t) {
+        function Qs(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var n = 0, r = new Array(t); n < t; n++)
                 r[n] = e[n];
             return r
         }
-        function Zs(e) {
+        function eu(e) {
             var t = e.translate
               , n = e.cardType
               , r = e.origin
               , o = e.titleTextOverride
               , i = e.bodyTextOverride
               , a = e.requireExplicitVoiceConsent
-              , l = Xs((0,
+              , l = Zs((0,
             K.useState)(!1), 2)
               , s = l[0]
               , u = l[1]
-              , c = Bs[n];
+              , c = js[n];
             (0,
             K.useEffect)(function() {
-                Vs(Ks.cardShown, r, n, c)
+                Js(Ys.cardShown, r, n, c)
             }, []);
-            var e = Ds(n, a)
+            var e = Ms(n, a)
               , d = null == e ? void 0 : e.primaryButton
               , l = d ? X().createElement(ye.Button, {
                 className: "btn-primary-md",
                 id: "upsell-card-primary-button",
                 onClick: function() {
-                    Vs(Ks.buttonClick, r, n, c, d.buttonClickBtnLog),
+                    Js(Ys.buttonClick, r, n, c, d.buttonClickBtnLog),
                     d.onClick(function(e) {
                         u(e)
                     })
@@ -17645,27 +17721,27 @@
                 className: "btn-secondary-md",
                 id: "upsell-card-secondary-button",
                 onClick: function() {
-                    Vs(Ks.buttonClick, r, n, c, f.buttonClickBtnLog),
+                    Js(Ys.buttonClick, r, n, c, f.buttonClickBtnLog),
                     f.onClick(function(e) {
                         u(e)
                     })
                 }
             }, t(f.text)) : null
-              , e = null !== (e = null == e ? void 0 : e.buttonStackOrientation) && void 0 !== e ? e : js
+              , e = null !== (e = null == e ? void 0 : e.buttonStackOrientation) && void 0 !== e ? e : zs
               , a = X().createElement("div", {
-                className: e === js ? "upsell-card-horizontal-button-list" : "upsell-card-vertical-button-list"
+                className: e === zs ? "upsell-card-horizontal-button-list" : "upsell-card-vertical-button-list"
             }, l, a)
-              , o = Qs(o) ? t(Ms[n]) : o
-              , i = Qs(i) ? t(Fs[n]) : i
+              , o = tu(o) ? t(Us[n]) : o
+              , i = tu(i) ? t(Bs[n]) : i
               , o = X().createElement("div", {
                 className: "upsell-card-text-content-group"
-            }, Ms[n] ? X().createElement("div", {
+            }, Us[n] ? X().createElement("div", {
                 className: "font-header-1"
             }, " ", o) : null, X().createElement("div", {
                 className: "upsell-card-content"
             }, " ", i))
-              , i = Hs[n] ? X().createElement("div", {
-                className: "home-page-upsell-card-image ".concat(Hs[n])
+              , i = Ws[n] ? X().createElement("div", {
+                className: "home-page-upsell-card-image ".concat(Ws[n])
             }) : null;
             return s ? null : X().createElement("div", {
                 className: "home-page-upsell-card-banner-container"
@@ -17681,16 +17757,16 @@
                 id: "facebookSunsetModal-container"
             })))
         }
-        function Qs(e) {
+        function tu(e) {
             return !e || 0 === e.length
         }
-        Zs.defaultProps = {
+        eu.defaultProps = {
             origin: "homepage",
             titleTextOverride: "",
             bodyTextOverride: "",
             requireExplicitVoiceConsent: !0
         },
-        Zs.propTypes = {
+        eu.propTypes = {
             translate: te().func.isRequired,
             cardType: te().string.isRequired,
             titleTextOverride: te().string,
@@ -17698,11 +17774,11 @@
             origin: te().string,
             requireExplicitVoiceConsent: te().bool
         };
-        var eu = Zs
-          , tu = function(e) {
-            return !![Ls.ContactMethodEmail, Ls.ContactMethodPhoneNumber, Ls.ContactMethodPhoneNumberEmailHorizontalLayout, Ls.ContactMethodPhoneNumberEmailHorizontalLayoutAltContent1, Ls.ContactMethodPhoneNumberEmailVerticalLayout, Ls.ContactMethodPhoneNumberVoiceOptIn, Ls.FacebookSunset].includes(e)
+        var nu = eu
+          , ru = function(e) {
+            return !![Fs.ContactMethodEmail, Fs.ContactMethodPhoneNumber, Fs.ContactMethodPhoneNumberEmailHorizontalLayout, Fs.ContactMethodPhoneNumberEmailHorizontalLayoutAltContent1, Fs.ContactMethodPhoneNumberEmailVerticalLayout, Fs.ContactMethodPhoneNumberVoiceOptIn, Fs.FacebookSunset].includes(e)
         };
-        function nu(e, t, n, r, o, i, a) {
+        function ou(e, t, n, r, o, i, a) {
             try {
                 var l = e[i](a)
                   , s = l.value
@@ -17711,24 +17787,24 @@
             }
             l.done ? t(s) : Promise.resolve(s).then(r, o)
         }
-        function ru(l) {
+        function iu(l) {
             return function() {
                 var e = this
                   , a = arguments;
                 return new Promise(function(t, n) {
                     var r = l.apply(e, a);
                     function o(e) {
-                        nu(r, t, n, o, i, "next", e)
+                        ou(r, t, n, o, i, "next", e)
                     }
                     function i(e) {
-                        nu(r, t, n, o, i, "throw", e)
+                        ou(r, t, n, o, i, "throw", e)
                     }
                     o(void 0)
                 }
                 )
             }
         }
-        function ou(e, t) {
+        function au(e, t) {
             return function(e) {
                 if (Array.isArray(e))
                     return e
@@ -17759,50 +17835,50 @@
                 if (!e)
                     return;
                 if ("string" == typeof e)
-                    return iu(e, t);
+                    return lu(e, t);
                 var n = Object.prototype.toString.call(e).slice(8, -1);
                 "Object" === n && e.constructor && (n = e.constructor.name);
                 if ("Map" === n || "Set" === n)
                     return Array.from(e);
                 if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-                    return iu(e, t)
+                    return lu(e, t)
             }(e, t) || function() {
                 throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
             }()
         }
-        function iu(e, t) {
+        function lu(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var n = 0, r = new Array(t); n < t; n++)
                 r[n] = e[n];
             return r
         }
-        function au(e) {
+        function su(e) {
             var t = e.translate
-              , n = Ls.ContactMethodMandatoryEmailPhone
-              , r = ou((0,
+              , n = Fs.ContactMethodMandatoryEmailPhone
+              , r = au((0,
             K.useState)(null), 2)
               , o = r[0]
               , i = r[1]
-              , a = ou((0,
+              , a = au((0,
             K.useState)(""), 2)
               , l = a[0]
               , s = a[1]
-              , e = ou((0,
+              , e = au((0,
             K.useState)(""), 2)
               , r = e[0]
               , u = e[1]
-              , a = ou((0,
+              , a = au((0,
             K.useState)(!1), 2)
               , e = a[0]
               , c = a[1]
-              , a = ou((0,
+              , a = au((0,
             K.useState)(!1), 2);
             a[0],
             a[1];
             return (0,
             K.useEffect)(function() {
                 var e = function() {
-                    var e = ru(regeneratorRuntime.mark(function e() {
+                    var e = iu(regeneratorRuntime.mark(function e() {
                         var t;
                         return regeneratorRuntime.wrap(function(e) {
                             for (; ; )
@@ -17834,7 +17910,7 @@
                     }
                 }()
                   , t = function() {
-                    var e = ru(regeneratorRuntime.mark(function e() {
+                    var e = iu(regeneratorRuntime.mark(function e() {
                         var t;
                         return regeneratorRuntime.wrap(function(e) {
                             for (; ; )
@@ -17868,11 +17944,11 @@
             (0,
             K.useEffect)(function() {
                 o === n && null !== x.UpsellService && void 0 !== x.UpsellService && x.UpsellService.renderContactMethodPromptModal({
-                    origin: $s,
-                    section: Js
+                    origin: Xs,
+                    section: Ks
                 })
             }, [o]),
-            tu(o) ? X().createElement(eu, {
+            ru(o) ? X().createElement(nu, {
                 translate: t,
                 cardType: o,
                 titleTextOverride: l,
@@ -17880,19 +17956,19 @@
                 requireExplicitVoiceConsent: e
             }) : null
         }
-        au.propTypes = {
+        su.propTypes = {
             translate: te().func.isRequired
         };
-        var lu = au;
-        function su(e) {
+        var uu = su;
+        function cu(e) {
             var t = e.translate
               , e = e.context;
-            return X().createElement(lu, {
+            return X().createElement(uu, {
                 translate: t,
                 context: e
             })
         }
-        function uu(e) {
+        function du(e) {
             var t, o = e.sort, n = e.itemsPerRow, r = e.toggleInterest, i = e.interestedUniverses, a = e.homePageSessionInfo, l = e.translate, s = (0,
             K.useRef)(null), u = (0,
             K.useRef)(null), c = No().contentMetadata, d = (0,
@@ -17928,7 +18004,7 @@
                     var t = e.filter(function(e) {
                         return e < (null == d ? void 0 : d.length)
                     });
-                    return vu(vu(vu(((e = {})[R.RootPlaceIds] = t.map(function(e) {
+                    return gu(gu(gu(((e = {})[R.RootPlaceIds] = t.map(function(e) {
                         return d[e].placeId
                     }),
                     e[R.UniverseIds] = t.map(function(e) {
@@ -17967,7 +18043,7 @@
                 toggleInterest: p
             })
         }
-        function cu(e) {
+        function fu(e) {
             var t = e.sort
               , n = e.itemsPerRow
               , r = e.fetchRecommendations
@@ -18042,7 +18118,7 @@
                 onClick: d,
                 isDisabled: !(null != i && i.size),
                 className: "continue-button"
-            }, e))), X().createElement(uu, {
+            }, e))), X().createElement(du, {
                 sort: t,
                 itemsPerRow: n,
                 translate: o,
@@ -18057,7 +18133,7 @@
                 homePageSessionInfo: l
             }))
         }
-        function du(e) {
+        function pu(e) {
             var t = e.children
               , n = (0,
             K.useState)(null)
@@ -18065,41 +18141,41 @@
               , r = n[1];
             return (0,
             K.useEffect)(function() {
-                Eu().then(function(e) {
+                Tu().then(function(e) {
                     null != (null == e ? void 0 : e.data) && r(e.data)
                 }, function(e) {
                     console.error(e)
                 })
             }, []),
-            X().createElement(Pu.Provider, {
+            X().createElement(xu.Provider, {
                 value: e
             }, t)
         }
-        su.defaultProps = {
-            context: Ls.ContactMethod
+        cu.defaultProps = {
+            context: Fs.ContactMethod
         },
-        su.propTypes = {
+        cu.propTypes = {
             translate: te().func.isRequired,
             context: te().string
         };
-        var fu, pu, mu = (0,
-        p.withTranslations)(su, xl), vu = function() {
-            return (vu = Object.assign || function(e) {
+        var mu, vu, hu = (0,
+        p.withTranslations)(cu, _l), gu = function() {
+            return (gu = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, hu = function() {
-            return (hu = Object.assign || function(e) {
+        }, yu = function() {
+            return (yu = Object.assign || function(e) {
                 for (var t, n = 1, r = arguments.length; n < r; n++)
                     for (var o in t = arguments[n])
                         Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
                 return e
             }
             ).apply(this, arguments)
-        }, gu = Je.maxTilesPerCarouselPage, yu = n, bu = t, Iu = (fu = (0,
+        }, bu = Je.maxTilesPerCarouselPage, Iu = n, Su = t, Cu = (mu = (0,
         p.withTranslations)(function(e) {
             var n = e.translate
               , t = fn()
@@ -18113,7 +18189,7 @@
               , s = a[1]
               , u = (0,
             K.useMemo)(function() {
-                return xs()
+                return Ns()
             }, [])
               , c = (0,
             K.useMemo)(function() {
@@ -18148,10 +18224,10 @@
               , p = f[1];
             (0,
             K.useEffect)(function() {
-                fe(yu.homePageWeb, bu.homePageWeb).then(function(e) {
+                fe(Iu.homePageWeb, Su.homePageWeb).then(function(e) {
                     p(e)
                 }).catch(function() {
-                    p(bu.homePageWeb)
+                    p(Su.homePageWeb)
                 })
             }, []);
             var m = null == e ? void 0 : e.IsExpandHomeContentEnabled
@@ -18161,10 +18237,10 @@
               , v = r[1];
             (0,
             K.useEffect)(function() {
-                fe(yu.gridUi, bu.gridUi).then(function(e) {
+                fe(Iu.gridUi, Su.gridUi).then(function(e) {
                     v(e)
                 }).catch(function() {
-                    v(bu.gridUi)
+                    v(Su.gridUi)
                 })
             }, []);
             var h = null == a ? void 0 : a.IsNewSortHeaderEnabled
@@ -18174,20 +18250,20 @@
             K.useCallback)(function(n) {
                 i(function(e) {
                     var t;
-                    return e && hu(hu({}, e), {
-                        contentMetadata: ((t = {})[C.Game] = hu(hu({}, e.contentMetadata[C.Game]), n[C.Game]),
-                        t[C.CatalogAsset] = hu(hu({}, e.contentMetadata[C.CatalogAsset]), n[C.CatalogAsset]),
-                        t[C.CatalogBundle] = hu(hu({}, e.contentMetadata[C.CatalogBundle]), n[C.CatalogBundle]),
+                    return e && yu(yu({}, e), {
+                        contentMetadata: ((t = {})[C.Game] = yu(yu({}, e.contentMetadata[C.Game]), n[C.Game]),
+                        t[C.CatalogAsset] = yu(yu({}, e.contentMetadata[C.CatalogAsset]), n[C.CatalogAsset]),
+                        t[C.CatalogBundle] = yu(yu({}, e.contentMetadata[C.CatalogBundle]), n[C.CatalogBundle]),
                         t)
                     })
                 })
             }, [])
-              , e = Ts(o, m, g)
+              , e = _s(o, m, g)
               , r = e.homeFeedRef
               , b = e.gridRecommendationsMap
               , I = e.itemsPerRowMap
               , S = e.startingRowNumbersMap;
-            Es(Y.HomePage);
+            Ts(Y.HomePage);
             a = (0,
             K.useMemo)(function() {
                 return !(null == o || !o.sorts) && o.sorts.every(function(e) {
@@ -18219,9 +18295,9 @@
                 }), X().createElement("div", {
                     className: "game-home-page-loading-carousel"
                 }, Array.from({
-                    length: gu
+                    length: bu
                 }, function(e, t) {
-                    return X().createElement(ws, {
+                    return X().createElement(Ps, {
                         key: t
                     })
                 })));
@@ -18238,7 +18314,7 @@
                             contentMetadata: o.contentMetadata,
                             appendContentMetadata: f
                         }
-                    }, X().createElement(cu, {
+                    }, X().createElement(fu, {
                         sort: l,
                         itemsPerRow: I.get(e),
                         fetchRecommendations: d,
@@ -18255,7 +18331,7 @@
                     contentMetadata: o.contentMetadata,
                     appendContentMetadata: f
                 }
-            }, X().createElement(mu, {
+            }, X().createElement(hu, {
                 translate: n,
                 context: void 0
             }), a && X().createElement(wa, {
@@ -18265,7 +18341,7 @@
             }), o.sorts.map(function(e, t) {
                 return X().createElement(X().Fragment, {
                     key: t
-                }, X().createElement(Ps, {
+                }, X().createElement(xs, {
                     translate: n,
                     sort: e,
                     positionId: t,
@@ -18282,9 +18358,9 @@
             }))))
         }, St),
         function(e) {
-            return X().createElement(dn, null, X().createElement(fu, vn({}, e)))
+            return X().createElement(dn, null, X().createElement(mu, vn({}, e)))
         }
-        ), Su = function(e, a, l, s) {
+        ), wu = function(e, a, l, s) {
             return new (l = l || Promise)(function(n, t) {
                 function r(e) {
                     try {
@@ -18310,7 +18386,7 @@
                 i((s = s.apply(e, a || [])).next())
             }
             )
-        }, Cu = function(n, r) {
+        }, Eu = function(n, r) {
             var o, i, a, l = {
                 label: 0,
                 sent: function() {
@@ -18402,22 +18478,22 @@
                     }([t, e])
                 }
             }
-        }, wu = x.EnvironmentUrls.userModerationApi + "/v1/reminder", Eu = function() {
-            return Su(void 0, void 0, Promise, function() {
+        }, Pu = x.EnvironmentUrls.userModerationApi + "/v1/reminder", Tu = function() {
+            return wu(void 0, void 0, Promise, function() {
                 var t;
-                return Cu(this, function(e) {
+                return Eu(this, function(e) {
                     return t = {
-                        url: wu,
+                        url: Pu,
                         withCredentials: !0
                     },
                     [2, A.httpService.get(t)]
                 })
             })
-        }, Pu = (0,
-        K.createContext)(null), Tu = {
+        }, xu = (0,
+        K.createContext)(null), _u = {
             common: [],
             feature: "Feature.Home"
-        }, xu = function(e, t) {
+        }, Nu = function(e, t) {
             var n = e.contentVariant
               , e = e.policyViolation
               , r = "";
@@ -18437,12 +18513,12 @@
                 confirmationButtonLabel: t("Experiment.Reminders.Button")
             }
         };
-        function _u() {
+        function ku() {
             var e = (s = (0,
             K.useState)(!1))[0]
               , t = s[1]
               , n = (0,
-            K.useContext)(Pu)
+            K.useContext)(xu)
               , r = (0,
             K.useRef)(0)
               , o = x.CurrentUser.userId;
@@ -18456,7 +18532,7 @@
                 return null;
             var a = n.interventionId
               , l = !e && (null == n ? void 0 : n.shouldSurfaceReminder)
-              , s = (u = xu(n, i)).dialogTitle
+              , s = (u = Nu(n, i)).dialogTitle
               , e = u.dialogBodyAbuseType
               , i = u.dialogBodyGuidelineReminder
               , u = u.confirmationButtonLabel;
@@ -18465,7 +18541,7 @@
                 show: l,
                 onHide: function() {
                     var e = Date.now();
-                    Nu(a, pu.DISMISSED, n.reminderNumber, o, e, (e - r.current) / 1e3, n.experimentVariant),
+                    Au(a, vu.DISMISSED, n.reminderNumber, o, e, (e - r.current) / 1e3, n.experimentVariant),
                     t(!0)
                 }
             }, X().createElement(ye.Modal.Header, {
@@ -18482,14 +18558,14 @@
                 className: "reminder-of-norms-confirm-button",
                 onClick: function() {
                     var e = Date.now();
-                    Nu(a, pu.CTA_CLICKED, n.reminderNumber, o, e, (e - r.current) / 1e3, n.experimentVariant),
+                    Au(a, vu.CTA_CLICKED, n.reminderNumber, o, e, (e - r.current) / 1e3, n.experimentVariant),
                     t(!0)
                 }
             }, u)))
         }
-        (St = pu = pu || {}).CTA_CLICKED = "REMINDER_INTERACTION_CTA_CLICKED",
+        (St = vu = vu || {}).CTA_CLICKED = "REMINDER_INTERACTION_CTA_CLICKED",
         St.DISMISSED = "REMINDER_INTERACTION_REMINDER_DISMISSED";
-        var Nu = function(e, t, n, r, o, i, a) {
+        var Au = function(e, t, n, r, o, i, a) {
             x.EventStream.SendEventWithTarget("HomePageRemindersEvent", "WebApp", {
                 user_id: r,
                 source_intervention_id: e,
@@ -18501,12 +18577,12 @@
                 experiment_variant: a
             }, x.EventStream.TargetTypes.WWW)
         };
-        function ku() {
+        function Ou() {
             return X().createElement(p.TranslationProvider, {
-                config: Tu
-            }, X().createElement(du, null, X().createElement(_u, null)))
+                config: _u
+            }, X().createElement(pu, null, X().createElement(ku, null)))
         }
-        var Au = (0,
+        var Ru = (0,
         p.withTranslations)(function(e) {
             e = e.translate;
             return X().createElement("div", {
@@ -18516,9 +18592,9 @@
                 className: "section"
             }, X().createElement("div", {
                 className: "col-xs-12 container-header"
-            }, X().createElement("h1", null, e(ot.LabelsHome)))), X().createElement("div", null, X().createElement(ku, null)), X().createElement("div", {
+            }, X().createElement("h1", null, e(ot.LabelsHome)))), X().createElement("div", null, X().createElement(Ou, null)), X().createElement("div", {
                 className: "place-list-container"
-            }, X().createElement(Iu, null)))
+            }, X().createElement(Cu, null)))
         }, {
             common: [],
             feature: "CommonUI.Features"
@@ -18526,13 +18602,13 @@
         (0,
         A.ready)(function() {
             c() ? (0,
-            e.render)(X().createElement(Iu, null), c()) : document.getElementById("places-list-web-app") && document.getElementById("content") ? (0,
-            e.render)(X().createElement(Au, null), document.getElementById("content")) : (0,
+            e.render)(X().createElement(Cu, null), c()) : document.getElementById("places-list-web-app") && document.getElementById("content") ? (0,
+            e.render)(X().createElement(Ru, null), document.getElementById("content")) : (0,
             P.fireEvent)("HomePageMissingContainerDiv")
         })
     }()
 }();
-//# sourceMappingURL=https://sourcemaps.rbxcdn.com/6eb536087dfd79f93623ed220517752e-placesList.bundle.min.js.map
+//# sourceMappingURL=https://sourcemaps.rbxcdn.com/580ba5a46a4fe5dd9cb59a26ad04fa39-placesList.bundle.min.js.map
 
 /* Bundle detector */
 window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("PlacesList");
