@@ -701,6 +701,10 @@
     justify-content: center
 }
 
+.content .people-list-header .friends-count {
+    margin: 0 0 0 6px
+}
+
 .content .friends-carousel-container {
     width: 100%;
     display: flex;

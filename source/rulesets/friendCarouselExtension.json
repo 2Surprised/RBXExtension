@@ -7,7 +7,7 @@
             "redirect": { "extensionPath": "/friendCarousel/custom/length.js" }
         },
         "condition": {
-            "urlFilter": "https://js.rbxcdn.com/fc8e623864dfda8d8eb184d73593306057df45b0f35b11968e931edf0973ba5b.js",
+            "urlFilter": "https://js.rbxcdn.com/7300e8cd15cef4dd76504244b83b65b11cbd23f2ac0b53feb6208b9bde9d1fe7.js",
             "resourceTypes": ["script"]
         }
     },
@@ -31,7 +31,7 @@
             "redirect": { "extensionPath": "/friendCarousel/custom/scrollAndPopover2.css" }
         },
         "condition": {
-            "urlFilter": "https://css.rbxcdn.com/e9fae4bc825cc21c14a76fccfc3ba85347471c91e87b261c487aa5238f5c5c01.css",
+            "urlFilter": "https://css.rbxcdn.com/384c6fe078c3c7a07f7912bd71d5fe5f7bcbe8ef350eaab471a318656598ebb8.css",
             "resourceTypes": ["stylesheet"]
         }
     }
