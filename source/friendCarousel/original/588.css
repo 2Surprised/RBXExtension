@@ -1637,6 +1637,10 @@
     padding-left: 4px
 }
 
+.hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored {
+    padding: 0
+}
+
 .light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container {
     color: #6a6f81
 }
