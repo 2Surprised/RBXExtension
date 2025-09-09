@@ -1440,6 +1440,10 @@
     padding-left: 4px
 }
 
+.hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored,.hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored,.hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored,.hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-label.interleaved-sponsored {
+    padding: 0
+}
+
 .light-theme .hover-game-tile.event-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.experience-events-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.grid-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container,.light-theme .hover-game-tile.interest-tile .featured-game-container .info-metadata-container .wide-game-tile-metadata .base-metadata .game-card-info .info-tooltip-container {
     color: #6a6f81
 }
@@ -2413,7 +2417,7 @@ body:has(.friends-carousel-tile:hover) .friends-carousel-list-container {
 /* For an unknown reason, the avatar images move down very slightly when the friend tiles are stretched. */
 /* This is to undo that horrible, random offset that happens for who knows what reason. */
 body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
-    /* transform: translate(0px, -0.4px) */
+    transform: translate(0px, -0.4px)
 }
 
 .content .react-friends-carousel-container {
