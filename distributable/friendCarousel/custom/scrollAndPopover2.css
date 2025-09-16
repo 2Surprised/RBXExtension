@@ -1,17 +1,28 @@
-.game-error {
-    align-items: center;
+.discovery-error-container {
+    padding: 40px 20px;
+    gap: 24px;
+    height: 50vh;
+    min-height: 300px
+}
+
+.discovery-error-container,.discovery-error-container .error-container-content {
     display: flex;
     flex-direction: column;
-    width: 312px
+    align-items: center;
+    justify-content: center;
+    text-align: center
 }
 
-.game-error .text-label {
-    margin-top: 12px
+.discovery-error-container .error-container-content .error-container-content-image {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0
 }
 
-.game-error .refresh-button {
-    margin-top: 24px;
-    width: 100%
+@media(max-width: 767px) {
+    .discovery-error-container .error-container-content-subtext {
+        font-size:12px
+    }
 }
 
 .game-card-container.grid-item-container {
@@ -1150,11 +1161,6 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
 
 .games-list-container .spinner {
     margin: 12px auto
-}
-
-.games-list-error {
-    display: flex;
-    justify-content: center
 }
 
 .games-list-header {
