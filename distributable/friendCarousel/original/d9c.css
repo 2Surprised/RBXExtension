@@ -1253,7 +1253,7 @@
     }
 }
 
-#games-carousel-page {
+#game-carousel-web-app,#games-carousel-page {
     overflow: hidden;
     padding-bottom: 70px
 }
@@ -3233,12 +3233,44 @@
     width: 360px
 }
 
+.inset-\[0\] {
+    inset: 0
+}
+
+.opacity-\[0\.5\] {
+    opacity: .5
+}
+
 .bg-\[var\(--color-action-standard-foreground\)\] {
     background-color: var(--color-action-standard-foreground)
 }
 
 .bg-\[var\(--dark-mode-action-standard-foreground\)\] {
     background-color: var(--dark-mode-action-standard-foreground)
+}
+
+.bg-\[var\(--inverse-surface-0\)\] {
+    background-color: var(--inverse-surface-0)
+}
+
+.bg-\[var\(--light-mode-surface-100\)\] {
+    background-color: var(--light-mode-surface-100)
+}
+
+.content-\[var\(--dark-mode-content-emphasis\)\] {
+    color: var(--dark-mode-content-emphasis)
+}
+
+.content-\[var\(--inverse-content-emphasis\)\] {
+    color: var(--inverse-content-emphasis)
+}
+
+.content-\[var\(--light-mode-content-emphasis\)\] {
+    color: var(--light-mode-content-emphasis)
+}
+
+.max-width-\[calc\(var\(--size-100\)\*50\)\] {
+    max-width: calc(var(--size-100)*50)
 }
 
 .size-\[var\(--icon-size-large\)\] {
@@ -3256,9 +3288,31 @@
     height: var(--icon-size-small)
 }
 
+.size-\[var\(--icon-size-xlarge\)\] {
+    width: var(--icon-size-xlarge);
+    height: var(--icon-size-xlarge)
+}
+
 .size-\[var\(--icon-size-xsmall\)\] {
     width: var(--icon-size-xsmall);
     height: var(--icon-size-xsmall)
+}
+
+.width-\[fit-content\] {
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+.padding-left-\[var\(--size-150\)\] {
+    padding-left: var(--size-150)
+}
+
+.padding-right-\[var\(--size-150\)\] {
+    padding-right: var(--size-150)
+}
+
+.padding-right-\[var\(--size-250\)\] {
+    padding-right: var(--size-250)
 }
 
 .\!visible {
@@ -3275,6 +3329,77 @@
 
 .icon-filled-minus {
     --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M23.5 14.5a1.5 1.5 0 010 3h-15a1.5 1.5 0 010-3h15z'/%3E%3C/svg%3E")
+}
+
+.icon-regular-x {
+    --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M7.293 8.707a1 1 0 011.414-1.414L16 14.586l7.293-7.293a1 1 0 111.414 1.414L17.414 16l7.293 7.293a1 1 0 01-1.414 1.414L16 17.414l-7.293 7.293a1 1 0 01-1.414-1.414L14.586 16 7.293 8.707z'/%3E%3C/svg%3E")
+}
+
+.icon-filled-x {
+    --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M24.56 9.56a1.5 1.5 0 00-2.12-2.12L16 13.878l-6.44-6.44a1.5 1.5 0 10-2.12 2.122L13.878 16l-6.44 6.44a1.5 1.5 0 002.122 2.12L16 18.122l6.44 6.44a1.5 1.5 0 002.12-2.122L18.122 16l6.44-6.44z'/%3E%3C/svg%3E")
+}
+
+.placeholder\:content-muted::-moz-placeholder {
+    color: var(--color-content-muted)
+}
+
+.placeholder\:content-muted::placeholder {
+    color: var(--color-content-muted)
+}
+
+.placeholder\:text-body-large::-moz-placeholder {
+    font: var(--typography-body-large-font);
+    letter-spacing: var(--typography-body-large-letter-spacing)
+}
+
+.placeholder\:text-body-large::placeholder {
+    font: var(--typography-body-large-font);
+    letter-spacing: var(--typography-body-large-letter-spacing)
+}
+
+.placeholder\:text-body-medium::-moz-placeholder {
+    font: var(--typography-body-medium-font);
+    letter-spacing: var(--typography-body-medium-letter-spacing)
+}
+
+.placeholder\:text-body-medium::placeholder {
+    font: var(--typography-body-medium-font);
+    letter-spacing: var(--typography-body-medium-letter-spacing)
+}
+
+.placeholder\:text-body-small::-moz-placeholder {
+    font: var(--typography-body-small-font);
+    letter-spacing: var(--typography-body-small-letter-spacing)
+}
+
+.placeholder\:text-body-small::placeholder {
+    font: var(--typography-body-small-font);
+    letter-spacing: var(--typography-body-small-letter-spacing)
+}
+
+.focus-visible\:outline-focus:focus-visible {
+    outline: var(--stroke-thicker) solid var(--color-selection-start);
+    outline-offset: var(--stroke-thicker)
+}
+
+.disabled\:outline-none:disabled,.focus-visible\:hover\:outline-none:hover:focus-visible {
+    outline: var(--stroke-none) solid var(--color-none)
+}
+
+.group\/interactable:hover .group-hover\/interactable\:bg-\[var\(--color-state-hover\)\] {
+    background-color: var(--color-state-hover)
+}
+
+.group\/interactable:active .group-active\/interactable\:bg-\[var\(--color-state-press\)\] {
+    background-color: var(--color-state-press)
+}
+
+.group\/interactable:disabled .group-disabled\/interactable\:bg-none {
+    background-color: var(--color-none)
+}
+
+.data-\[state\=checked\]\:bg-action-sub-emphasis[data-state=checked] {
+    background-color: var(--color-action-sub-emphasis-background)
 }
 
 @media (prefers-reduced-motion:no-preference) {
