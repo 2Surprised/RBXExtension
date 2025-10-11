@@ -3347,8 +3347,20 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
     --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M15.293 22.707a1 1 0 001.414 0l10-10a1 1 0 00-1.414-1.414L16 20.586l-9.293-9.293a1 1 0 00-1.414 1.414l10 10z'/%3E%3C/svg%3E")
 }
 
+.icon-filled-clock {
+    --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 6a1 1 0 011 1v6.586l2.707 2.707a1 1 0 01-1.414 1.414l-3-3A1 1 0 0115 16V9a1 1 0 011-1z'/%3E%3C/svg%3E")
+}
+
 .icon-filled-minus {
     --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M23.5 14.5a1.5 1.5 0 010 3h-15a1.5 1.5 0 010-3h15z'/%3E%3C/svg%3E")
+}
+
+.icon-regular-shield-check {
+    --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M21.707 11.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 011.414-1.414L14 17.586l6.293-6.293a1 1 0 011.414 0z'/%3E%3Cpath d='M15.229 29.67C4.434 24.924 4.017 19.179 4 7.445a2.002 2.002 0 011.367-1.9l10-3.334a2 2 0 011.264 0l10 3.333A2.002 2.002 0 0128 7.444c-.016 11.735-.434 17.48-11.227 22.226a1.932 1.932 0 01-1.544 0zm-7.81-9.26c1.188 2.852 3.488 5.17 8.582 7.414 5.093-2.244 7.393-4.562 8.58-7.415 1.274-3.06 1.41-7.001 1.419-12.967L16 4.108 6 7.442c.009 5.965.146 9.908 1.42 12.967z'/%3E%3C/svg%3E")
+}
+
+.icon-regular-speech-bubble-align-center {
+    --svg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M10 12a1 1 0 011-1h10a1 1 0 110 2H11a1 1 0 01-1-1zM13 15a1 1 0 100 2h5a1 1 0 100-2h-5z'/%3E%3Cpath d='M21.604 23.841a96.687 96.687 0 006.72-.604A1.929 1.929 0 0030 21.306V6a2 2 0 00-2-2H4a2 2 0 00-2 2v15.306c0 .977.706 1.808 1.676 1.931a96.69 96.69 0 006.72.605l4.845 4.843c.419.42 1.1.42 1.518 0l4.845-4.843zm-.875-1.954L16 26.617l-4.73-4.73-.762-.042A94.883 94.883 0 014 21.262V6h24v15.262a94.882 94.882 0 01-6.508.583l-.763.042z'/%3E%3C/svg%3E")
 }
 
 .icon-regular-x {
