@@ -3186,6 +3186,21 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
     left: 12px
 }
 
+.game-card-container .game-card-link .game-card-pills-container.game-card-pill-top-right {
+    top: 12px;
+    right: 12px
+}
+
+.game-card-container .game-card-link .game-card-pills-container.game-card-pill-bottom-left {
+    bottom: 12px;
+    left: 12px
+}
+
+.game-card-container .game-card-link .game-card-pills-container.game-card-pill-bottom-right {
+    bottom: 12px;
+    right: 12px
+}
+
 .game-card-container .game-card-link .game-card-pills-container .game-card-pill-with-animation {
     height: 24px;
     max-width: 100%;
@@ -3197,6 +3212,12 @@ body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
     z-index: 1;
     background: hsla(0,0%,100%,.9);
     color: #202227
+}
+
+.game-card-container .game-card-link .game-card-pills-container .game-card-pill-with-animation.game-card-badge-rounded-rectangle {
+    border-radius: 4px;
+    background: rgba(0,0,0,.9);
+    color: #fff
 }
 
 .game-card-container .game-card-link .game-card-pills-container .game-card-pill-with-animation .game-card-pill-animation-container {
