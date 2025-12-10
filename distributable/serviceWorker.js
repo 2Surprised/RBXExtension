@@ -4,7 +4,8 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
         enableFriendActivityTracker: true,
         enableFriendCarouselExtension: true,
         enableAvatarHeadshotURLRedirect: true,
-        enableUnfriendBlocker: true
+        enableUnfriendBlocker: true,
+        enableLogoutBlocker: true
     });
     if (items.enableFriendActivityTracker) {
         FriendActivityTracker(true);
@@ -17,6 +18,9 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
     }
     if (items.enableUnfriendBlocker) {
         UnfriendBlocker(true);
+    }
+    if (items.enableLogoutBlocker) {
+        LogoutBlocker(true);
     }
     chrome.storage.sync.onChanged.addListener(changes => {
         if ('enableFriendActivityTracker' in changes) {
@@ -38,6 +42,11 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
             changes.enableUnfriendBlocker.newValue === true ?
                 UnfriendBlocker(true) :
                 UnfriendBlocker(false);
+        }
+        if ('enableLogoutBlocker' in changes) {
+            changes.enableLogoutBlocker.newValue === true ?
+                LogoutBlocker(true) :
+                LogoutBlocker(false);
         }
     });
 })();
@@ -276,13 +285,29 @@ function AvatarHeadshotURLRedirect(enable) {
 }
 function UnfriendBlocker(enable) {
     if (enable) {
-        chrome.declarativeNetRequest.updateEnabledRulesets({
-            enableRulesetIds: ['ruleset_UnfriendBlocker']
+        chrome.declarativeNetRequest.updateStaticRules({
+            rulesetId: 'ruleset_HttpBlocker',
+            enableRuleIds: [1]
         });
     }
     else {
-        chrome.declarativeNetRequest.updateEnabledRulesets({
-            disableRulesetIds: ['ruleset_UnfriendBlocker']
+        chrome.declarativeNetRequest.updateStaticRules({
+            rulesetId: 'ruleset_HttpBlocker',
+            disableRuleIds: [1]
+        });
+    }
+}
+function LogoutBlocker(enable) {
+    if (enable) {
+        chrome.declarativeNetRequest.updateStaticRules({
+            rulesetId: 'ruleset_HttpBlocker',
+            enableRuleIds: [2]
+        });
+    }
+    else {
+        chrome.declarativeNetRequest.updateStaticRules({
+            rulesetId: 'ruleset_HttpBlocker',
+            disableRuleIds: [2]
         });
     }
 }

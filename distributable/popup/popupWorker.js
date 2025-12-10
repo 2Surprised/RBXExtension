@@ -8,18 +8,21 @@ function init() {
     const friendCarouselExtensionCheckbox = document.getElementById('friend-carousel-extension');
     const avatarHeadshotURLRedirectCheckbox = document.getElementById('avatar-headshot-url-redirect');
     const unfriendBlockerCheckbox = document.getElementById('unfriend-blocker');
+    const logoutBlockerCheckbox = document.getElementById('logout-blocker');
     (async function restoreOptions() {
         chrome.storage.sync.get({
             enableFriendActivityTracker: true,
             enableFriendCarouselExtension: true,
             enableAvatarHeadshotURLRedirect: true,
-            enableUnfriendBlocker: true
+            enableUnfriendBlocker: true,
+            enableLogoutBlocker: true
         })
             .then(items => {
             friendActivityTrackerCheckbox.checked = items.enableFriendActivityTracker;
             friendCarouselExtensionCheckbox.checked = items.enableFriendCarouselExtension;
             avatarHeadshotURLRedirectCheckbox.checked = items.enableAvatarHeadshotURLRedirect;
             unfriendBlockerCheckbox.checked = items.enableUnfriendBlocker;
+            logoutBlockerCheckbox.checked = items.enableLogoutBlocker;
         });
         chrome.storage.session.get({ debuggerState: 'detached' })
             .then(items => {
@@ -33,17 +36,20 @@ function init() {
         const isFriendCarouselExtensionEnabled = friendCarouselExtensionCheckbox.checked;
         const isAvatarHeadshotURLRedirectEnabled = avatarHeadshotURLRedirectCheckbox.checked;
         const isUnfriendBlockerEnabled = unfriendBlockerCheckbox.checked;
+        const isLogoutBlockerEnabled = logoutBlockerCheckbox.checked;
         await chrome.storage.sync.set({
             enableFriendActivityTracker: isFriendActivityTrackerEnabled,
             enableFriendCarouselExtension: isFriendCarouselExtensionEnabled,
             enableAvatarHeadshotURLRedirect: isAvatarHeadshotURLRedirectEnabled,
-            enableUnfriendBlocker: isUnfriendBlockerEnabled
+            enableUnfriendBlocker: isUnfriendBlockerEnabled,
+            enableLogoutBlocker: isLogoutBlockerEnabled
         });
     }
     friendActivityTrackerCheckbox.addEventListener('change', saveOptions);
     friendCarouselExtensionCheckbox.addEventListener('change', saveOptions);
     avatarHeadshotURLRedirectCheckbox.addEventListener('change', saveOptions);
     unfriendBlockerCheckbox.addEventListener('change', saveOptions);
+    logoutBlockerCheckbox.addEventListener('change', saveOptions);
     chrome.storage.session.onChanged.addListener(changes => {
         if (!changes.debuggerState)
             return;
