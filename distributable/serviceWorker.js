@@ -222,18 +222,14 @@ async function FriendActivityTracker(enable) {
             let isSubPlace = false;
             let rootPlaceName = '';
             let subPlaceName = '';
-            let placeUrl = '';
             let userDisplayName = '';
             let imageDataUrl = '';
-            let notificationId = '';
             isSubPlace = placeId !== rootPlaceId;
             const placeIdsToFetch = isSubPlace ? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId;
             const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIdsToFetch}`).then(response => response.json());
             rootPlaceName = games[0].name;
-            placeUrl = games[0].url;
             if (isSubPlace) {
                 subPlaceName = games[1].name;
-                placeUrl = games[1].url;
             }
             const userObjectPromise = getUserFromUserId(userId);
             const imageUrlPromise = getAvatarIconUrlFromUserId(userId, "avatar-headshot", 100);
@@ -250,7 +246,7 @@ async function FriendActivityTracker(enable) {
                 priority: 2,
                 type: 'basic',
                 silent: false
-            }, (notifId => { notificationId = notifId; }));
+            });
         }
     }
 }

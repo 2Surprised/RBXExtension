@@ -286,21 +286,21 @@ async function FriendActivityTracker(enable: boolean) {
             let rootPlaceName = ''
             let subPlaceName = ''
             // TODO: Lead user to the game's page when clicking on notification
-            let placeUrl = ''
+            // let placeUrl = ''
             let userDisplayName = ''
             let imageDataUrl = ''
             // TODO: Create self-deleting notifications
-            let notificationId = ''
+            // let notificationId = ''
             isSubPlace = placeId !== rootPlaceId
 
             // TODO: Detect if a friend has joined another, then display the members of the party
             const placeIdsToFetch = isSubPlace? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId
             const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIdsToFetch}`).then(response => response.json())
             rootPlaceName = games[0].name
-            placeUrl = games[0].url
+            // placeUrl = games[0].url
             if (isSubPlace) {
                 subPlaceName = games[1].name
-                placeUrl = games[1].url
+                // placeUrl = games[1].url
             }
             const userObjectPromise = getUserFromUserId(userId)
             const imageUrlPromise = getAvatarIconUrlFromUserId(userId, AvatarIconStyle.avatarHeadshot, AvatarIconSize.Hundred)
@@ -318,7 +318,7 @@ async function FriendActivityTracker(enable: boolean) {
                 priority: 2,
                 type: 'basic',
                 silent: false
-            }, (notifId => { notificationId = notifId }))
+            }/*, (notifId => { notificationId = notifId })*/)
         }
     }
 }
