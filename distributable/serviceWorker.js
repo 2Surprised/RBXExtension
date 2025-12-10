@@ -3,7 +3,8 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
     const items = await chrome.storage.sync.get({
         enableFriendActivityTracker: true,
         enableFriendCarouselExtension: true,
-        enableAvatarHeadshotURLRedirect: true
+        enableAvatarHeadshotURLRedirect: true,
+        enableUnfriendBlocker: true
     });
     if (items.enableFriendActivityTracker) {
         FriendActivityTracker(true);
@@ -13,6 +14,9 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
     }
     if (items.enableAvatarHeadshotURLRedirect) {
         AvatarHeadshotURLRedirect(true);
+    }
+    if (items.enableUnfriendBlocker) {
+        UnfriendBlocker(true);
     }
     chrome.storage.sync.onChanged.addListener(changes => {
         if ('enableFriendActivityTracker' in changes) {
@@ -29,6 +33,11 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
             changes.enableAvatarHeadshotURLRedirect.newValue === true ?
                 AvatarHeadshotURLRedirect(true) :
                 AvatarHeadshotURLRedirect(false);
+        }
+        if ('enableUnfriendBlocker' in changes) {
+            changes.enableUnfriendBlocker.newValue === true ?
+                UnfriendBlocker(true) :
+                UnfriendBlocker(false);
         }
     });
 })();
@@ -266,6 +275,18 @@ function AvatarHeadshotURLRedirect(enable) {
     else {
         chrome.declarativeNetRequest.updateEnabledRulesets({
             disableRulesetIds: ['ruleset_AvatarHeadshotURLRedirect']
+        });
+    }
+}
+function UnfriendBlocker(enable) {
+    if (enable) {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            enableRulesetIds: ['ruleset_UnfriendBlocker']
+        });
+    }
+    else {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            disableRulesetIds: ['ruleset_UnfriendBlocker']
         });
     }
 }

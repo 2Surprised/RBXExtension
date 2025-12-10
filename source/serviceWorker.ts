@@ -9,11 +9,13 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
     const items = await chrome.storage.sync.get({
         enableFriendActivityTracker: true,
         enableFriendCarouselExtension: true,
-        enableAvatarHeadshotURLRedirect: true
+        enableAvatarHeadshotURLRedirect: true,
+        enableUnfriendBlocker: true
     })
     if (items.enableFriendActivityTracker) { FriendActivityTracker(true) }
     if (items.enableFriendCarouselExtension) { FriendCarouselExtension(true) }
     if (items.enableAvatarHeadshotURLRedirect) { AvatarHeadshotURLRedirect(true) }
+    if (items.enableUnfriendBlocker) { UnfriendBlocker(true) }
     
     // Respond when features are enabled/disabled
     chrome.storage.sync.onChanged.addListener(changes => {
@@ -31,6 +33,11 @@ import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResourc
             changes.enableAvatarHeadshotURLRedirect.newValue === true ?
             AvatarHeadshotURLRedirect(true) :
             AvatarHeadshotURLRedirect(false)
+        }
+        if ('enableUnfriendBlocker' in changes) {
+            changes.enableUnfriendBlocker.newValue === true ?
+            UnfriendBlocker(true) :
+            UnfriendBlocker(false)
         }
     })
 })()
@@ -336,6 +343,18 @@ function AvatarHeadshotURLRedirect(enable: boolean) {
     } else {
         chrome.declarativeNetRequest.updateEnabledRulesets({
             disableRulesetIds: ['ruleset_AvatarHeadshotURLRedirect']
+        })
+    }
+}
+
+function UnfriendBlocker(enable: boolean) {
+    if (enable) {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            enableRulesetIds: ['ruleset_UnfriendBlocker']
+        })
+    } else {
+        chrome.declarativeNetRequest.updateEnabledRulesets({
+            disableRulesetIds: ['ruleset_UnfriendBlocker']
         })
     }
 }

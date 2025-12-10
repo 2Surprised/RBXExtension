@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Roblox+",
-    "description": "Improves the user ~experience on the Roblox website.",
-    "version": "3.2.11",
+    "description": "Improves the user experience on the Roblox website.",
+    "version": "4.0.0",
     "action": {
         "default_title": "Roblox+",
         "default_popup": "/popup/popup.html"
@@ -34,6 +34,11 @@
                 "id": "ruleset_FriendCarouselExtension",
                 "enabled": true,
                 "path": "/rulesets/friendCarouselExtension.json"
+            },
+            {
+                "id": "ruleset_UnfriendBlocker",
+                "enabled": true,
+                "path": "/rulesets/unfriendBlocker.json"
             }
         ]
     },

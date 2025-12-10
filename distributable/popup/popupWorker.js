@@ -7,16 +7,19 @@ function init() {
     const friendActivityTrackerLabelText = friendActivityTrackerLabel.innerHTML;
     const friendCarouselExtensionCheckbox = document.getElementById('friend-carousel-extension');
     const avatarHeadshotURLRedirectCheckbox = document.getElementById('avatar-headshot-url-redirect');
+    const unfriendBlockerCheckbox = document.getElementById('unfriend-blocker');
     (async function restoreOptions() {
         chrome.storage.sync.get({
             enableFriendActivityTracker: true,
             enableFriendCarouselExtension: true,
-            enableAvatarHeadshotURLRedirect: true
+            enableAvatarHeadshotURLRedirect: true,
+            enableUnfriendBlocker: true
         })
             .then(items => {
             friendActivityTrackerCheckbox.checked = items.enableFriendActivityTracker;
             friendCarouselExtensionCheckbox.checked = items.enableFriendCarouselExtension;
             avatarHeadshotURLRedirectCheckbox.checked = items.enableAvatarHeadshotURLRedirect;
+            unfriendBlockerCheckbox.checked = items.enableUnfriendBlocker;
         });
         chrome.storage.session.get({ debuggerState: 'detached' })
             .then(items => {
@@ -29,15 +32,18 @@ function init() {
         const isFriendActivityTrackerEnabled = friendActivityTrackerCheckbox.checked;
         const isFriendCarouselExtensionEnabled = friendCarouselExtensionCheckbox.checked;
         const isAvatarHeadshotURLRedirectEnabled = avatarHeadshotURLRedirectCheckbox.checked;
+        const isUnfriendBlockerEnabled = unfriendBlockerCheckbox.checked;
         await chrome.storage.sync.set({
             enableFriendActivityTracker: isFriendActivityTrackerEnabled,
             enableFriendCarouselExtension: isFriendCarouselExtensionEnabled,
-            enableAvatarHeadshotURLRedirect: isAvatarHeadshotURLRedirectEnabled
+            enableAvatarHeadshotURLRedirect: isAvatarHeadshotURLRedirectEnabled,
+            enableUnfriendBlocker: isUnfriendBlockerEnabled
         });
     }
     friendActivityTrackerCheckbox.addEventListener('change', saveOptions);
     friendCarouselExtensionCheckbox.addEventListener('change', saveOptions);
     avatarHeadshotURLRedirectCheckbox.addEventListener('change', saveOptions);
+    unfriendBlockerCheckbox.addEventListener('change', saveOptions);
     chrome.storage.session.onChanged.addListener(changes => {
         if (!changes.debuggerState)
             return;
