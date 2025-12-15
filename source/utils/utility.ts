@@ -1,21 +1,22 @@
 // Regular expressions
-export const ExtensionName = 'RBXExtension'
-export const RobloxWebsiteRegex = "^https?\:\/\/([a-z0-9\-]+\.)*roblox\.com(.+)?$"
-export const RobloxWWWRegex = "^https?\:\/\/www\.roblox\.com"
-export const RobloxLoginRegex = "^https?\:\/\/www\.roblox\.com\/?([Ll]ogin)?$"
-export const RobloxPresenceRegex = "^https?\:\/\/presence\.roblox\.com"
+export const RobloxWebsiteRegex = /^https?\:\/\/(\S+\.)*roblox\.com(.+)?$/
+export const RobloxWWWRegex = /^https?\:\/\/www\.roblox\.com/
+export const RobloxLoginRegex = /^https?\:\/\/(\S+\.)*roblox\.com\/?([Ll]ogin)?$/
+export const RobloxPresenceRegex = /^https?\:\/\/presence\.roblox\.com/
 
 // Functions
-export function removeValueFromArray(array: any[], value: any): void {
+export function removeValueFromArray<T>(array: T[], value: T, once?: boolean): T[] {
     if (typeof(value) === 'object') {
         for (let index = 0; index < array.length; index++) {
             const element = array[index]
             try {
                 if (JSON.stringify(element) === JSON.stringify(value)) {
                     array.splice(index, 1)
+                    if (once) return array;
+                    index--
                 }
             } catch (error) {
-                // Some elements of the array may not be objects, this prevents an error from throwing
+                // Some elements may not be objects, this prevents an error from throwing
             }
         }
     } else {
@@ -26,6 +27,7 @@ export function removeValueFromArray(array: any[], value: any): void {
             }
         }
     }
+    return array;
 }
 
 export async function blobToDataUrl(blob: Blob): Promise<Base64URLString> {
@@ -48,13 +50,13 @@ export async function getDataUrlFromWebResource(url: URL): Promise<Base64URLStri
 // Extension logic
 export async function getUserFromUserId(userId: number): Promise<UserObject> {
     return new Promise(async (resolve, _reject) => {
-        const userObject = await fetch(`https://users.roblox.com/v1/users/${userId}`).then(response => response.json())
+        const userObject: UserObject = await fetch(`https://users.roblox.com/v1/users/${userId}`).then(response => response.json())
         resolve(userObject)
     })
 }
 
 // TODO: Resolve issue with fetch request not returning a 200
-export async function getAvatarIconUrlFromUserId(userId: number, type: AvatarIconStyle = AvatarIconStyle.avatarHeadshot, size: AvatarIconSize = AvatarIconSize.FourHundredAndTwenty): Promise<URL> {
+export async function getAvatarIconUrlFromUserId(userId: number, type: AvatarIconStyle = AvatarIconStyle.AvatarHeadshot, size: AvatarIconSize = AvatarIconSize.FourHundredAndTwenty): Promise<URL> {
     return new Promise(async (resolve, reject) => {
         const response: ThumbnailResponse = await fetch(`https://thumbnails.roblox.com/v1/users/${type}?userIds=${userId}&size=${size}x${size}&format=Png&isCircular=false`).then(response => response.json())
         const iconObject = response.data[0]

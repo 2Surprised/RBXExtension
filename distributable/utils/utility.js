@@ -1,15 +1,17 @@
-export const ExtensionName = 'RBXExtension';
-export const RobloxWebsiteRegex = "^https?\:\/\/([a-z0-9\-]+\.)*roblox\.com(.+)?$";
-export const RobloxWWWRegex = "^https?\:\/\/www\.roblox\.com";
-export const RobloxLoginRegex = "^https?\:\/\/www\.roblox\.com\/?([Ll]ogin)?$";
-export const RobloxPresenceRegex = "^https?\:\/\/presence\.roblox\.com";
-export function removeValueFromArray(array, value) {
+export const RobloxWebsiteRegex = /^https?\:\/\/(\S+\.)*roblox\.com(.+)?$/;
+export const RobloxWWWRegex = /^https?\:\/\/www\.roblox\.com/;
+export const RobloxLoginRegex = /^https?\:\/\/(\S+\.)*roblox\.com\/?([Ll]ogin)?$/;
+export const RobloxPresenceRegex = /^https?\:\/\/presence\.roblox\.com/;
+export function removeValueFromArray(array, value, once) {
     if (typeof (value) === 'object') {
         for (let index = 0; index < array.length; index++) {
             const element = array[index];
             try {
                 if (JSON.stringify(element) === JSON.stringify(value)) {
                     array.splice(index, 1);
+                    if (once)
+                        return array;
+                    index--;
                 }
             }
             catch (error) {
@@ -24,6 +26,7 @@ export function removeValueFromArray(array, value) {
             }
         }
     }
+    return array;
 }
 export async function blobToDataUrl(blob) {
     return new Promise((resolve, reject) => {

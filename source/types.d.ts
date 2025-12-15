@@ -1,4 +1,7 @@
-// Extension type definitions
+/**
+ * Extension
+ */
+
 const enum ErrorMessage {
     Default = 'Something went wrong. Check the console for information.',
     NoErrorsPassed = 'No errors were passed to the error handler!',
@@ -13,7 +16,14 @@ interface ResponseBody {
     base64Encoded: boolean
 }
 
-// Roblox API type definitions
+interface FeatureMap {
+    [key: string]: (enabled: boolean) => void
+}
+
+/**
+ * Roblox API
+ */
+
 interface UserObject {
     description: string,
     created: string,
@@ -70,9 +80,9 @@ const enum ThumbnailState {
 }
 
 const enum AvatarIconStyle {
-    avatar = 'avatar',
-    avatarBust = 'avatar-bust',
-    avatarHeadshot = 'avatar-headshot'
+    Avatar = 'avatar',
+    AvatarBust = 'avatar-bust',
+    AvatarHeadshot = 'avatar-headshot'
 }
 
 const enum AvatarIconSize {

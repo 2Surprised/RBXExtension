@@ -1,383 +1,255 @@
-// TODO: Implement best friends system
-// TODO: Implement notes system for friends/followers/following
-// TODO: Completely overhaul the Roblox website chat
+import {
+    getUserFromUserId,
+    getAvatarIconUrlFromUserId,
+    getDataUrlFromWebResource,
+    RobloxWWWRegex,
+    RobloxLoginRegex,
+    RobloxPresenceRegex,
+    removeValueFromArray
+} from './utils/utility.ts'
 
-import { getUserFromUserId, getAvatarIconUrlFromUserId, getDataUrlFromWebResource, RobloxWWWRegex, RobloxLoginRegex, RobloxPresenceRegex, removeValueFromArray } from './utils/utility.ts'
+/**
+ * Globals
+ */
 
-// On startup, enable features according to user settings options
-(async function init() {
-    const items = await chrome.storage.sync.get({
-        enableFriendActivityTracker: true,
-        enableFriendCarouselExtension: true,
-        enableAvatarHeadshotURLRedirect: true,
-        enableUnfriendBlocker: true,
-        enableLogoutBlocker: true
-    })
-    if (items.enableFriendActivityTracker) { FriendActivityTracker(true) }
-    if (items.enableFriendCarouselExtension) { FriendCarouselExtension(true) }
-    if (items.enableAvatarHeadshotURLRedirect) { AvatarHeadshotURLRedirect(true) }
-    if (items.enableUnfriendBlocker) { UnfriendBlocker(true) }
-    if (items.enableLogoutBlocker) { LogoutBlocker(true) }
-    
-    // Respond when features are enabled/disabled
-    chrome.storage.sync.onChanged.addListener(changes => {
-        if ('enableFriendActivityTracker' in changes) {
-            changes.enableFriendActivityTracker.newValue === true ?
-            FriendActivityTracker(true) :
-            FriendActivityTracker(false)
-        }
-        if ('enableFriendCarouselExtension' in changes) {
-            changes.enableFriendCarouselExtension.newValue === true ?
-            FriendCarouselExtension(true) :
-            FriendCarouselExtension(false)
-        }
-        if ('enableAvatarHeadshotURLRedirect' in changes) {
-            changes.enableAvatarHeadshotURLRedirect.newValue === true ?
-            AvatarHeadshotURLRedirect(true) :
-            AvatarHeadshotURLRedirect(false)
-        }
-        if ('enableUnfriendBlocker' in changes) {
-            changes.enableUnfriendBlocker.newValue === true ?
-            UnfriendBlocker(true) :
-            UnfriendBlocker(false)
-        }
-        if ('enableLogoutBlocker' in changes) {
-            changes.enableLogoutBlocker.newValue === true ?
-            LogoutBlocker(true) :
-            LogoutBlocker(false)
-        }
-    })
+const CONFIG = {
+    DETACHED_DEBUGGER_ALERT_DELAY: 10000,
+    RETRY_REQUESTS_DELAY: 5000,
+    USER_PRESENCE_COOLDOWN: 15000,
+    MAXIMUM_USER_PRESENCE_IN_SINGLE_REQUEST: 3
+}
+
+const state = {
+    shouldReattach: false,
+    isAttached: false,
+    isAttaching: false,
+    attachedTabId: 0,
+    recentPresences: [] as string[]
+};
+
+/**
+ * Feature Toggling
+ */
+
+function toggleRulesets(enable: boolean, rulesetIds: Array<string>) {
+    chrome.declarativeNetRequest.updateEnabledRulesets({ [enable ? 'enableRulesetIds' : 'disableRulesetIds']: rulesetIds })
+}
+
+function toggleRules(enable: boolean, ruleIds: Array<number>, rulesetId: string) {
+    chrome.declarativeNetRequest.updateStaticRules({ rulesetId, [enable ? 'enableRuleIds' : 'disableRuleIds']: ruleIds })
+}
+
+const features: FeatureMap = {
+    enableFriendActivityTracker: toggleTracker,
+    enableFriendCarouselExtension: (enable) => toggleRulesets(enable, ['ruleset_FriendCarouselExtension']),
+    enableAvatarHeadshotURLRedirect: (enable) => toggleRulesets(enable, ['ruleset_AvatarHeadshotURLRedirect']),
+    enableUnfriendBlocker: (enable) => toggleRules(enable, [1], 'ruleset_XhrBlocker'),
+    enableLogoutBlocker: (enable) => toggleRules(enable, [2], 'ruleset_XhrBlocker')
+};
+
+/**
+ * Initialization
+ */
+
+(async () => {
+    const settings = await chrome.storage.sync.get(Object.keys(features))
+    // Sync user settings
+    Object.entries(features).forEach(([key, handler]) => handler(!!settings[key]))
+    // Listen for changes
+    if (!chrome.storage.sync.onChanged.hasListener(listenForChanges)) {
+        chrome.storage.sync.onChanged.addListener(listenForChanges)
+    }
 })()
 
-let isFriendActivityTrackerInitialExecution = true
-let isTryingToAttach = false
-let isDebuggerAlreadyAttached = false
-let tabTitle = ''
-let attachedTabId = 0
+function listenForChanges(changes: { [key: string]: chrome.storage.StorageChange }) {
+    Object.keys(changes).forEach(key => features[key]?.(changes[key]?.newValue))
+}
 
-async function FriendActivityTracker(enable: boolean) {
-    // !! TODO: Fix issue with duplicate notifications when enabling/disabling feature without restarting
-    // TODO: Prevent authenticated user from appearing in notifications
-    // TODO: Prevent false positives as a result of the Presence API returning invalid data.
-    //       Check in with the Games API to check if a friend has truly left a game, as more
-    //       often than not, the friend never left the game they were in.
-    // TODO: Add user settings option to disable subplace tracker
-    // TODO: Add user settings option to disable automated notification deletion
-    // Fun fact: Even though RobloxLoginRegexMatch prevents the debugger from attaching to roblox.com/login
-    // tabs, the userhub websocket still works when the page is accessed through the Account Switcher feature.
-    // This just avoids a lengthy implementation just to check if the user is logged in or not.
-    const RobloxLoginRegexMatch = new RegExp(RobloxLoginRegex)
-    const ALERT_TIMER_FOR_DETACHED_DEBUGGER = 10000
-    const RETRY_TIMER_FOR_FAILED_REQUESTS = 5000
-    const RESET_TIMER_FOR_RECENT_USER_PRESENCE = 15000
-    const MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST = 3
+/**
+ * Friend Activity Tracker
+ */
 
+async function toggleTracker(enable: boolean) {
     if (!enable) {
-        if (isDebuggerAlreadyAttached) {
-            chrome.debugger.detach({ tabId: attachedTabId })
-            onDetach(false)
+        state.shouldReattach = false
+
+        if (chrome.debugger.onDetach.hasListener(retryOnDebuggerDetached)) {
+            chrome.debugger.onDetach.removeListener(retryOnDebuggerDetached)
+            chrome.debugger.onEvent.removeListener(onDebuggerEvent)
+            chrome.tabs.onUpdated.removeListener(onTabUpdated)
+            chrome.webRequest.onBeforeRequest.removeListener(attachOnRequest)
         }
+
+        if (state.isAttached) {
+            chrome.debugger.detach({ tabId: state.attachedTabId })
+            handleDetach(false)
+        }
+        
         return;
     }
 
-    if (isFriendActivityTrackerInitialExecution) {
-        isFriendActivityTrackerInitialExecution = false
-        chrome.storage.session.set({ debuggerState: 'detached' })
-
-        // Add event listeners only on initial execution, preventing subsequent executions from
-        // registering them again. Event listeners aren't removed when the feature is disabled because
-        // the implementation would be slightly messy.
-        // (See comments on attemptToAttachDebuggerCallback for more information)
-
-        chrome.debugger.onDetach.addListener(() => { onDetach(true) })
-
-        // Detach debugger if no longer on www.roblox.com
-        chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-            if (tabId !== attachedTabId) return;
-            tabTitle = tab.title!
-            if (!changeInfo.url) return;
-            if (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(changeInfo.url)) {
-                chrome.debugger.detach({ tabId: attachedTabId })
-                onDetach(true)
-            }
-        })
-
-        chrome.debugger.onEvent.addListener(async (source, method, params: any) => {
-            const { requestId } = params
-    
-            if (method === 'Network.responseReceived' &&
-                params.response.url.match(RobloxPresenceRegex) &&
-                params.response.status === 200
-            ) {
-                // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
-                // These guard nodes prevent "No resource with given identifier",
-                // and "No data found for resource with given identifier" errors.
-                // Some are not required since the second and third conditionals above
-                // already remove them from the equation.
-                if (params.type === 'Preflight') return;
-                // "unknown" seems to be caused by local files being fetched, and any redirects to local files,
-                // which somehow causes the remote debugging protocol to be unable to retrieve their contents.
-                // Oddly enough, it seems like many other requests from the disk cache succeed, so the local
-                // files might be stored in long-term storage instead of in caches and RAM.
-                // if (params.response.securityState === 'unknown') return; // (Not required)
-                if (params.response.headers["content-length"] === 0) return;
-                // if (params.response.status === 204) return; // Ignore HTTP 204 No Content successes (Not required)
-                // The document will have no data when the response is first received, while fonts never have data
-                // if (params.type === 'Document' || params.type === 'Font') return; // (Not required)
-    
-                async function getResponseBodyAndPassOnData() {
-                    const result = await chrome.debugger.sendCommand(
-                        source,
-                        'Network.getResponseBody',
-                        { requestId: requestId }
-                    ) as ResponseBody
-                    const responseBody = result.body
-                    isFriendActivity(responseBody)
-                }
-    
-                try {
-                    await getResponseBodyAndPassOnData()
-                } catch (error) {
-                    console.warn('Failed to retrieve response body, will retry in a few seconds.', requestId, params, error)
-                    // This is a hacky solution, but if the original retrieval of the response body fails,
-                    // this will simply wait a few seconds before attempting another retrieval.
-                    setTimeout(() => {
-                        getResponseBodyAndPassOnData()
-                        .catch(error => console.error('Failed to retrieve response body.', requestId, params, error))
-                    }, RETRY_TIMER_FOR_FAILED_REQUESTS)
-                }
-            }
-        })
-
-        attemptToAttachDebugger()
-    } else {
-        attemptToAttachDebugger()
+    // Initialize listeners once
+    if (!chrome.debugger.onDetach.hasListener(retryOnDebuggerDetached)) {
+        chrome.debugger.onDetach.addListener(retryOnDebuggerDetached)
+        chrome.debugger.onEvent.addListener(onDebuggerEvent)
+        chrome.tabs.onUpdated.addListener(onTabUpdated)
     }
 
-    function attemptToAttachDebugger() {
-        chrome.tabs.query({ url: "https://www.roblox.com/*" }, attemptToAttachDebuggerCallback)
-        chrome.webRequest.onBeforeRequest.addListener(attemptToAttachDebuggerCallback, { urls: [ "https://www.roblox.com/*" ] })
-    }
+    chrome.storage.session.set({ debuggerState: 'detached' })
+    findTargets()
+}
 
-    // This is necessary because of the way arguments are passed to callbacks. Passing custom arguments
-    // to a callback function requires that you create another function to act as a wrapper, within which
-    // you can call the function that you actually want.
-    // https://stackoverflow.com/questions/17238348/using-addeventlistener-to-add-a-callback-with-arguments/17238581#17238581
-    // The issue with that approach is that when attempting to remove the event listener, you can't
-    // reference the nested local function. The wrapper function needs its own way to be referenced.
-    // https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript
-    function attemptToAttachDebuggerCallback(object: chrome.tabs.Tab[] | chrome.webRequest.WebRequestBodyDetails) {
-        if (Array.isArray(object)) {
-            attachDebugger(object, undefined)
-        } else {
-            attachDebugger(undefined, object)
-        }
-    }
+// Attach debugger to roblox.com pages (with userhub websocket) for presence data
+// TODO: Implement XHR/websocket interceptor that does not use chrome.debugger
 
-    async function attachDebugger(tabs?: chrome.tabs.Tab[], details?: chrome.webRequest.WebRequestBodyDetails) {
-        if (isTryingToAttach || isDebuggerAlreadyAttached) return;
-        isTryingToAttach = true
-        let tabId = 0
-        let tab: chrome.tabs.Tab;
+async function findTargets() {
+    chrome.tabs.query({ url: "https://www.roblox.com/*" }, (tabs) => {
+        const validTab = tabs.find(tab => tab.status !== 'unloaded')
+        if (validTab?.id) { attemptAttach(validTab.id, validTab.url) }
+    })
 
-        if (tabs) {
-            for (const tabInQuestion of tabs) {
-                if (tabInQuestion.status !== 'unloaded' && !RobloxLoginRegexMatch.test(tabInQuestion.url!)) {
-                    tabId = tabInQuestion.id!
-                    tab = tabInQuestion
-                    break;
-                }
-            }
-        } else if (details) {
-            const tabInQuestion = await chrome.tabs.get(details.tabId)
-            // chrome.webRequest.onBeforeRequest can trigger on tabs that aren't www.roblox.com
-            if (!tabInQuestion.url?.match(RobloxWWWRegex) || RobloxLoginRegexMatch.test(tabInQuestion.url)) {
-                isTryingToAttach = false
-                return;
-            }
-            ({ tabId } = details)
-            tab = tabInQuestion
-        }
+    chrome.webRequest.onBeforeRequest.addListener(attachOnRequest, { urls: ["https://www.roblox.com/*"] })
+}
 
-        if (!(tabId > 0)) {
-            isTryingToAttach = false
-            return;
-        }
+function attachOnRequest(details: chrome.webRequest.WebRequestBodyDetails) {
+    attemptAttach(details.tabId, details.url)
+}
 
-        try {
-            await chrome.debugger.attach({ tabId: tabId }, '1.3')
-            await chrome.debugger.sendCommand({ tabId: tabId }, 'Network.enable')
-        } catch (error) {
-            isTryingToAttach = false
-            // When a user updates a chrome:// tab by navigating from it, this error will occur.
-            // This error can be safely ignored, as the debugger is simply trying to attach to a
-            // still unloading chrome:// tab. After a few tries, it'll successfully attach to the
-            // newly loaded in tab.
-            // @ts-expect-error: No need to handle unknown error type
-            if (error.message === 'Cannot access a chrome:// URL') return;
-            console.error(error)
-        }
+async function attemptAttach(tabId: number, url?: string) {
+    if (state.isAttaching || state.isAttached) return;
+    // Do not attach to login page (account switcher page works, but implementation is deemed unnecessary)
+    if (!url || !url?.match(RobloxWWWRegex) || RobloxLoginRegex.test(url)) return;
 
-        chrome.webRequest.onBeforeRequest.removeListener(attemptToAttachDebuggerCallback)
-        isTryingToAttach = false
-        isDebuggerAlreadyAttached = true
-        attachedTabId = tabId
+    state.isAttaching = true
+    try {
+        await chrome.debugger.attach({ tabId }, '1.3')
+        await chrome.debugger.sendCommand({ tabId }, 'Network.enable')
+        
+        state.isAttached = true
+        state.attachedTabId = tabId
         chrome.storage.session.set({ debuggerState: 'attached' })
-
-        tabTitle = tab!.title!
-        console.log(`Currently attached to: ${tabTitle}`)
-    }
-
-    function onDetach(reattach: boolean) {
-        isDebuggerAlreadyAttached = false
-        attachedTabId = 0
-        chrome.storage.session.set({ debuggerState: 'detached' })
-
-        if (reattach) {
-            console.log('The debugger has been detached.')
-            attemptToAttachDebugger()
-            alertIfDebuggerIsDetached()
-        } else {
-            console.log('The debugger has been disabled.')
+        chrome.webRequest.onBeforeRequest.removeListener(attachOnRequest)
+    } catch (error: any) {
+        if (error.message !== 'Cannot access a chrome:// URL') {
+            console.error('Failed to attach:', error)
         }
+    } finally {
+        state.isAttaching = false
     }
+}
 
-    function alertIfDebuggerIsDetached() {
-        setTimeout(() => {
-            if (isDebuggerAlreadyAttached) return;
-            chrome.notifications.create({
-                iconUrl: './utils/RBLX_Tilt_Primary_Black.png',
-                title: 'Friend Activity Tracker is disabled!',
-                message: 'You will no longer receive notifications on friend activity.',
-                contextMessage: 'To reenable, make sure to keep the website open and stay logged in!',
-                priority: 2,
-                type: 'basic',
-                silent: false
-            })
-        }, ALERT_TIMER_FOR_DETACHED_DEBUGGER)
-    }
-
-    function isFriendActivity(responseBody: string) {
+async function onDebuggerEvent(source: chrome.debugger.Debuggee, method: string, params: any) {
+    if (
+        // https://github.com/chromedp/chromedp/issues/1317#issuecomment-1561122839
+        // These guard nodes prevent 'No resource with given identifier',
+        // and 'No data found for resource with given identifier' errors.
+        method === 'Network.responseReceived' &&
+        params.response.url.match(RobloxPresenceRegex) &&
+        params.response.status === 200 &&
+        params.type !== 'Preflight' &&
+        params.response.headers['content-length'] !== 0
+    ) {
         try {
-            const object = JSON.parse(responseBody)
-            if ('userPresences' in object && object.userPresences.length <= MAXIMUM_USER_PRESENCES_HANDLED_IN_SINGLE_REQUEST) {
-                const userPresencesObject: UserPresencesResponse = object
-                sendActivityAlert(userPresencesObject.userPresences)
+            const response = await chrome.debugger.sendCommand(source, 'Network.getResponseBody', { requestId: params.requestId }) as ResponseBody
+            const data = JSON.parse(response.body)
+            if (data.userPresences?.length <= CONFIG.MAXIMUM_USER_PRESENCE_IN_SINGLE_REQUEST) {
+                notifyActivity(data.userPresences)
             }
         } catch (error) {
-            if (!(error instanceof SyntaxError)) {
-                console.warn(error)
-            }
-        }
-    }
-
-    // TODO: Implement session cache to prevent unnecessary strain on API
-    // TODO: Implement filter for game activity with user-friendly interface
-    // TODO: Add buttons to launch game client from notification
-    const recentUserPresences: string[] = []
-
-    async function sendActivityAlert(userPresences: UserPresence[]) {
-        for (const userPresence of userPresences) {
-            // Prevents duplicate notifications from coming through
-            if (recentUserPresences.includes(JSON.stringify(userPresence))) continue;
-            recentUserPresences.push(JSON.stringify(userPresence))
-            setTimeout(() => {
-                removeValueFromArray(recentUserPresences, JSON.stringify(userPresence))
-            }, RESET_TIMER_FOR_RECENT_USER_PRESENCE)
-
-            const { placeId, rootPlaceId, userId, userPresenceType } = userPresence
-            if (!rootPlaceId) return;
-            if (userPresenceType !== 2) return;
-            
-            let isSubPlace = false
-            let rootPlaceName = ''
-            let subPlaceName = ''
-            // TODO: Lead user to the game's page when clicking on notification
-            // let placeUrl = ''
-            let userDisplayName = ''
-            let imageDataUrl = ''
-            // TODO: Create self-deleting notifications
-            // let notificationId = ''
-            isSubPlace = placeId !== rootPlaceId
-
-            // TODO: Detect if a friend has joined another, then display the members of the party
-            const placeIdsToFetch = isSubPlace? `${rootPlaceId}&placeIds=${placeId}` : rootPlaceId
-            const games = await fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIdsToFetch}`).then(response => response.json())
-            rootPlaceName = games[0].name
-            // placeUrl = games[0].url
-            if (isSubPlace) {
-                subPlaceName = games[1].name
-                // placeUrl = games[1].url
-            }
-            const userObjectPromise = getUserFromUserId(userId)
-            const imageUrlPromise = getAvatarIconUrlFromUserId(userId, AvatarIconStyle.avatarHeadshot, AvatarIconSize.Hundred)
-            const responses = await Promise.all([userObjectPromise, imageUrlPromise])
-            const userObject = responses[0]
-            const imageUrl = responses[1]
-            imageDataUrl = await getDataUrlFromWebResource(imageUrl)
-            userDisplayName = userObject.displayName
-
-            chrome.notifications.create({
-                iconUrl: imageDataUrl,
-                title: !isSubPlace ? `${userDisplayName} is playing!` : `${userDisplayName} is in a subplace!`,
-                message: !isSubPlace ? `Now in: ${rootPlaceName}` : `Now in: ${subPlaceName}`,
-                contextMessage: !isSubPlace ? '' : `Part of: ${rootPlaceName}`,
-                priority: 2,
-                type: 'basic',
-                silent: false
-            }/*, (notifId => { notificationId = notifId })*/)
+            // Retry once silently
+            setTimeout(async () => {
+                try {
+                    const response = await chrome.debugger.sendCommand(source, 'Network.getResponseBody', { requestId: params.requestId }) as ResponseBody
+                    const data = JSON.parse(response.body)
+                    if (data.userPresences?.length <= CONFIG.MAXIMUM_USER_PRESENCE_IN_SINGLE_REQUEST) {
+                        const userPresencesObject: UserPresencesResponse = data
+                        notifyActivity(userPresencesObject.userPresences)
+                    }
+                } catch (error) {
+                    if (!(error instanceof SyntaxError) && state.isAttached) {
+                        console.error(error)
+                    }
+                }
+            }, CONFIG.RETRY_REQUESTS_DELAY);
         }
     }
 }
 
-function FriendCarouselExtension(enable: boolean) {
-    if (enable) {
-        chrome.declarativeNetRequest.updateEnabledRulesets({
-            enableRulesetIds: ['ruleset_FriendCarouselExtension']
-        })
-    } else {
-        chrome.declarativeNetRequest.updateEnabledRulesets({
-            disableRulesetIds: ['ruleset_FriendCarouselExtension']
+// TODO: Prevent authenticated user from appearing in notifications
+// TODO: Prevent false positives as a result of the Presence API returning invalid data
+// TODO: Implement session cache to prevent unnecessary strain on API
+// TODO: Implement filter for game activity with user-friendly interface
+// TODO: Add buttons to launch game client from notification
+// TODO: Lead user to the game's page when clicking on notification
+// TODO: Create self-deleting notifications
+async function notifyActivity(userPresences: UserPresence[]) {
+    for (const presence of userPresences) {
+        const pString = JSON.stringify(presence)
+        // Prevent duplicates and non-matching presence data
+        if (state.recentPresences.includes(pString)) continue;
+        if (!presence.rootPlaceId || presence.userPresenceType !== UserPresenceType.InGame) continue;
+        // Temporarily mark as duplicate
+        state.recentPresences.push(pString)
+        setTimeout(() => {
+            removeValueFromArray(state.recentPresences, pString)
+        }, CONFIG.USER_PRESENCE_COOLDOWN);
+
+        const isSubPlace = presence.placeId !== presence.rootPlaceId
+        const placeIds = isSubPlace ? `${presence.rootPlaceId}&placeIds=${presence.placeId}` : presence.rootPlaceId
+        const [games, user, iconUrl] = await Promise.all([
+            fetch(`https://games.roblox.com/v1/games/multiget-place-details?placeIds=${placeIds}`).then(r => r.json()),
+            getUserFromUserId(presence.userId),
+            getAvatarIconUrlFromUserId(presence.userId, AvatarIconStyle.AvatarHeadshot, AvatarIconSize.Hundred)
+        ])
+
+        chrome.notifications.create({
+            type: 'basic',
+            priority: 2,
+            iconUrl: await getDataUrlFromWebResource(iconUrl),
+            title: `${user.displayName} is ${isSubPlace ? 'in a subplace' : 'playing'}!`,
+            message: `Now in: ${isSubPlace ? games[1].name : games[0].name}`,
+            contextMessage: isSubPlace ? `Part of: ${games[0]?.name}` : ''
         })
     }
 }
 
-function AvatarHeadshotURLRedirect(enable: boolean) {
-    if (enable) {
-        chrome.declarativeNetRequest.updateEnabledRulesets({
-            enableRulesetIds: ['ruleset_AvatarHeadshotURLRedirect']
-        })
-    } else {
-        chrome.declarativeNetRequest.updateEnabledRulesets({
-            disableRulesetIds: ['ruleset_AvatarHeadshotURLRedirect']
-        })
+// Detach debugger if no longer on www.roblox.com
+async function onTabUpdated(tabId: number, changeInfo: chrome.tabs.TabChangeInfo) {
+    if (
+        changeInfo.url && tabId === state.attachedTabId &&
+        (!changeInfo.url.match(RobloxWWWRegex) || RobloxLoginRegex.test(changeInfo.url))
+    ) {
+        chrome.debugger.detach({ tabId })
     }
 }
 
-function UnfriendBlocker(enable: boolean) {
-    if (enable) {
-        chrome.declarativeNetRequest.updateStaticRules({
-            rulesetId: 'ruleset_HttpBlocker',
-            enableRuleIds: [1]
-        })
-    } else {
-        chrome.declarativeNetRequest.updateStaticRules({
-            rulesetId: 'ruleset_HttpBlocker',
-            disableRuleIds: [1]
-        })
-    }
+// Passing arguments to a callback function requires a wrapper function:
+// https://stackoverflow.com/questions/17238348/using-addeventlistener-to-add-a-callback-with-arguments/17238581#17238581
+// Wrapper function cannot be anonymous to allow for removal if necessary:
+// https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript
+async function retryOnDebuggerDetached() {
+    handleDetach(true)
 }
 
-function LogoutBlocker(enable: boolean) {
-    if (enable) {
-        chrome.declarativeNetRequest.updateStaticRules({
-            rulesetId: 'ruleset_HttpBlocker',
-            enableRuleIds: [2]
-        })
-    } else {
-        chrome.declarativeNetRequest.updateStaticRules({
-            rulesetId: 'ruleset_HttpBlocker',
-            disableRuleIds: [2]
-        })
+async function handleDetach(shouldRetry: boolean) {
+    state.isAttached = false
+    state.attachedTabId = 0
+    chrome.storage.session.set({ debuggerState: 'detached' })
+
+    if (shouldRetry) {
+        state.shouldReattach = true
+        findTargets()
+        setTimeout(() => {
+            if (!state.isAttached && state.shouldReattach) {
+                chrome.notifications.create({
+                    type: 'basic',
+                    priority: 2,
+                    iconUrl: './utils/RBLX_Tilt_Primary_Black.png',
+                    title: 'Friend Activity Tracker is disabled!',
+                    message: 'You will no longer receive notifications on friend activity.',
+                    contextMessage: 'To reenable, make sure to keep the website open and stay logged in!'
+                })
+            }
+        }, CONFIG.DETACHED_DEBUGGER_ALERT_DELAY);
     }
 }
