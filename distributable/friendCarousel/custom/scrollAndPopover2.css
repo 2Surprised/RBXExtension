@@ -3427,7 +3427,7 @@ body:has(.friends-carousel-tile:hover) .friends-carousel-list-container {
 /* For an unknown reason, the avatar images move down very slightly when the friend tiles are stretched. */
 /* This is to undo that horrible, random offset that happens for who knows what reason. */
 body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
-    transform: translate(0px, -0.4px)
+    /* transform: translate(0px, -0.4px) */
 }
 
 .content .react-friends-carousel-container {
