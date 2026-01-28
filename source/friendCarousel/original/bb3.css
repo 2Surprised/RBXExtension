@@ -3802,46 +3802,33 @@
 
 .content .friends-carousel-container {
     width: 100%;
-    display: flex;
-    overflow: auto;
     padding-left: 12px;
     padding-right: 12px;
-    transform: rotateX(180deg);
-    z-index: 5;
-    position: relative;
-    scrollbar-width: thin;
-    scrollbar-color: #8787873b #f1f1f100;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden
 }
 
 .content .friends-carousel-list-container {
-    width: 100%;
-    display: flex;
-    /* overflow: hidden; */
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-pack: justify;
     justify-content: space-between;
-    transform: rotateX(180deg);
-    padding-top: 15px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden
 }
 
 .content .friends-carousel-list-container-not-full {
-    width: 100%;
-    display: flex;
-    /* overflow: hidden; */
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-pack: start;
     justify-content: flex-start;
-    transform: rotateX(180deg);
-    padding-top: 15px;
-}
-
-/* https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered/74816531#74816531 */
-body:has(.friends-carousel-tile:hover) .friends-carousel-list-container {
-    height: 500px;
-}
-
-/* For an unknown reason, the avatar images move down very slightly when the friend tiles are stretched. */
-/* This is to undo that horrible, random offset that happens for who knows what reason. */
-body:has(.friends-carousel-tile:hover) .avatar.avatar-card-fullbody {
-    /* transform: translate(0px, -0.4px) */
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden
 }
 
 .content .react-friends-carousel-container {

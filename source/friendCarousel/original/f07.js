@@ -27695,7 +27695,7 @@
                     style: {
                         position: "absolute",
                         top: (null != (s = null == (u = g.current) ? void 0 : u.offsetHeight) ? s : 0) + (null != (d = null == (c = g.current) ? void 0 : c.offsetTop) ? d : 0),
-                        left: (l = (null != (i = null == (r = g.current) ? void 0 : r.offsetLeft) ? i : 0) + (null != (a = null == (o = g.current) ? void 0 : o.offsetWidth) ? a : 0) / 2 - m / 2) < 0 ? 24 : l + m > document.getElementsByClassName("friends-carousel-container")[0].scrollWidth ? document.getElementsByClassName("friends-carousel-container")[0].scrollWidth - (m + 24) : l,
+                        left: (l = (null != (i = null == (r = g.current) ? void 0 : r.offsetLeft) ? i : 0) + (null != (a = null == (o = g.current) ? void 0 : o.offsetWidth) ? a : 0) / 2 - m / 2) < 0 ? 24 : l + m > window.innerWidth ? window.innerWidth - (m + 24) : l,
                         zIndex: 1002,
                         width: m
                     },
@@ -27989,7 +27989,7 @@
             et.useEffect)(function() {
                 var t, n, o = null == (t = m.current) ? void 0 : t.offsetWidth, i = null != (n = null == r ? void 0 : r.length) ? n : 0;
                 if (null != o && null != r) {
-                    var a = 51;
+                    var a = Math.floor(o / 110);
                     w(110 * (p ? i + 1 : i) > o),
                     y(r.slice(0, a - !!p))
                 }
