@@ -233,9 +233,15 @@
     .games-list-container .horizontal-scroller {
         width:100%
     }
+}
 
+.games-list-container .horizontal-scroller.new-scroll-arrows {
+    width: 100%
+}
+
+@media (max-width: 543px) {
     .games-list-container .horizontal-scroller .horizontally-scrollable {
-        height: 162px
+        height:162px
     }
 }
 
@@ -1370,6 +1376,18 @@
     width: fit-content
 }
 
+.padding-left-\[var\(--size-150\)\] {
+    padding-left: var(--size-150)
+}
+
+.padding-right-\[var\(--size-150\)\] {
+    padding-right: var(--size-150)
+}
+
+.padding-right-\[var\(--size-250\)\] {
+    padding-right: var(--size-250)
+}
+
 .scroll {
     overflow: auto
 }
@@ -1420,6 +1438,22 @@
 
 .icon-filled-x {
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Cpath d='M24.5607 9.56066C25.1464 8.97487 25.1464 8.02513 24.5607 7.43934C23.9749 6.85355 23.0251 6.85355 22.4393 7.43934L16 13.8787L9.56066 7.43934C8.97487 6.85355 8.02513 6.85355 7.43934 7.43934C6.85355 8.02513 6.85355 8.97487 7.43934 9.56066L13.8787 16L7.43934 22.4393C6.85355 23.0251 6.85355 23.9749 7.43934 24.5607C8.02513 25.1464 8.97487 25.1464 9.56066 24.5607L16 18.1213L22.4393 24.5607C23.0251 25.1464 23.9749 25.1464 24.5607 24.5607C25.1464 23.9749 25.1464 23.0251 24.5607 22.4393L18.1213 16L24.5607 9.56066Z' fill='black'/%3E%3C/svg%3E")
+}
+
+.\[-ms-overflow-style\:none\] {
+    -ms-overflow-style: none
+}
+
+.\[-webkit-overflow-scrolling\:touch\] {
+    -webkit-overflow-scrolling: touch
+}
+
+.\[scroll-snap-type\:x_mandatory\] {
+    scroll-snap-type: x mandatory
+}
+
+.\[scrollbar-width\:none\] {
+    scrollbar-width: none
 }
 
 .discovery-error-container {
@@ -4226,4 +4260,14 @@
 
 .group\/interactable:disabled .group-disabled\/interactable\:bg-none {
     background-color: var(--color-none)
+}
+
+.\[\&\:\:-webkit-scrollbar\]\:hidden::-webkit-scrollbar {
+    display: none
+}
+
+@media (pointer: coarse) and (not (any-pointer:fine)) {
+    .\[\@media\(pointer\:coarse\)_and_\(not_\(any-pointer\:fine\)\)\]\:\[scroll-snap-type\:none\] {
+        scroll-snap-type:none
+    }
 }
